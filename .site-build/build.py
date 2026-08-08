@@ -45,6 +45,9 @@ EXCLUDE_FILE_PREFIXES = ("未命名",)
 EXCLUDE_FILE_NAMES = {"草稿.md", "模板.md", "READEME.md", "AI 测试.md"}
 EXCLUDE_FILE_SUFFIXES = (".excalidraw.md",)
 
+# 仓库根目录下不参与构建的文件（如 README.md 操作文档）
+EXCLUDE_ROOT_FILES = {"README.md"}
+
 # 分区落地页：以下文件名会改名为 index.md
 INDEX_RENAMES = ("首页.md", "欢迎.md")
 
@@ -88,6 +91,8 @@ def copy_tree(src: Path, dst: Path) -> None:
         try:
             is_dir = entry.is_dir()
         except OSError:
+            continue
+        if src == VAULT_ROOT and entry.name in EXCLUDE_ROOT_FILES:
             continue
         if should_exclude(entry.name, is_dir):
             continue
