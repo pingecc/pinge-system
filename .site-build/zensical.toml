@@ -1,0 +1,375 @@
+# 由 build.py 自动生成；如需调整站点信息/导航顺序，请修改 build.py 顶部的配置后重新构建。
+[project]
+site_name = "我的学习笔记"
+site_url = "https://pingecc.github.io/pinge-system/"
+site_description = "个人学习笔记知识库"
+site_dir = "site"
+docs_dir = "content"
+language = "zh"
+
+nav = [
+  { "首页" = "index.md" },
+  { "前端" = [
+    { "前端" = "前端/index.md" },
+    { "01-HTML" = [
+      { "01-HTML" = "前端/01-HTML/01-HTML.md" },
+    ] },
+    { "03-JavaScript" = "前端/03-JavaScript.md" },
+    { "CSS从零到企业级开发" = [
+      { "01-CSS的本质" = "前端/CSS从零到企业级开发/01-CSS的本质.md" },
+      { "02-CSS选择器" = "前端/CSS从零到企业级开发/02-CSS选择器.md" },
+      { "03-盒子模型" = "前端/CSS从零到企业级开发/03-盒子模型.md" },
+      { "04-Margin、Padding与BFC" = "前端/CSS从零到企业级开发/04-Margin、Padding与BFC.md" },
+      { "05-普通文档流与Display" = "前端/CSS从零到企业级开发/05-普通文档流与Display.md" },
+      { "06-Flex布局" = "前端/CSS从零到企业级开发/06-Flex布局.md" },
+      { "08-Grid（网格布局）" = "前端/CSS从零到企业级开发/08-Grid（网格布局）.md" },
+      { "CSS" = "前端/CSS从零到企业级开发/CSS.md" },
+      { "reference" = [
+        { "flex-grow-flex-shrink-guide" = "前端/CSS从零到企业级开发/reference/flex-grow-flex-shrink-guide.md" },
+        { "justify-content-guide" = "前端/CSS从零到企业级开发/reference/justify-content-guide.md" },
+      ] },
+    ] },
+    { "JavaScript" = [
+      { "01-基础语法" = "前端/JavaScript/01-基础语法.md" },
+      { "02-对象与数组" = "前端/JavaScript/02-对象与数组.md" },
+    ] },
+    { "React学习路线-面向后台ERP" = "前端/React学习路线-面向后台ERP.md" },
+    { "前端学习路线" = "前端/前端学习路线.md" },
+    { "网页布局" = [
+      { "00-学习大纲" = "前端/网页布局/00-学习大纲.md" },
+      { "02-CSS" = "前端/网页布局/02-CSS.md" },
+      { "03-布局技巧" = "前端/网页布局/03-布局技巧.md" },
+      { "reference" = [
+        { "a标签可以放块级元素" = "前端/网页布局/reference/a标签可以放块级元素.md" },
+        { "后代选择器与子选择器的区别" = "前端/网页布局/reference/后代选择器与子选择器的区别.md" },
+        { "基本结构标签说明" = "前端/网页布局/reference/基本结构标签说明.md" },
+      ] },
+      { "综合案例" = [
+        { "01-超链接" = "前端/网页布局/综合案例/01-超链接.md" },
+        { "02-表格" = "前端/网页布局/综合案例/02-表格.md" },
+        { "03-表单" = "前端/网页布局/综合案例/03-表单.md" },
+      ] },
+    ] },
+  ] },
+  { "Java" = [
+    { "Java" = "Java/index.md" },
+    { "01-Java核心编程" = [
+      { "00-设计哲学" = "Java/01-Java核心编程/00-设计哲学.md" },
+      { "01-开发和运行环境" = "Java/01-Java核心编程/01-开发和运行环境.md" },
+      { "02-语言核心" = "Java/01-Java核心编程/02-语言核心.md" },
+      { "03-并发编程" = "Java/01-Java核心编程/03-并发编程.md" },
+      { "04-函数式编程" = "Java/01-Java核心编程/04-函数式编程.md" },
+      { "05-IO编程" = "Java/01-Java核心编程/05-IO编程.md" },
+      { "JVM" = [
+        { "01-Java源码到类加载过程" = "Java/01-Java核心编程/JVM/01-Java源码到类加载过程.md" },
+        { "02-Class对象应用" = "Java/01-Java核心编程/JVM/02-Class对象应用.md" },
+      ] },
+      { "Java核心语言特性" = [
+        { "03-注解Annotation" = "Java/01-Java核心编程/Java核心语言特性/03-注解Annotation.md" },
+      ] },
+      { "Java源码设计" = [
+        { "Java-CallBack设计" = "Java/01-Java核心编程/Java源码设计/Java-CallBack设计.md" },
+        { "Java-动态代理设计" = "Java/01-Java核心编程/Java源码设计/Java-动态代理设计.md" },
+        { "构造方法中传递 this 设计理解" = "Java/01-Java核心编程/Java源码设计/构造方法中传递 this 设计理解.md" },
+      ] },
+      { "Java高级技术" = [
+        { "字节码操作-ASM" = "Java/01-Java核心编程/Java高级技术/字节码操作-ASM.md" },
+      ] },
+      { "MAT" = "Java/01-Java核心编程/MAT.md" },
+      { "Tomcat" = "Java/01-Java核心编程/Tomcat.md" },
+      { "面向对象" = "Java/01-Java核心编程/面向对象.md" },
+    ] },
+    { "02-Spring生态" = [
+      { "01-Spring" = [
+        { "01-Spring" = "Java/02-Spring生态/01-Spring/01-Spring.md" },
+        { "01-Spring核心" = "Java/02-Spring生态/01-Spring/01-Spring核心.md" },
+        { "02-常见应用" = "Java/02-Spring生态/01-Spring/02-常见应用.md" },
+      ] },
+      { "02-SpringMVC" = "Java/02-Spring生态/02-SpringMVC.md" },
+      { "SpringAI集成" = "Java/02-Spring生态/SpringAI集成.md" },
+    ] },
+    { "03-数据库" = [
+      { "MongoDB" = "Java/03-数据库/MongoDB.md" },
+      { "MySQL" = "Java/03-数据库/MySQL.md" },
+      { "PostgreSQL" = "Java/03-数据库/PostgreSQL.md" },
+      { "Redis" = "Java/03-数据库/Redis.md" },
+      { "SQL" = "Java/03-数据库/SQL.md" },
+      { "分布式事务" = "Java/03-数据库/分布式事务.md" },
+      { "消息队列" = "Java/03-数据库/消息队列.md" },
+    ] },
+    { "04-ORM" = [
+      { "Mybatis" = [
+        { "01-ORM发展历程" = "Java/04-ORM/Mybatis/01-ORM发展历程.md" },
+        { "02-Mybatis" = "Java/04-ORM/Mybatis/02-Mybatis.md" },
+      ] },
+    ] },
+    { "04-开发工具" = [
+      { "01-Lombok" = "Java/04-开发工具/01-Lombok.md" },
+      { "01-Ugit" = "Java/04-开发工具/01-Ugit.md" },
+      { "02-hutool" = "Java/04-开发工具/02-hutool.md" },
+      { "Git" = "Java/04-开发工具/Git.md" },
+      { "日志" = [
+        { "01-Logback" = "Java/04-开发工具/日志/01-Logback.md" },
+        { "01-日志" = "Java/04-开发工具/日志/01-日志.md" },
+        { "02-log4j2" = "Java/04-开发工具/日志/02-log4j2.md" },
+      ] },
+    ] },
+    { "05-Elastic Stack" = [
+      { "01-核心知识" = [
+        { "01-Elasticsearch简介" = "Java/05-Elastic Stack/01-核心知识/01-Elasticsearch简介.md" },
+        { "02-DSL-API操作" = "Java/05-Elastic Stack/01-核心知识/02-DSL-API操作.md" },
+        { "03-RestAPI" = "Java/05-Elastic Stack/01-核心知识/03-RestAPI.md" },
+      ] },
+    ] },
+    { "Java核心" = [
+      { "Excalidraw" = [
+        { "vue-route" = "Java/Java核心/Excalidraw/vue-route.md" },
+        { "企业经营" = "Java/Java核心/Excalidraw/企业经营.md" },
+      ] },
+      { "GPT" = [
+        { "ChatGPT" = "Java/Java核心/GPT/ChatGPT.md" },
+        { "DeepSeek学习" = "Java/Java核心/GPT/DeepSeek学习.md" },
+        { "Gemini学习" = "Java/Java核心/GPT/Gemini学习.md" },
+      ] },
+      { "Spring生态" = [
+        { "01-Spring" = "Java/Java核心/Spring生态/01-Spring.md" },
+        { "02-Spring Cloud" = "Java/Java核心/Spring生态/02-Spring Cloud.md" },
+      ] },
+      { "工作流" = [
+        { "01-Flowable" = "Java/Java核心/工作流/01-Flowable.md" },
+      ] },
+      { "技术基建" = [
+        { "1-Web开发" = [
+          { "01-HTML" = "Java/Java核心/技术基建/1-Web开发/01-HTML.md" },
+          { "02-CSS" = "Java/Java核心/技术基建/1-Web开发/02-CSS.md" },
+          { "JavaScript" = [
+            { "异步" = "Java/Java核心/技术基建/1-Web开发/JavaScript/异步.md" },
+            { "浏览器" = "Java/Java核心/技术基建/1-Web开发/JavaScript/浏览器.md" },
+            { "语言核心" = "Java/Java核心/技术基建/1-Web开发/JavaScript/语言核心.md" },
+          ] },
+          { "RDEADME" = "Java/Java核心/技术基建/1-Web开发/RDEADME.md" },
+          { "Vue" = [
+            { "README" = "Java/Java核心/技术基建/1-Web开发/Vue/README.md" },
+            { "Vue2" = "Java/Java核心/技术基建/1-Web开发/Vue/Vue2.md" },
+            { "Vue3" = "Java/Java核心/技术基建/1-Web开发/Vue/Vue3.md" },
+          ] },
+          { "Web" = "Java/Java核心/技术基建/1-Web开发/Web.md" },
+          { "vue3快速上手" = "Java/Java核心/技术基建/1-Web开发/vue3快速上手.md" },
+          { "工程化" = "Java/Java核心/技术基建/1-Web开发/工程化.md" },
+          { "待整理" = "Java/Java核心/技术基建/1-Web开发/待整理.md" },
+          { "构建" = "Java/Java核心/技术基建/1-Web开发/构建.md" },
+        ] },
+        { "4-Python开发" = [
+          { "0-Python" = "Java/Java核心/技术基建/4-Python开发/0-Python.md" },
+          { "RDADEME" = "Java/Java核心/技术基建/4-Python开发/RDADEME.md" },
+          { "爬虫" = "Java/Java核心/技术基建/4-Python开发/爬虫.md" },
+        ] },
+        { "前后端数据交互" = "Java/Java核心/技术基建/前后端数据交互.md" },
+        { "技术组件" = [
+          { "MinIO" = "Java/Java核心/技术基建/技术组件/MinIO.md" },
+        ] },
+        { "教程资源" = "Java/Java核心/技术基建/教程资源.md" },
+        { "线上故障分析" = "Java/Java核心/技术基建/线上故障分析.md" },
+        { "计算机系统" = [
+          { "IO" = [
+            { "IO" = "Java/Java核心/技术基建/计算机系统/IO/IO.md" },
+            { "什么是IO" = "Java/Java核心/技术基建/计算机系统/IO/什么是IO.md" },
+          ] },
+          { "操作系统" = "Java/Java核心/技术基建/计算机系统/操作系统.md" },
+          { "数据存储" = "Java/Java核心/技术基建/计算机系统/数据存储.md" },
+          { "文件系统设计" = "Java/Java核心/技术基建/计算机系统/文件系统设计.md" },
+          { "深入理解计算机系统" = [
+            { "深入理解计算机系统" = "Java/Java核心/技术基建/计算机系统/深入理解计算机系统/深入理解计算机系统.md" },
+            { "系统调用" = "Java/Java核心/技术基建/计算机系统/深入理解计算机系统/系统调用.md" },
+          ] },
+          { "计算机组层原理" = "Java/Java核心/技术基建/计算机系统/计算机组层原理.md" },
+          { "计算机网络" = "Java/Java核心/技术基建/计算机系统/计算机网络.md" },
+        ] },
+        { "软件开发环境" = "Java/Java核心/技术基建/软件开发环境.md" },
+        { "运维" = [
+          { "软件安装" = "Java/Java核心/技术基建/运维/软件安装.md" },
+        ] },
+      ] },
+      { "消息队列" = [
+        { "01-RabbitMQ基础" = "Java/Java核心/消息队列/01-RabbitMQ基础.md" },
+        { "02-RabbitMQ问题解决" = "Java/Java核心/消息队列/02-RabbitMQ问题解决.md" },
+      ] },
+    ] },
+    { "应用" = [
+      { "应用" = "Java/应用/index.md" },
+      { "Flowable" = [
+        { "01-Flowable" = "Java/应用/Flowable/01-Flowable.md" },
+      ] },
+      { "Spring生态" = [
+        { "Mybatis" = "Java/应用/Spring生态/Mybatis.md" },
+      ] },
+      { "其它技术" = "Java/应用/其它技术.md" },
+    ] },
+    { "架构" = [
+      { "系统性能" = "Java/架构/系统性能.md" },
+    ] },
+    { "源码系列" = [
+      { "01-Spring Framework" = [
+        { "01-Spring核心工作原理" = "Java/源码系列/01-Spring Framework/01-Spring核心工作原理.md" },
+      ] },
+      { "阅读心法" = "Java/源码系列/阅读心法.md" },
+    ] },
+  ] },
+  { "Python" = [
+    { "Python" = "Python/index.md" },
+    { "01-Python核心编程" = [
+      { "00-设计哲学" = "Python/01-Python核心编程/00-设计哲学.md" },
+      { "01-开发和运行环境" = "Python/01-Python核心编程/01-开发和运行环境.md" },
+      { "02-核心语法" = "Python/01-Python核心编程/02-核心语法.md" },
+      { "03-数据结构" = "Python/01-Python核心编程/03-数据结构.md" },
+      { "04-函数" = "Python/01-Python核心编程/04-函数.md" },
+      { "05-面向对象" = "Python/01-Python核心编程/05-面向对象.md" },
+      { "06-模块化" = "Python/01-Python核心编程/06-模块化.md" },
+      { "07-文件" = "Python/01-Python核心编程/07-文件.md" },
+    ] },
+    { "02-开发" = [
+      { "01-requests" = "Python/02-开发/01-requests.md" },
+      { "02-配置信息设计" = "Python/02-开发/02-配置信息设计.md" },
+    ] },
+  ] },
+  { "系统架构" = [
+    { "系统架构" = "系统架构/index.md" },
+    { "ERP" = [
+      { "库存设计" = [
+        { "01-库存管理" = "系统架构/ERP/库存设计/01-库存管理.md" },
+      ] },
+      { "采购管理" = [
+        { "01-采购管理" = "系统架构/ERP/采购管理/01-采购管理.md" },
+        { "02-采购术语" = "系统架构/ERP/采购管理/02-采购术语.md" },
+      ] },
+      { "销售管理" = [
+        { "01-销售管理" = "系统架构/ERP/销售管理/01-销售管理.md" },
+      ] },
+    ] },
+    { "企业财务信息化" = [
+      { "ERP与财务" = "系统架构/企业财务信息化/ERP与财务.md" },
+      { "企业财务信息化" = "系统架构/企业财务信息化/企业财务信息化.md" },
+      { "杂谈" = "系统架构/企业财务信息化/杂谈.md" },
+      { "资料库" = [
+        { "ERP中的财务体现" = "系统架构/企业财务信息化/资料库/ERP中的财务体现.md" },
+        { "三单匹配" = "系统架构/企业财务信息化/资料库/三单匹配.md" },
+        { "会计准则" = "系统架构/企业财务信息化/资料库/会计准则.md" },
+        { "会计核算" = "系统架构/企业财务信息化/资料库/会计核算.md" },
+        { "发票与税" = "系统架构/企业财务信息化/资料库/发票与税.md" },
+        { "报表合并机制" = "系统架构/企业财务信息化/资料库/报表合并机制.md" },
+        { "理解做账" = "系统架构/企业财务信息化/资料库/理解做账.md" },
+        { "税务管理" = "系统架构/企业财务信息化/资料库/税务管理.md" },
+        { "管理会计" = "系统架构/企业财务信息化/资料库/管理会计.md" },
+        { "资金管理" = "系统架构/企业财务信息化/资料库/资金管理.md" },
+      ] },
+    ] },
+    { "系统设计" = [
+      { "API设计规范" = "系统架构/系统设计/API设计规范.md" },
+      { "Git规范" = "系统架构/系统设计/Git规范.md" },
+      { "企业组织数据权限" = "系统架构/系统设计/企业组织数据权限.md" },
+      { "单据设计" = "系统架构/系统设计/单据设计.md" },
+      { "数据一致性" = "系统架构/系统设计/数据一致性.md" },
+    ] },
+    { "跨境物流业务" = [
+      { "书籍阅读" = [
+        { "《实战供应链：业务梳理、系统设计与项目实战》" = "系统架构/跨境物流业务/书籍阅读/《实战供应链：业务梳理、系统设计与项目实战》.md" },
+        { "《跨境物流及海外仓》" = "系统架构/跨境物流业务/书籍阅读/《跨境物流及海外仓》.md" },
+        { "详解" = [
+          { "UPS" = "系统架构/跨境物流业务/书籍阅读/详解/UPS.md" },
+          { "偏远邮编" = "系统架构/跨境物流业务/书籍阅读/详解/偏远邮编.md" },
+          { "理解承运人" = "系统架构/跨境物流业务/书籍阅读/详解/理解承运人.md" },
+          { "邮政和快递的区别" = "系统架构/跨境物流业务/书籍阅读/详解/邮政和快递的区别.md" },
+          { "邮编在跨境物流的作用" = "系统架构/跨境物流业务/书籍阅读/详解/邮编在跨境物流的作用.md" },
+        ] },
+      ] },
+    ] },
+    { "项目实践" = [
+      { "外贸业财一体化ERP" = [
+        { "个人职责内容" = "系统架构/项目实践/外贸业财一体化ERP/个人职责内容.md" },
+      ] },
+      { "大货系统" = [
+        { "订单模块" = "系统架构/项目实践/大货系统/订单模块.md" },
+      ] },
+    ] },
+  ] },
+  { "English" = [
+    { "English" = "English/index.md" },
+    { "zmg" = [
+      { "信息网" = "English/zmg/信息网.md" },
+    ] },
+    { "零基础系统学习英语" = [
+      { "01-英语学习下意识的重要性" = "English/零基础系统学习英语/01-英语学习下意识的重要性.md" },
+      { "02-单词联想" = "English/零基础系统学习英语/02-单词联想.md" },
+    ] },
+  ] },
+  { "考证" = [
+    { "考证" = "考证/index.md" },
+    { "软考" = [
+      { "软考" = "考证/软考/index.md" },
+    ] },
+  ] },
+  { "编程语言模型" = [
+    { "编程语言模型" = "编程语言模型/index.md" },
+    { "模块化" = "编程语言模型/模块化.md" },
+  ] },
+  { "源码系列" = [
+    { "源码系列" = "源码系列/index.md" },
+  ] },
+]
+
+[project.theme]
+language = "zh"
+features = [
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.sections",
+  "navigation.expand",
+  "navigation.indexes",
+  "navigation.top",
+  "navigation.instant",
+  "navigation.footer",
+  "content.code.copy",
+  "content.tabs.link",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc = { permalink = true }
+pymdownx.arithmatex = { generic = true }
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji = { emoji_generator = "zensical.extensions.emoji.to_svg", emoji_index = "zensical.extensions.emoji.twemoji" }
+pymdownx.highlight = { anchor_linenums = true, line_spans = "__span", pygments_lang_class = true }
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences = { custom_fences = [ { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" } ] }
+pymdownx.tabbed = { alternate_style = true, combine_header_slug = true }
+pymdownx.tasklist = { custom_checkbox = true }
+pymdownx.tilde = {}

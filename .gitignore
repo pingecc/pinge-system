@@ -1,0 +1,5 @@
+.DS_Store
+.obsidian/
+.site-build/.venv/
+.site-build/content/
+.site-build/site/
