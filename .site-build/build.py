@@ -353,6 +353,7 @@ def write_home_page() -> None:
 EXTRA_ASSETS = {
     "reading-mode.css": "assets/reading-mode.css",
     "reading-mode.js": "assets/reading-mode.js",
+    "site-layout.css": "assets/site-layout.css",
 }
 
 
@@ -408,7 +409,7 @@ site_description = "{SITE_DESCRIPTION}"
 site_dir = "site"
 docs_dir = "content"
 language = "zh"
-extra_css = ["assets/reading-mode.css"]
+extra_css = ["assets/reading-mode.css", "assets/site-layout.css"]
 extra_javascript = ["assets/reading-mode.js"]
 
 nav = [
