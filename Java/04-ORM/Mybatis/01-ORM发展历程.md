@@ -49,7 +49,7 @@ while (rs.next()) {
 
 
 
-# Spring JDBC
+## Spring JDBC
 
 Spring JDBC 在JDBC上做了轻量级的封装，通过提供了JdbcTemplate，里面封装了各种各样的 execute,query和update方法，应用层面只需要提供数据源、编写SQL语句、提取结果集就可以了，使用过程接近JDBC操作。
 
@@ -121,7 +121,7 @@ public class UserDao {
 }
 ```
 
-# Mybatis
+## Mybatis
 
 对JDBC的更进一步封装，提供以下服务：
 - 数据库资源的管理：不需要我们自己建立数据库连接，释放

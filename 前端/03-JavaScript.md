@@ -27,7 +27,7 @@
 that can span multiple lines */
 ```
 
-# 数据模型
+## 数据模型
     
 
 JavaScript 具有原始数据类型
@@ -136,7 +136,7 @@ NaN === NaN; // false
 isNaN(NaN); // true
 ```
 
-## 变量
+### 变量
     
 
 早期声明变量使用 var ，**从 ES6 开始，建议使用****`let`****关键字声明变量。**
@@ -165,7 +165,7 @@ JavaScript 是一种动态类型语言，声明变量时不用指定数据类型
 
   
 
-## 字符串
+### 字符串
     
 
 在 JavaScript 中，字符串是零个或多个字符的序列。**字符串文字以单引号 (') 或双引号 (") 开始和结束**，JavaScript 字符串是不可变的，这意味着它们在创建后修改将返回新的对象。
@@ -261,7 +261,7 @@ console.log(html);
 // 输出保留换行和缩进（实际使用时可通过 trim() 去除首尾空格）
 ```
 
-## 数组
+### 数组
     
 
 JavaScript的数组可以包括任意数据类型。例如：
@@ -311,7 +311,7 @@ arr[5] = 'x';
 console.log(arr); // arr变为['A', 'B', 'C', undefined, undefined, 'x']
 ```
 
-## Map和Set
+### Map和Set
     
 
 JavaScript的默认对象表示方式`{}`可以视为其他语言中的`Map`或`Dictionary`的数据结构，即一组键值对。但是JavaScript的对象有个小问题，就是键必须是字符串。但实际上Number或者其他数据类型作为键也是非常合理的，为了解决这个问题，最新的ES6规范引入了新的数据类型`Map`
@@ -363,7 +363,7 @@ s.add(4);
 s.delete(3);
 ```
 
-## iterable
+### iterable
     
 
 遍历`Array`可以采用下标循环，遍历`Map`和`Set`就无法使用下标。为了统一集合类型，ES6标准引入了新的`iterable`类型，`Array`、`Map`和`Set`都属于`iterable`类型。具有`iterable`类型的集合可以通过新的`for ... of`循环来遍历。
@@ -383,7 +383,7 @@ for (let x of m) { // 遍历Map
 }
 ```
 
-## 解构赋值
+### 解构赋值
     
 
 JavaScript提供的一种特殊语法，它使我们可以将**数组或对象“拆包”至一系列变量中**。
@@ -431,7 +431,7 @@ alert(height); // 200
   const { createApp, ref, reactive } = Vue;
 ```
 
-# 函数
+## 函数
     
 
 JavaScript中的**函数也是对象**，和Python一样。按照惯例，函数名称使用驼峰命名法，并以动词开头，例如 `getData()`、`fetchContents()` 和 `isValid()` 。通过 `return` 来返回值，如果没有指定，则默认返回`undefined` 。
@@ -467,7 +467,7 @@ let abs = function (x) {
 abs(10)
 ```
 
-## 参数
+### 参数
     
 
 在JavaScript中调用函数参数的传递直接按照顺序传递即可，不像Python那样搞那么多花样。JavaScript和java一样，参数是按照值来传递，对于基本数据类型，就是值本身，对于引用对象，就是对象的引用值。
@@ -542,7 +542,7 @@ foo(1);
 
   
 
-## 高阶函数
+### 高阶函数
     
 
 接受一个函数对象作为参数，这样就可以在函数内部去调用这个传进来的函数。
@@ -620,7 +620,7 @@ arr.sort(function (s1, s2) {
 }); // ['apple', 'Google', 'Microsoft']
 ```
 
-## 闭包
+### 闭包
     
 
 闭包的构成**：**内部函数 + 内部函数在创建时捕获的变量
@@ -693,7 +693,7 @@ function setupButton(i) {
 // 即使在循环中调用 setupButton，每个回调都“记住”了自己的 i
 ```
 
-## 箭头函数
+### 箭头函数
     
 
 先来了解下JavaScript中的匿名函数：没有名称的函数：
@@ -743,10 +743,10 @@ x => {
 
 ```
 
-# 控制结构
+## 控制结构
     
 
-## 条件
+### 条件
     
 
 和Java一样，其中`else`语句是可选的。如果语句块只包含一条语句，那么可以省略`{}`：
@@ -761,7 +761,7 @@ if (age >= 18) {
     console.log('kid');
 }
 ```
-## 循环
+### 循环
     
 
 ```JavaScript
@@ -815,7 +815,7 @@ do {
 n; // 100
 ```
 
-## 异常
+### 异常
     
 
 异常捕获处理
@@ -910,7 +910,7 @@ try {
 }
 ```
 
-## 模块
+### 模块
     
 
 ES Modules（ESM）。
@@ -1026,7 +1026,7 @@ import('./math.js')
 }
 ```
 
-# 对象
+## 对象
     
 
 在JavaScript中，除了原始类型，其它一些皆是对象，对象本质是 **属性****的集合**，对应的键是字符串类型，而值可以是任意数据类型，创建一个对象常用的是对象字面量。
@@ -1060,7 +1060,7 @@ test.hello()。
 
 > JavaScript比Python太灵活了。
 
-## 属性
+### 属性
     
 
 操作对象就是操作对象的属性，关于对象属性的操作包括以下：
@@ -1140,7 +1140,7 @@ Math.max.call(null, 3, 5, 4); // 5
 
 ```
 
-## 对象属性配置
+### 对象属性配置
     
 
 我们知道，对象可以存储属性。
@@ -1157,7 +1157,7 @@ Math.max.call(null, 3, 5, 4); // 5
 Object.defineProperty(obj, propertyName, descriptor)
 ```
 
-## 构造函数
+### 构造函数
     
 
 如何快速创建结构相同的对象呢？例如，以下代码创建了一个 `person` 对象，它包含两个属性 `firstName` 和 `lastName`，如果在程序中需要创建许多结构类似Person的对象，该如何做？
@@ -1201,7 +1201,7 @@ let person = new Person('John','Doe');
 
 > 通过构造函数去创建对象，每使用new关键字创建一个对象，该对象的所有属性都会重复创建一份，包括方法，所以内存使用效率并不高。
 
-## 原型
+### 原型
     
 
 每个 JavaScript 对象都默认有一个与之关联的原型对象，通过原型对象，可以实现属性的共享，从而减少内存占用。
@@ -1272,7 +1272,7 @@ console.log(p1.getFullName(), p2.getFullName());
 console.log(p2.getFullName === p2.getFullName);
 ```
 
-## Promise
+### Promise
     
 
 Promise 是一个**对象**，它封装了**异步操作**的结果。

@@ -13,7 +13,7 @@ DELETE /orders/1
 
 三个接口使用相同的 URL，通过不同的 HTTP Method 区分不同操作，无需设计 `/getOrder`、`/updateOrder`、`/deleteOrder` 等不同路径，使接口更加统一、简洁，也降低了接口命名的复杂度。同时，遵循 HTTP 语义也有利于接口文档、日志分析、网关治理及客户端理解。
 
-## GET
+### GET
 
 适用：简单查询
 
@@ -26,7 +26,7 @@ GET /orders?status=WAIT_SHIP&warehouseId=1
 
 另外对于系统中的分页查询，如果是个简单的单据，可以直接设计成GET查询，如果是一个复杂的单据，考虑到后续会逐渐复杂，建议在一开始就设计成POST查询。
 
-## POST
+### POST
 
 适用：
 1. 复杂查询
@@ -74,7 +74,7 @@ POST /orders/query
 POST /orders/10001/approve
 ```
 
-## PUT
+### PUT
 
 适用：
 1. 更新操作
@@ -83,7 +83,7 @@ POST /orders/10001/approve
 PUT /orders/10001
 ```
 
-## DELETE
+### DELETE
 
 使用：
 1. 删除
@@ -96,9 +96,9 @@ DELETE /orders/10001
 
 
 
-# Controller参数设计规范
+## Controller参数设计规范
 
-## Path 参数
+### Path 参数
 适用于：通过ID来进行的
 - 查询详情
 - 修改指定资源
@@ -130,7 +130,7 @@ public Result<Void> approve(
 **资源唯一标识（ID）统一使用 Path 参数，不允许放到 RequestBody 或 Query 参数。**
 
 
-## Query 参数
+### Query 参数
 
 适用于：
 1. 简单的查询
@@ -182,7 +182,7 @@ public Result<Void> delete(
 注意：这里的` @RequestParam` 虽然可以省略，Spring MVC会默认默认按照 RequestParam去解析，但是还是建议加上，清晰。
 
 
-## RequestBody
+### RequestBody
 
 1. 新增
 2. 复杂查询
@@ -202,7 +202,7 @@ public Result<PageResult<OrderVO>> query(
 }
 ```
 
-## 文件上传
+### 文件上传
 
 首先一旦涉及文件，HTTP 请求就必须变成：
 ```http
@@ -291,9 +291,9 @@ public Result<Long> create(
 }
 ```
 
-### 文件上传接口单独设计
+#### 文件上传接口单独设计
 
-## 文件下载
+### 文件下载
 文件下载和普通的返回json数据格式的不同点就在于，返回的响应header和body（二进制流）不同
 
 ```
@@ -320,9 +320,9 @@ public void download(
 ```
 
 
-### 下载
+#### 下载
 
-### 在线预览
+#### 在线预览
 
-### 实时导出
+#### 实时导出
 

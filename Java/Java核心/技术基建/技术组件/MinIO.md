@@ -6,16 +6,16 @@ MinIO uses buckets to organize objects. A bucket is similar to a folder or direc
 
 # 核心概念
 
-## Bucket
+### Bucket
 
 Bucket 是存储Object的逻辑空间，每个Bucket之间的数据是相互隔离的，对用户而言，相当于存放文件的顶层文件夹；
 
 
-## Object
+### Object
 
 Object 是存储到MinIO的基本对象，对用户而言，相当于文件；
 
-# Java MinioClient API 
+## Java MinioClient API 
 
 - **API 文档**：[https://minio.github.io/minio-java/](https://minio.github.io/minio-java/)
 - **示例代码库**：[https://github.com/minio/minio-java/tree/master/src/test/java/io/minio/examples](https://github.com/minio/minio-java/tree/master/src/test/java/io/minio/examples)
@@ -32,7 +32,7 @@ Object 是存储到MinIO的基本对象，对用户而言，相当于文件；
     
 	所有操作均通过 **Builder 模式参数对象** 调用，例如 `PutObjectArgs.builder()...build()`。
 
-## 创建 MinioClient 实例
+### 创建 MinioClient 实例
 
 
 ```java
@@ -57,7 +57,7 @@ MinioClient client = MinioClient.builder()
 
 
 
-## **Bucket（桶）管理**
+### **Bucket（桶）管理**
 
 |操作|方法|示例|
 |---|---|---|
@@ -70,7 +70,7 @@ MinioClient client = MinioClient.builder()
 
 ---
 
-## **Object（对象）操作**
+### **Object（对象）操作**
 （1）上传对象
 
 ```java
@@ -150,7 +150,7 @@ for (Result<Item> result : results) {
 
 ---
 
-##  **预签名 URL（临时访问）**
+###  **预签名 URL（临时访问）**
 
 用于生成 **临时可公开访问的 URL**（无需暴露密钥）：
 
@@ -180,7 +180,7 @@ String uploadUrl = client.getPresignedObjectUrl(
 
 ---
 
-##  **元数据与属性**
+###  **元数据与属性**
 获取对象信息（不含数据）：
 
 ```java
@@ -197,7 +197,7 @@ System.out.println("ContentType: " + stat.contentType());
 
 ---
 
-##  **错误处理**
+###  **错误处理**
 
 MinIO SDK 抛出 **受检异常（Checked Exceptions）**，需捕获：
 
@@ -220,7 +220,7 @@ try {
 
 ---
 
-##  其它
+###  其它
 
 |功能|说明|
 |---|---|
@@ -232,7 +232,7 @@ try {
 
 ---
 
-## 最佳实践总结
+### 最佳实践总结
 
 1. **复用 MinioClient 实例**：它是线程安全的，应作为单例使用。
 2. **大文件用 `uploadObject`**：自动分片，避免内存溢出。

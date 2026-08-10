@@ -27,7 +27,7 @@ PGSQL的官方地址：https://www.postgresql.org/
 
 PGSQL的国内社区：http://www.postgres.cn/v2/home
 
-# 二、PostgreSQL和MySQL的区别
+## 二、PostgreSQL和MySQL的区别
 
 技术没有好坏之分，知识看一下是否符合你的业务，能否解决你的业务需求。其次也要查看社区的活跃度以及更新的频次。
 
@@ -48,7 +48,7 @@ PostgreSQL相对MySQL上述问题的特点：
 * PostgreSQL支持主从复制的同步操作，可以实现数据的0丢失。
 * PostgreSQL的MVCC实现和MySQL不大一样。PostgreSQL一行数据会存储多个版本。最多可以存储40亿个事务版本。
 
-# 三、PostgreSQL的安装
+## 三、PostgreSQL的安装
 
 咱们只在Linux中安装，不推荐大家在Windows下安装。
 
@@ -104,7 +104,7 @@ psql
 
 如果非要下载：https://sbp.enterprisedb.com/getfile.jsp?fileid=1258242
 
-# 四、PostgreSQL的配置
+## 四、PostgreSQL的配置
 
 要搞两个配置信息，一个关于postgreSQL的远程连接配置以及postgreSQL的日志配置。
 
@@ -121,7 +121,7 @@ PostgreSQL的主要配置放在数据目录下的， **postgresql.conf** 以及 
 
 上图可以看到，postgreSQL的核心文件，都属于postgres用户，操作的时候，尽可能的别用root用户，容易玩出坑，尽可能先切换到postgres用户去玩。
 
-## 4.1 远程连接配置
+### 4.1 远程连接配置
 
 PostgreSQL默认情况下不支持远程连接的，这个跟MySQL几乎一样
 
@@ -166,7 +166,7 @@ host    all             all             0.0.0.0/0               md5
 sudo systemctl restart postgresql-12
 ```
 
-## 4.2 配置数据库的日志
+### 4.2 配置数据库的日志
 
 查看postgresql.conf文件
 
@@ -189,7 +189,7 @@ log_rotation_age = 1d
 log_rotation_size = 0
 ```
 
-# 五、PostgreSQL的基操
+## 五、PostgreSQL的基操
 
 只在psql命令行（客户端）下，执行了一次\l，查看了所有的库信息
 
@@ -216,7 +216,7 @@ log_rotation_size = 0
 \?，可以查看到服务级别的一些命令
 ```
 
-## 5.1 用户操作
+### 5.1 用户操作
 
 构建用户命令巨简单
 
@@ -267,7 +267,7 @@ create database root;
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/8cd4b44b799a4378876c286f3cfcc195.png)
 
-## 5.2 权限操作
+### 5.2 权限操作
 
 权限操作前，要先掌握一下PGSQL的逻辑结构
 
@@ -294,7 +294,7 @@ create database root;
 \help grant
 ```
 
-## 小任务
+### 小任务
 
 构建一个用户（你自己名字）
 
@@ -308,7 +308,7 @@ create database root;
 
 将表的select，update，insert权限赋予用户
 
-## 完成上述操作
+### 完成上述操作
 
 ```sql
 -- 准备用户
@@ -353,7 +353,7 @@ psql -h 192.168.11.32 -p 5432 -U laozheng -W
 
 这种权限的赋予方式，可以用管理员用户去构建整体表结构，如此一来，分配指定用户，赋予不同的权限，这样一来，就不怕用户误操了。
 
-# 六、图形化界面安装
+## 六、图形化界面安装
 
 图形化界面可以连接PGSQL的很多，Navicat（收费）。
 
@@ -383,7 +383,7 @@ https://www.postgresql.org/ftp/pgadmin/pgadmin4/v6.9/windows/
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/baf2c087b92c4936b40903d64741defb.png)
 
-# 七、数据类型
+## 七、数据类型
 
 PGSQL支持的类型特别丰富，大多数的类型和MySQL都有对应的关系
 
@@ -403,9 +403,9 @@ PGSQL支持的类型特别丰富，大多数的类型和MySQL都有对应的关�
 | ip类型     | cidr（存储ip地址）                                                                                                | MySQL也不支持~                                                                                         |
 | 等等       | http://www.postgres.cn/docs/12/datatype.html                                                                      |                                                                                                        |
 
-# 八、PostgreSQL基本操作&数据类型
+## 八、PostgreSQL基本操作&数据类型
 
-## 8.1 单引号和双引号
+### 8.1 单引号和双引号
 
 在PGSQL中，写SQL语句时，单引号用来标识实际的值。双引号用来标识一个关键字，比如表名，字段名。
 
@@ -415,7 +415,7 @@ PGSQL支持的类型特别丰富，大多数的类型和MySQL都有对应的关�
 select 1.414,'卡塔尔',"葡萄牙";
 ```
 
-## 8.2 数据类型转换
+### 8.2 数据类型转换
 
 第一种方式：只需要在值的前面，添加上具体的数据类型即可
 
@@ -440,7 +440,7 @@ select '13'::int;
 select CAST(varchar '100' as int);
 ```
 
-## 8.3 布尔类型
+### 8.3 布尔类型
 
 布尔类型简单的丫批，可以存储三个值，true，false，null
 
@@ -460,9 +460,9 @@ boolean类型在做and和or的逻辑操作时，结果
 | false | NULL  | false   | NULL   |
 | NULL  | NULL  | NULL    | NULL   |
 
-## 8.4 数值类型
+### 8.4 数值类型
 
-### 8.4.1 整型
+#### 8.4.1 整型
 
 整型比较简单，主要就是三个：
 
@@ -472,7 +472,7 @@ boolean类型在做and和or的逻辑操作时，结果
 
 正常没啥事就integer，如果要存主键，比如雪花算法，那就bigint。空间要节约，根据情况smallint
 
-### 8.4.2 浮点型
+#### 8.4.2 浮点型
 
 浮点类型就关注2个（其实是一个）
 
@@ -481,7 +481,7 @@ boolean类型在做and和or的逻辑操作时，结果
 
 针对浮点类型的数据，就使用 **numeric**
 
-### 8.4.3 序列
+#### 8.4.3 序列
 
 MySQL中的主键自增，是基于auto_increment去实现。MySQL里没有序列的对象。
 
@@ -539,7 +539,7 @@ insert into laozheng.yyy (name) values ('yyy');
 
 如果是单独构建序列，再构建表，使用传统方式实现，序列和表就是相对独立的。
 
-### 8.4.4 数值的常见操作
+#### 8.4.4 数值的常见操作
 
 针对数值咱们可以实现加减乘除取余这5个操作
 
@@ -557,7 +557,7 @@ insert into laozheng.yyy (name) values ('yyy');
 
 数值操作也提供了一些函数，比如pi()，round(数值，位数)，floor()，ceil()
 
-## 8.5 字符串类型
+### 8.5 字符串类型
 
 字符串类型用的是最多的一种，在PGSQL里，主要支持三种：
 
@@ -571,7 +571,7 @@ insert into laozheng.yyy (name) values ('yyy');
 
 其他的函数，可以查看  http://www.postgres.cn/docs/12/functions-string.html
 
-## 8.6 日期类型
+### 8.6 日期类型
 
 在PGSQL中，核心的时间类型，就三个。
 
@@ -607,7 +607,7 @@ insert into laozheng.yyy (name) values ('yyy');
   select timestamp '2011-11-11 12:12:12' + interval '1day' + interval '1minute' + interval '1month';
   ```
 
-## 8.7 枚举类型
+### 8.7 枚举类型
 
 枚举类型MySQL也支持，只是没怎么用，PGSQL同样支持这种数据类型
 
@@ -628,7 +628,7 @@ insert into test (weekday) values ('Fri');
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/4645410ba2f0470db94a3d39428c49e3.png)
 
-## 8.8 IP类型
+### 8.8 IP类型
 
 PGSQL支持IP类型的存储，支持IPv4，IPv6这种，甚至Mac内种诡异类型也支持
 
@@ -642,7 +642,7 @@ IP也支持范围查找。
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/ed070a62ac66473cbfc742a1a696a8ce.png)
 
-## 8.9 JSON&JSONB类型
+### 8.9 JSON&JSONB类型
 
 JSON在MySQL8.x中也做了支持，但是MySQL支持的不好，因为JSON类型做查询时，基本无法给JSON字段做索引。
 
@@ -717,7 +717,7 @@ JSON中key对应的value的数据类型
 
 JSON还支持很多函数。可以直接查看   http://www.postgres.cn/docs/12/functions-json.html   函数太多了，不分析了。
 
-## 8.10 复合类型
+### 8.10 复合类型
 
 复合类型就好像Java中的一个对象，Java中有一个User，User和表做了一个映射，User中有个人信息对象。可以基于符合类型对映射上个人信息。
 
@@ -751,7 +751,7 @@ insert into tb_user (info) values (('李四',24));
 select * from tb_user;
 ```
 
-## 8.11 数组类型
+### 8.11 数组类型
 
 数组还是要依赖其他类型，比如在设置住址，住址可能有多个住址，可以采用数组类型去修饰字符串。
 
@@ -803,15 +803,15 @@ select array[1,2] <@ array[1,2,4];
 select array[2,4,4,45,1] && array[1];
 ```
 
-# 九、表
+## 九、表
 
 表的构建语句，基本都会。
 
 核心在于构建表时，要指定上一些约束。
 
-## 9.1 约束
+### 9.1 约束
 
-### 9.1.1 主键
+#### 9.1.1 主键
 
 ```sql
 -- 主键约束
@@ -822,7 +822,7 @@ create table test(
 );
 ```
 
-### 9.1.2 非空
+#### 9.1.2 非空
 
 ```sql
 -- 非空约束
@@ -833,7 +833,7 @@ create table test(
 );
 ```
 
-### 9.1.3 唯一
+#### 9.1.3 唯一
 
 ```sql
 drop table test;
@@ -847,7 +847,7 @@ insert into test (name,id_card) values ('李四','333333333333333333');
 insert into test (name,id_card) values (NULL,'433333333333333333');
 ```
 
-### 9.1.4 检查
+#### 9.1.4 检查
 
 ```sql
 -- 检查约束
@@ -863,9 +863,9 @@ create table test(
 insert into test (name,price,discount_price) values ('粽子',122,12);
 ```
 
-### 9.1.5 外键（不玩）
+#### 9.1.5 外键（不玩）
 
-### 9.1.6 默认值
+#### 9.1.6 默认值
 
 一般公司内，要求表中除了主键和业务字段之外，必须要有5个字段
 
@@ -879,7 +879,7 @@ create table test(
 );
 ```
 
-## 9.2 触发器
+### 9.2 触发器
 
 触发器Trigger，是由事件出发的一种存储过程
 
@@ -1015,7 +1015,7 @@ select * from score;
 delete from student where id = 1;
 ```
 
-## 9.3 表空间（问题填坑）
+### 9.3 表空间（问题填坑）
 
 在存储数据时，数据肯定要落到磁盘上，基于构建的tablespace，指定数据存放在磁盘上的物理地址。
 
@@ -1068,7 +1068,7 @@ create tablespace tp_test location '/var/lib/pgsql/12/tp_test';
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/34a5b492fc7d474ca7994d5ccccf6d5c.png)
 
-## 9.4 视图
+### 9.4 视图
 
 跟MySQL的没啥区别，把一些复杂的操作封装起来，还可以隐藏一些敏感数据。
 
@@ -1107,9 +1107,9 @@ update vw_student_score set math_score =999 where id = 2;
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/1468eac56ade4fbab9bc1d941c8bd2da.png)
 
-## 9.5 索引
+### 9.5 索引
 
-### 9.5.1 索引的基本概念
+#### 9.5.1 索引的基本概念
 
 先了解概念和使用
 
@@ -1122,7 +1122,7 @@ update vw_student_score set math_score =999 where id = 2;
 
 索引可以提升效率，甚至还可以给字段做一些约束
 
-### 9.5.2 索引的分类
+#### 9.5.2 索引的分类
 
 B-Tree索引：最常用的索引。
 
@@ -1130,7 +1130,7 @@ Hash索引：跟MySQL类似，做等值判断，范围凉凉~
 
 GIN索引：针对字段的多个值的类型，比如数组类型。
 
-### 9.5.3 创建索引看效果
+#### 9.5.3 创建索引看效果
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/3b4ff875c0194b5fa27e38530fc2df95.png)
 
@@ -1210,7 +1210,7 @@ explain select * from tb_index where phone @> array['0.6925242730781953'::varcha
 -- 0.1s以内完成
 ```
 
-## 9.6 物化视图
+### 9.6 物化视图
 
 前面说过普通视图，本质就是一个SQL语句，普通的视图并不会本地磁盘存储任何物理。
 
@@ -1278,9 +1278,9 @@ insert into test values (5,'猪头肉',99,40);
 select * from test;
 ```
 
-# 十、事务
+## 十、事务
 
-## 10.1 什么是ACID？（常识）
+### 10.1 什么是ACID？（常识）
 
 在日常操作中，对于一组相关操作，通常要求要么都成功，要么都失败。在关系型数据库中，称这一组操作为事务。为了保证整体事务的安全性，有ACID这一说：
 
@@ -1295,7 +1295,7 @@ PostgreSQL中，在事务的并发问题里，也是基于MVCC，多版本并发
 
 PostgreSQL相比于其他数据，有一个比较大的优化，DDL也可以包含在一个事务中。比如集群中的操作，一个事务可以保证多个节点都构建出一个表，才算成功。
 
-## 10.2 事务的基本使用
+### 10.2 事务的基本使用
 
 首先基于前面的各种操作，应该已经体会到了，PostgreSQL是自动提交事务。跟MySQL是一样的。
 
@@ -1320,7 +1320,7 @@ insert into test values (7,'bbb',12,5);
 commit;
 ```
 
-## 10.3 保存点（了解）
+### 10.3 保存点（了解）
 
 比如项目中有一个大事务操作，不好控制，超时有影响，回滚会造成一切重来，成本太高。
 
@@ -1352,9 +1352,9 @@ rollback to savepoint ok1;
 commit;
 ```
 
-# 十一、并发问题
+## 十一、并发问题
 
-## 11.1 事务的隔离级别
+### 11.1 事务的隔离级别
 
 在不考虑隔离性的前提下，事务的并发可能会出现的问题：
 
@@ -1371,7 +1371,7 @@ commit;
 
 PGSQL在老版本中，只有两个隔离级别，读已提交和串行化。在PGSQL中就不存在脏读问题。
 
-## 11.2 MVCC
+### 11.2 MVCC
 
 首先要清楚，为啥要有MVCC。
 
@@ -1425,13 +1425,13 @@ select xmin,xmax,* from test where id = 8;
 select xmin,xmax,* from test where id = 8;
 ```
 
-# 十二、锁
+## 十二、锁
 
 PostgreSQL中主要有两种锁，一个表锁一个行锁
 
 PostgreSQL中也提供了页锁，咨询锁，But，这个不需要关注，他是为了锁的完整性
 
-## 12.1 表锁
+### 12.1 表锁
 
 表锁显而易见，就是锁住整张表。表锁也分为很多中模式。
 
@@ -1465,7 +1465,7 @@ commit;
 
 如果111号是基于ACCESS SHARE共享锁时，其他线程查询当前表是不会锁住得
 
-## 12.2 行锁
+### 12.2 行锁
 
 PostgreSQL的行锁和MySQL的基本是一模一样的，基于select for update就可以指定行锁。
 
@@ -1488,7 +1488,7 @@ commit;
 
 其他的连接要锁住当前行，会阻塞住。
 
-# 十三、备份&恢复
+## 十三、备份&恢复
 
 防止数据丢失的第一道防线就是备份。数据丢失有的是硬件损坏，还有人为的误删之类的，也有BUG的原因导致误删数据。
 
@@ -1584,7 +1584,7 @@ chown -R postgres. archive
 
 发现，将当前的正在使用的wal日志和最新的上一个wal日志归档过来了，但是之前的没归档，不要慌，后期备份时，会执行命令，这个命令会直接要求wal日志立即归档，然后最全量备份。
 
-## 13.1 逻辑备份&恢复
+### 13.1 逻辑备份&恢复
 
 PostgreSQL提供了pg_dump以及pg_dumpall的命令来实现逻辑备份。
 
@@ -1618,7 +1618,7 @@ pg_dump这种备份，不会造成用户对数据的操作出现阻塞。
 
 除此之外，也可以通过图形化界面备份，在库的位置点击备份就成，导出一个文本文件。
 
-## 13.2 物理备份（归档+物理）
+### 13.2 物理备份（归档+物理）
 
 这里需要基于前面的文件系统的备份和归档备份实现最终的操作
 
@@ -1662,7 +1662,7 @@ pg_basebackup -D /pg_basebackup -Ft -Pv -Upostgres -h 192.168.11.32 -p 5432 -R
 * 需要输入postgres的密码，这里可以设置，重新备份。![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/ab3f9e3db3ad4f769499eaf50a29d806.png)
 * 执行备份![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/232a538ba0604be5a7bbcb6f9649a728.png)![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/3bc6360d43664e8eb9fed78551507cff.png)
 
-## 13.3 物理恢复（归档+物理）
+### 13.3 物理恢复（归档+物理）
 
 模拟数据库崩盘，先停止postgresql服务，然后直接删掉data目录下的全部内容
 
@@ -1690,9 +1690,9 @@ systemctl start postgresql-12
 select pg_wal_replay_resume();
 ```
 
-## 13.4 物理备份&恢复（PITR-Point in time Recovery）
+### 13.4 物理备份&恢复（PITR-Point in time Recovery）
 
-### 模拟场景
+#### 模拟场景
 
 > 场景：每天凌晨02:00，开始做全备（PBK），到了第二天，如果有人14:00分将数据做了误删，希望将数据恢复到14:00分误删之前的状态？
 
@@ -1700,7 +1700,7 @@ select pg_wal_replay_resume();
 
 2、归档恢复：备份中的归档，有02:00~14:00之间的额数据信息，可以基于归档日志将数据恢复到指定的事务id或者是指定时间点，从而实现数据的完整恢复。
 
-### 准备场景和具体操作
+#### 准备场景和具体操作
 
 1、构建一张t3表查询一些数据
 
@@ -1776,7 +1776,7 @@ pg_waldump
 select pg_wal_replay_resume();
 ```
 
-# 十四、数据迁移
+## 十四、数据迁移
 
 PostgreSQL做数据迁移的插件非常多，可以从MySQL迁移到PostgreSQL也可以基于其他数据源迁移到PostgreSQL
 
@@ -1823,15 +1823,15 @@ pgloader 刚刚写好的脚本文件
 
 ![image.png](https://fynotefile.oss-cn-zhangjiakou.aliyuncs.com/fynote/fyfile/2746/1668770654044/9a31fa692c33483589366fc36bbb9ab2.png)
 
-# 十五、主从操作
+## 十五、主从操作
 
 PostgreSQL自身只支持简单的主从，没有主从自动切换，仿照类似Nginx的效果一样，采用keepalived的形式，在主节点宕机后，通过脚本的执行完成主从切换。
 
-## 15.1 主从实现（异步流复制）
+### 15.1 主从实现（异步流复制）
 
 操作方式类似与之前的备份和恢复
 
-### 1、准备环境：
+#### 1、准备环境：
 
 | 角色    | IP            | 端口 |
 | ------- | ------------- | ---- |
@@ -1842,7 +1842,7 @@ PostgreSQL自身只支持简单的主从，没有主从自动切换，仿照类�
 
 修改好ip，安装好postgresql服务
 
-### 2、给主准备一些数据
+#### 2、给主准备一些数据
 
 ```sql
 create table t1 (id int);
@@ -1850,7 +1850,7 @@ insert into t1 values (111);
 select * from t1;
 ```
 
-### 3、配置主节点信息（主从都配置，因为后面会有主从切换的操作）
+#### 3、配置主节点信息（主从都配置，因为后面会有主从切换的操作）
 
 修改 **pg_hba.conf** 文件
 
@@ -1870,7 +1870,7 @@ select * from t1;
 systemctl restart postgresql-12
 ```
 
-### 4、从节点加入到主节点
+#### 4、从节点加入到主节点
 
 关闭从节点服务
 
@@ -1934,7 +1934,7 @@ systemctl restart postgresql-12
   select * from pg_stat_wal_receiver
   ```
 
-## 15.2 主从切换（不这么玩）
+### 15.2 主从切换（不这么玩）
 
 其实主从的本质就是从节点去主节点不停的备份新的数据。
 
@@ -1955,7 +1955,7 @@ systemctl restart postgresql-12
 
 5、启动原主新从查看信息
 
-## 15.3 主从故障切换
+### 15.3 主从故障切换
 
 默认情况下，这里的主从备份是异步的，导致一个问题，如果主节点写入的数据还没有备份到从节点，主节点忽然宕机了，导致后面如果基于上述方式实现主从切换，数据可能丢失。
 

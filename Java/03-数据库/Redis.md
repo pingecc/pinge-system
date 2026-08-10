@@ -31,7 +31,7 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 ```Bash
 项目名:业务名:类型:id
 ```
-## String操作
+### String操作
 
 value是字符串，不过根据字符串的格式不同，又可以分为3类：
 
@@ -52,7 +52,7 @@ String的常见命令有：
 * SETEX：添加一个String类型的键值对，并且指定有效期
 
 
-## Hash操作
+### Hash操作
 Hash类型，也叫散列，其value是一个无序字典，类似于Java中的HashMap结构。
 
 **Hash类型的常见命令**
@@ -70,7 +70,7 @@ Hash类型，也叫散列，其value是一个无序字典，类似于Java中的H
 - HINCRBY:让一个hash类型key的字段值自增并指定步长
 - HSETNX：添加一个hash类型的key的field值，前提是这个field不存在，否则不执行
 
-## List操作
+### List操作
 Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向链表结构。既可以支持正向检索和也可以支持反向检索。
 
 特征也与LinkedList类似：
@@ -88,7 +88,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - LRANGE key star end：返回一段角标范围内的所有元素
 - BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil
 
-## Set操作
+### Set操作
 
 Redis的Set结构与Java中的HashSet类似
 
@@ -108,7 +108,7 @@ Redis的Set结构与Java中的HashSet类似
 * SDIFF key1 key2 ... ：求key1与key2的差集
 * SUNION key1 key2 ..：求key1和key2的并集
 
-## SortedSet
+### SortedSet
 Redis的SortedSet是一个可排序的set集合，与Java中的TreeSet有些类似，但底层数据结构却差别很大。SortedSet中的每一个元素都带有一个score属性，可以基于score属性对元素排序，底层的实现是一个跳表（SkipList）加 hash表。
 
 SortedSet具备下列特性：
@@ -140,7 +140,7 @@ SortedSet的常见命令有：
 - **降序**获取sorted set 中的指定元素的排名：ZREVRANK key memeber
 
 
-# 关于对象存储方案
+## 关于对象存储方案
 
 如果要把一个Java对象存储到Redis，以下是常见的方案：
 
@@ -157,7 +157,7 @@ SortedSet的常见命令有：
 	- 对象字段较多，但经常只需要读取或更新其中几个字段。
 
 
-# 应用
+## 应用
 
 常见应用：
 
@@ -166,14 +166,14 @@ SortedSet的常见命令有：
 - 作为分布式锁
 
 
-## 共享session
+### 共享session
 
 简单来说，就是把用户信息存储在Redis中，不存储在内存里，传统的Tomcat是直接存储在内存里，这个在分布式环境下，如果是多节点的话，每个节点就没有办法共享session状态信息了。
-## 缓存
+### 缓存
 
 
-## 分布式锁
+### 分布式锁
 redission
 
-## 消息队列
+### 消息队列
 

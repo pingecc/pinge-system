@@ -52,7 +52,7 @@ public interface Callback<C, R> {
 
 # callback如何交给框架？
 
-## 发现式 Callback（Discovery Callback）
+### 发现式 Callback（Discovery Callback）
 
 这是 Spring 生命周期中最常见的一种。
 
@@ -129,7 +129,7 @@ Spring 中典型案例：
 还有一种形式，不通过接口的方式，而是通过注解的方式，框架提供注解，用户自定义方法去使用这个注解，然后Spring会扫描用户对象的所有方法是否使用了这个注解，如果使用了则调用目标方法。
 
 
-## 注册式 Callback（Registration Callback）
+### 注册式 Callback（Registration Callback）
 
 
 用户主动把 Callback 交给框架。用户调用框架提供的某个方法，但是这个方法的参数是一个函数接口，需要用户在调用时实现这个接口并传入，框架会在方法里调用用户提供的实现。
@@ -173,7 +173,7 @@ public <T> T execute(TransactionCallback<T> callback){
 - 适用于模板方法模式
     
 
-# 关于回调函数中的参数
+## 关于回调函数中的参数
 
 如果回调函数还有参数，那么回调函数的参数通常不是用户自己传入的，而是框架在调用回调函数时，**根据当前运行环境构造并传递给用户的上下文（Context）对象。把框架内部的运行状态暴露给用户，因为用户需要这个。
 

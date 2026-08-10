@@ -27,11 +27,11 @@
 
 ---
 
-# **一、先忘掉语言：操作系统面对的原始问题**
+## **一、先忘掉语言：操作系统面对的原始问题**
 
   
 
-## **1️⃣ 操作系统眼中的 IO 是什么？**
+### **1️⃣ 操作系统眼中的 IO 是什么？**
 
   
 
@@ -56,7 +56,7 @@
 
 ---
 
-## **2️⃣ 内核面临的终极问题**
+### **2️⃣ 内核面临的终极问题**
 
   
 
@@ -74,11 +74,11 @@
 
 ---
 
-# **二、select：第一代 IO 多路复用**
+## **二、select：第一代 IO 多路复用**
 
   
 
-## **1️⃣ select 的设计动机（历史背景）**
+### **1️⃣ select 的设计动机（历史背景）**
 
   
 
@@ -106,7 +106,7 @@ for fd in all_fds:
 
 ---
 
-## **2️⃣ select 的内核 API（C 原型）**
+### **2️⃣ select 的内核 API（C 原型）**
 
 ```
 int select(
@@ -120,11 +120,11 @@ int select(
 
 ---
 
-## **3️⃣ 每个参数“人话解释”**
+### **3️⃣ 每个参数“人话解释”**
 
   
 
-### **① nfds**
+#### **① nfds**
 
 ```
 最大 fd + 1
@@ -136,7 +136,7 @@ int select(
 
 ---
 
-### **② readfds / writefds / exceptfds**
+#### **② readfds / writefds / exceptfds**
 
 ```
 fd_set = 位图（bitmap）
@@ -159,7 +159,7 @@ fd_set = 位图（bitmap）
 
 ---
 
-### **③ timeout**
+#### **③ timeout**
 
 - NULL：一直阻塞
     
@@ -170,18 +170,18 @@ fd_set = 位图（bitmap）
 
 ---
 
-## **4️⃣ select 的内核执行流程（重点）**
+### **4️⃣ select 的内核执行流程（重点）**
 
   
 
-### **用户态 → 内核态**
+#### **用户态 → 内核态**
 
 ```
 select()
  └─ copy fd_set 到内核
 ```
 
-### **内核内部（关键）**
+#### **内核内部（关键）**
 
 ```
 for fd in [0..nfds):
@@ -194,7 +194,7 @@ for fd in [0..nfds):
 
 ---
 
-### **返回用户态**
+#### **返回用户态**
 
 ```
 把就绪 fd_set 拷回用户态
@@ -203,11 +203,11 @@ for fd in [0..nfds):
 
 ---
 
-## **5️⃣ select 的致命问题（本质）**
+### **5️⃣ select 的致命问题（本质）**
 
   
 
-### **❌ 问题 1：O(n) 扫描**
+#### **❌ 问题 1：O(n) 扫描**
 
 ```
 每次 select 都要扫所有 fd
@@ -215,7 +215,7 @@ for fd in [0..nfds):
 
 ---
 
-### **❌ 问题 2：用户态 ↔ 内核态拷贝**
+#### **❌ 问题 2：用户态 ↔ 内核态拷贝**
 
 - 每次都要拷贝 fd_set
     
@@ -224,7 +224,7 @@ for fd in [0..nfds):
 
 ---
 
-### **❌ 问题 3：fd 数量限制**
+#### **❌ 问题 3：fd 数量限制**
 
 - 默认 1024（FD_SETSIZE）
     
@@ -233,7 +233,7 @@ for fd in [0..nfds):
 
 ---
 
-## **6️⃣ 一句话总结 select**
+### **6️⃣ 一句话总结 select**
 
   
 
@@ -241,7 +241,7 @@ for fd in [0..nfds):
 
 ---
 
-# **三、epoll：事件驱动模型的诞生**
+## **三、epoll：事件驱动模型的诞生**
 
   
 
@@ -253,7 +253,7 @@ select 的问题一句话概括：
 
 ---
 
-## **1️⃣ epoll 的设计思想（非常重要）**
+### **1️⃣ epoll 的设计思想（非常重要）**
 
   
 
@@ -275,11 +275,11 @@ epoll 的模式是：
 
 ---
 
-## **2️⃣ epoll 的三大 API（必须背下来）**
+### **2️⃣ epoll 的三大 API（必须背下来）**
 
   
 
-### **① epoll_create**
+#### **① epoll_create**
 
 ```
 int epoll_create(int size);
@@ -296,7 +296,7 @@ int epoll_create(int size);
 
 ---
 
-### **② epoll_ctl（注册/修改/删除）**
+#### **② epoll_ctl（注册/修改/删除）**
 
 ```
 int epoll_ctl(
@@ -307,7 +307,7 @@ int epoll_ctl(
 );
 ```
 
-#### **op 的取值**
+##### **op 的取值**
 
 - EPOLL_CTL_ADD
     
@@ -318,7 +318,7 @@ int epoll_ctl(
 
 ---
 
-#### **epoll_event**
+##### **epoll_event**
 
 ```
 struct epoll_event {
@@ -327,7 +327,7 @@ struct epoll_event {
 };
 ```
 
-##### **events**
+###### **events**
 
 - EPOLLIN（可读）
     
@@ -338,7 +338,7 @@ struct epoll_event {
 
   
 
-##### **data**
+###### **data**
 
 - 用户自定义数据
     
@@ -349,7 +349,7 @@ struct epoll_event {
 
 ---
 
-### **③ epoll_wait（等事件）**
+#### **③ epoll_wait（等事件）**
 
 ```
 int epoll_wait(
@@ -364,15 +364,15 @@ int epoll_wait(
 
 ---
 
-## **3️⃣ epoll 的内核数据结构（核心）**
+### **3️⃣ epoll 的内核数据结构（核心）**
 
   
 
-### **内核里维护了两样东西**
+#### **内核里维护了两样东西**
 
   
 
-#### **① 红黑树（关注列表）**
+##### **① 红黑树（关注列表）**
 
 ```
 fd → epoll_event
@@ -385,7 +385,7 @@ fd → epoll_event
 
 ---
 
-#### **② 就绪链表（ready list）**
+##### **② 就绪链表（ready list）**
 
 ```
 fd1 → fd3 → fd20 → ...
@@ -398,11 +398,11 @@ fd1 → fd3 → fd20 → ...
 
 ---
 
-## **4️⃣ epoll 的工作流程（非常关键）**
+### **4️⃣ epoll 的工作流程（非常关键）**
 
   
 
-### **① 注册阶段**
+#### **① 注册阶段**
 
 ```
 epoll_ctl(ADD, fd)
@@ -412,7 +412,7 @@ epoll_ctl(ADD, fd)
 
 ---
 
-### **② IO 事件发生（中断上下文）**
+#### **② IO 事件发生（中断上下文）**
 
 ```
 网卡中断
@@ -425,7 +425,7 @@ epoll_ctl(ADD, fd)
 
 ---
 
-### **③ 用户态等待**
+#### **③ 用户态等待**
 
 ```
 epoll_wait()
@@ -435,7 +435,7 @@ epoll_wait()
 
 ---
 
-## **5️⃣ epoll 为什么是“近 O(1)”**
+### **5️⃣ epoll 为什么是“近 O(1)”**
 
 - 不扫描 fd
     
@@ -450,7 +450,7 @@ epoll_wait()
 
 ---
 
-## **6️⃣ 一句话总结 epoll**
+### **6️⃣ 一句话总结 epoll**
 
   
 
@@ -458,7 +458,7 @@ epoll_wait()
 
 ---
 
-# **四、select vs epoll 的本质差异（一定要对齐）**
+## **四、select vs epoll 的本质差异（一定要对齐）**
 
 |**维度**|**select**|**epoll**|
 |---|---|---|
@@ -470,15 +470,15 @@ epoll_wait()
 
 ---
 
-# **五、回到 Python：它如何映射这套模型？**
+## **五、回到 Python：它如何映射这套模型？**
 
   
 
-## **1️⃣ Python 的 select 模块**
+### **1️⃣ Python 的 select 模块**
 
   
 
-### **select.select**
+#### **select.select**
 
 ```
 readable, _, _ = select.select(fds, [], [])
@@ -493,7 +493,7 @@ readable, _, _ = select.select(fds, [], [])
 
 ---
 
-## **2️⃣ Python 的 epoll 封装**
+### **2️⃣ Python 的 epoll 封装**
 
 ```
 ep = select.epoll()
@@ -502,7 +502,7 @@ ep.register(fd, select.EPOLLIN)
 events = ep.poll()
 ```
 
-### **对应关系**
+#### **对应关系**
 
 |**Python**|**内核**|
 |---|---|
@@ -514,7 +514,7 @@ events = ep.poll()
 
 ---
 
-## **3️⃣ Python 中的“高级抽象”**
+### **3️⃣ Python 中的“高级抽象”**
 
 - selectors 模块
     
@@ -529,11 +529,11 @@ selectors.DefaultSelector
 
 ---
 
-# **六、Java 是怎么用 epoll / select 的？**
+## **六、Java 是怎么用 epoll / select 的？**
 
   
 
-## **1️⃣ Java NIO 的核心类**
+### **1️⃣ Java NIO 的核心类**
 
 ```
 Selector
@@ -543,7 +543,7 @@ SelectionKey
 
 ---
 
-## **2️⃣ 本质映射**
+### **2️⃣ 本质映射**
 
 |**Java**|**OS**|
 |---|---|
@@ -553,7 +553,7 @@ SelectionKey
 
 ---
 
-## **3️⃣ Netty 再往上抽象了一层**
+### **3️⃣ Netty 再往上抽象了一层**
 
 ```
 EventLoop
@@ -565,11 +565,11 @@ EventLoop
 
 ---
 
-# **七、JavaScript（Node.js）是怎么回事？**
+## **七、JavaScript（Node.js）是怎么回事？**
 
   
 
-## **1️⃣ Node.js 本质结构**
+### **1️⃣ Node.js 本质结构**
 
 ```
 JavaScript
@@ -579,7 +579,7 @@ JavaScript
 
 ---
 
-## **2️⃣ JS 写法**
+### **2️⃣ JS 写法**
 
 ```
 socket.on('data', (data) => {
@@ -587,7 +587,7 @@ socket.on('data', (data) => {
 });
 ```
 
-### **实际发生了什么？**
+#### **实际发生了什么？**
 
 ```
 epoll_wait
@@ -600,7 +600,7 @@ epoll_wait
 
 ---
 
-# **八、终极抽象（你以后看任何语言都能套）**
+## **八、终极抽象（你以后看任何语言都能套）**
 
   
 
@@ -619,7 +619,7 @@ epoll_wait
 
 ---
 
-## **如果你愿意，下一步我可以继续：**
+### **如果你愿意，下一步我可以继续：**
 
 - **画一张：select / epoll 内核级流程对比图**
     

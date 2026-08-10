@@ -1,6 +1,6 @@
 
 # Java Web开发历程
-## 早期Web通用实现
+### 早期Web通用实现
 
 >总结：早期的web，由于浏览器能力有限，几乎只是一个显示器，有后端把网页内容拼好发给浏览器，而后端的实现分为2个部分：
 >	web服务器：负责和客户端交互，解析请求，将请求转发给对应的外部程序，外部程序处理返回内容，web服务器再把内容返回给客户端。
@@ -18,7 +18,7 @@ CGI，全称Common Gateway Interface（通用网关接口），可以看作是We
     1. 通过环境变量或标准输入（`STDIN`）读取服务器传递的请求数据
     2. 将生成的HTML内容输出到标准输出（`STDOUT`），服务器会捕获这些输出并返回给浏览器。
 
-## Java的Tomcat 与Servlet
+### Java的Tomcat 与Servlet
 Java这边的实现是：**Servlet+JSP**。
 >关于servlet这个名字：“Servlet” = “Server” （服务器）+ “Applet（小的程序组件）”，表示运行在服务端的小程序（组件）
 
@@ -89,9 +89,9 @@ Java Web 的发展脉络（时间线）
 | 4️⃣ 全栈整合时代 | 2010–2017 | Spring MVC、Maven、REST API       | 前后端分离、微服务雏形   |
 | 5️⃣ 云原生时代  | 2017–至今   | Spring Boot、Spring Cloud、Docker | 内嵌容器、自动装配、微服务 |
 
-## 传统Java web开发
+### 传统Java web开发
 
-## MVC 模式
+### MVC 模式
 	MVC （Model -View - Controller）一种软件架构模式，将系统区分为模型(Model)、视图(View) 和控制器(Controller)
 
 |   |   |   |
@@ -99,7 +99,7 @@ Java Web 的发展脉络（时间线）
 |Model|模型|存储数据和业务逻辑（比如用户信息、订单）|
 |View|视图|显示数据（通常是 HTML 页面）|
 |Controller|控制器|接收请求、调用模型、选择视图|
-# Spring MVC 设计
+## Spring MVC 设计
 Spring Web MVC是建立在Servlet API上的原始Web框架，采用MVC设计模式，对Servlet进行了封装和增强，**底层还是基于Tomcat+Servlet 工作。**
 > 传统的Servlet开发繁琐，大量重复代码，每个URL都需要手动配置，写一个HttpServlet，手动解析参数、手动跳转页面......
 
@@ -211,7 +211,7 @@ public class DispatcherServlet extends FrameworkServlet {
 
 
 
-# 工程搭建
+## 工程搭建
 
 ```Bash
 spring-mvc-api/
@@ -364,7 +364,7 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
 	✅ 返回 JSON，完美支持前后端分离！
 
 
-# 核心注解
+## 核心注解
 
 主要注解详解（现代 RESTful 开发必备）
 
@@ -425,7 +425,7 @@ public class UserApiController {
 }
 ```
 
-#  Filter 和 Interceptor
+##  Filter 和 Interceptor
 ```Bash
 HTTP 请求
     ↓
@@ -609,7 +609,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 
 
-# 处理CORS
+## 处理CORS
 
 **Spring MVC** **处理** **CORS** **的四种方式**
 
