@@ -347,6 +347,30 @@ def write_home_page() -> None:
 
 
 # ---------------------------------------------------------------------------
+# 自定义站点资源（阅读模式侧栏开关）
+# ---------------------------------------------------------------------------
+
+EXTRA_ASSETS = {
+    "reading-mode.css": "assets/reading-mode.css",
+    "reading-mode.js": "assets/reading-mode.js",
+}
+
+
+def stage_extra_assets() -> None:
+    """把 extra/ 下的自定义资源复制到 content/assets/，供站点引用。"""
+    src = BUILD_ROOT / "extra"
+    if not src.is_dir():
+        return
+    for name, rel in EXTRA_ASSETS.items():
+        s = src / name
+        if not s.is_file():
+            continue
+        d = CONTENT_DIR / rel
+        d.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(s, d)
+
+
+# ---------------------------------------------------------------------------
 # zensical.toml 生成
 # ---------------------------------------------------------------------------
 
@@ -384,6 +408,8 @@ site_description = "{SITE_DESCRIPTION}"
 site_dir = "site"
 docs_dir = "content"
 language = "zh"
+extra_css = ["assets/reading-mode.css"]
+extra_javascript = ["assets/reading-mode.js"]
 
 nav = [
 {nav_text}
@@ -474,6 +500,9 @@ def main() -> int:
     global md_index, img_index
     md_index, img_index = build_link_index()
     convert_all()
+
+    print("2.5/4 复制自定义站点资源（侧栏开关）")
+    stage_extra_assets()
 
     print("3/4 生成首页与导航配置")
     write_section_indexes()

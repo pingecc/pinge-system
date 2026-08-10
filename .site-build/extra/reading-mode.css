@@ -1,0 +1,48 @@
+/* 阅读模式开关按钮：点击隐藏/显示左侧导航栏与右侧目录 */
+.md-reading-toggle {
+  align-items: center;
+  background-color: var(--md-default-bg-color);
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 50%;
+  box-shadow: var(--md-shadow-z2);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  opacity: 0.55;
+  position: fixed;
+  top: 5rem;
+  transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+  width: 2rem;
+  z-index: 3;
+}
+
+.md-reading-toggle:hover {
+  opacity: 1;
+}
+
+.md-reading-toggle svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.md-reading-toggle--left {
+  left: 0.5rem;
+}
+
+.md-reading-toggle--right {
+  right: 0.5rem;
+}
+
+.md-reading-toggle[aria-pressed="true"] {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+}
+
+/* 移动端侧栏本来就是抽屉，不需要这两个按钮 */
+@media screen and (max-width: 76.234375em) {
+  .md-reading-toggle {
+    display: none;
+  }
+}
