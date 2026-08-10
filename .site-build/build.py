@@ -418,6 +418,7 @@ nav = [
 
 [project.theme]
 language = "zh"
+custom_dir = "templates"
 features = [
   "navigation.tabs",
   "navigation.tabs.sticky",

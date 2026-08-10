@@ -26,7 +26,7 @@ AnnotationConfigApplicationContext
 
 在开发中会直接使用 `AnnotationConfigApplicationContext` 来构建，它支持通过Java配置类的方式。
 
-### 创建ApplicationContext对象
+## 创建ApplicationContext对象
 
 1、创建配置类
 ```java
@@ -59,7 +59,7 @@ public class App {
 
 运行。**Spring容器创建成功**。但是里面没有任何的Bean，接下来我们开始学习如何往容器里注册Bean。
 
-### 注册Bean
+## 注册Bean
 
 1、先定义一个UserService
 

@@ -7,7 +7,7 @@
 pip install requests
 ```
 
-## GET 请求
+# GET 请求
 
 ```python
 import requests
@@ -18,9 +18,9 @@ print(response.text)          # 响应内容（字符串）
 print(response.json())        # 如果是 JSON，直接转成 Python 字典
 ```
 
-#### 常用参数
+### 常用参数
 
-### 查询参数
+## 查询参数
 
 ```python
 params = {
@@ -31,7 +31,7 @@ r = requests.get("https://httpbin.org/get", params=params)
 print(r.url)  # 自动拼成 https://httpbin.org/get?key1=value1&key2=value2
 ```
 
-### 请求头
+## 请求头
 
 ```python
 headers = {
@@ -41,7 +41,7 @@ headers = {
 r = requests.get("https://api.example.com/data", headers=headers)
 ```
 
-## POST 请求
+# POST 请求
 
 发送表单或者json
 
@@ -58,7 +58,7 @@ r = requests.post("https://httpbin.org/post", json=json_data)
 # r = requests.post(..., data=json.dumps(json_data), headers=headers)
 ```
 
-### 响应对象
+## 响应对象
 
 | 属性/方法              | 说明                          |
 |-----------------------|-----------------------------|
@@ -72,7 +72,7 @@ r = requests.post("https://httpbin.org/post", json=json_data)
 | `r.encoding`          | 编码（可手动修改）              |
 | `r.raise_for_status()`| 状态码不是 2xx 时抛出异常       |
 
-## 超时与异常处理
+# 超时与异常处理
 
 ```python
 try:
@@ -93,7 +93,7 @@ except requests.exceptions.RequestException as e:
 - `TooManyRedirects`
 - `RequestException`（基类）
 
-## Session
+# Session
 
 通过Session来服用网络连接，通常用于需要保持登录状态、Cookies 时
 
@@ -118,7 +118,7 @@ with requests.Session() as s:
 ```
 
 
-## 完整小例子
+# 完整小例子
 
 ```python
 import requests

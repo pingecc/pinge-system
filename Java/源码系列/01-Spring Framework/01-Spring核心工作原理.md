@@ -26,7 +26,7 @@ public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 	1. 获取配置信息：
 		1. `@ComponentScan`：**获取Bean扫描路径**，拿到这个路径下的所有类，然后一个个的判断类上是否有`@Component`  注解，如果有就代表是一个Bean，然后创建BeanDefinition，然后创建非懒加载的单例Bean，存入Map
 
-### 扫描Bean路径
+## 扫描Bean路径
 
 思考：
 
@@ -52,7 +52,7 @@ public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 
 
 
-### createBean设计
+## createBean设计
 
 下面就是**Bean的整个生命周期**，也即构建Bean的过程，任何一个节点报错就会创建Bean失败。
 
@@ -66,7 +66,7 @@ public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 1、依赖注入如何实现：在实例化Bean时，给对应的属性赋值：
 - 获取Bean的所有字段，判断是否有  `@Autowired`  注解，如果有，则根据类型以及根据name去获取对应的 Bean赋值上，
 
-### BeanDefinition 的扫描
+## BeanDefinition 的扫描
 
 
 
@@ -77,7 +77,7 @@ public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 在扫描Bean时，会主动的去扫描那些接口类型的Bean，检查是否存在，存在则构建，否则使用默认的。
 
 
-## Spring中的核心组件
+# Spring中的核心组件
 
 
 ![[Pasted image 20260714211953.png]]

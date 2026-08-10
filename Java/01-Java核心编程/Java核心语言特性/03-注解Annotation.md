@@ -93,7 +93,7 @@ Java社区一直在想：
 
 
 
-## Chapter02：Annotation的本质
+# Chapter02：Annotation的本质
 
 有了Annotation，就可以给程序添加**元数据**。Annotation的本质就是：**一个接口（Interface）， 一个类。
 
@@ -129,7 +129,7 @@ Annotation就像**快递标签。** 一个个的箱子📦就是Class，可以�
 
 ---
 
-## Chapter03：Annotation 的完整语法
+# Chapter03：Annotation 的完整语法
 
 学完这一章，你应该能够回答下面这些问题：
 
@@ -152,7 +152,7 @@ public @interface MyAnnotation {
 
 然后就是在程序中需要什么配置项，就往这个注解里去添加对应的属性，在后续使用这个注解时就是去声明对应的属性值是什么。
 
-### 注解里面可以写什么
+## 注解里面可以写什么
 
 Annotation 本质上不是一个普通对象，它更像一份**声明式配置**，在它里面可以写属性，使用时通过**Key-Value 配置项**的形式去声明。
 
@@ -195,7 +195,7 @@ mapping.method()
 ```
 
 
-### 属性支持哪些类型
+## 属性支持哪些类型
 
 - 基本数据类型
 - String类型
@@ -232,7 +232,7 @@ String[] value();
 
 下面额外详细介绍下几种不容易理解的属性类型。
 
-#### 数组类型属性
+### 数组类型属性
 
 >数组属性主要是为了一个属性可以配置多个值
 
@@ -267,7 +267,7 @@ String[] arr = {"Tom", "Jack", "Lucy"};
 )
 ```
 
-#### Annotation类型属性
+### Annotation类型属性
 
 为什么允许 Annotation 嵌套 Annotation：因为Annotation 的本质，它其实就是：配置。像XML也可以嵌套：
 ```xml
@@ -334,7 +334,7 @@ public class JavaBook {
 ```
 
 
-### 属性可以有默认值
+## 属性可以有默认值
 
 ```java
 public @interface MyAnnotation {
@@ -349,7 +349,7 @@ public @interface MyAnnotation {
 在使用注解时，没有声明对应属性的值，那么就使用默认的值。
 
 
-### value名 属性
+## value名 属性
 
 如果注解只有一个属性，且属性名为 **`value`****，那么使用时可以省略 **`value =`**。
 
@@ -367,7 +367,7 @@ public @interface Target {
 ```
 
 
-## Chapter04：元注解
+# Chapter04：元注解
 
 前面我们讲过一个概念“元数据”，其实就是用于描述数据的数据，而“元注解”就是用于描述注解本身的注解，
 
@@ -379,7 +379,7 @@ public @interface Target {
 | `@Inherited`  | 子类是否继承父类的注解   |
 | `@Repeatable` | 是否允许同一个注解重复出现 |
 
-### @Target
+## @Target
 
 **决定注解可以写在哪里**，通过`ElementType` 枚举值来指定。
 >可以指定多个值，如果不写则默认支持所有，但是一般会写，这样可以让编译器提示。
@@ -428,7 +428,7 @@ public enum ElementType {
 }
 ```
 
-### @Retention
+## @Retention
 
 决定 Annotation 的生命周期，能够存活多久，通过RetentionPolicy值指定。
 
@@ -515,7 +515,7 @@ Javassist
 
 
 
-### @Documented
+## @Documented
 
 比较简单，用于标注当通过 `javadoc`命令生成文档时，对应的注解是否也要出现在文档里，写了这个注解就是保留到文档里，没写就是不保留，几乎所有框架提供的注解都会写上这个注解。
 
@@ -527,7 +527,7 @@ public @interface Documented {
 }
 ```
 
-### @Inherited
+## @Inherited
 
 用于指定注解是否可以被继承。
 ```java
@@ -546,7 +546,7 @@ public @interface Inherited {
 2、很少用，在`JUnit` 中 或者一些权限 Annotation 会用到。
 
 
-### @Repeatable
+## @Repeatable
 
 让注解可以重复出现。
 ```java
@@ -674,7 +674,7 @@ UserService.class.getAnnotationsByType(Role.class);
 
 
 
-## Chapter05：组合注解
+# Chapter05：组合注解
 
 我们自定义的注解，只要它的`@Target` 值是 `ElementType.TYPE` （或者`ElementType.ANNOTATION_TYPE`），那么语法上它就可以被当作元注解使用，也即直接写在另外一个注解上，但是起不起作用还得看程序本身支不支持，而Spring框架就支持，它会递归解析注解层次，只要存在Spring框架声明的那些注解，Spring就直接赋予这些注解对应的能力，最典型的例子：@Component。
 
@@ -702,7 +702,7 @@ public class AppConfig {
 }
 ```
 
-## Chapter05：常用API
+# Chapter05：常用API
 
 ```java
 // 获取指定类型的注解，支持 @Inherited
@@ -722,4 +722,4 @@ Tag[] tags = User.class.getAnnotationsByType(Tag.class);
 
 
 
-## Chapter06：嵌套注解
+# Chapter06：嵌套注解

@@ -2,7 +2,7 @@
 
 # 环境配置
 
-### pom依赖
+## pom依赖
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@
 ```
 
 
-### 配置大模型服务地址
+## 配置大模型服务地址
 
 配置resources/application.properties
 
@@ -96,7 +96,7 @@ spring.ai.deepseek.chat.options.model=deepseek-chat
 spring.ai.deepseek.chat.options.temperature=0.8
 ```
 
-### 测试
+## 测试
 
 创建ChatController 进行测试
 

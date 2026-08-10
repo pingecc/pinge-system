@@ -70,7 +70,7 @@ Document
 
 JavaScript 操作的对象也是 DOM，而不是 HTML 源文件。
 
-## 解析 CSS ------ 生成 CSSOM
+# 解析 CSS ------ 生成 CSSOM
 
 
 CSS：

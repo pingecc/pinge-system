@@ -56,6 +56,6 @@ db.cache_collection.createIndex({ "createdAt": 1 }, { expireAfterSeconds: 3600 }
 4. **需要高级缓存算法**：如严格的 LRU/LFU 淘汰策略，Redis 原生支持，MongoDB 主要靠 TTL。
 
 
-## 应用场景
+# 应用场景
 数据是“以对象为中心”（一个请求主要操作一个大对象），且这个对象的结构经常变，或者数据量大到单机存不下，那么 MongoDB 是绝佳选择。
 存商品详情、订单快照、用户行为日志、内容数据（灵活、海量）。
