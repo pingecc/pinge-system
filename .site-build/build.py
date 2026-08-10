@@ -394,7 +394,6 @@ language = "zh"
 features = [
   "navigation.tabs",
   "navigation.tabs.sticky",
-  "navigation.expand",
   "navigation.indexes",
   "navigation.top",
   "navigation.instant",
