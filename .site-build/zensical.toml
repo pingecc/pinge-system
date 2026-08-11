@@ -228,10 +228,11 @@ nav = [
       { "05-面向对象" = "Python/01-Python核心编程/05-面向对象.md" },
       { "06-模块化" = "Python/01-Python核心编程/06-模块化.md" },
       { "07-文件" = "Python/01-Python核心编程/07-文件.md" },
+      { "python虚拟环境" = "Python/01-Python核心编程/python虚拟环境.md" },
     ] },
     { "02-开发" = [
       { "01-requests" = "Python/02-开发/01-requests.md" },
-      { "02-配置信息设计" = "Python/02-开发/02-配置信息设计.md" },
+      { "02-os库" = "Python/02-开发/02-os库.md" },
     ] },
   ] },
   { "系统架构" = [

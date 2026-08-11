@@ -24,4 +24,4 @@ fi
 echo "==> 3/3 推送到 GitHub"
 git push origin main
 echo "已发布！GitHub Actions 构建完成后访问："
-echo "  https://<你的GitHub用户名>.github.io/pinge-system/"
+echo "  https://pingecc.github.io/pinge-system/"
