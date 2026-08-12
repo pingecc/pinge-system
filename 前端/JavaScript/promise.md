@@ -1,0 +1,443 @@
+# JS的单线程
+
+JavaScript 的**主执行线程只有一个**（Call Stack 只有一个）。
+
+- 同一时刻只能执行一段同步代码。
+- 没有像 Java 那样的多线程并发执行业务逻辑（虽然有 Web Worker / Node Worker Threads，但它们是隔离的，不能直接操作 DOM 或共享内存，使用场景有限）。
+
+**为什么设计成单线程？**
+
+- 浏览器环境：操作 DOM 必须保证安全，多线程同时改 DOM 会出大问题（需要加锁，复杂度极高）。
+- 历史原因 + 简单性：语言最初为浏览器脚本设计。
+
+**代价**：如果一段代码执行时间很长（比如复杂计算），会**阻塞**整个页面（卡顿、无响应）。所以 JS 强调「不要做长时间同步计算」，重活要么拆分，要么丢给 Worker。
+
+## 异步如何实现
+
+### 1. 先记住三样东西
+
+1. **Call Stack（调用栈）**  
+   主线程正在执行的代码都在这里。同一时间只能有一个东西在跑。
+
+2. **Web APIs / Node 底层能力**（真正干活的人）  
+   浏览器或 Node.js 提供的**其他线程**/系统能力，比如：
+   - 定时器线程
+   - 网络请求线程
+   - 文件 I/O 线程
+   - 等等
+
+3. **任务队列（Task Queue）**  
+   用来存放「已经完成的异步操作的回调函数」。
+
+事件循环（Event Loop）的工作就是：  
+**不断盯着调用栈，一旦调用栈空了，就从任务队列里拿一个回调出来，放进调用栈执行。**
+
+---
+
+### 2. 定时器案例拆解
+
+```js
+console.log('开始');
+
+setTimeout(() => {
+  console.log('定时器到了');
+}, 2000);
+
+console.log('结束');
+```
+
+我们按**真实发生的时间顺序**来看：
+
+第 0 毫秒（主线程开始执行）
+
+1. 遇到 `console.log('开始')`  
+   → 直接在调用栈执行，打印「开始」。
+
+2. 遇到 `setTimeout(..., 2000)`  
+   这里是关键点！  
+   JavaScript **并没有自己去计时**，而是对浏览器说：
+
+   > 「帮我计时 2 秒，时间到了以后，把这个箭头函数放到任务队列里。」
+
+   然后**主线程立刻继续往下执行**，不会在这里等。
+
+3. 遇到 `console.log('结束')`  
+   → 打印「结束」。
+
+此时调用栈已经空了。
+
+
+
+第 0 ~ 2000 毫秒之间
+
+- 主线程空闲（或者在做别的事）。
+- **浏览器的定时器线程**在后台默默计时（这是真正的其他线程在工作）。
+
+
+
+第 2000 毫秒时
+
+- 定时器线程发现时间到了。
+- 它把你传入的那个回调函数 `() => { console.log('定时器到了') }`  
+  **放进宏任务队列（Macrotask Queue）**。
+
+
+
+事件循环开始工作
+
+事件循环一直在检查：
+
+> 「调用栈空了吗？空了的话，任务队列里有没有东西？」
+
+发现有，就取出这个回调，推入调用栈执行 → 打印「定时器到了」。
+
+
+**核心结论**：
+- 主线程从来没有真正「等待」过那 2 秒。
+- 真正计时的是浏览器提供的**其他线程**。
+- 主线程只是注册了一下任务，然后继续干自己的事。
+- 等别人干完了，通过「任务队列」通知主线程来执行回调。
+
+这就是「异步非阻塞」的本质。
+
+---
+
+### 4. 网络请求案例拆解
+
+```js
+console.log('1');
+
+fetch('https://api.example.com/data')
+  .then(res => res.json())
+  .then(data => console.log('数据到了', data));
+
+console.log('2');
+```
+
+时间线：
+
+1. 打印 `1`
+2. 遇到 `fetch`：
+   - JS 引擎告诉浏览器网络模块：「帮我发这个 HTTP 请求」
+   - 主线程**立刻继续**，打印 `2`
+3. 浏览器的网络线程去发请求、等服务器响应（可能要几百毫秒）
+4. 响应回来后，网络模块把「成功回调」放入任务队列
+5. 事件循环发现调用栈空了，就把回调拿出来执行（进入 `.then`）
+
+所以你看到的效果是：`1` 和 `2` 几乎瞬间打印，数据过一会儿才到。
+
+---
+
+### 5. Promise 的异步又是怎么实现的？
+
+Promise 本身其实是**同步**创建的，但它的 `.then` 回调是**微任务**。
+
+```js
+console.log('start');
+
+Promise.resolve().then(() => {
+  console.log('promise then');
+});
+
+console.log('end');
+```
+
+执行过程：
+
+1. `console.log('start')` → 同步执行
+2. `Promise.resolve().then(...)`  
+   - 创建一个已经成功的 Promise（同步）
+   - 把 `.then` 里的回调**放入微任务队列**
+3. `console.log('end')` → 同步执行
+4. 同步代码全部执行完，调用栈空了
+5. 事件循环先清空**微任务队列** → 打印 `promise then`
+
+所以 Promise 的「异步」不是因为它自己开了线程，而是因为它把回调放进了**微任务队列**，等当前同步代码执行完再执行。
+
+
+
+
+
+**Promise / async-await 系统讲解**（面向 Java 后端开发者）
+
+JavaScript 的异步模型与 Java 的线程 + `Future`/`CompletableFuture` 有本质区别。JS 是**单线程 + 事件循环**，异步主要通过回调、Promise 和 async/await 实现。下面按层次深入浅出讲解。
+
+# Promise
+
+
+
+早期 JS 异步全靠**回调函数**：
+
+```js
+fs.readFile('a.txt', (err, data) => {
+  if (err) { /* 处理错误 */ }
+  fs.readFile('b.txt', (err2, data2) => {
+    // 继续嵌套……
+  });
+});
+```
+
+问题非常明显：
+- **回调地狱**（Callback Hell）：层层嵌套，可读性极差。
+- 错误处理分散，容易漏掉。
+- 无法方便地组合、取消、超时控制。
+
+## 2. Promise 介绍
+
+Promise 是一个代表未来某个异步操作结果的**对象**。它有三种状态：
+
+| 状态      | 含义           | 是否可变       |
+| --------- | -------------- | -------------- |
+| pending   | 进行中         | 可变为其他状态 |
+| fulfilled | 成功（有值）   | 终态           |
+| rejected  | 失败（有原因） | 终态           |
+
+一旦变成 fulfilled 或 rejected，就不可再变。这和 Java中的`CompletableFuture` 的完成状态非常类似。
+
+#### 创建 Promise
+
+```js
+const p = new Promise((resolve, reject) => {
+  // 异步操作
+  setTimeout(() => {
+    if (Math.random() > 0.5) {
+      resolve('成功结果');   // 变成 fulfilled
+    } else {
+      reject(new Error('失败原因')); // 变成 rejected
+    }
+  }, 1000);
+});
+```
+
+- `resolve(value)` → 成功，把 Promise 标记为 **成功（fulfilled）**，并把 value 作为成功的结果。
+- `reject(reason)` → 失败（通常传 Error 对象），把 Promise 标记为 **失败（rejected）**，并把 reason 作为失败的原因（通常是 Error 对象）。
+
+> Promise 一旦被 resolve 或 reject（状态变为 settled），就**不可再改变**。
+
+```js
+ // 调用 resolve resolve 之后，后续回调调用then()，参数来自resolve传的value
+const p1 = new Promise((resolve, reject) => {
+  resolve('成功了');    
+});
+p1.then(value => {
+  console.log(value);   // 输出：成功了
+});
+
+// 调用 reject，后续调用catch，参数来自reject传的value
+const p2 = new Promise((resolve, reject) => {
+  reject(new Error('出错了'));  
+});
+p2.catch(err => {
+  console.error(err.message);  // 输出：出错了
+});
+
+
+```
+
+
+
+#### 使用 Promise
+
+```js
+p.then(
+  value => console.log('成功:', value),   // onFulfilled
+  reason => console.error('失败:', reason) // onRejected（可选）
+);
+```
+
+更常见的是链式写法 + 单独的 `.catch()`：
+
+```js
+p
+  .then(value => {
+    console.log(value);
+    return value + ' 加工后';
+  })
+  .then(processed => console.log(processed))
+  .catch(err => console.error(err))
+  .finally(() => console.log('无论成功失败都会执行'));
+```
+
+**重要特性**：
+- `.then()` 返回的是**新的 Promise**，所以可以链式调用。
+- 如果在 `.then()` 里返回一个值，下一个 `.then()` 会收到这个值。
+- 如果返回另一个 Promise，会等待它完成（自动展开）。
+- 如果抛出异常或返回 `reject`，会进入 `.catch()`。
+
+---
+
+### 3. Promise 的核心方法与组合
+
+```js
+// 快速创建已完成的 Promise
+Promise.resolve(42);
+Promise.reject(new Error('fail'));
+
+// 并行等待全部成功（有一个失败就失败）——类似 CompletableFuture.allOf
+Promise.all([p1, p2, p3])
+  .then(([r1, r2, r3]) => { /* 全部成功 */ });
+
+// 全部结束（无论成功失败），返回结果数组（含状态）
+Promise.allSettled([p1, p2, p3]);
+
+// 谁先完成就用谁（成功或失败都算）
+Promise.race([p1, p2]);
+
+// 谁先成功就用谁（忽略失败的）
+Promise.any([p1, p2]);
+```
+
+这些和 Java 的 `CompletableFuture.allOf`、`anyOf` 思路非常接近，只是 API 更简洁。
+
+---
+
+### 4. async / await —— 让异步代码看起来像同步
+
+`async/await` 是 Promise 的**语法糖**，让代码读起来像同步，但底层仍然是 Promise + 事件循环。
+
+#### 基本用法
+
+```js
+async function fetchData() {
+  try {
+    const res = await fetch('/api/user');   // 等待 Promise 完成
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error('出错了', err);
+    throw err; // 可以继续抛出
+  } finally {
+    console.log('清理工作');
+  }
+}
+```
+
+关键点：
+- `async` 函数**永远返回 Promise**。即使你 `return 1`，实际返回的是 `Promise.resolve(1)`。
+- `await` 只能用在 `async` 函数内部（或顶层模块）。
+- `await` 会暂停当前 `async` 函数的执行，直到 Promise 完成，然后继续。
+- 出错时，`await` 会抛出异常，用 `try/catch` 捕获（非常像同步代码）。
+
+#### 对比 Promise 写法
+
+```js
+// Promise 链式
+function fetchData() {
+  return fetch('/api/user')
+    .then(res => res.json())
+    .then(data => data)
+    .catch(err => { /* ... */ });
+}
+
+// async/await 写法（更直观）
+async function fetchData() {
+  try {
+    const res = await fetch('/api/user');
+    return await res.json();
+  } catch (err) { /* ... */ }
+}
+```
+
+---
+
+### 5. 从 Java 视角理解
+
+| Java                             | JavaScript              | 说明                |
+| -------------------------------- | ----------------------- | ------------------- |
+| `CompletableFuture`              | `Promise`               | 代表未来结果        |
+| `future.thenApply / thenCompose` | `.then()`               | 链式处理            |
+| `future.exceptionally`           | `.catch()`              | 错误处理            |
+| `CompletableFuture.allOf`        | `Promise.all`           | 全部完成            |
+| `CompletableFuture.anyOf`        | `Promise.race` / `any`  | 竞速                |
+| `supplyAsync + thenApply` 链式   | async/await             | 语法更清晰          |
+| 线程池 + 阻塞 `get()`            | 事件循环 + 非阻塞 await | JS 没有真正阻塞线程 |
+
+JS 没有“阻塞当前线程等结果”的概念（除了极少数同步 API），`await` 只是让当前 async 函数暂停，事件循环继续处理其他任务。
+
+---
+
+### 6. 常见陷阱与最佳实践
+
+1. **忘记 `await`**
+   ```js
+   async function bad() {
+     const data = fetch(...); // 得到的是 Promise，不是数据！
+   }
+   ```
+
+2. **在循环中串行 await（性能差）**
+   ```js
+   // 串行（慢）
+   for (const url of urls) {
+     await fetch(url);
+   }
+   
+   // 并行（推荐）
+   await Promise.all(urls.map(url => fetch(url)));
+   ```
+
+3. **async 函数里的错误必须处理**
+   - 未捕获的 rejection 会变成 unhandled rejection（类似未捕获异常）。
+   - 顶层用 `.catch()` 或 `try/catch`。
+
+4. **返回值 vs 抛出错误**
+   ```js
+   async function f() {
+     // return Promise.reject(...) 和 throw 效果类似
+     throw new Error('fail'); // 推荐
+   }
+   ```
+
+5. **顶层 await**（现代模块支持）
+   ```js
+   // 在 ES module 顶层可以直接写
+   const data = await fetch(...);
+   ```
+
+---
+
+### 7. 完整小例子（推荐写法）
+
+```js
+async function getUserWithPosts(userId) {
+  try {
+    const [user, posts] = await Promise.all([
+      fetch(`/api/users/${userId}`).then(r => r.json()),
+      fetch(`/api/users/${userId}/posts`).then(r => r.json())
+    ]);
+    return { user, posts };
+  } catch (err) {
+    console.error('获取用户信息失败', err);
+    throw err; // 让调用方也能感知
+  }
+}
+
+// 调用
+getUserWithPosts(123)
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
+
+---
+
+### 总结（记忆要点）
+
+- **Promise** = 异步结果的容器 + 状态机 + 链式处理能力。
+- **async/await** = 让 Promise 代码写起来像同步，本质还是 Promise。
+- 错误处理优先用 `try/catch`（async/await）或 `.catch()`。
+- 多个独立异步操作优先用 `Promise.all` 并行。
+- 永远不要忘记：`async` 函数返回的是 Promise。
+
+如果你已经熟悉 Java 的 `CompletableFuture`，可以把 Promise 当成更轻量、更语法友好的版本，再配合 async/await 就能写出非常清晰的异步代码。
+
+需要我继续深入某个具体点（比如微任务队列、Promise 实现原理、取消、超时封装、与 RxJS 的对比等），随时说。
+
+
+
+
+
+
+
+
+
+如果还有哪一步觉得模糊（比如「微任务和宏任务到底有什么区别」「为什么 Promise 的 then 是微任务」），直接指出具体点，我继续往下拆。

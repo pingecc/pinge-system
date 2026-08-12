@@ -34,23 +34,28 @@ nav = [
     { "JavaScript" = [
       { "01-基础语法" = "前端/JavaScript/01-基础语法.md" },
       { "02-对象与数组" = "前端/JavaScript/02-对象与数组.md" },
+      { "03-模块化" = "前端/JavaScript/03-模块化.md" },
+      { "IIFE" = "前端/JavaScript/IIFE.md" },
+      { "promise" = "前端/JavaScript/promise.md" },
     ] },
     { "React学习路线-面向后台ERP" = "前端/React学习路线-面向后台ERP.md" },
-    { "前端学习路线" = "前端/前端学习路线.md" },
-    { "网页布局" = [
-      { "00-学习大纲" = "前端/网页布局/00-学习大纲.md" },
-      { "02-CSS" = "前端/网页布局/02-CSS.md" },
-      { "03-布局技巧" = "前端/网页布局/03-布局技巧.md" },
-      { "reference" = [
-        { "a标签可以放块级元素" = "前端/网页布局/reference/a标签可以放块级元素.md" },
-        { "后代选择器与子选择器的区别" = "前端/网页布局/reference/后代选择器与子选择器的区别.md" },
-        { "基本结构标签说明" = "前端/网页布局/reference/基本结构标签说明.md" },
+    { "Users" = [
+      { "ping" = [
+        { "pinge-system" = [
+          { "code" = [
+            { "web" = [
+              { "project" = [
+                { "vanilla-admin" = [
+                  { "login.html" = "前端/Users/ping/pinge-system/code/web/project/vanilla-admin/login.html.md" },
+                ] },
+              ] },
+            ] },
+          ] },
+        ] },
       ] },
-      { "综合案例" = [
-        { "01-超链接" = "前端/网页布局/综合案例/01-超链接.md" },
-        { "02-表格" = "前端/网页布局/综合案例/02-表格.md" },
-        { "03-表单" = "前端/网页布局/综合案例/03-表单.md" },
-      ] },
+    ] },
+    { "网页开发" = [
+      { "01-网页开发" = "前端/网页开发/01-网页开发.md" },
     ] },
   ] },
   { "Java" = [
@@ -233,6 +238,7 @@ nav = [
     { "02-开发" = [
       { "01-requests" = "Python/02-开发/01-requests.md" },
       { "02-os库" = "Python/02-开发/02-os库.md" },
+      { "03-pathlib" = "Python/02-开发/03-pathlib.md" },
     ] },
   ] },
   { "系统架构" = [
@@ -313,6 +319,12 @@ nav = [
   ] },
   { "源码系列" = [
     { "源码系列" = "源码系列/index.md" },
+  ] },
+  { "AI全栈应用" = [
+    { "AI全栈应用" = "AI全栈应用/index.md" },
+    { "Vibe Coding" = [
+      { "01-" = "AI全栈应用/Vibe Coding/01-.md" },
+    ] },
   ] },
   { "工具资源" = [
     { "工具资源" = "工具资源/index.md" },
