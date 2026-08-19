@@ -322,9 +322,17 @@ nav = [
   ] },
   { "AI全栈应用" = [
     { "AI全栈应用" = "AI全栈应用/index.md" },
+    { "AI 基础概念" = "AI全栈应用/AI 基础概念.md" },
+    { "Agent" = [
+      { "00-总结" = "AI全栈应用/Agent/00-总结.md" },
+      { "01-认识Agent" = "AI全栈应用/Agent/01-认识Agent.md" },
+      { "02-上下文工程" = "AI全栈应用/Agent/02-上下文工程.md" },
+      { "核心代码示例" = "AI全栈应用/Agent/核心代码示例.md" },
+    ] },
     { "Vibe Coding" = [
       { "01-" = "AI全栈应用/Vibe Coding/01-.md" },
     ] },
+    { "WorkBuddy" = "AI全栈应用/WorkBuddy.md" },
   ] },
   { "工具资源" = [
     { "工具资源" = "工具资源/index.md" },
