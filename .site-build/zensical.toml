@@ -13,14 +13,10 @@ nav = [
   { "首页" = "index.md" },
   { "前端" = [
     { "前端" = "前端/index.md" },
-    { "01-HTML" = [
-      { "01-HTML" = "前端/01-HTML/01-HTML.md" },
-    ] },
     { "03-JavaScript" = "前端/03-JavaScript.md" },
     { "CSS从零到企业级开发" = [
-      { "01-CSS的本质" = "前端/CSS从零到企业级开发/01-CSS的本质.md" },
+      { "01-CSS基础" = "前端/CSS从零到企业级开发/01-CSS基础.md" },
       { "02-CSS选择器" = "前端/CSS从零到企业级开发/02-CSS选择器.md" },
-      { "08-Grid（网格布局）" = "前端/CSS从零到企业级开发/08-Grid（网格布局）.md" },
       { "CSS" = "前端/CSS从零到企业级开发/CSS.md" },
       { "reference" = [
         { "flex-grow-flex-shrink-guide" = "前端/CSS从零到企业级开发/reference/flex-grow-flex-shrink-guide.md" },
@@ -30,42 +26,24 @@ nav = [
         { "01-盒子模型" = "前端/CSS从零到企业级开发/布局/01-盒子模型.md" },
         { "02-Margin、Padding与BFC" = "前端/CSS从零到企业级开发/布局/02-Margin、Padding与BFC.md" },
         { "03-普通文档流与Display" = "前端/CSS从零到企业级开发/布局/03-普通文档流与Display.md" },
-        { "04-Flex布局" = "前端/CSS从零到企业级开发/布局/04-Flex布局.md" },
-        { "position" = "前端/CSS从零到企业级开发/布局/position.md" },
+        { "04-position" = "前端/CSS从零到企业级开发/布局/04-position.md" },
+        { "05-Flex布局" = "前端/CSS从零到企业级开发/布局/05-Flex布局.md" },
+        { "08-Grid（网格布局）" = "前端/CSS从零到企业级开发/布局/08-Grid（网格布局）.md" },
         { "布局技巧" = "前端/CSS从零到企业级开发/布局/布局技巧.md" },
       ] },
     ] },
+    { "HTML" = "前端/HTML.md" },
     { "JavaScript" = [
       { "01-基础语法" = "前端/JavaScript/01-基础语法.md" },
+      { "01-网页开发" = "前端/JavaScript/01-网页开发.md" },
       { "02-对象与数组" = "前端/JavaScript/02-对象与数组.md" },
-      { "03-模块化" = "前端/JavaScript/03-模块化.md" },
+      { "03-函数" = "前端/JavaScript/03-函数.md" },
+      { "04-模块化" = "前端/JavaScript/04-模块化.md" },
+      { "05-异步" = "前端/JavaScript/05-异步.md" },
+      { "06-浏览器" = "前端/JavaScript/06-浏览器.md" },
       { "IIFE" = "前端/JavaScript/IIFE.md" },
-      { "函数" = "前端/JavaScript/函数.md" },
-      { "异步" = "前端/JavaScript/异步.md" },
-      { "浏览器" = "前端/JavaScript/浏览器.md" },
     ] },
     { "React学习路线-面向后台ERP" = "前端/React学习路线-面向后台ERP.md" },
-    { "Users" = [
-      { "ping" = [
-        { "pinge-system" = [
-          { "code" = [
-            { "web" = [
-              { "project" = [
-                { "vanilla-admin" = [
-                  { "login.html" = "前端/Users/ping/pinge-system/code/web/project/vanilla-admin/login.html.md" },
-                ] },
-              ] },
-            ] },
-          ] },
-        ] },
-      ] },
-    ] },
-    { "网站" = [
-      { "01-登录" = "前端/网站/01-登录.md" },
-    ] },
-    { "网页开发" = [
-      { "01-网页开发" = "前端/网页开发/01-网页开发.md" },
-    ] },
   ] },
   { "Java" = [
     { "Java" = "Java/index.md" },
