@@ -31,6 +31,8 @@ nav = [
         { "02-Margin、Padding与BFC" = "前端/CSS从零到企业级开发/布局/02-Margin、Padding与BFC.md" },
         { "03-普通文档流与Display" = "前端/CSS从零到企业级开发/布局/03-普通文档流与Display.md" },
         { "04-Flex布局" = "前端/CSS从零到企业级开发/布局/04-Flex布局.md" },
+        { "position" = "前端/CSS从零到企业级开发/布局/position.md" },
+        { "布局技巧" = "前端/CSS从零到企业级开发/布局/布局技巧.md" },
       ] },
     ] },
     { "JavaScript" = [
