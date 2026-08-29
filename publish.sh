@@ -8,6 +8,18 @@ if ! git remote | grep -q '^origin$'; then
   exit 1
 fi
 
+# 兼容 nvm 等"用户级"Node 安装（bash 不读取 .zprofile，直接跑脚本会找不到 npm）
+if ! command -v npm >/dev/null 2>&1; then
+  export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    \. "$NVM_DIR/nvm.sh"
+  fi
+  if ! command -v npm >/dev/null 2>&1; then
+    echo "找不到 npm：请先安装 Node.js 20+，或把 npm 所在目录加入 PATH"
+    exit 1
+  fi
+fi
+
 echo "==> 1/3 本地构建（VitePress）"
 npm run build
 
