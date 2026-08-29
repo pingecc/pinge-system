@@ -689,7 +689,7 @@ export const navCategories = [
   {
     "label": "Python",
     "link": "/categories/Python",
-    "count": 11,
+    "count": 10,
     "articles": [
       {
         "title": "虚拟环境",
@@ -732,12 +732,6 @@ export const navCategories = [
         "url": "/Python/01-Python核心编程/07-文件",
         "created": 1786173733000,
         "modified": 1786173733000
-      },
-      {
-        "title": "1. 先创一个项目目录，进入到这个项目目录下",
-        "url": "/Python/01-Python核心编程/python虚拟环境",
-        "created": 1786453728000,
-        "modified": 1786453728000
       },
       {
         "title": "安装",
@@ -1902,13 +1896,6 @@ export const allArticles = [
     "modified": 1786173733000
   },
   {
-    "title": "1. 先创一个项目目录，进入到这个项目目录下",
-    "url": "/Python/01-Python核心编程/python虚拟环境",
-    "category": "Python",
-    "created": 1786453728000,
-    "modified": 1786453728000
-  },
-  {
     "title": "安装",
     "url": "/Python/02-开发/01-requests",
     "category": "Python",
@@ -3064,10 +3051,6 @@ export const sidebarGroups = [
         "collapsed": false,
         "items": [
           {
-            "text": "python虚拟环境",
-            "link": "/Python/01-Python核心编程/python虚拟环境"
-          },
-          {
             "text": "01-开发和运行环境",
             "link": "/Python/01-Python核心编程/01-开发和运行环境"
           },
@@ -3831,9 +3814,6 @@ export const mdIndex = {
   ],
   "03-RestAPI": [
     "Java/05-Elastic Stack/01-核心知识/03-RestAPI.md"
-  ],
-  "python虚拟环境": [
-    "Python/01-Python核心编程/python虚拟环境.md"
   ],
   "01-核心": [
     "Python/01-Python核心编程/01-核心.md"
@@ -4655,9 +4635,6 @@ export const imgIndex = {
   ],
   "Pasted image 20260626222125": [
     "Python/zmg/Pasted image 20260626222125.png"
-  ],
-  "python虚拟环境": [
-    "Python/01-Python核心编程/python虚拟环境.md"
   ],
   "01-核心": [
     "Python/01-Python核心编程/01-核心.md"
