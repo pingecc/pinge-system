@@ -25,6 +25,14 @@ const categoryArticles = computed(() => {
   return articles
 })
 
+// 分类列表展示文件名（含所在文件夹路径），不使用文章一级标题
+function articleName(art: { url: string }): string {
+  const segments = art.url.split("/").filter(Boolean)
+  // 去掉顶级主题目录；"其他"为合并分类，不存在顶级目录，保留真实子目录
+  if (props.categoryName !== "其他") segments.shift()
+  return segments.join("/")
+}
+
 function formatDate(ts: number): string {
   const d = new Date(ts)
   const pad = (n: number) => String(n).padStart(2, "0")
@@ -61,7 +69,7 @@ function getSortIcon(field: "created" | "modified"): string {
 
     <div v-if="categoryArticles.length > 0" class="article-list">
       <div class="article-header">
-        <span class="header-title">标题</span>
+        <span class="header-title">文件名</span>
         <span class="header-created sortable" @click="toggleSort('created')">
           发布时间 <span class="sort-icon">{{ getSortIcon("created") }}</span>
         </span>
@@ -75,7 +83,7 @@ function getSortIcon(field: "created" | "modified"): string {
         :href="withBase(art.url)"
         class="article-item"
       >
-        <span class="article-title" :title="art.title">{{ art.title }}</span>
+        <span class="article-title" :title="art.title">{{ articleName(art) }}</span>
         <span class="article-created">{{ formatDate(art.created) }}</span>
         <span class="article-modified">{{ formatDate(art.modified) }}</span>
       </a>
