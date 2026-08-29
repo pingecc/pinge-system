@@ -11,6 +11,7 @@ extra_javascript = ["assets/reading-mode.js"]
 
 nav = [
   { "首页" = "index.md" },
+  { "MIGRATION" = "MIGRATION.md" },
   { "前端" = [
     { "前端" = "前端/index.md" },
     { "01-HTML" = "前端/01-HTML.md" },
@@ -326,6 +327,416 @@ nav = [
     ] },
     { "WorkBuddy" = "AI全栈应用/WorkBuddy.md" },
     { "workbuddy分享" = "AI全栈应用/workbuddy分享.md" },
+  ] },
+  { "categories" = [
+    { "categories" = "categories/index.md" },
+    { "[category]" = "categories/[category].md" },
+  ] },
+  { "node_modules" = [
+    { "node_modules" = "node_modules/index.md" },
+    { "@algolia" = [
+      { "abtesting" = [
+        { "README" = "node_modules/@algolia/abtesting/README.md" },
+      ] },
+      { "autocomplete-core" = [
+        { "README" = "node_modules/@algolia/autocomplete-core/README.md" },
+      ] },
+      { "autocomplete-plugin-algolia-insights" = [
+        { "README" = "node_modules/@algolia/autocomplete-plugin-algolia-insights/README.md" },
+      ] },
+      { "autocomplete-preset-algolia" = [
+        { "README" = "node_modules/@algolia/autocomplete-preset-algolia/README.md" },
+      ] },
+      { "client-abtesting" = [
+        { "README" = "node_modules/@algolia/client-abtesting/README.md" },
+      ] },
+      { "client-analytics" = [
+        { "README" = "node_modules/@algolia/client-analytics/README.md" },
+      ] },
+      { "client-insights" = [
+        { "README" = "node_modules/@algolia/client-insights/README.md" },
+      ] },
+      { "client-personalization" = [
+        { "README" = "node_modules/@algolia/client-personalization/README.md" },
+      ] },
+      { "client-query-suggestions" = [
+        { "README" = "node_modules/@algolia/client-query-suggestions/README.md" },
+      ] },
+      { "client-search" = [
+        { "README" = "node_modules/@algolia/client-search/README.md" },
+      ] },
+      { "ingestion" = [
+        { "README" = "node_modules/@algolia/ingestion/README.md" },
+      ] },
+      { "monitoring" = [
+        { "README" = "node_modules/@algolia/monitoring/README.md" },
+      ] },
+      { "recommend" = [
+        { "README" = "node_modules/@algolia/recommend/README.md" },
+      ] },
+    ] },
+    { "@babel" = [
+      { "helper-string-parser" = [
+        { "README" = "node_modules/@babel/helper-string-parser/README.md" },
+      ] },
+      { "helper-validator-identifier" = [
+        { "README" = "node_modules/@babel/helper-validator-identifier/README.md" },
+      ] },
+      { "parser" = [
+        { "CHANGELOG" = "node_modules/@babel/parser/CHANGELOG.md" },
+        { "README" = "node_modules/@babel/parser/README.md" },
+      ] },
+      { "types" = [
+        { "README" = "node_modules/@babel/types/README.md" },
+      ] },
+    ] },
+    { "@docsearch" = [
+      { "css" = [
+        { "README" = "node_modules/@docsearch/css/README.md" },
+      ] },
+      { "js" = [
+        { "README" = "node_modules/@docsearch/js/README.md" },
+      ] },
+      { "react" = [
+        { "README" = "node_modules/@docsearch/react/README.md" },
+      ] },
+    ] },
+    { "@esbuild" = [
+      { "darwin-arm64" = [
+        { "README" = "node_modules/@esbuild/darwin-arm64/README.md" },
+      ] },
+    ] },
+    { "@iconify" = [
+      { "types" = [
+        { "README" = "node_modules/@iconify/types/README.md" },
+      ] },
+    ] },
+    { "@iconify-json" = [
+      { "simple-icons" = [
+        { "README" = "node_modules/@iconify-json/simple-icons/README.md" },
+      ] },
+    ] },
+    { "@jridgewell" = [
+      { "sourcemap-codec" = [
+        { "README" = "node_modules/@jridgewell/sourcemap-codec/README.md" },
+      ] },
+    ] },
+    { "@rollup" = [
+      { "rollup-darwin-arm64" = [
+        { "README" = "node_modules/@rollup/rollup-darwin-arm64/README.md" },
+      ] },
+    ] },
+    { "@shikijs" = [
+      { "core" = [
+        { "README" = "node_modules/@shikijs/core/README.md" },
+      ] },
+      { "engine-javascript" = [
+        { "README" = "node_modules/@shikijs/engine-javascript/README.md" },
+      ] },
+      { "engine-oniguruma" = [
+        { "README" = "node_modules/@shikijs/engine-oniguruma/README.md" },
+      ] },
+      { "langs" = [
+        { "README" = "node_modules/@shikijs/langs/README.md" },
+      ] },
+      { "themes" = [
+        { "README" = "node_modules/@shikijs/themes/README.md" },
+      ] },
+      { "transformers" = [
+        { "README" = "node_modules/@shikijs/transformers/README.md" },
+      ] },
+      { "types" = [
+        { "README" = "node_modules/@shikijs/types/README.md" },
+      ] },
+      { "vscode-textmate" = [
+        { "LICENSE" = "node_modules/@shikijs/vscode-textmate/LICENSE.md" },
+        { "README" = "node_modules/@shikijs/vscode-textmate/README.md" },
+      ] },
+    ] },
+    { "@types" = [
+      { "estree" = [
+        { "README" = "node_modules/@types/estree/README.md" },
+      ] },
+      { "hast" = [
+        { "README" = "node_modules/@types/hast/README.md" },
+      ] },
+      { "linkify-it" = [
+        { "README" = "node_modules/@types/linkify-it/README.md" },
+      ] },
+      { "markdown-it" = [
+        { "README" = "node_modules/@types/markdown-it/README.md" },
+      ] },
+      { "mdast" = [
+        { "README" = "node_modules/@types/mdast/README.md" },
+      ] },
+      { "mdurl" = [
+        { "README" = "node_modules/@types/mdurl/README.md" },
+      ] },
+      { "unist" = [
+        { "README" = "node_modules/@types/unist/README.md" },
+      ] },
+      { "web-bluetooth" = [
+        { "README" = "node_modules/@types/web-bluetooth/README.md" },
+      ] },
+    ] },
+    { "@ungap" = [
+      { "structured-clone" = [
+        { "README" = "node_modules/@ungap/structured-clone/README.md" },
+      ] },
+    ] },
+    { "@vitejs" = [
+      { "plugin-vue" = [
+        { "README" = "node_modules/@vitejs/plugin-vue/README.md" },
+      ] },
+    ] },
+    { "@vue" = [
+      { "compiler-core" = [
+        { "README" = "node_modules/@vue/compiler-core/README.md" },
+      ] },
+      { "compiler-dom" = [
+        { "README" = "node_modules/@vue/compiler-dom/README.md" },
+      ] },
+      { "compiler-sfc" = [
+        { "README" = "node_modules/@vue/compiler-sfc/README.md" },
+      ] },
+      { "compiler-ssr" = [
+        { "README" = "node_modules/@vue/compiler-ssr/README.md" },
+      ] },
+      { "devtools-api" = [
+        { "README" = "node_modules/@vue/devtools-api/README.md" },
+      ] },
+      { "devtools-kit" = [
+        { "README" = "node_modules/@vue/devtools-kit/README.md" },
+      ] },
+      { "devtools-shared" = [
+        { "README" = "node_modules/@vue/devtools-shared/README.md" },
+      ] },
+      { "reactivity" = [
+        { "README" = "node_modules/@vue/reactivity/README.md" },
+      ] },
+      { "runtime-core" = [
+        { "README" = "node_modules/@vue/runtime-core/README.md" },
+      ] },
+      { "runtime-dom" = [
+        { "README" = "node_modules/@vue/runtime-dom/README.md" },
+      ] },
+      { "server-renderer" = [
+        { "README" = "node_modules/@vue/server-renderer/README.md" },
+      ] },
+      { "shared" = [
+        { "README" = "node_modules/@vue/shared/README.md" },
+      ] },
+    ] },
+    { "@vueuse" = [
+      { "integrations" = [
+        { "README" = "node_modules/@vueuse/integrations/README.md" },
+      ] },
+    ] },
+    { "algoliasearch" = [
+      { "README" = "node_modules/algoliasearch/README.md" },
+    ] },
+    { "birpc" = [
+      { "README" = "node_modules/birpc/README.md" },
+    ] },
+    { "ccount" = [
+      { "readme" = "node_modules/ccount/readme.md" },
+    ] },
+    { "character-entities-html4" = [
+      { "readme" = "node_modules/character-entities-html4/readme.md" },
+    ] },
+    { "character-entities-legacy" = [
+      { "readme" = "node_modules/character-entities-legacy/readme.md" },
+    ] },
+    { "comma-separated-tokens" = [
+      { "readme" = "node_modules/comma-separated-tokens/readme.md" },
+    ] },
+    { "copy-anything" = [
+      { "README" = "node_modules/copy-anything/README.md" },
+    ] },
+    { "csstype" = [
+      { "README" = "node_modules/csstype/README.md" },
+    ] },
+    { "dequal" = [
+      { "readme" = "node_modules/dequal/readme.md" },
+    ] },
+    { "devlop" = [
+      { "readme" = "node_modules/devlop/readme.md" },
+    ] },
+    { "emoji-regex-xs" = [
+      { "README" = "node_modules/emoji-regex-xs/README.md" },
+    ] },
+    { "entities" = [
+      { "readme" = "node_modules/entities/readme.md" },
+    ] },
+    { "esbuild" = [
+      { "LICENSE" = "node_modules/esbuild/LICENSE.md" },
+      { "README" = "node_modules/esbuild/README.md" },
+    ] },
+    { "estree-walker" = [
+      { "CHANGELOG" = "node_modules/estree-walker/CHANGELOG.md" },
+      { "README" = "node_modules/estree-walker/README.md" },
+    ] },
+    { "focus-trap" = [
+      { "CHANGELOG" = "node_modules/focus-trap/CHANGELOG.md" },
+      { "README" = "node_modules/focus-trap/README.md" },
+      { "SECURITY" = "node_modules/focus-trap/SECURITY.md" },
+    ] },
+    { "hast-util-to-html" = [
+      { "readme" = "node_modules/hast-util-to-html/readme.md" },
+    ] },
+    { "hast-util-whitespace" = [
+      { "readme" = "node_modules/hast-util-whitespace/readme.md" },
+    ] },
+    { "hookable" = [
+      { "LICENSE" = "node_modules/hookable/LICENSE.md" },
+      { "README" = "node_modules/hookable/README.md" },
+    ] },
+    { "html-void-elements" = [
+      { "readme" = "node_modules/html-void-elements/readme.md" },
+    ] },
+    { "magic-string" = [
+      { "README" = "node_modules/magic-string/README.md" },
+    ] },
+    { "mark.js" = [
+      { "CONTRIBUTING" = "node_modules/mark.js/CONTRIBUTING.md" },
+      { "ISSUE_TEMPLATE" = "node_modules/mark.js/ISSUE_TEMPLATE.md" },
+      { "README" = "node_modules/mark.js/README.md" },
+    ] },
+    { "mdast-util-to-hast" = [
+      { "readme" = "node_modules/mdast-util-to-hast/readme.md" },
+    ] },
+    { "micromark-util-character" = [
+      { "readme" = "node_modules/micromark-util-character/readme.md" },
+    ] },
+    { "micromark-util-encode" = [
+      { "readme" = "node_modules/micromark-util-encode/readme.md" },
+    ] },
+    { "micromark-util-sanitize-uri" = [
+      { "readme" = "node_modules/micromark-util-sanitize-uri/readme.md" },
+    ] },
+    { "micromark-util-symbol" = [
+      { "readme" = "node_modules/micromark-util-symbol/readme.md" },
+    ] },
+    { "micromark-util-types" = [
+      { "readme" = "node_modules/micromark-util-types/readme.md" },
+    ] },
+    { "minisearch" = [
+      { "CHANGELOG" = "node_modules/minisearch/CHANGELOG.md" },
+      { "README" = "node_modules/minisearch/README.md" },
+    ] },
+    { "mitt" = [
+      { "README" = "node_modules/mitt/README.md" },
+    ] },
+    { "nanoid" = [
+      { "README" = "node_modules/nanoid/README.md" },
+    ] },
+    { "oniguruma-to-es" = [
+      { "README" = "node_modules/oniguruma-to-es/README.md" },
+    ] },
+    { "perfect-debounce" = [
+      { "README" = "node_modules/perfect-debounce/README.md" },
+    ] },
+    { "picocolors" = [
+      { "README" = "node_modules/picocolors/README.md" },
+    ] },
+    { "postcss" = [
+      { "README" = "node_modules/postcss/README.md" },
+    ] },
+    { "preact" = [
+      { "README" = "node_modules/preact/README.md" },
+    ] },
+    { "property-information" = [
+      { "readme" = "node_modules/property-information/readme.md" },
+    ] },
+    { "regex" = [
+      { "README" = "node_modules/regex/README.md" },
+    ] },
+    { "regex-recursion" = [
+      { "README" = "node_modules/regex-recursion/README.md" },
+    ] },
+    { "regex-utilities" = [
+      { "README" = "node_modules/regex-utilities/README.md" },
+    ] },
+    { "rfdc" = [
+      { "readme" = "node_modules/rfdc/readme.md" },
+    ] },
+    { "rollup" = [
+      { "LICENSE" = "node_modules/rollup/LICENSE.md" },
+      { "README" = "node_modules/rollup/README.md" },
+    ] },
+    { "search-insights" = [
+      { "LICENSE" = "node_modules/search-insights/LICENSE.md" },
+      { "README" = "node_modules/search-insights/README.md" },
+    ] },
+    { "shiki" = [
+      { "README" = "node_modules/shiki/README.md" },
+    ] },
+    { "source-map-js" = [
+      { "README" = "node_modules/source-map-js/README.md" },
+    ] },
+    { "space-separated-tokens" = [
+      { "readme" = "node_modules/space-separated-tokens/readme.md" },
+    ] },
+    { "speakingurl" = [
+      { "CHANGELOG" = "node_modules/speakingurl/CHANGELOG.md" },
+      { "README" = "node_modules/speakingurl/README.md" },
+    ] },
+    { "stringify-entities" = [
+      { "readme" = "node_modules/stringify-entities/readme.md" },
+    ] },
+    { "superjson" = [
+      { "README" = "node_modules/superjson/README.md" },
+    ] },
+    { "tabbable" = [
+      { "CHANGELOG" = "node_modules/tabbable/CHANGELOG.md" },
+      { "README" = "node_modules/tabbable/README.md" },
+      { "SECURITY" = "node_modules/tabbable/SECURITY.md" },
+    ] },
+    { "trim-lines" = [
+      { "readme" = "node_modules/trim-lines/readme.md" },
+    ] },
+    { "unist-util-is" = [
+      { "readme" = "node_modules/unist-util-is/readme.md" },
+    ] },
+    { "unist-util-position" = [
+      { "readme" = "node_modules/unist-util-position/readme.md" },
+    ] },
+    { "unist-util-stringify-position" = [
+      { "readme" = "node_modules/unist-util-stringify-position/readme.md" },
+    ] },
+    { "unist-util-visit" = [
+      { "readme" = "node_modules/unist-util-visit/readme.md" },
+    ] },
+    { "unist-util-visit-parents" = [
+      { "readme" = "node_modules/unist-util-visit-parents/readme.md" },
+    ] },
+    { "vfile" = [
+      { "readme" = "node_modules/vfile/readme.md" },
+    ] },
+    { "vfile-message" = [
+      { "readme" = "node_modules/vfile-message/readme.md" },
+    ] },
+    { "vite" = [
+      { "LICENSE" = "node_modules/vite/LICENSE.md" },
+      { "README" = "node_modules/vite/README.md" },
+    ] },
+    { "vitepress" = [
+      { "README" = "node_modules/vitepress/README.md" },
+      { "template" = [
+        { "template" = "node_modules/vitepress/template/index.md" },
+        { "api-examples" = "node_modules/vitepress/template/api-examples.md" },
+        { "markdown-examples" = "node_modules/vitepress/template/markdown-examples.md" },
+      ] },
+    ] },
+    { "vue" = [
+      { "README" = "node_modules/vue/README.md" },
+    ] },
+    { "zwitch" = [
+      { "readme" = "node_modules/zwitch/readme.md" },
+    ] },
+  ] },
+  { "scripts" = [
+    { "scripts" = "scripts/index.md" },
   ] },
   { "工具资源" = [
     { "工具资源" = "工具资源/index.md" },

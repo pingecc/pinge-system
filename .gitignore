@@ -3,3 +3,6 @@
 .site-build/.venv/
 .site-build/content/
 .site-build/site/
+node_modules/
+.vitepress/cache/
+.vitepress/dist/

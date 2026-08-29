@@ -1,101 +1,80 @@
-# 知识库站点操作文档
+# Pinge's Blog
 
-本仓库托管你的 Markdown 知识库，自动构建并发布到 GitHub Pages。
+个人 Markdown 知识库，基于 **VitePress** 构建并发布到 GitHub Pages。
 
 - 仓库：`github.com/pingecc/pinge-system`（公开）
 - 站点：<https://pingecc.github.io/pinge-system/>
-- 构建工具：Zensical（Material 主题）
+- 构建：VitePress 1.6 + GitHub Actions
 
 ## 工作原理
 
 ```text
 修改笔记（.md）
-    ↓  .site-build/publish.sh（一条命令）
-本地构建验证 → git 提交 → git push
+    ↓  publish.sh（一条命令）
+npm run build（生成分类/索引数据 + 构建） → git 提交 → git push
     ↓  GitHub Actions（自动）
-重新构建站点 → 部署到 GitHub Pages（约 1-2 分钟）
+npm ci + npm run build → 部署到 GitHub Pages
 ```
 
-所有生成物（`.site-build/content`、`.site-build/site`、`.venv`）不入库，每次由 Actions 在云端重新构建。
+## 本地开发
+
+```bash
+npm install      # 首次
+npm run dev      # 本地预览 http://localhost:15173/pinge-system/
+npm run build    # 生成站点到 .vitepress/dist
+```
 
 ## 日常更新（改完笔记后）
 
 1. 在 Obsidian 或任意编辑器中修改、保存笔记
-2. 打开终端，进入项目目录：
+2. 执行 `./publish.sh`（本地构建验证 → 提交 → 推送）
+3. 等待 GitHub Actions 构建完成（约 1-2 分钟），访问站点确认
 
-   ```bash
-   cd /Users/ping/pinge-system/doc
-   ```
+## 站点特性
 
-3. 执行发布命令：
+- 首页：分类胶囊导航 + 最新发布 / 最近修改
+- 分类落地页：`/categories/<分类>`（小主题自动并入"其他"）
+- 左侧分类目录树侧边栏、右侧大纲、本地全文搜索（Ctrl+K）
+- Obsidian 双链 `[[笔记]]`、图片嵌入 `![[图片]]` 渲染时自动转换
+- 每篇笔记显示创建 / 修改时间（取 git 历史）
+- 深色 / 浅色主题跟随系统
 
-   ```bash
-   ./.site-build/publish.sh
-   ```
-
-   脚本会自动完成：本地构建验证 → `git add` → `git commit` → `git push`
-
-4. 等 1-2 分钟，刷新站点查看：<https://pingecc.github.io/pinge-system/>
-
-如果没有任何改动，脚本会提示“没有新的内容改动，跳过提交”，不会产生空提交。
-
-## 本地预览（可选）
-
-```bash
-./.site-build/build.sh serve
-```
-
-打开 http://localhost:8000 即可实时预览，改动即时刷新；`Ctrl+C` 退出。
-
-## 站点自动规则（无需手动维护）
-
-- 每个顶层文件夹 = 顶部导航标签；文件夹内的层级 = 左侧导航
-- 文件夹里的 `首页.md` / `欢迎.md` 自动作为该分区的落地页
-- Obsidian 双链 `[[笔记]]`、`![[图片]]` 构建时自动转换为普通链接
-- 以下文件自动排除（不在站点也不在仓库提交之外，仅站点中不展示）：
-  `未命名*`、`草稿.md`、`模板.md`、`READEME.md`、`AI 测试.md`、`*.excalidraw.md`
-- 顶层导航顺序：前端 → Java → Python → 系统架构 → English → 考证 → 编程语言模型 → 源码系列（新文件夹自动追加末尾）
-
-## 不修改内容时手动触发构建
-
-- 打开仓库 Actions 页面（<https://github.com/pingecc/pinge-system/actions>）
-- 点 **Re-run** 重跑最近一次，或点 **Run workflow** 手动触发
-
-## 常见问题
-
-### 推送被 GitHub 拦截（GH013 密钥保护）
-
-说明笔记里含有真实密钥（如 API Key）。公开仓库不允许提交密钥：
-
-1. 打开提示中的文件，把密钥替换成占位符（如 `sk-你的Key`）
-2. 重新运行 `./.site-build/publish.sh`
-3. 到密钥服务商平台重新生成一个新密钥（旧的视为已泄露）
-
-### Actions 构建失败
-
-1. 打开 Actions 页面查看失败日志
-2. 确认仓库 Settings → Pages → Build and deployment → Source 是 **GitHub Actions**
-3. 修复后点 Re-run
-
-### 推送慢或超时
-
-已配置 SSH 走 443 端口备用通道（`ssh.github.com`），网络波动时直接重试一次即可。
-
-### 想调整站点配置
-
-编辑 `.site-build/build.py` 顶部的配置区（站点名、站点地址、导航顺序、排除规则），保存后重新运行 `./.site-build/publish.sh`。
-
-## 目录说明
+## 目录结构
 
 ```text
-README.md                        本文档
-笔记文件夹/                     知识库内容（md + 图片）
-.site-build/
-  ├─ build.sh                   一键构建入口（自动准备环境）
-  ├─ build.py                   暂存复制 + 双链转换 + 生成导航配置
-  ├─ publish.sh                 发布命令（构建 + 提交 + 推送）
-  ├─ zensical.toml              站点配置（构建时自动生成）
-  ├─ content/                   构建暂存副本（不入库）
-  └─ site/                      构建产物（不入库）
-.github/workflows/docs.yml       GitHub Actions 自动部署
+.
+├── index.md               # 首页（标语 + 分类胶囊 + 最近文章）
+├── categories/            # 分类落地页（动态路由）
+├── .vitepress/
+│   ├── config.mts         # 站点配置
+│   ├── generated/         # 自动生成的分类/索引数据（勿手改）
+│   ├── plugins/           # Obsidian 双链 & HTML 安全插件
+│   └── theme/             # 自定义主题组件与样式
+├── scripts/gen-site-data.mjs  # 扫描笔记，生成分类/侧边栏/时间戳数据
+├── Java/ 前端/ 系统架构/ …     # 笔记主题目录（11 个）
+└── publish.sh             # 一键发布
 ```
+
+主题目录说明（小目录自动并入"其他"分类）：前端、Java、Python、系统架构、English、
+AI全栈应用；服务器、考证、编程模型、源码系列、工具资源 → 其他。
+
+## 评论功能（giscus，需手动配置一次）
+
+1. 在仓库 Settings 勾选 Discussions，并创建一个分类（如 `General`）
+2. 打开 <https://giscus.app/>，填入仓库 `pingecc/pinge-system`，按指引获取
+   `repo-id` 与 `category-id`
+3. 将三个值填入 `.vitepress/theme/components/Comments.vue` 顶部的
+   `GISCUS_REPO_ID`、`GISCUS_CATEGORY`、`GISCUS_CATEGORY_ID`，重新发布
+
+## 写作规范
+
+- 笔记用标准 Markdown；文件名即 URL，建议 `01-xxx`、`02-xxx` 编号排序
+- 支持 Obsidian 双链 `[[...]]` 与 `![[图片]]`（构建时自动转换，未命中的原样显示）
+- 图片粘贴到各文件夹 `zmg/` 即可；引用不存在的图片会显示文字占位
+- 以下文件/目录不会生成页面：`.obsidian/`、`zmg/` 目录内、`*.excalidraw.md`、
+  `草稿.md`、`模板.md`、`READEME.md`、`AI 测试.md`、`未命名*` 开头文件
+
+## 迁移说明
+
+旧工具链（Zensical + `.site-build/build.py`）已由 VitePress 取代，详见
+`MIGRATION.md`；`.site-build/` 目录仅作存档，不再参与构建。

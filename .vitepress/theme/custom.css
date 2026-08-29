@@ -1,0 +1,42 @@
+/* 首页整屏布局：内容固定在视口内，列表内部滚动（对标目标站点） */
+html:has(.is-home),
+html:has(.is-home) body {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+html:has(.is-home) .VPContent.is-home {
+  height: calc(100dvh - var(--vp-nav-height));
+  overflow: hidden;
+}
+
+html:has(.is-home) .VPHome .vp-doc.container {
+  padding-bottom: 0;
+}
+
+html:has(.is-home) .VPHome {
+  margin-bottom: 0;
+}
+
+/* 链接去掉下划线（与目标站点一致） */
+a {
+  text-decoration: none !important;
+}
+
+/* 评论 */
+.giscus-comments {
+  border-top: 1px solid var(--vp-c-divider);
+  margin-top: 40px;
+  padding-top: 24px;
+}
+
+.giscus-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.giscus-tip {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
