@@ -175,4 +175,16 @@ function onLeave() {
     transform: translateY(0);
   }
 }
+
+/* 触屏设备没有 hover：隐藏下拉，胶囊直接跳转到分类页 */
+@media (hover: none) {
+  .dropdown,
+  .dropdown-fade-enter-from,
+  .dropdown-fade-enter-active,
+  .dropdown-fade-leave-active,
+  .dropdown-fade-enter-to,
+  .dropdown-fade-leave-from {
+    display: none;
+  }
+}
 </style>

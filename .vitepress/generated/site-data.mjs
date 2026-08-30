@@ -87,7 +87,7 @@ export const navCategories = [
         "title": "基础语法",
         "url": "/前端/03-JavaScript/01-核心",
         "created": 1788094737000,
-        "modified": 1788095560000
+        "modified": 1788096316000
       },
       {
         "title": "1. 函数的本质",
@@ -2006,7 +2006,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1788095560000
+    "modified": 1788096316000
   },
   {
     "title": "1. 函数的本质",

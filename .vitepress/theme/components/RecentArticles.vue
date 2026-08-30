@@ -110,6 +110,9 @@ function getCategoryClass(category: string): string {
     flex: 0 1 auto;
     width: 100%;
     max-width: none;
+    max-height: none !important;
+    padding: 16px 16px 8px;
+    overflow: visible;
   }
 }
 
@@ -169,6 +172,27 @@ function getCategoryClass(category: string): string {
 @media (max-width: 768px) {
   .recent-articles .articles-section:first-child {
     display: none;
+  }
+
+  .recent-articles .article-header {
+    display: none;
+  }
+
+  .recent-articles .section-title {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .recent-articles .article-link {
+    padding: 12px 0;
+  }
+
+  .recent-articles .article-title {
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 }
 

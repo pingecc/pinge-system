@@ -207,4 +207,47 @@ function getSortIcon(field: "created" | "modified"): string {
   color: var(--vp-c-text-3);
   font-size: 14px;
 }
+
+/* 移动端：去掉三列表头，标题整行展示，日期降为第二行小字 */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 16px;
+  }
+
+  .category-title {
+    font-size: 24px;
+  }
+
+  .article-list {
+    padding: 12px 16px;
+  }
+
+  .article-header {
+    display: none;
+  }
+
+  .article-item {
+    flex-wrap: wrap;
+    padding: 14px 0;
+    row-gap: 4px;
+  }
+
+  .article-title {
+    flex: 1 1 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .article-created,
+  .article-modified {
+    width: auto;
+    font-size: 11px;
+  }
+
+  .article-created {
+    margin-right: 16px;
+  }
+}
 </style>

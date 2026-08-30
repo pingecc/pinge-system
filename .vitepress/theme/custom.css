@@ -1,13 +1,27 @@
-/* 首页整屏布局：内容固定在视口内，列表内部滚动（对标目标站点） */
-html:has(.is-home),
-html:has(.is-home) body {
-  overflow: hidden !important;
-  height: 100%;
+/* 首页整屏布局：仅桌面端把内容固定在视口内、列表内部滚动（对标目标站点） */
+@media (min-width: 769px) {
+  html:has(.is-home),
+  html:has(.is-home) body {
+    overflow: hidden !important;
+    height: 100%;
+  }
+
+  html:has(.is-home) .VPContent.is-home {
+    height: calc(100dvh - var(--vp-nav-height));
+    overflow: hidden;
+  }
 }
 
-html:has(.is-home) .VPContent.is-home {
-  height: calc(100dvh - var(--vp-nav-height));
-  overflow: hidden;
+/* 移动端首页：恢复自然页面滚动，避免内容被裁切 */
+@media (max-width: 768px) {
+  html:has(.is-home) .VPContent.is-home {
+    height: auto;
+    overflow: visible;
+  }
+
+  html:has(.is-home) .VPHome {
+    padding-bottom: 24px;
+  }
 }
 
 html:has(.is-home) .VPHome .vp-doc.container {

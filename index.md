@@ -7,7 +7,7 @@ import { nextTick, ref, onMounted, onUnmounted } from 'vue'
 import CategoryNav from './.vitepress/theme/components/CategoryNav.vue'
 import RecentArticles from './.vitepress/theme/components/RecentArticles.vue'
 
-const showHeader = ref(true)
+const showHero = ref(true)
 const heightThreshold = 600
 const widthThreshold = 768
 let layoutFrame = 0
@@ -37,7 +37,8 @@ function updateRecentArticlesMaxHeight() {
 }
 
 function checkSize() {
-  showHeader.value = window.innerHeight >= heightThreshold && window.innerWidth >= widthThreshold
+  // 大屏才显示 hero 标语；分类导航在所有屏幕下都显示
+  showHero.value = window.innerHeight >= heightThreshold && window.innerWidth >= widthThreshold
   nextTick(updateRecentArticlesMaxHeight)
 }
 
@@ -55,11 +56,11 @@ onUnmounted(() => {
 })
 </script>
 
-<div v-if="showHeader" class="hero-section">
+<div v-if="showHero" class="hero-section">
   <p class="tagline">It's never too late. Just do it better.</p>
 </div>
 
-<CategoryNav v-if="showHeader" />
+<CategoryNav />
 
 <RecentArticles />
 
