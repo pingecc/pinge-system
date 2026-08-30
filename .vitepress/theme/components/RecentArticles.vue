@@ -2,6 +2,7 @@
 import { computed } from "vue"
 import { withBase } from "vitepress"
 import { allArticles } from "../../generated/site-data.mjs"
+import { articleFileName } from "../utils"
 
 const CATEGORY_CLASS: Record<string, string> = {
   前端: "cat-front",
@@ -43,7 +44,7 @@ function getCategoryClass(category: string): string {
       <ul class="article-list">
         <li v-for="art in recentlyCreated" :key="art.url" class="article-item">
           <a :href="withBase(art.url)" class="article-link">
-            <span class="article-title" :title="art.title">{{ art.title }}</span>
+            <span class="article-title" :title="art.title">{{ articleFileName(art.url, art.category) }}</span>
             <span class="article-category" :class="getCategoryClass(art.category)">{{ art.category }}</span>
             <span class="article-date">{{ formatDate(art.created) }}</span>
           </a>
@@ -61,7 +62,7 @@ function getCategoryClass(category: string): string {
       <ul class="article-list">
         <li v-for="art in recentlyModified" :key="art.url" class="article-item">
           <a :href="withBase(art.url)" class="article-link">
-            <span class="article-title" :title="art.title">{{ art.title }}</span>
+            <span class="article-title" :title="art.title">{{ articleFileName(art.url, art.category) }}</span>
             <span class="article-category" :class="getCategoryClass(art.category)">{{ art.category }}</span>
             <span class="article-date">{{ formatDate(art.modified) }}</span>
           </a>

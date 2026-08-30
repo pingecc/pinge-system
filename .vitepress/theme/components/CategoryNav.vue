@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { withBase } from "vitepress"
 import { navCategories } from "../../generated/site-data.mjs"
+import { articleFileName } from "../utils"
 
 const showDropdown = ref<string | null>(null)
 let openTimer: number | undefined
@@ -41,7 +42,7 @@ function onLeave() {
             class="dropdown-item"
             :title="art.title"
           >
-            {{ art.title }}
+            {{ articleFileName(art.url, cat.label) }}
           </a>
           <div v-if="cat.articles.length === 0" class="dropdown-empty">暂无文章</div>
         </div>
