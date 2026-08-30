@@ -86,8 +86,8 @@ export const navCategories = [
       {
         "title": "基础语法",
         "url": "/前端/03-JavaScript/01-核心",
-        "created": 1788093066257.6301,
-        "modified": 1788093066257.6301
+        "created": 1788094737000,
+        "modified": 1788094737000
       },
       {
         "title": "1. 函数的本质",
@@ -105,7 +105,7 @@ export const navCategories = [
         "title": "JS的单线程",
         "url": "/前端/03-JavaScript/05-异步",
         "created": 1787971861000,
-        "modified": 1787971861000
+        "modified": 1788094737000
       },
       {
         "title": "1. localStorage",
@@ -122,8 +122,8 @@ export const navCategories = [
       {
         "title": "从 URL 到页面",
         "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
-        "created": 1788064605939.932,
-        "modified": 1788064605939.932
+        "created": 1788094737000,
+        "modified": 1788094737000
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
@@ -2005,8 +2005,8 @@ export const allArticles = [
     "title": "基础语法",
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
-    "created": 1788093066257.6301,
-    "modified": 1788093066257.6301
+    "created": 1788094737000,
+    "modified": 1788094737000
   },
   {
     "title": "1. 函数的本质",
@@ -2027,7 +2027,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/05-异步",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1788094737000
   },
   {
     "title": "1. localStorage",
@@ -2047,8 +2047,8 @@ export const allArticles = [
     "title": "从 URL 到页面",
     "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
     "category": "前端",
-    "created": 1788064605939.932,
-    "modified": 1788064605939.932
+    "created": 1788094737000,
+    "modified": 1788094737000
   },
   {
     "title": "React学习路线：面向后台管理和ERP系统",

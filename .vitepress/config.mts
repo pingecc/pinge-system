@@ -48,7 +48,7 @@ export default defineConfig({
   themeConfig: {
     nav: navItems(),
     sidebar: { "/": sidebarGroups },
-    outline: "deep",
+    outline: { level: [1, 6], label: "本页目录" },
     search: {
       provider: "local",
       options: {
