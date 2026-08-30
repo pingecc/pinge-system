@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 23,
+    "count": 22,
     "articles": [
       {
         "title": "HTML基础",
@@ -84,22 +84,10 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "变量声明",
-        "url": "/前端/03-JavaScript/01-基础语法",
-        "created": 1787971861000,
-        "modified": 1787971861000
-      },
-      {
-        "title": "01-网页开发",
-        "url": "/前端/03-JavaScript/01-网页开发",
-        "created": 1787971861000,
-        "modified": 1787971861000
-      },
-      {
-        "title": "对象的创建",
-        "url": "/前端/03-JavaScript/02-对象与数组",
-        "created": 1787971861000,
-        "modified": 1787971861000
+        "title": "基础语法",
+        "url": "/前端/03-JavaScript/01-核心",
+        "created": 1788093066257.6301,
+        "modified": 1788093066257.6301
       },
       {
         "title": "1. 函数的本质",
@@ -130,6 +118,12 @@ export const navCategories = [
         "url": "/前端/03-JavaScript/IIFE",
         "created": 1787971861000,
         "modified": 1787971861000
+      },
+      {
+        "title": "从 URL 到页面",
+        "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
+        "created": 1788064605939.932,
+        "modified": 1788064605939.932
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
@@ -2008,25 +2002,11 @@ export const allArticles = [
     "modified": 1787971861000
   },
   {
-    "title": "变量声明",
-    "url": "/前端/03-JavaScript/01-基础语法",
+    "title": "基础语法",
+    "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
-    "created": 1787971861000,
-    "modified": 1787971861000
-  },
-  {
-    "title": "01-网页开发",
-    "url": "/前端/03-JavaScript/01-网页开发",
-    "category": "前端",
-    "created": 1787971861000,
-    "modified": 1787971861000
-  },
-  {
-    "title": "对象的创建",
-    "url": "/前端/03-JavaScript/02-对象与数组",
-    "category": "前端",
-    "created": 1787971861000,
-    "modified": 1787971861000
+    "created": 1788093066257.6301,
+    "modified": 1788093066257.6301
   },
   {
     "title": "1. 函数的本质",
@@ -2062,6 +2042,13 @@ export const allArticles = [
     "category": "前端",
     "created": 1787971861000,
     "modified": 1787971861000
+  },
+  {
+    "title": "从 URL 到页面",
+    "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
+    "category": "前端",
+    "created": 1788064605939.932,
+    "modified": 1788064605939.932
   },
   {
     "title": "React学习路线：面向后台管理和ERP系统",
@@ -2349,6 +2336,16 @@ export const sidebarGroups = [
     "text": "前端",
     "items": [
       {
+        "text": "React",
+        "collapsed": false,
+        "items": [
+          {
+            "text": "01-前端基础：浏览器与HTML CSS",
+            "link": "/前端/React/01-前端基础：浏览器与HTML CSS"
+          }
+        ]
+      },
+      {
         "text": "02-CSS",
         "collapsed": false,
         "items": [
@@ -2423,16 +2420,8 @@ export const sidebarGroups = [
             "link": "/前端/03-JavaScript/IIFE"
           },
           {
-            "text": "01-基础语法",
-            "link": "/前端/03-JavaScript/01-基础语法"
-          },
-          {
-            "text": "01-网页开发",
-            "link": "/前端/03-JavaScript/01-网页开发"
-          },
-          {
-            "text": "02-对象与数组",
-            "link": "/前端/03-JavaScript/02-对象与数组"
+            "text": "01-核心",
+            "link": "/前端/03-JavaScript/01-核心"
           },
           {
             "text": "03-函数",
@@ -3480,6 +3469,9 @@ export const sidebarGroups = [
   }
 ]
 export const mdIndex = {
+  "01-前端基础：浏览器与HTML CSS": [
+    "前端/React/01-前端基础：浏览器与HTML CSS.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
   ],
@@ -3531,14 +3523,9 @@ export const mdIndex = {
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
   ],
-  "01-基础语法": [
-    "前端/03-JavaScript/01-基础语法.md"
-  ],
-  "01-网页开发": [
-    "前端/03-JavaScript/01-网页开发.md"
-  ],
-  "02-对象与数组": [
-    "前端/03-JavaScript/02-对象与数组.md"
+  "01-核心": [
+    "前端/03-JavaScript/01-核心.md",
+    "Python/01-Python核心编程/01-核心.md"
   ],
   "03-函数": [
     "前端/03-JavaScript/03-函数.md"
@@ -3815,9 +3802,6 @@ export const mdIndex = {
   "03-RestAPI": [
     "Java/05-Elastic Stack/01-核心知识/03-RestAPI.md"
   ],
-  "01-核心": [
-    "Python/01-Python核心编程/01-核心.md"
-  ],
   "03-数据结构": [
     "Python/01-Python核心编程/03-数据结构.md"
   ],
@@ -3986,6 +3970,9 @@ export const mdIndex = {
   ]
 }
 export const imgIndex = {
+  "01-前端基础：浏览器与HTML CSS": [
+    "前端/React/01-前端基础：浏览器与HTML CSS.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
   ],
@@ -4136,14 +4123,9 @@ export const imgIndex = {
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
   ],
-  "01-基础语法": [
-    "前端/03-JavaScript/01-基础语法.md"
-  ],
-  "01-网页开发": [
-    "前端/03-JavaScript/01-网页开发.md"
-  ],
-  "02-对象与数组": [
-    "前端/03-JavaScript/02-对象与数组.md"
+  "01-核心": [
+    "前端/03-JavaScript/01-核心.md",
+    "Python/01-Python核心编程/01-核心.md"
   ],
   "03-函数": [
     "前端/03-JavaScript/03-函数.md"
@@ -4635,9 +4617,6 @@ export const imgIndex = {
   ],
   "Pasted image 20260626222125": [
     "Python/zmg/Pasted image 20260626222125.png"
-  ],
-  "01-核心": [
-    "Python/01-Python核心编程/01-核心.md"
   ],
   "03-数据结构": [
     "Python/01-Python核心编程/03-数据结构.md"
