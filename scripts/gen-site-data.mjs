@@ -196,7 +196,7 @@ function treeItems(dirAbs, posixRel) {
     const rel = `${posixRel}/${e.name}`
     if (e.isDirectory()) {
       const children = treeItems(abs, rel)
-      if (children.length) items.push({ text: e.name, collapsed: false, items: children })
+      if (children.length) items.push({ text: e.name, collapsed: true, items: children })
     } else {
       items.push({ text: path.basename(e.name, MD_EXT), link: "/" + rel.slice(0, -MD_EXT.length) })
     }
@@ -211,12 +211,12 @@ for (const label of categoryOrder) {
     for (const topDir of SMALL_DIRS) {
       if (!fs.existsSync(path.join(ROOT, topDir))) continue
       const children = treeItems(path.join(ROOT, topDir), topDir)
-      if (children.length) items.push({ text: topDir, collapsed: false, items: children })
+      if (children.length) items.push({ text: topDir, collapsed: true, items: children })
     }
-    if (items.length) sidebarGroups.push({ text: label, items })
+    if (items.length) sidebarGroups.push({ text: label, collapsed: true, items })
   } else {
     const items = treeItems(path.join(ROOT, label), label)
-    if (items.length) sidebarGroups.push({ text: label, items })
+    if (items.length) sidebarGroups.push({ text: label, collapsed: true, items })
   }
 }
 

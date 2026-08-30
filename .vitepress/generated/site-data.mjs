@@ -87,7 +87,7 @@ export const navCategories = [
         "title": "基础语法",
         "url": "/前端/03-JavaScript/01-核心",
         "created": 1788094737000,
-        "modified": 1788094737000
+        "modified": 1788095560000
       },
       {
         "title": "1. 函数的本质",
@@ -2006,7 +2006,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1788094737000
+    "modified": 1788095560000
   },
   {
     "title": "1. 函数的本质",
@@ -2334,10 +2334,11 @@ export const allArticles = [
 export const sidebarGroups = [
   {
     "text": "前端",
+    "collapsed": true,
     "items": [
       {
         "text": "React",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-前端基础：浏览器与HTML CSS",
@@ -2347,11 +2348,11 @@ export const sidebarGroups = [
       },
       {
         "text": "02-CSS",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "reference",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "flex-grow-flex-shrink-guide",
@@ -2365,7 +2366,7 @@ export const sidebarGroups = [
           },
           {
             "text": "布局",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "布局技巧",
@@ -2413,7 +2414,7 @@ export const sidebarGroups = [
       },
       {
         "text": "03-JavaScript",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "IIFE",
@@ -2457,14 +2458,15 @@ export const sidebarGroups = [
   },
   {
     "text": "Java",
+    "collapsed": true,
     "items": [
       {
         "text": "Java核心",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "Excalidraw",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "vue-route",
@@ -2478,7 +2480,7 @@ export const sidebarGroups = [
           },
           {
             "text": "GPT",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "ChatGPT",
@@ -2496,7 +2498,7 @@ export const sidebarGroups = [
           },
           {
             "text": "Spring生态",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Spring",
@@ -2510,7 +2512,7 @@ export const sidebarGroups = [
           },
           {
             "text": "工作流",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Flowable",
@@ -2520,11 +2522,11 @@ export const sidebarGroups = [
           },
           {
             "text": "技术基建",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "技术组件",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "MinIO",
@@ -2534,11 +2536,11 @@ export const sidebarGroups = [
               },
               {
                 "text": "计算机系统",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "IO",
-                    "collapsed": false,
+                    "collapsed": true,
                     "items": [
                       {
                         "text": "IO",
@@ -2552,7 +2554,7 @@ export const sidebarGroups = [
                   },
                   {
                     "text": "深入理解计算机系统",
-                    "collapsed": false,
+                    "collapsed": true,
                     "items": [
                       {
                         "text": "深入理解计算机系统",
@@ -2588,7 +2590,7 @@ export const sidebarGroups = [
               },
               {
                 "text": "运维",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "软件安装",
@@ -2598,11 +2600,11 @@ export const sidebarGroups = [
               },
               {
                 "text": "1-Web开发",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "JavaScript",
-                    "collapsed": false,
+                    "collapsed": true,
                     "items": [
                       {
                         "text": "异步",
@@ -2620,7 +2622,7 @@ export const sidebarGroups = [
                   },
                   {
                     "text": "Vue",
-                    "collapsed": false,
+                    "collapsed": true,
                     "items": [
                       {
                         "text": "README",
@@ -2672,7 +2674,7 @@ export const sidebarGroups = [
               },
               {
                 "text": "4-Python开发",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "RDADEME",
@@ -2708,7 +2710,7 @@ export const sidebarGroups = [
           },
           {
             "text": "消息队列",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-RabbitMQ基础",
@@ -2724,11 +2726,11 @@ export const sidebarGroups = [
       },
       {
         "text": "应用",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "Flowable",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Flowable",
@@ -2738,7 +2740,7 @@ export const sidebarGroups = [
           },
           {
             "text": "Spring生态",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "Mybatis",
@@ -2758,7 +2760,7 @@ export const sidebarGroups = [
       },
       {
         "text": "架构",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "系统性能",
@@ -2768,11 +2770,11 @@ export const sidebarGroups = [
       },
       {
         "text": "源码系列",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-Spring Framework",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Spring核心工作原理",
@@ -2788,11 +2790,11 @@ export const sidebarGroups = [
       },
       {
         "text": "01-Java核心编程",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "JVM",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Java源码到类加载过程",
@@ -2806,7 +2808,7 @@ export const sidebarGroups = [
           },
           {
             "text": "Java核心语言特性",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "03-注解Annotation",
@@ -2816,7 +2818,7 @@ export const sidebarGroups = [
           },
           {
             "text": "Java源码设计",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "Java-CallBack设计",
@@ -2834,7 +2836,7 @@ export const sidebarGroups = [
           },
           {
             "text": "Java高级技术",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "字节码操作-ASM",
@@ -2882,11 +2884,11 @@ export const sidebarGroups = [
       },
       {
         "text": "02-Spring生态",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-Spring",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Spring",
@@ -2914,7 +2916,7 @@ export const sidebarGroups = [
       },
       {
         "text": "03-数据库",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "MongoDB",
@@ -2948,11 +2950,11 @@ export const sidebarGroups = [
       },
       {
         "text": "04-ORM",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "Mybatis",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-ORM发展历程",
@@ -2968,11 +2970,11 @@ export const sidebarGroups = [
       },
       {
         "text": "04-开发工具",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "日志",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Logback",
@@ -3008,11 +3010,11 @@ export const sidebarGroups = [
       },
       {
         "text": "05-Elastic Stack",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-核心知识",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-Elasticsearch简介",
@@ -3034,10 +3036,11 @@ export const sidebarGroups = [
   },
   {
     "text": "Python",
+    "collapsed": true,
     "items": [
       {
         "text": "01-Python核心编程",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-开发和运行环境",
@@ -3071,7 +3074,7 @@ export const sidebarGroups = [
       },
       {
         "text": "02-开发",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-requests",
@@ -3091,14 +3094,15 @@ export const sidebarGroups = [
   },
   {
     "text": "系统架构",
+    "collapsed": true,
     "items": [
       {
         "text": "ERP",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "库存设计",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-库存管理",
@@ -3108,7 +3112,7 @@ export const sidebarGroups = [
           },
           {
             "text": "采购管理",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-采购管理",
@@ -3122,7 +3126,7 @@ export const sidebarGroups = [
           },
           {
             "text": "销售管理",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "01-销售管理",
@@ -3134,11 +3138,11 @@ export const sidebarGroups = [
       },
       {
         "text": "企业财务信息化",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "资料库",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "ERP中的财务体现",
@@ -3198,7 +3202,7 @@ export const sidebarGroups = [
       },
       {
         "text": "系统设计",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "API设计规范",
@@ -3224,15 +3228,15 @@ export const sidebarGroups = [
       },
       {
         "text": "跨境物流业务",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "书籍阅读",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "详解",
-                "collapsed": false,
+                "collapsed": true,
                 "items": [
                   {
                     "text": "UPS",
@@ -3270,11 +3274,11 @@ export const sidebarGroups = [
       },
       {
         "text": "项目实践",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "外贸业财一体化ERP",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "个人职责内容",
@@ -3284,7 +3288,7 @@ export const sidebarGroups = [
           },
           {
             "text": "大货系统",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "订单模块",
@@ -3302,10 +3306,11 @@ export const sidebarGroups = [
   },
   {
     "text": "English",
+    "collapsed": true,
     "items": [
       {
         "text": "单词库",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-",
@@ -3315,7 +3320,7 @@ export const sidebarGroups = [
       },
       {
         "text": "句式和语法",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "动词作句首",
@@ -3325,7 +3330,7 @@ export const sidebarGroups = [
       },
       {
         "text": "零基础系统学习英语",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-英语学习下意识的重要性",
@@ -3349,10 +3354,11 @@ export const sidebarGroups = [
   },
   {
     "text": "AI全栈应用",
+    "collapsed": true,
     "items": [
       {
         "text": "Agent",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "核心代码示例",
@@ -3374,7 +3380,7 @@ export const sidebarGroups = [
       },
       {
         "text": "Vibe Coding",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "01-",
@@ -3398,14 +3404,15 @@ export const sidebarGroups = [
   },
   {
     "text": "其他",
+    "collapsed": true,
     "items": [
       {
         "text": "服务器",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "Mac",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "command 和 sh",
@@ -3421,11 +3428,11 @@ export const sidebarGroups = [
       },
       {
         "text": "考证",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "软考",
-            "collapsed": false,
+            "collapsed": true,
             "items": [
               {
                 "text": "首页",
@@ -3437,7 +3444,7 @@ export const sidebarGroups = [
       },
       {
         "text": "编程模型",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "模块化",
@@ -3447,7 +3454,7 @@ export const sidebarGroups = [
       },
       {
         "text": "源码系列",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "欢迎",
@@ -3457,7 +3464,7 @@ export const sidebarGroups = [
       },
       {
         "text": "工具资源",
-        "collapsed": false,
+        "collapsed": true,
         "items": [
           {
             "text": "开发工具",

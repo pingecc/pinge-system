@@ -40,3 +40,55 @@ a {
   color: var(--vp-c-text-2);
   font-size: 13px;
 }
+
+/* 右侧目录：三级及以下标题默认折叠，点击小箭头展开 */
+.VPDocAsideOutline ul.VPDocOutlineItem.nested > li {
+  position: relative;
+}
+
+.VPDocAsideOutline li > button.outline-fold {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+}
+
+.VPDocAsideOutline li > button.outline-fold:hover {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+}
+
+.VPDocAsideOutline li > button.outline-fold::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin-top: -2px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg); /* 指向右侧 = 折叠态 */
+}
+
+.VPDocAsideOutline li:not(.is-collapsed) > button.outline-fold::before {
+  transform: rotate(45deg); /* 指向下方 = 展开态 */
+}
+
+.VPDocAsideOutline li.is-collapsed > ul.VPDocOutlineItem {
+  display: none;
+}
+
+.VPDocAsideOutline ul.VPDocOutlineItem.nested > li > a.outline-link {
+  padding-right: 20px;
+}
