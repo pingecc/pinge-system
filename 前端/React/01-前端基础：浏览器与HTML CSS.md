@@ -31,9 +31,9 @@
 输入 URL  
   → ① DNS：域名 → IP  
   → ② HTTP 请求 / 响应（200 OK + HTML）  
-  → ③ 解析 HTML → DOM 树  
-  → ④ 解析 CSS → CSSOM  
-       DOM + CSSOM → 渲染树 → Layout → Paint  
+  **→ ③ 解析 HTML → DOM 树**  
+  **→ ④ 解析 CSS → CSSOM**  
+       **DOM + CSSOM → 渲染树 → Layout → Paint**  
   → ⑤ JS 插队执行（默认阻塞解析）  
 页面出现在屏幕上
 

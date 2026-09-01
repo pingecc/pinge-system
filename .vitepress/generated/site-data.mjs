@@ -90,7 +90,7 @@ export const navCategories = [
         "modified": 1788096316000
       },
       {
-        "title": "1. 函数的本质",
+        "title": "函数的本质",
         "url": "/前端/03-JavaScript/03-函数",
         "created": 1787971861000,
         "modified": 1787971861000
@@ -102,7 +102,7 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "JS的单线程",
+        "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
         "url": "/前端/03-JavaScript/05-异步",
         "created": 1787971861000,
         "modified": 1788094737000
@@ -1047,7 +1047,7 @@ export const navCategories = [
   {
     "label": "其他",
     "link": "/categories/%E5%85%B6%E4%BB%96",
-    "count": 6,
+    "count": 8,
     "articles": [
       {
         "title": "开发工具",
@@ -1072,6 +1072,18 @@ export const navCategories = [
         "url": "/源码系列/欢迎",
         "created": 1786173733000,
         "modified": 1786173733000
+      },
+      {
+        "title": "不同语言中如何实现函数的传递",
+        "url": "/编程模型/函数",
+        "created": 1788264681726.4087,
+        "modified": 1788264681726.4087
+      },
+      {
+        "title": "垃圾回收器",
+        "url": "/编程模型/垃圾回收器",
+        "created": 1788268346225.8271,
+        "modified": 1788268346225.8271
       },
       {
         "title": "声明",
@@ -2009,7 +2021,7 @@ export const allArticles = [
     "modified": 1788096316000
   },
   {
-    "title": "1. 函数的本质",
+    "title": "函数的本质",
     "url": "/前端/03-JavaScript/03-函数",
     "category": "前端",
     "created": 1787971861000,
@@ -2023,7 +2035,7 @@ export const allArticles = [
     "modified": 1787971861000
   },
   {
-    "title": "JS的单线程",
+    "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
     "url": "/前端/03-JavaScript/05-异步",
     "category": "前端",
     "created": 1787971861000,
@@ -2315,6 +2327,20 @@ export const allArticles = [
     "category": "系统架构",
     "created": 1786173733000,
     "modified": 1786366613000
+  },
+  {
+    "title": "不同语言中如何实现函数的传递",
+    "url": "/编程模型/函数",
+    "category": "其他",
+    "created": 1788264681726.4087,
+    "modified": 1788264681726.4087
+  },
+  {
+    "title": "垃圾回收器",
+    "url": "/编程模型/垃圾回收器",
+    "category": "其他",
+    "created": 1788268346225.8271,
+    "modified": 1788268346225.8271
   },
   {
     "title": "声明",
@@ -3447,6 +3473,14 @@ export const sidebarGroups = [
         "collapsed": true,
         "items": [
           {
+            "text": "函数",
+            "link": "/编程模型/函数"
+          },
+          {
+            "text": "垃圾回收器",
+            "link": "/编程模型/垃圾回收器"
+          },
+          {
             "text": "模块化",
             "link": "/编程模型/模块化"
           }
@@ -3968,6 +4002,12 @@ export const mdIndex = {
   ],
   "快捷键": [
     "服务器/Mac/快捷键.md"
+  ],
+  "函数": [
+    "编程模型/函数.md"
+  ],
+  "垃圾回收器": [
+    "编程模型/垃圾回收器.md"
   ],
   "模块化": [
     "编程模型/模块化.md"
@@ -4808,6 +4848,12 @@ export const imgIndex = {
   ],
   "快捷键": [
     "服务器/Mac/快捷键.md"
+  ],
+  "函数": [
+    "编程模型/函数.md"
+  ],
+  "垃圾回收器": [
+    "编程模型/垃圾回收器.md"
   ],
   "模块化": [
     "编程模型/模块化.md"
