@@ -1,8 +1,19 @@
-# 1. localStorage
+
+# DOM操作
+
+1. 查找节点
+2. 新增节点
+3. 修改节点的内容
+4. 修改节点的样式
+5. 给节点添加或者移除指定的类选择器
+
+
+
+# localStorage
 
 **localStorage** 是浏览器提供的 Web Storage API 中的一种本地持久化存储机制，用于在客户端（浏览器）以键值对形式保存数据。
 
-### 1. 核心特点
+### ⁠0.1 ⁠核心特点
 
 | 特性 | 说明 |
 |------|------|
@@ -17,7 +28,7 @@
 - **sessionStorage**：同样是同源、字符串存储，但标签页关闭后数据消失。
 - **Cookie**：容量小（约 4KB）、会随请求发送、有过期时间、可设置 HttpOnly 等安全属性。
 
-### 2. 常用 API
+### ⁠0.2 ⁠常用 API
 
 ```js
 // 1. 存储数据
@@ -47,7 +58,7 @@ console.log(localStorage.username);
 delete localStorage.username;
 ```
 
-### 3. 存储非字符串数据（最常用场景）
+### ⁠0.3 ⁠存储非字符串数据（最常用场景）
 
 因为只能存字符串，对象/数组必须用 `JSON`：
 
@@ -74,7 +85,7 @@ console.log(parsedUser?.name); // 张三
 - `Date` 对象会被转成字符串，取出来需要重新 `new Date()`。
 - 大对象序列化/反序列化有性能开销。
 
-### 4. 监听存储变化（跨标签页通信）
+### ⁠0.4 ⁠监听存储变化（跨标签页通信）
 
 当**同一个源的其他标签页/窗口**修改了 localStorage 时，当前页面会触发 `storage` 事件：
 
@@ -94,7 +105,7 @@ window.addEventListener('storage', (event) => {
 
 这是实现简单跨标签页同步的常用手段（例如登录状态同步、购物车更新）。
 
-### 5. 容量与错误处理
+### ⁠0.5 ⁠容量与错误处理
 
 ```js
 try {
@@ -111,7 +122,7 @@ try {
 
 实际可用容量会因浏览器、设备、已有数据而略有差异，不要依赖精确的 5MB。
 > 目前绝大多数浏览器的存储限制基本是 5MB
-### 6. 安全与最佳实践
+### ⁠0.6 ⁠安全与最佳实践
 
 1. **不要存敏感信息**  
    localStorage 任何同源的 JS 都能读写，XSS 攻击一旦成功即可轻易窃取。密码、token（尤其是长期有效的）、身份证号等应放在 HttpOnly Cookie 或更安全的地方。
@@ -165,7 +176,7 @@ try {
 
 ---
 
-## 核心属性
+## ⁠1 ⁠核心属性
 
 `location` 将当前 URL 拆解为多个可读写的属性：
 
@@ -190,7 +201,7 @@ console.log(location.search);    // ?a=1&b=2
 
 ---
 
-## 常用方法
+## ⁠2 ⁠常用方法
 
 | 方法 | 作用 | 特点 |
 |------|------|------|
@@ -214,9 +225,9 @@ location.reload(true);    // 强制刷新（类似 Ctrl+F5）
 
 ---
 
-## 实际应用场景
+## ⁠3 ⁠实际应用场景
 
-### 1. 页面跳转
+### ⁠3.1 ⁠页面跳转
 ```javascript
 // 最常用
 location.href = 'https://example.com';
@@ -225,28 +236,28 @@ location.href = 'https://example.com';
 window.location = 'https://example.com';
 ```
 
-### 2. 解析 URL 参数
+### ⁠3.2 ⁠解析 URL 参数
 传统写法：
 ```javascript
 const params = new URLSearchParams(location.search);
 console.log(params.get('a'));  // "1"
 ```
 
-### 3. 修改 URL 但不刷新（现代用法）
+### ⁠3.3 ⁠修改 URL 但不刷新（现代用法）
 配合 `history.pushState` 可实现无刷新修改地址栏：
 ```javascript
 history.pushState({}, '', '/new-path');
 // 此时 location.pathname 会变为 /new-path，但页面不会刷新
 ```
 
-### 4. 获取当前域名做判断
+### ⁠3.4 ⁠获取当前域名做判断
 ```javascript
 if (location.hostname === 'localhost') {
   // 本地开发环境配置
 }
 ```
 
-# 2. 浏览器中的「同源」（Origin）
+# 浏览器中的「同源」（Origin）
 
 **源**是浏览器用来识别一个网页身份的基本单位，由以下三部分**严格组合**而成：
 
@@ -256,7 +267,7 @@ if (location.hostname === 'localhost') {
 
 只要这三部分**完全相同**，就属于同一个源。
 
-#### 举例说明：
+#### ⁠0.0.1 ⁠举例说明：
 
 | URL | 协议 | 域名 | 端口 | 源是否相同？ |
 |-----|------|------|------|-------------|
@@ -274,7 +285,7 @@ if (location.hostname === 'localhost') {
 - 路径（`/page`）、查询参数（`?id=1`）、锚点（`#section`）**都不影响源**。
 - `www.example.com` 和 `example.com` 被视为**不同源**（除非做了特殊配置）。
 
-### 2. 什么是「同源」（Same-Origin）？
+### ⁠0.1 ⁠什么是「同源」（Same-Origin）？
 
 当两个页面的**协议 + 域名 + 端口完全一致**时，就称为**同源**。
 
@@ -284,7 +295,7 @@ if (location.hostname === 'localhost') {
 - 发送 AJAX / Fetch 请求（默认允许）
 - 读写对方的 Cookie（在符合路径和域名规则的前提下）
 
-### 3. 什么是「同源策略」（Same-Origin Policy）？
+### ⁠0.2 ⁠什么是「同源策略」（Same-Origin Policy）？
 
 这是浏览器最核心的安全机制之一。
 
@@ -302,7 +313,7 @@ if (location.hostname === 'localhost') {
 
 **目的**：防止恶意网站通过脚本窃取其他网站的用户数据（比如银行页面的 Cookie、表单内容等）。
 
-### 4. 实际例子
+### ⁠0.3 ⁠实际例子
 
 假设当前页面是：`https://www.example.com`
 
@@ -318,7 +329,7 @@ fetch('https://api.example.com/data');          // 会被 CORS 策略拦截（�
 document.querySelector('iframe').contentWindow.document; // 跨源 iframe 无法访问
 ```
 
-### 5. 如何突破同源限制？（常见合法方式）
+### ⁠0.4 ⁠如何突破同源限制？（常见合法方式）
 
 虽然有同源策略，但现代 Web 有标准的跨源通信方式：
 
@@ -349,7 +360,7 @@ document.querySelector('iframe').contentWindow.document; // 跨源 iframe 无法
 
 
 
-# 3. 给 DOM 元素绑定事件回调函数
+# 给 DOM 元素绑定事件回调函数
 
 ```text
 DOM 元素  ───── 监听 ─────>  事件
@@ -367,7 +378,7 @@ DOM 元素  ───── 监听 ─────>  事件
 
 
 
-## 核心 API：`addEventListener`
+## ⁠1 ⁠核心 API：`addEventListener`
 
 语法：
 
@@ -381,7 +392,7 @@ element.addEventListener(事件类型, 回调函数, 可选配置);
   - 布尔值：`true` 表示在捕获阶段触发，`false`（默认）表示在冒泡阶段触发
   - 或对象：`{ capture: false, once: false, passive: false }`
 
-### 2. 绑定过程本质
+### ⁠1.1 ⁠绑定过程本质
 
 1. 你拿到一个 DOM 元素（通过 `getElementById`、`querySelector` 等）
 2. 调用它的 `addEventListener` 方法
@@ -393,7 +404,7 @@ element.addEventListener(事件类型, 回调函数, 可选配置);
 - 只有事件真实触发时才会执行
 - 同一个元素、同一个事件可以绑定多个回调（都会执行）
 
-### 3. 回调函数被调用时会发生什么
+### ⁠1.2 ⁠回调函数被调用时会发生什么
 
 浏览器调用你的回调时，大致是这样：
 
@@ -408,7 +419,7 @@ element.addEventListener(事件类型, 回调函数, 可选配置);
 - `event.preventDefault()`：阻止默认行为
 - `event.stopPropagation()`：阻止事件继续传播
 
-### 4. 事件传播的两个阶段（了解即可）
+### ⁠1.3 ⁠事件传播的两个阶段（了解即可）
 
 事件触发后会经历：
 
@@ -418,7 +429,7 @@ element.addEventListener(事件类型, 回调函数, 可选配置);
 
 默认情况下，`addEventListener` 监听的是**冒泡阶段**。
 
-### 5. 如何取消绑定
+### ⁠1.4 ⁠如何取消绑定
 
 ```js
 element.removeEventListener(事件类型, 同一个回调函数引用);
@@ -426,7 +437,7 @@ element.removeEventListener(事件类型, 同一个回调函数引用);
 
 注意：必须传入**同一个函数引用**才能移除，匿名函数通常无法移除。
 
-### 6. 现代推荐写法 vs 旧写法
+### ⁠1.5 ⁠现代推荐写法 vs 旧写法
 
 | 写法 | 示例 | 说明 |
 |------|------|------|
@@ -437,10 +448,10 @@ element.removeEventListener(事件类型, 同一个回调函数引用);
 好的，下面把之前列出的**常用事件**都配上简洁、可直接理解的示例代码。
 
 ---
-## 常用事件
-### 1. 文档 / 窗口相关事件
+## ⁠2 ⁠常用事件
+### ⁠2.1 ⁠文档 / 窗口相关事件
 
-#### `DOMContentLoaded`（DOM 加载完成）
+#### ⁠2.1.1 ⁠`DOMContentLoaded`（DOM 加载完成）
 ```js
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM 已准备好，可以安全操作元素了');
@@ -449,14 +460,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-#### `load`（页面所有资源加载完成）
+#### ⁠2.1.2 ⁠`load`（页面所有资源加载完成）
 ```js
 window.addEventListener('load', () => {
   console.log('图片、CSS、JS 全部加载完成');
 });
 ```
 
-#### `beforeunload`（即将离开页面）
+#### ⁠2.1.3 ⁠`beforeunload`（即将离开页面）
 ```js
 window.addEventListener('beforeunload', (event) => {
   // 现代浏览器只会显示通用提示，不能自定义文案
@@ -465,14 +476,14 @@ window.addEventListener('beforeunload', (event) => {
 });
 ```
 
-#### `resize`（窗口大小改变）
+#### ⁠2.1.4 ⁠`resize`（窗口大小改变）
 ```js
 window.addEventListener('resize', () => {
   console.log('当前窗口宽度：', window.innerWidth);
 });
 ```
 
-#### `scroll`（页面滚动）
+#### ⁠2.1.5 ⁠`scroll`（页面滚动）
 ```js
 window.addEventListener('scroll', () => {
   console.log('滚动距离：', window.scrollY);
@@ -481,9 +492,9 @@ window.addEventListener('scroll', () => {
 
 ---
 
-### 2. 鼠标事件
+### ⁠2.2 ⁠鼠标事件
 
-#### `click`（单击）
+#### ⁠2.2.1 ⁠`click`（单击）
 ```js
 const btn = document.getElementById('myBtn');
 btn.addEventListener('click', (event) => {
@@ -491,14 +502,14 @@ btn.addEventListener('click', (event) => {
 });
 ```
 
-#### `dblclick`（双击）
+#### ⁠2.2.2 ⁠`dblclick`（双击）
 ```js
 btn.addEventListener('dblclick', () => {
   console.log('按钮被双击了');
 });
 ```
 
-#### `mousedown` / `mouseup`（按下 / 松开）
+#### ⁠2.2.3 ⁠`mousedown` / `mouseup`（按下 / 松开）
 ```js
 btn.addEventListener('mousedown', () => {
   console.log('鼠标按下');
@@ -508,14 +519,14 @@ btn.addEventListener('mouseup', () => {
 });
 ```
 
-#### `mousemove`（鼠标移动）
+#### ⁠2.2.4 ⁠`mousemove`（鼠标移动）
 ```js
 document.addEventListener('mousemove', (event) => {
   console.log(`鼠标位置：x=${event.clientX}, y=${event.clientY}`);
 });
 ```
 
-#### `mouseenter` / `mouseleave`（进入 / 离开，不冒泡）
+#### ⁠2.2.5 ⁠`mouseenter` / `mouseleave`（进入 / 离开，不冒泡）
 ```js
 const box = document.getElementById('box');
 box.addEventListener('mouseenter', () => {
@@ -526,7 +537,7 @@ box.addEventListener('mouseleave', () => {
 });
 ```
 
-#### `contextmenu`（右键菜单）
+#### ⁠2.2.6 ⁠`contextmenu`（右键菜单）
 ```js
 box.addEventListener('contextmenu', (event) => {
   event.preventDefault(); // 阻止浏览器默认右键菜单
@@ -536,9 +547,9 @@ box.addEventListener('contextmenu', (event) => {
 
 ---
 
-### 3. 键盘事件
+### ⁠2.3 ⁠键盘事件
 
-#### `keydown`（按键按下）
+#### ⁠2.3.1 ⁠`keydown`（按键按下）
 ```js
 document.addEventListener('keydown', (event) => {
   console.log('按下了键：', event.key); // 如 'Enter'、'a'、'Escape'
@@ -553,7 +564,7 @@ document.addEventListener('keydown', (event) => {
 });
 ```
 
-#### `keyup`（按键松开）
+#### ⁠2.3.2 ⁠`keyup`（按键松开）
 ```js
 document.addEventListener('keyup', (event) => {
   console.log('松开了键：', event.key);
@@ -562,9 +573,9 @@ document.addEventListener('keyup', (event) => {
 
 ---
 
-### 4. 表单相关事件（最常用）
+### ⁠2.4 ⁠表单相关事件（最常用）
 
-#### `submit`（表单提交）
+#### ⁠2.4.1 ⁠`submit`（表单提交）
 ```js
 const form = document.getElementById('login-form');
 form.addEventListener('submit', (event) => {
@@ -576,7 +587,7 @@ form.addEventListener('submit', (event) => {
 });
 ```
 
-#### `input`（输入内容实时变化）
+#### ⁠2.4.2 ⁠`input`（输入内容实时变化）
 ```js
 const input = document.getElementById('username');
 input.addEventListener('input', (event) => {
@@ -584,7 +595,7 @@ input.addEventListener('input', (event) => {
 });
 ```
 
-#### `change`（值改变且失去焦点 / 选择改变）
+#### ⁠2.4.3 ⁠`change`（值改变且失去焦点 / 选择改变）
 ```js
 const select = document.getElementById('city');
 select.addEventListener('change', (event) => {
@@ -597,7 +608,7 @@ checkbox.addEventListener('change', (event) => {
 });
 ```
 
-#### `focus` / `blur`（获得 / 失去焦点）
+#### ⁠2.4.4 ⁠`focus` / `blur`（获得 / 失去焦点）
 ```js
 input.addEventListener('focus', () => {
   console.log('输入框获得焦点');
@@ -609,7 +620,7 @@ input.addEventListener('blur', () => {
 });
 ```
 
-#### `reset`（表单重置）
+#### ⁠2.4.5 ⁠`reset`（表单重置）
 ```js
 form.addEventListener('reset', () => {
   console.log('表单被重置了');
@@ -618,9 +629,9 @@ form.addEventListener('reset', () => {
 
 ---
 
-### 5. 其他常用事件
+### ⁠2.5 ⁠其他常用事件
 
-#### `error`（资源加载失败）
+#### ⁠2.5.1 ⁠`error`（资源加载失败）
 ```js
 const img = document.getElementById('avatar');
 img.addEventListener('error', () => {
@@ -628,21 +639,21 @@ img.addEventListener('error', () => {
 });
 ```
 
-#### `transitionend`（CSS 过渡结束）
+#### ⁠2.5.2 ⁠`transitionend`（CSS 过渡结束）
 ```js
 box.addEventListener('transitionend', () => {
   console.log('过渡动画结束了');
 });
 ```
 
-#### `animationend`（CSS 动画结束）
+#### ⁠2.5.3 ⁠`animationend`（CSS 动画结束）
 ```js
 box.addEventListener('animationend', () => {
   console.log('动画播放完毕');
 });
 ```
 
-#### 触摸事件（移动端）
+#### ⁠2.5.4 ⁠触摸事件（移动端）
 ```js
 box.addEventListener('touchstart', (event) => {
   console.log('手指按下', event.touches[0].clientX);
@@ -657,7 +668,7 @@ box.addEventListener('touchend', () => {
 
 
 
-### 6. 实际开发中的建议
+### ⁠2.6 ⁠实际开发中的建议
 
 1. **优先使用 `addEventListener`**，不要用 `onclick =` 或 HTML 属性。
 2. **`DOMContentLoaded` 是初始化页面逻辑的最佳时机**（你代码的做法是正确的）。
@@ -673,36 +684,36 @@ box.addEventListener('touchend', () => {
 
 ---
 
-## 一、获取元素（查询 DOM）
+## ⁠1 ⁠获取元素（查询 DOM）
 
-### 1. 通过 ID 获取（单个元素）
+### ⁠1.1 ⁠通过 ID 获取（单个元素）
 ```javascript
 const el = document.getElementById('header');
 // 返回单个 Element 或 null
 // 注意：参数不加 #，且 id 在页面中应唯一
 ```
 
-### 2. 通过类名获取（元素集合）
+### ⁠1.2 ⁠通过类名获取（元素集合）
 ```javascript
 const items = document.getElementsByClassName('item');
 // 返回 HTMLCollection（实时集合，动态更新）
 // 即使只有一个元素，也是集合，需用 items[0] 访问
 ```
 
-### 3. 通过标签名获取
+### ⁠1.3 ⁠通过标签名获取
 ```javascript
 const divs = document.getElementsByTagName('div');
 const inputs = form.getElementsByTagName('input');
 // 同样返回 HTMLCollection
 ```
 
-### 4. 通过 name 属性获取（常用于表单）
+### ⁠1.4 ⁠通过 name 属性获取（常用于表单）
 ```javascript
 const radios = document.getElementsByName('gender');
 // 返回 NodeList
 ```
 
-### 5. CSS 选择器方式（最灵活，现代首选）
+### ⁠1.5 ⁠CSS 选择器方式（最灵活，现代首选）
 ```javascript
 // 获取第一个匹配元素
 const first = document.querySelector('.list .item');
@@ -718,15 +729,15 @@ const all = document.querySelectorAll('.item');
 
 ---
 
-## 二、创建与添加元素
+## ⁠2 ⁠创建与添加元素
 
-### 1. 创建元素
+### ⁠2.1 ⁠创建元素
 ```javascript
 const div = document.createElement('div');
 const text = document.createTextNode('Hello');
 ```
 
-### 2. 添加到 DOM
+### ⁠2.2 ⁠添加到 DOM
 ```javascript
 const parent = document.getElementById('container');
 
@@ -744,7 +755,7 @@ referenceChild.after(div);         // 在某元素之后
 referenceChild.replaceWith(div);   // 替换某元素
 ```
 
-### 3. 克隆元素
+### ⁠2.3 ⁠克隆元素
 ```javascript
 const clone = original.cloneNode(true);  
 // true = 深克隆（含子元素）；false = 浅克隆（仅自身）
@@ -752,27 +763,27 @@ const clone = original.cloneNode(true);
 
 ---
 
-## 三、修改元素内容
+## ⁠3 ⁠修改元素内容
 
-### 1. `textContent` — 纯文本（推荐）
+### ⁠3.1 ⁠`textContent` — 纯文本（推荐）
 ```javascript
 el.textContent = '<script>alert(1)</script>';
 // 输出原样文本，不会执行脚本（XSS 安全）
 ```
 
-### 2. `innerText` — 渲染后的文本
+### ⁠3.2 ⁠`innerText` — 渲染后的文本
 ```javascript
 el.innerText = 'Hello';
 // 会触发重排（reflow），性能略差；受 CSS 影响（如 display:none 的内容获取不到）
 ```
 
-### 3. `innerHTML` — HTML 字符串（慎用）
+### ⁠3.3 ⁠`innerHTML` — HTML 字符串（慎用）
 ```javascript
 el.innerHTML = '<strong>加粗</strong>';
 // 会解析 HTML；如果内容来自用户输入，极易引发 XSS 攻击
 ```
 
-### 4. `outerHTML` — 包含自身标签
+### ⁠3.4 ⁠`outerHTML` — 包含自身标签
 ```javascript
 console.log(el.outerHTML);  
 // 输出：<div id="x">内容</div>
@@ -782,9 +793,9 @@ console.log(el.outerHTML);
 
 ---
 
-## 四、修改元素属性
+## ⁠4 ⁠修改元素属性
 
-### 1. 标准属性
+### ⁠4.1 ⁠标准属性
 ```javascript
 const img = document.getElementById('pic');
 
@@ -794,7 +805,7 @@ img.id = 'new-id';
 img.className = 'active';        // class 是保留字，用 className
 ```
 
-### 2. 通用方法（适合自定义属性或动态属性名）
+### ⁠4.2 ⁠通用方法（适合自定义属性或动态属性名）
 ```javascript
 img.setAttribute('src', 'photo.jpg');
 img.getAttribute('src');         // 'photo.jpg'
@@ -802,7 +813,7 @@ img.hasAttribute('data-id');     // true / false
 img.removeAttribute('title');
 ```
 
-### 3. 自定义数据属性（data-*）
+### ⁠4.3 ⁠自定义数据属性（data-*）
 HTML5 推荐用 `data-` 前缀存放自定义数据：
 ```html
 <div id="user" data-user-id="123" data-role="admin">...</div>
@@ -820,9 +831,9 @@ user.dataset.status = 'online';
 
 ---
 
-## 五、修改元素样式
+## ⁠5 ⁠修改元素样式
 
-### 1. 行内样式（style 属性）
+### ⁠5.1 ⁠行内样式（style 属性）
 ```javascript
 const box = document.getElementById('box');
 
@@ -831,7 +842,7 @@ box.style.backgroundColor = '#f00';  // CSS 属性转驼峰命名
 box.style.cssText = 'width:200px; height:100px; color:red;';  // 批量设置
 ```
 
-### 2. 操作 CSS 类（现代推荐方式）
+### ⁠5.2 ⁠操作 CSS 类（现代推荐方式）
 ```javascript
 const el = document.getElementById('menu');
 
@@ -858,7 +869,7 @@ el.classList.replace('old-class', 'new-class');
 
 ---
 
-## 六、删除元素
+## ⁠6 ⁠删除元素
 
 ```javascript
 const child = document.getElementById('old');
@@ -872,7 +883,7 @@ child.remove();
 
 ---
 
-## 七、DOM 遍历（导航关系）
+## ⁠7 ⁠遍历（导航关系）
 
 通过元素间的父子、兄弟关系导航：
 
@@ -898,7 +909,7 @@ el.previousElementSibling; // 上一个兄弟元素
 
 ---
 
-## 八、元素尺寸与位置（几何属性）
+## ⁠8 ⁠元素尺寸与位置（几何属性）
 
 ```javascript
 const box = document.getElementById('box');
@@ -927,9 +938,9 @@ rect.height;   // 元素总高
 
 ---
 
-## 九、DOM 事件操作
+## ⁠9 ⁠事件操作
 
-### 1. 添加事件监听（现代标准方式）
+### ⁠9.1 ⁠添加事件监听（现代标准方式）
 ```javascript
 const btn = document.getElementById('btn');
 
@@ -941,7 +952,7 @@ btn.addEventListener('click', function(event) {
 });
 ```
 
-### 2. 事件委托（性能优化技巧）
+### ⁠9.2 ⁠事件委托（性能优化技巧）
 利用冒泡机制，在父元素上统一监听：
 ```javascript
 document.getElementById('list').addEventListener('click', function(e) {
@@ -951,7 +962,7 @@ document.getElementById('list').addEventListener('click', function(e) {
 });
 ```
 
-### 3. 移除事件监听
+### ⁠9.3 ⁠移除事件监听
 ```javascript
 function handler() { /* ... */ }
 
@@ -961,9 +972,9 @@ btn.removeEventListener('click', handler);  // 移除时必须引用同一函数
 
 ---
 
-## 十、现代 DOM API（进阶）
+## ⁠10 ⁠现代 DOM API（进阶）
 
-### 1. `insertAdjacentHTML` / `insertAdjacentElement`
+### ⁠10.1 ⁠`insertAdjacentHTML` / `insertAdjacentElement`
 在元素相对位置插入内容，性能优于 `innerHTML` 重新解析整个元素：
 ```javascript
 el.insertAdjacentHTML('beforebegin', '<p>前面</p>');  // 元素之前
@@ -972,20 +983,20 @@ el.insertAdjacentHTML('beforeend', '<span>内部末尾</span>');   // 内部最�
 el.insertAdjacentHTML('afterend', '<p>后面</p>');    // 元素之后
 ```
 
-### 2. `closest` — 向上查找祖先
+### ⁠10.2 ⁠`closest` — 向上查找祖先
 ```javascript
 const btn = e.target;
 const card = btn.closest('.card');  // 向上查找最近的含 .card 的祖先元素
 ```
 
-### 3. `matches` — 判断是否匹配选择器
+### ⁠10.3 ⁠`matches` — 判断是否匹配选择器
 ```javascript
 if (el.matches('.active')) {
     // 元素是否有 active 类
 }
 ```
 
-### 4. `contains` — 判断是否包含某元素
+### ⁠10.4 ⁠`contains` — 判断是否包含某元素
 ```javascript
 const parent = document.getElementById('parent');
 const child = document.getElementById('child');
@@ -994,7 +1005,7 @@ console.log(parent.contains(child));  // true / false
 
 ---
 
-## 十一、性能优化要点
+## ⁠11 ⁠性能优化要点
 
 | 优化策略 | 说明 |
 |---------|------|
@@ -1004,7 +1015,7 @@ console.log(parent.contains(child));  // true / false
 | **事件委托** | 避免给大量子元素分别绑定事件 |
 | **优先用 `classList`** | 代替直接修改 `style`，让样式归 CSS 管理 |
 
-### 文档片段示例
+### ⁠11.1 ⁠文档片段示例
 ```javascript
 const fragment = document.createDocumentFragment();
 for (let i = 0; i < 100; i++) {
@@ -1017,7 +1028,7 @@ document.getElementById('list').appendChild(fragment);  // 只触发一次重排
 
 ---
 
-## 十二、快速速查表
+## ⁠12 ⁠快速速查表
 
 | 操作 | 方法/属性 |
 |------|----------|

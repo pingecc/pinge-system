@@ -18,7 +18,7 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "一条 CSS 规则的组成",
+        "title": "CSS 规则的组成",
         "url": "/前端/02-CSS/02-CSS选择器",
         "created": 1787971861000,
         "modified": 1787971861000
@@ -108,10 +108,10 @@ export const navCategories = [
         "modified": 1788268792000
       },
       {
-        "title": "1. localStorage",
-        "url": "/前端/03-JavaScript/06-浏览器",
-        "created": 1787971861000,
-        "modified": 1787971861000
+        "title": "DOM操作",
+        "url": "/前端/03-JavaScript/06-DOM与浏览器API",
+        "created": 1788785141166.7986,
+        "modified": 1788785141166.7986
       },
       {
         "title": "IIFE",
@@ -1047,7 +1047,7 @@ export const navCategories = [
   {
     "label": "其他",
     "link": "/categories/%E5%85%B6%E4%BB%96",
-    "count": 8,
+    "count": 9,
     "articles": [
       {
         "title": "开发工具",
@@ -1084,6 +1084,12 @@ export const navCategories = [
         "url": "/编程模型/垃圾回收器",
         "created": 1788268792000,
         "modified": 1788268792000
+      },
+      {
+        "title": "函数式编程控制反转",
+        "url": "/编程模型/控制反转",
+        "created": 1788356454957.4446,
+        "modified": 1788356454957.4446
       },
       {
         "title": "声明",
@@ -1937,7 +1943,7 @@ export const allArticles = [
     "modified": 1787971861000
   },
   {
-    "title": "一条 CSS 规则的组成",
+    "title": "CSS 规则的组成",
     "url": "/前端/02-CSS/02-CSS选择器",
     "category": "前端",
     "created": 1787971861000,
@@ -2042,11 +2048,11 @@ export const allArticles = [
     "modified": 1788268792000
   },
   {
-    "title": "1. localStorage",
-    "url": "/前端/03-JavaScript/06-浏览器",
+    "title": "DOM操作",
+    "url": "/前端/03-JavaScript/06-DOM与浏览器API",
     "category": "前端",
-    "created": 1787971861000,
-    "modified": 1787971861000
+    "created": 1788785141166.7986,
+    "modified": 1788785141166.7986
   },
   {
     "title": "IIFE",
@@ -2343,6 +2349,13 @@ export const allArticles = [
     "modified": 1788268792000
   },
   {
+    "title": "函数式编程控制反转",
+    "url": "/编程模型/控制反转",
+    "category": "其他",
+    "created": 1788356454957.4446,
+    "modified": 1788356454957.4446
+  },
+  {
     "title": "声明",
     "url": "/编程模型/模块化",
     "category": "其他",
@@ -2463,8 +2476,8 @@ export const sidebarGroups = [
             "link": "/前端/03-JavaScript/05-异步"
           },
           {
-            "text": "06-浏览器",
-            "link": "/前端/03-JavaScript/06-浏览器"
+            "text": "06-DOM与浏览器API",
+            "link": "/前端/03-JavaScript/06-DOM与浏览器API"
           }
         ]
       },
@@ -3481,6 +3494,10 @@ export const sidebarGroups = [
             "link": "/编程模型/垃圾回收器"
           },
           {
+            "text": "控制反转",
+            "link": "/编程模型/控制反转"
+          },
+          {
             "text": "模块化",
             "link": "/编程模型/模块化"
           }
@@ -3577,8 +3594,8 @@ export const mdIndex = {
   "05-异步": [
     "前端/03-JavaScript/05-异步.md"
   ],
-  "06-浏览器": [
-    "前端/03-JavaScript/06-浏览器.md"
+  "06-DOM与浏览器API": [
+    "前端/03-JavaScript/06-DOM与浏览器API.md"
   ],
   "vue-route": [
     "Java/Java核心/Excalidraw/vue-route.md"
@@ -4009,6 +4026,9 @@ export const mdIndex = {
   "垃圾回收器": [
     "编程模型/垃圾回收器.md"
   ],
+  "控制反转": [
+    "编程模型/控制反转.md"
+  ],
   "模块化": [
     "编程模型/模块化.md"
   ],
@@ -4183,8 +4203,8 @@ export const imgIndex = {
   "05-异步": [
     "前端/03-JavaScript/05-异步.md"
   ],
-  "06-浏览器": [
-    "前端/03-JavaScript/06-浏览器.md"
+  "06-DOM与浏览器API": [
+    "前端/03-JavaScript/06-DOM与浏览器API.md"
   ],
   "vue-route": [
     "Java/Java核心/Excalidraw/vue-route.md"
@@ -4854,6 +4874,9 @@ export const imgIndex = {
   ],
   "垃圾回收器": [
     "编程模型/垃圾回收器.md"
+  ],
+  "控制反转": [
+    "编程模型/控制反转.md"
   ],
   "模块化": [
     "编程模型/模块化.md"
