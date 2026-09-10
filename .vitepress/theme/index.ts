@@ -2,8 +2,8 @@ import { h } from "vue"
 import type { Theme } from "vitepress"
 import DefaultTheme from "vitepress/theme"
 import Comments from "./components/Comments.vue"
-import SidebarActiveScroller from "./components/SidebarActiveScroller.vue"
-import OutlineFold from "./components/OutlineFold.vue"
+import SidebarActiveScroller from "./components/SidebarActiveScroller"
+import OutlineFold from "./components/OutlineFold"
 import "./custom.css"
 
 export default {

@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 22,
+    "count": 23,
     "articles": [
       {
         "title": "HTML基础",
@@ -21,7 +21,7 @@ export const navCategories = [
         "title": "CSS 规则的组成",
         "url": "/前端/02-CSS/02-CSS选择器",
         "created": 1787971861000,
-        "modified": 1787971861000
+        "modified": 1788871186000
       },
       {
         "title": "Excalidraw Data",
@@ -105,19 +105,25 @@ export const navCategories = [
         "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
         "url": "/前端/03-JavaScript/05-异步",
         "created": 1787971861000,
-        "modified": 1788268792000
+        "modified": 1788871186000
       },
       {
         "title": "DOM操作",
         "url": "/前端/03-JavaScript/06-DOM与浏览器API",
-        "created": 1788785141166.7986,
-        "modified": 1788785141166.7986
+        "created": 1788871186000,
+        "modified": 1788871186000
       },
       {
         "title": "IIFE",
         "url": "/前端/03-JavaScript/IIFE",
         "created": 1787971861000,
         "modified": 1787971861000
+      },
+      {
+        "title": "React介绍",
+        "url": "/前端/React/01-介绍",
+        "created": 1788874929819.8018,
+        "modified": 1788874929819.8018
       },
       {
         "title": "从 URL 到页面",
@@ -1088,8 +1094,8 @@ export const navCategories = [
       {
         "title": "函数式编程控制反转",
         "url": "/编程模型/控制反转",
-        "created": 1788356454957.4446,
-        "modified": 1788356454957.4446
+        "created": 1788871186000,
+        "modified": 1788871186000
       },
       {
         "title": "声明",
@@ -1947,7 +1953,7 @@ export const allArticles = [
     "url": "/前端/02-CSS/02-CSS选择器",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1788871186000
   },
   {
     "title": "Excalidraw Data",
@@ -2045,14 +2051,14 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/05-异步",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1788268792000
+    "modified": 1788871186000
   },
   {
     "title": "DOM操作",
     "url": "/前端/03-JavaScript/06-DOM与浏览器API",
     "category": "前端",
-    "created": 1788785141166.7986,
-    "modified": 1788785141166.7986
+    "created": 1788871186000,
+    "modified": 1788871186000
   },
   {
     "title": "IIFE",
@@ -2060,6 +2066,13 @@ export const allArticles = [
     "category": "前端",
     "created": 1787971861000,
     "modified": 1787971861000
+  },
+  {
+    "title": "React介绍",
+    "url": "/前端/React/01-介绍",
+    "category": "前端",
+    "created": 1788874929819.8018,
+    "modified": 1788874929819.8018
   },
   {
     "title": "从 URL 到页面",
@@ -2352,8 +2365,8 @@ export const allArticles = [
     "title": "函数式编程控制反转",
     "url": "/编程模型/控制反转",
     "category": "其他",
-    "created": 1788356454957.4446,
-    "modified": 1788356454957.4446
+    "created": 1788871186000,
+    "modified": 1788871186000
   },
   {
     "title": "声明",
@@ -2379,6 +2392,10 @@ export const sidebarGroups = [
         "text": "React",
         "collapsed": true,
         "items": [
+          {
+            "text": "01-介绍",
+            "link": "/前端/React/01-介绍"
+          },
           {
             "text": "01-前端基础：浏览器与HTML CSS",
             "link": "/前端/React/01-前端基础：浏览器与HTML CSS"
@@ -3527,6 +3544,9 @@ export const sidebarGroups = [
   }
 ]
 export const mdIndex = {
+  "01-介绍": [
+    "前端/React/01-介绍.md"
+  ],
   "01-前端基础：浏览器与HTML CSS": [
     "前端/React/01-前端基础：浏览器与HTML CSS.md"
   ],
@@ -4037,6 +4057,9 @@ export const mdIndex = {
   ]
 }
 export const imgIndex = {
+  "01-介绍": [
+    "前端/React/01-介绍.md"
+  ],
   "01-前端基础：浏览器与HTML CSS": [
     "前端/React/01-前端基础：浏览器与HTML CSS.md"
   ],
@@ -4141,6 +4164,15 @@ export const imgIndex = {
   ],
   "Pasted image 20260825210010": [
     "前端/zmg/Pasted image 20260825210010.png"
+  ],
+  "Pasted image 20260908213959": [
+    "前端/zmg/Pasted image 20260908213959.png"
+  ],
+  "component_note": [
+    "前端/zmg/component_note.png"
+  ],
+  "react_note": [
+    "前端/zmg/react_note.png"
   ],
   "首页": [
     "前端/首页.md",

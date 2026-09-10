@@ -81,9 +81,14 @@ function categoryOf(topDir) {
 // git 历史时间戳（创建/修改时间），失败回退文件 mtime
 function getGitTimestamps() {
   const map = new Map()
+  // core.quotepath=off：CI 环境默认会把中文路径输出成带引号的转义形式，导致路径对不上
+  const unquote = (p) =>
+    p.startsWith('"') && p.endsWith('"')
+      ? p.slice(1, -1).replace(/\\(?:x([0-9A-Fa-f]{2})|(.))/g, (_, hex, ch) => ch ?? String.fromCharCode(parseInt(hex, 16)))
+      : p
   try {
     const out = execSync(
-      'git log --format="%at %H" --name-only --diff-filter=ACMR',
+      'git -c core.quotepath=off log --format="%at %H" --name-only --diff-filter=ACMR',
       { cwd: ROOT, encoding: "utf-8", stdio: ["pipe", "pipe", "pipe"], maxBuffer: 64 * 1024 * 1024 }
     )
     let current = null
@@ -93,7 +98,7 @@ function getGitTimestamps() {
       if (m) {
         current = parseInt(m[1], 10) * 1000
       } else if (current !== null) {
-        const abs = path.join(ROOT, line)
+        const abs = path.join(ROOT, unquote(line))
         if (!map.has(abs)) {
           map.set(abs, { modified: current, created: current })
         } else {
