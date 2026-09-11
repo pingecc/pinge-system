@@ -75,9 +75,14 @@ onUnmounted(() => {
 .tagline {
   font-size: 32px;
   font-weight: bold;
-  color: var(--vp-c-text-2);
   margin: 0;
   text-align: center;
+  /* 品牌色渐变文字（品牌色见 custom.css，明暗模式自动跟随变量） */
+  background: linear-gradient(105deg, var(--vp-c-text-1) 30%, var(--vp-c-brand-1) 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 640px) {

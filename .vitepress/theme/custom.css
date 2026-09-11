@@ -1,3 +1,53 @@
+/* 站点品牌色（覆盖 VitePress 默认靛蓝），明暗模式各一套 */
+:root {
+  --vp-c-brand-1: #047857;
+  --vp-c-brand-2: #059669;
+  --vp-c-brand-3: #10b981;
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+}
+
+html.dark {
+  --vp-c-brand-1: #34d399;
+  --vp-c-brand-2: #2bb984;
+  --vp-c-brand-3: #10b981;
+  --vp-c-brand-soft: rgba(52, 211, 153, 0.16);
+}
+
+/* 分类徽章配色（明暗模式各一套），供首页/分类页列表使用 */
+:root {
+  --cat-front-bg: rgba(59, 130, 246, 0.12);
+  --cat-front-text: #2563eb;
+  --cat-java-bg: rgba(236, 72, 153, 0.12);
+  --cat-java-text: #db2777;
+  --cat-python-bg: rgba(34, 197, 94, 0.12);
+  --cat-python-text: #059669;
+  --cat-arch-bg: rgba(139, 92, 246, 0.12);
+  --cat-arch-text: #7c3aed;
+  --cat-english-bg: rgba(233, 84, 32, 0.12);
+  --cat-english-text: #c2410c;
+  --cat-ai-bg: rgba(14, 165, 233, 0.14);
+  --cat-ai-text: #0284c7;
+  --cat-other-bg: rgba(100, 116, 139, 0.12);
+  --cat-other-text: #64748b;
+}
+
+html.dark {
+  --cat-front-bg: rgba(96, 165, 250, 0.16);
+  --cat-front-text: #93c5fd;
+  --cat-java-bg: rgba(244, 114, 182, 0.16);
+  --cat-java-text: #f9a8d4;
+  --cat-python-bg: rgba(52, 211, 153, 0.16);
+  --cat-python-text: #6ee7b7;
+  --cat-arch-bg: rgba(167, 139, 250, 0.16);
+  --cat-arch-text: #c4b5fd;
+  --cat-english-bg: rgba(251, 146, 60, 0.16);
+  --cat-english-text: #fdba74;
+  --cat-ai-bg: rgba(56, 189, 248, 0.16);
+  --cat-ai-text: #7dd3fc;
+  --cat-other-bg: rgba(148, 163, 184, 0.16);
+  --cat-other-text: #cbd5e1;
+}
+
 /* 首页整屏布局：仅桌面端把内容固定在视口内、列表内部滚动（对标目标站点） */
 @media (min-width: 769px) {
   html:has(.is-home),
@@ -35,6 +85,30 @@ html:has(.is-home) .VPHome {
 /* 链接去掉下划线（与目标站点一致） */
 a {
   text-decoration: none !important;
+}
+
+/* 正文内容中的链接恢复下划线保证辨识度；界面元素（导航/侧边栏/首页列表）保持无下划线。
+   注意排除首页（.VPContent.is-home 的内容也带 .vp-doc 类） */
+.VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a {
+  text-decoration: underline !important;
+  text-decoration-color: var(--vp-c-divider);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.25s;
+}
+
+.VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a:hover {
+  text-decoration-color: var(--vp-c-brand-1);
+}
+
+/* 正文图片：圆角 + 细边框；medium-zoom 放大态除外 */
+.vp-doc img:not(.medium-zoom-image--opened) {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+/* 暗色模式柔化白底截图，避免亮块刺眼 */
+html.dark .vp-doc img:not(.medium-zoom-image--opened) {
+  filter: brightness(0.92);
 }
 
 /* 评论 */

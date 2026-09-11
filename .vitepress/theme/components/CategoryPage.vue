@@ -29,7 +29,7 @@ const categoryArticles = computed(() => {
 function formatDate(ts: number): string {
   const d = new Date(ts)
   const pad = (n: number) => String(n).padStart(2, "0")
-  return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+  return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())}`
 }
 
 function toggleSort(field: "created" | "modified") {
@@ -62,7 +62,7 @@ function getSortIcon(field: "created" | "modified"): string {
 
     <div v-if="categoryArticles.length > 0" class="article-list">
       <div class="article-header">
-        <span class="header-title">文件名</span>
+        <span class="header-title">文章</span>
         <span class="header-created sortable" @click="toggleSort('created')">
           发布时间 <span class="sort-icon">{{ getSortIcon("created") }}</span>
         </span>
@@ -132,7 +132,7 @@ function getSortIcon(field: "created" | "modified"): string {
 
 .header-created,
 .header-modified {
-  width: 145px;
+  width: 90px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -189,7 +189,7 @@ function getSortIcon(field: "created" | "modified"): string {
 
 .article-created,
 .article-modified {
-  width: 145px;
+  width: 90px;
   font-size: 12px;
   color: var(--vp-c-text-3);
   text-align: right;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, onMounted, onBeforeUnmount } from "vue"
 import { withBase } from "vitepress"
 import { allArticles } from "../../generated/site-data.mjs"
 import { articleFileName } from "../utils"
@@ -24,12 +24,43 @@ const recentlyModified = computed(() =>
 function formatDate(ts: number): string {
   const d = new Date(ts)
   const pad = (n: number) => String(n).padStart(2, "0")
-  return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+  return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())}`
 }
 
 function getCategoryClass(category: string): string {
   return CATEGORY_CLASS[category] || "cat-other"
 }
+
+let unbindFadeHint: (() => void) | undefined
+
+// 列表可滚动且未滚到底时，给卡片加底部渐隐提示；纯 CSS 无法感知滚动位置
+function updateFadeHint() {
+  document.querySelectorAll<HTMLElement>(".recent-articles .article-list").forEach((el) => {
+    const section = el.closest(".articles-section")
+    if (!section) return
+    const overflowed = el.scrollHeight > el.clientHeight + 4
+    const atEnd = el.scrollTop + el.clientHeight >= el.scrollHeight - 4
+    section.classList.toggle("list-fade", overflowed && !atEnd)
+  })
+}
+
+function bindFadeHint() {
+  const lists = document.querySelectorAll<HTMLElement>(".recent-articles .article-list")
+  lists.forEach((el) => el.addEventListener("scroll", updateFadeHint, { passive: true }))
+  const ro = new ResizeObserver(updateFadeHint)
+  lists.forEach((el) => ro.observe(el))
+  updateFadeHint()
+  return () => {
+    lists.forEach((el) => el.removeEventListener("scroll", updateFadeHint))
+    ro.disconnect()
+  }
+}
+
+onMounted(() => {
+  unbindFadeHint = bindFadeHint()
+})
+
+onBeforeUnmount(() => unbindFadeHint?.())
 </script>
 
 <template>
@@ -93,6 +124,7 @@ function getCategoryClass(category: string): string {
 }
 
 .articles-section {
+  position: relative;
   display: flex;
   flex: 1 1 0;
   flex-direction: column;
@@ -103,6 +135,27 @@ function getCategoryClass(category: string): string {
   max-height: var(--home-recent-articles-max-height, none);
   min-height: 0;
   overflow: hidden;
+}
+
+/* 列表内容可滚动且未滚到底时，底部渐隐提示还有更多（list-fade 由脚本维护） */
+.articles-section::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 40px;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(to bottom, transparent, var(--vp-c-bg-soft));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 769px) {
+  .articles-section.list-fade::after {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -149,7 +202,7 @@ function getCategoryClass(category: string): string {
 }
 
 .header-date {
-  width: 145px;
+  width: 90px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -262,7 +315,7 @@ function getCategoryClass(category: string): string {
 }
 
 .article-date {
-  width: 145px;
+  width: 90px;
   font-size: 12px;
   color: var(--vp-c-text-3);
   text-align: right;
@@ -284,39 +337,39 @@ function getCategoryClass(category: string): string {
   }
 }
 
-/* 分类配色 */
+/* 分类配色：变量定义在 custom.css，明暗模式各一套 */
 .cat-front {
-  background: rgba(59, 130, 246, 0.15);
-  color: rgb(59, 130, 246);
+  background: var(--cat-front-bg);
+  color: var(--cat-front-text);
 }
 
 .cat-java {
-  background: rgba(236, 72, 153, 0.15);
-  color: rgb(236, 72, 153);
+  background: var(--cat-java-bg);
+  color: var(--cat-java-text);
 }
 
 .cat-python {
-  background: rgba(34, 197, 94, 0.15);
-  color: rgb(34, 197, 94);
+  background: var(--cat-python-bg);
+  color: var(--cat-python-text);
 }
 
 .cat-arch {
-  background: rgba(139, 92, 246, 0.15);
-  color: rgb(139, 92, 246);
+  background: var(--cat-arch-bg);
+  color: var(--cat-arch-text);
 }
 
 .cat-english {
-  background: rgba(233, 84, 32, 0.15);
-  color: rgb(233, 84, 32);
+  background: var(--cat-english-bg);
+  color: var(--cat-english-text);
 }
 
 .cat-ai {
-  background: rgba(14, 165, 233, 0.15);
-  color: rgb(14, 165, 233);
+  background: var(--cat-ai-bg);
+  color: var(--cat-ai-text);
 }
 
 .cat-other {
-  background: rgba(100, 116, 139, 0.15);
-  color: rgb(148, 163, 184);
+  background: var(--cat-other-bg);
+  color: var(--cat-other-text);
 }
 </style>
