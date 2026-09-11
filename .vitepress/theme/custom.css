@@ -107,6 +107,13 @@ a {
   padding-right: 20px;
 }
 
+/* 图片放大层（medium-zoom）：它自身不设置 z-index，放大图和遮罩会被
+   fixed 定位的左侧边栏（桌面 z-index 25 / 移动端 60）盖住，需整体抬高 */
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 100;
+}
+
 /* 文章元信息（阅读时长 / 字数 / 创建日期），位于标题上方 */
 .article-meta {
   padding-top: 4px;
