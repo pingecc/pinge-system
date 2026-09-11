@@ -34,9 +34,15 @@ npm run build    # 生成站点到 .vitepress/dist
 
 - 首页：分类胶囊导航 + 最新发布 / 最近修改
 - 分类落地页：`/categories/<分类>`（小主题自动并入"其他"）
-- 左侧分类目录树侧边栏、右侧大纲、本地全文搜索（Ctrl+K）
+- 左侧分类目录树侧边栏、右侧大纲
+- 全文搜索：开发模式（`npm run dev`）用 VitePress 内置本地搜索；线上为
+  Pagefind（构建时索引、中文效果好、按需加载，快捷键 Ctrl/⌘+K 或 `/`）
+- SEO：sitemap.xml + robots.txt 自动生成；每篇笔记自动提取摘要写入
+  `<meta description>` 与 OG/Twitter 卡片标签（分享到微信/社交有摘要卡片）
 - Obsidian 双链 `[[笔记]]`、图片嵌入 `![[图片]]` 渲染时自动转换
-- 每篇笔记显示创建 / 修改时间（取 git 历史）
+- 每篇笔记标题上方显示阅读时长 / 字数 / 创建日期（时间取 git 历史）
+- ` ```mermaid ` 代码块渲染为图表，明暗主题切换时自动重绘
+- 正文图片点击放大（medium-zoom）
 - 深色 / 浅色主题跟随系统
 
 ## 目录结构
@@ -46,11 +52,11 @@ npm run build    # 生成站点到 .vitepress/dist
 ├── index.md               # 首页（标语 + 分类胶囊 + 最近文章）
 ├── categories/            # 分类落地页（动态路由）
 ├── .vitepress/
-│   ├── config.mts         # 站点配置
-│   ├── generated/         # 自动生成的分类/索引数据（勿手改）
+│   ├── config.mts         # 站点配置（sitemap / SEO / mermaid / 搜索）
+│   ├── generated/         # 自动生成的分类/索引/摘要数据（勿手改）
 │   ├── plugins/           # Obsidian 双链 & HTML 安全插件
 │   └── theme/             # 自定义主题组件与样式
-├── scripts/gen-site-data.mjs  # 扫描笔记，生成分类/侧边栏/时间戳数据
+├── scripts/gen-site-data.mjs  # 扫描笔记，生成分类/侧边栏/时间戳/摘要/字数数据
 ├── Java/ 前端/ 系统架构/ …     # 笔记主题目录（11 个）
 └── publish.sh             # 一键发布
 ```

@@ -7,9 +7,16 @@
     "dev": "vitepress dev --host 0.0.0.0 --port 15173",
     "prebuild": "node scripts/gen-site-data.mjs",
     "build": "vitepress build",
+    "postbuild": "pagefind --site .vitepress/dist",
     "preview": "vitepress preview --host 0.0.0.0"
   },
   "devDependencies": {
+    "pagefind": "^1.5.2",
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@pagefind/default-ui": "^1.5.2",
+    "medium-zoom": "^1.1.0",
+    "mermaid": "^11.17.2"
   }
 }

@@ -122,8 +122,8 @@ export const navCategories = [
       {
         "title": "React介绍",
         "url": "/前端/React/01-介绍",
-        "created": 1788874929819.8018,
-        "modified": 1788874929819.8018
+        "created": 1789042733000,
+        "modified": 1789042733000
       },
       {
         "title": "从 URL 到页面",
@@ -1148,1239 +1148,1593 @@ export const allArticles = [
     "url": "/AI全栈应用/AI 基础概念",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 1703,
+    "minutes": 5
   },
   {
     "title": "Agent应用核心分工",
     "url": "/AI全栈应用/Agent/00-总结",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 665,
+    "minutes": 2
   },
   {
     "title": "工具调用",
     "url": "/AI全栈应用/Agent/01-认识Agent",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 2930,
+    "minutes": 8
   },
   {
     "title": "1.  Agent 如何调用大模型：理解API的上下文结构",
     "url": "/AI全栈应用/Agent/02-上下文工程",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 5920,
+    "minutes": 15
   },
   {
     "title": "最小Agent实现",
     "url": "/AI全栈应用/Agent/核心代码示例",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 5,
+    "minutes": 1
   },
   {
     "title": "01-",
     "url": "/AI全栈应用/Vibe Coding/01-",
     "category": "AI全栈应用",
     "created": 1786544159000,
-    "modified": 1786544159000
+    "modified": 1786544159000,
+    "words": 34,
+    "minutes": 1
   },
   {
     "title": "工作空间",
     "url": "/AI全栈应用/WorkBuddy",
     "category": "AI全栈应用",
     "created": 1787150857000,
-    "modified": 1787150857000
+    "modified": 1787150857000,
+    "words": 1210,
+    "minutes": 4
   },
   {
     "title": "连接业务系统",
     "url": "/AI全栈应用/workbuddy分享",
     "category": "AI全栈应用",
     "created": 1787578947000,
-    "modified": 1787578947000
+    "modified": 1787578947000,
+    "words": 330,
+    "minutes": 1
   },
   {
     "title": "exercise",
     "url": "/English/单词库/01-",
     "category": "English",
     "created": 1787578947000,
-    "modified": 1787578947000
+    "modified": 1787578947000,
+    "words": 1,
+    "minutes": 1
   },
   {
     "title": "动词作句首",
     "url": "/English/句式和语法/动词作句首",
     "category": "English",
     "created": 1787578947000,
-    "modified": 1787578947000
+    "modified": 1787578947000,
+    "words": 319,
+    "minutes": 1
   },
   {
     "title": "欢迎",
     "url": "/English/欢迎",
     "category": "English",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 49,
+    "minutes": 1
   },
   {
     "title": "发挥下意识的关键点",
     "url": "/English/零基础系统学习英语/01-英语学习下意识的重要性",
     "category": "English",
     "created": 1786173733000,
-    "modified": 1787578947000
+    "modified": 1787578947000,
+    "words": 520,
+    "minutes": 2
   },
   {
     "title": "02-单词联想",
     "url": "/English/零基础系统学习英语/02-单词联想",
     "category": "English",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 117,
+    "minutes": 1
   },
   {
     "title": "03-学英语的10个习惯",
     "url": "/English/零基础系统学习英语/03-学英语的10个习惯",
     "category": "English",
     "created": 1787578947000,
-    "modified": 1787578947000
+    "modified": 1787578947000,
+    "words": 174,
+    "minutes": 1
   },
   {
     "title": "安全性",
     "url": "/Java/01-Java核心编程/00-设计哲学",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 687,
+    "minutes": 2
   },
   {
     "title": "01-开发和运行环境",
     "url": "/Java/01-Java核心编程/01-开发和运行环境",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 15,
+    "minutes": 1
   },
   {
     "title": "泛型",
     "url": "/Java/01-Java核心编程/02-语言核心",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 6503,
+    "minutes": 17
   },
   {
     "title": "进程和线程",
     "url": "/Java/01-Java核心编程/03-并发编程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2923,
+    "minutes": 8
   },
   {
     "title": "函数接口发展历程",
     "url": "/Java/01-Java核心编程/04-函数式编程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1372,
+    "minutes": 4
   },
   {
     "title": "对象序列化",
     "url": "/Java/01-Java核心编程/05-IO编程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1828,
+    "minutes": 5
   },
   {
     "title": "关于类加载",
     "url": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2250,
+    "minutes": 6
   },
   {
     "title": "02-Class对象应用",
     "url": "/Java/01-Java核心编程/JVM/02-Class对象应用",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "Chapter01：为什么需要Annotation",
     "url": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2409,
+    "minutes": 7
   },
   {
     "title": "callback如何交给框架？",
     "url": "/Java/01-Java核心编程/Java源码设计/Java-CallBack设计",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 637,
+    "minutes": 2
   },
   {
     "title": "静态代理",
     "url": "/Java/01-Java核心编程/Java源码设计/Java-动态代理设计",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 12,
+    "minutes": 1
   },
   {
     "title": "构造方法中传递 this 设计理解",
     "url": "/Java/01-Java核心编程/Java源码设计/构造方法中传递 this 设计理解",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 92,
+    "minutes": 1
   },
   {
     "title": "字节码操作-ASM",
     "url": "/Java/01-Java核心编程/Java高级技术/字节码操作-ASM",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 132,
+    "minutes": 1
   },
   {
     "title": "MAT",
     "url": "/Java/01-Java核心编程/MAT",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 13468,
+    "minutes": 34
   },
   {
     "title": "Tomcat",
     "url": "/Java/01-Java核心编程/Tomcat",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 333,
+    "minutes": 1
   },
   {
     "title": "嵌套类型",
     "url": "/Java/01-Java核心编程/面向对象",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 4,
+    "minutes": 1
   },
   {
     "title": "Chapter01：Spring IOC 容器",
     "url": "/Java/02-Spring生态/01-Spring/01-Spring",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 391,
+    "minutes": 1
   },
   {
     "title": "IOC 容器",
     "url": "/Java/02-Spring生态/01-Spring/01-Spring核心",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1118,
+    "minutes": 3
   },
   {
     "title": "Bean",
     "url": "/Java/02-Spring生态/01-Spring/02-常见应用",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 836,
+    "minutes": 3
   },
   {
     "title": "Java Web开发历程",
     "url": "/Java/02-Spring生态/02-SpringMVC",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2637,
+    "minutes": 7
   },
   {
     "title": "环境配置",
     "url": "/Java/02-Spring生态/SpringAI集成",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 37,
+    "minutes": 1
   },
   {
     "title": "为什么MongoDB可以作为缓存",
     "url": "/Java/03-数据库/MongoDB",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1179,
+    "minutes": 3
   },
   {
     "title": "数据模型与设计",
     "url": "/Java/03-数据库/MySQL",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 5514,
+    "minutes": 14
   },
   {
     "title": "一、PostgreSQL介绍",
     "url": "/Java/03-数据库/PostgreSQL",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 9847,
+    "minutes": 25
   },
   {
     "title": "常见数据结构操作",
     "url": "/Java/03-数据库/Redis",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1695,
+    "minutes": 5
   },
   {
     "title": "SELECT",
     "url": "/Java/03-数据库/SQL",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 639,
+    "minutes": 2
   },
   {
     "title": "分布式事务",
     "url": "/Java/03-数据库/分布式事务",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 120,
+    "minutes": 1
   },
   {
     "title": "消息队列",
     "url": "/Java/03-数据库/消息队列",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 39,
+    "minutes": 1
   },
   {
     "title": "JDBC操作数据库",
     "url": "/Java/04-ORM/Mybatis/01-ORM发展历程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 389,
+    "minutes": 1
   },
   {
     "title": "CRUD 操作",
     "url": "/Java/04-ORM/Mybatis/02-Mybatis",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 78,
+    "minutes": 1
   },
   {
     "title": "引入依赖",
     "url": "/Java/04-开发工具/01-Lombok",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 367,
+    "minutes": 1
   },
   {
     "title": "切换分支",
     "url": "/Java/04-开发工具/01-Ugit",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1809,
+    "minutes": 5
   },
   {
     "title": "最佳实践",
     "url": "/Java/04-开发工具/02-hutool",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 48,
+    "minutes": 1
   },
   {
     "title": "Chapter01：认识Git",
     "url": "/Java/04-开发工具/Git",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2122,
+    "minutes": 6
   },
   {
     "title": "依赖",
     "url": "/Java/04-开发工具/日志/01-Logback",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 81,
+    "minutes": 1
   },
   {
     "title": "Java日志发展过程",
     "url": "/Java/04-开发工具/日志/01-日志",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 405,
+    "minutes": 2
   },
   {
     "title": "依赖",
     "url": "/Java/04-开发工具/日志/02-log4j2",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 66,
+    "minutes": 1
   },
   {
     "title": "全文检索",
     "url": "/Java/05-Elastic Stack/01-核心知识/01-Elasticsearch简介",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 728,
+    "minutes": 2
   },
   {
     "title": "索引库",
     "url": "/Java/05-Elastic Stack/01-核心知识/02-DSL-API操作",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1047,
+    "minutes": 3
   },
   {
     "title": "03-RestAPI",
     "url": "/Java/05-Elastic Stack/01-核心知识/03-RestAPI",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 77,
+    "minutes": 1
   },
   {
     "title": "Excalidraw Data",
     "url": "/Java/Java核心/Excalidraw/vue-route",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 45,
+    "minutes": 1
   },
   {
     "title": "Excalidraw Data",
     "url": "/Java/Java核心/Excalidraw/企业经营",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 75,
+    "minutes": 1
   },
   {
     "title": "**一、总原则（先说结论）**",
     "url": "/Java/Java核心/GPT/ChatGPT",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 701,
+    "minutes": 2
   },
   {
     "title": "DeepSeek学习",
     "url": "/Java/Java核心/GPT/DeepSeek学习",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 710,
+    "minutes": 2
   },
   {
     "title": "Gemini学习",
     "url": "/Java/Java核心/GPT/Gemini学习",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 961,
+    "minutes": 3
   },
   {
     "title": "01-Spring",
     "url": "/Java/Java核心/Spring生态/01-Spring",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "微服务架构",
     "url": "/Java/Java核心/Spring生态/02-Spring Cloud",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1914,
+    "minutes": 5
   },
   {
     "title": "核心服务",
     "url": "/Java/Java核心/工作流/01-Flowable",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 485,
+    "minutes": 2
   },
   {
     "title": "最佳实践",
     "url": "/Java/Java核心/技术基建/1-Web开发/01-HTML",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 498,
+    "minutes": 2
   },
   {
     "title": "最佳实践",
     "url": "/Java/Java核心/技术基建/1-Web开发/02-CSS",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 319,
+    "minutes": 1
   },
   {
     "title": "实现异步的机制",
     "url": "/Java/Java核心/技术基建/1-Web开发/JavaScript/异步",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1289,
+    "minutes": 4
   },
   {
     "title": "Ajax",
     "url": "/Java/Java核心/技术基建/1-Web开发/JavaScript/浏览器",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 561,
+    "minutes": 2
   },
   {
     "title": "基础模型",
     "url": "/Java/Java核心/技术基建/1-Web开发/JavaScript/语言核心",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 928,
+    "minutes": 3
   },
   {
     "title": "教程资源",
     "url": "/Java/Java核心/技术基建/1-Web开发/RDEADME",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 68,
+    "minutes": 1
   },
   {
     "title": "README",
     "url": "/Java/Java核心/技术基建/1-Web开发/Vue/README",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 61,
+    "minutes": 1
   },
   {
     "title": "介绍",
     "url": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue2",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 7588,
+    "minutes": 19
   },
   {
     "title": "Vue2和Vue3",
     "url": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue3",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 764,
+    "minutes": 2
   },
   {
     "title": "同源策略",
     "url": "/Java/Java核心/技术基建/1-Web开发/Web",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 3113,
+    "minutes": 8
   },
   {
     "title": "Vue3快速上手",
     "url": "/Java/Java核心/技术基建/1-Web开发/vue3快速上手",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2942,
+    "minutes": 8
   },
   {
     "title": "vue/cli项目工程",
     "url": "/Java/Java核心/技术基建/1-Web开发/工程化",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 735,
+    "minutes": 2
   },
   {
     "title": "Vue 3 为什么“基于” Node.js？——其实不是“依赖”，而是“开发工具链依赖”",
     "url": "/Java/Java核心/技术基建/1-Web开发/待整理",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 432,
+    "minutes": 2
   },
   {
     "title": "npm",
     "url": "/Java/Java核心/技术基建/1-Web开发/构建",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 925,
+    "minutes": 3
   },
   {
     "title": "0-Python",
     "url": "/Java/Java核心/技术基建/4-Python开发/0-Python",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "RDADEME",
     "url": "/Java/Java核心/技术基建/4-Python开发/RDADEME",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "静态网页",
     "url": "/Java/Java核心/技术基建/4-Python开发/爬虫",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 270,
+    "minutes": 1
   },
   {
     "title": "POST请求",
     "url": "/Java/Java核心/技术基建/前后端数据交互",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 648,
+    "minutes": 2
   },
   {
     "title": "核心概念",
     "url": "/Java/Java核心/技术基建/技术组件/MinIO",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 668,
+    "minutes": 2
   },
   {
     "title": "前端",
     "url": "/Java/Java核心/技术基建/教程资源",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 70,
+    "minutes": 1
   },
   {
     "title": "线上故障分析",
     "url": "/Java/Java核心/技术基建/线上故障分析",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 216,
+    "minutes": 1
   },
   {
     "title": "**总览路线（你可以先扫一眼）**",
     "url": "/Java/Java核心/技术基建/计算机系统/IO/IO",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1201,
+    "minutes": 4
   },
   {
     "title": "**1️⃣ 什么是 IO？（一句话但要真正懂）**",
     "url": "/Java/Java核心/技术基建/计算机系统/IO/什么是IO",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 994,
+    "minutes": 3
   },
   {
     "title": "操作系统",
     "url": "/Java/Java核心/技术基建/计算机系统/操作系统",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "1️⃣ 文件存储：有目录的图书馆",
     "url": "/Java/Java核心/技术基建/计算机系统/数据存储",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1083,
+    "minutes": 3
   },
   {
     "title": "序列化与反序列化",
     "url": "/Java/Java核心/技术基建/计算机系统/文件系统设计",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1194,
+    "minutes": 3
   },
   {
     "title": "计算机系统漫游",
     "url": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/深入理解计算机系统",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1718,
+    "minutes": 5
   },
   {
     "title": "创建 test.txt: echo \"Hello world\" > test.txt",
     "url": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/系统调用",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1282,
+    "minutes": 4
   },
   {
     "title": "认识计算机体系结构",
     "url": "/Java/Java核心/技术基建/计算机系统/计算机组层原理",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 6411,
+    "minutes": 17
   },
   {
     "title": "计算机网络",
     "url": "/Java/Java核心/技术基建/计算机系统/计算机网络",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "node",
     "url": "/Java/Java核心/技术基建/软件开发环境",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 189,
+    "minutes": 1
   },
   {
     "title": "MinIO",
     "url": "/Java/Java核心/技术基建/运维/软件安装",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 46,
+    "minutes": 1
   },
   {
     "title": "背景",
     "url": "/Java/Java核心/消息队列/01-RabbitMQ基础",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 470,
+    "minutes": 2
   },
   {
     "title": "保证本地事务与消息发送的原子性",
     "url": "/Java/Java核心/消息队列/02-RabbitMQ问题解决",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 550,
+    "minutes": 2
   },
   {
     "title": "依赖",
     "url": "/Java/应用/Flowable/01-Flowable",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 104,
+    "minutes": 1
   },
   {
     "title": "Mybatis",
     "url": "/Java/应用/Spring生态/Mybatis",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "Tika",
     "url": "/Java/应用/其它技术",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 50,
+    "minutes": 1
   },
   {
     "title": "欢迎",
     "url": "/Java/应用/欢迎",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 58,
+    "minutes": 1
   },
   {
     "title": "先找系统真正的性能瓶颈",
     "url": "/Java/架构/系统性能",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1358,
+    "minutes": 4
   },
   {
     "title": "ApplicationContext",
     "url": "/Java/源码系列/01-Spring Framework/01-Spring核心工作原理",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 997,
+    "minutes": 3
   },
   {
     "title": "阅读心法",
     "url": "/Java/源码系列/阅读心法",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 41,
+    "minutes": 1
   },
   {
     "title": "虚拟环境",
     "url": "/Python/01-Python核心编程/01-开发和运行环境",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786453728000
+    "modified": 1786453728000,
+    "words": 543,
+    "minutes": 2
   },
   {
     "title": "设计哲学",
     "url": "/Python/01-Python核心编程/01-核心",
     "category": "Python",
     "created": 1787925958000,
-    "modified": 1787925958000
+    "modified": 1787925958000,
+    "words": 2784,
+    "minutes": 7
   },
   {
     "title": "使用in进行集合比较",
     "url": "/Python/01-Python核心编程/03-数据结构",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786370678000
+    "modified": 1786370678000,
+    "words": 1407,
+    "minutes": 4
   },
   {
     "title": "2. 参数",
     "url": "/Python/01-Python核心编程/04-函数",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786370678000
+    "modified": 1786370678000,
+    "words": 1216,
+    "minutes": 4
   },
   {
     "title": "05-面向对象",
     "url": "/Python/01-Python核心编程/05-面向对象",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "Python模块化整体模型",
     "url": "/Python/01-Python核心编程/06-模块化",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 374,
+    "minutes": 1
   },
   {
     "title": "07-文件",
     "url": "/Python/01-Python核心编程/07-文件",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "安装",
     "url": "/Python/02-开发/01-requests",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 175,
+    "minutes": 1
   },
   {
     "title": "环境变量",
     "url": "/Python/02-开发/02-os库",
     "category": "Python",
     "created": 1786453728000,
-    "modified": 1786453728000
+    "modified": 1786453728000,
+    "words": 366,
+    "minutes": 1
   },
   {
     "title": "获取路径对象",
     "url": "/Python/02-开发/03-pathlib",
     "category": "Python",
     "created": 1786544159000,
-    "modified": 1786544159000
+    "modified": 1786544159000,
+    "words": 467,
+    "minutes": 2
   },
   {
     "title": "HTML基础",
     "url": "/前端/01-HTML",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 5762,
+    "minutes": 15
   },
   {
     "title": "解析 HTML ------ 生成 DOM Tree",
     "url": "/前端/02-CSS/01-CSS基础",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 180,
+    "minutes": 1
   },
   {
     "title": "CSS 规则的组成",
     "url": "/前端/02-CSS/02-CSS选择器",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1788871186000
+    "modified": 1788871186000,
+    "words": 815,
+    "minutes": 3
   },
   {
     "title": "Excalidraw Data",
     "url": "/前端/02-CSS/CSS",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 81,
+    "minutes": 1
   },
   {
     "title": "CSS Flexbox: flex-grow 与 flex-shrink 详解",
     "url": "/前端/02-CSS/reference/flex-grow-flex-shrink-guide",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 1030,
+    "minutes": 3
   },
   {
     "title": "justify-content 属性详解",
     "url": "/前端/02-CSS/reference/justify-content-guide",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 393,
+    "minutes": 1
   },
   {
     "title": "浏览器眼中的所有元素都是盒子",
     "url": "/前端/02-CSS/布局/01-盒子模型",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 543,
+    "minutes": 2
   },
   {
     "title": "重新认识 Margin 和 Padding",
     "url": "/前端/02-CSS/布局/02-Margin、Padding与BFC",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 724,
+    "minutes": 2
   },
   {
     "title": "没有 CSS，网页还能显示吗？",
     "url": "/前端/02-CSS/布局/03-普通文档流与Display",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 573,
+    "minutes": 2
   },
   {
     "title": "04-position",
     "url": "/前端/02-CSS/布局/04-position",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 1452,
+    "minutes": 4
   },
   {
     "title": "1. 核心概念",
     "url": "/前端/02-CSS/布局/05-Flex布局",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 869,
+    "minutes": 3
   },
   {
     "title": "为什么已经有了 Flex，还要发明 Grid？",
     "url": "/前端/02-CSS/布局/08-Grid（网格布局）",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 613,
+    "minutes": 2
   },
   {
     "title": "margin-left: auto",
     "url": "/前端/02-CSS/布局/布局技巧",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 37,
+    "minutes": 1
   },
   {
     "title": "基础语法",
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1788268792000
+    "modified": 1788268792000,
+    "words": 977,
+    "minutes": 3
   },
   {
     "title": "函数的本质",
     "url": "/前端/03-JavaScript/03-函数",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1788268792000
+    "modified": 1788268792000,
+    "words": 1171,
+    "minutes": 3
   },
   {
     "title": "1. 核心设计理念",
     "url": "/前端/03-JavaScript/04-模块化",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 3596,
+    "minutes": 9
   },
   {
     "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
     "url": "/前端/03-JavaScript/05-异步",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1788871186000
+    "modified": 1788871186000,
+    "words": 4231,
+    "minutes": 11
   },
   {
     "title": "DOM操作",
     "url": "/前端/03-JavaScript/06-DOM与浏览器API",
     "category": "前端",
     "created": 1788871186000,
-    "modified": 1788871186000
+    "modified": 1788871186000,
+    "words": 3572,
+    "minutes": 9
   },
   {
     "title": "IIFE",
     "url": "/前端/03-JavaScript/IIFE",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 362,
+    "minutes": 1
   },
   {
     "title": "React介绍",
     "url": "/前端/React/01-介绍",
     "category": "前端",
-    "created": 1788874929819.8018,
-    "modified": 1788874929819.8018
+    "created": 1789042733000,
+    "modified": 1789042733000,
+    "words": 656,
+    "minutes": 2
   },
   {
     "title": "从 URL 到页面",
     "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1788268792000
+    "modified": 1788268792000,
+    "words": 494,
+    "minutes": 2
   },
   {
     "title": "React学习路线：面向后台管理和ERP系统",
     "url": "/前端/React学习路线-面向后台ERP",
     "category": "前端",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1725,
+    "minutes": 5
   },
   {
     "title": "浏览器解析HTML全过程",
     "url": "/前端/首页",
     "category": "前端",
     "created": 1786173733000,
-    "modified": 1787668391000
+    "modified": 1787668391000,
+    "words": 1114,
+    "minutes": 3
   },
   {
     "title": "开发工具",
     "url": "/工具资源/开发工具",
     "category": "其他",
     "created": 1786365135000,
-    "modified": 1786365135000
+    "modified": 1786365135000,
+    "words": 1,
+    "minutes": 1
   },
   {
     "title": "command 和 sh",
     "url": "/服务器/Mac/command 和 sh",
     "category": "其他",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 188,
+    "minutes": 1
   },
   {
     "title": "查看隐藏文件",
     "url": "/服务器/Mac/快捷键",
     "category": "其他",
     "created": 1787971861000,
-    "modified": 1787971861000
+    "modified": 1787971861000,
+    "words": 6,
+    "minutes": 1
   },
   {
     "title": "欢迎",
     "url": "/源码系列/欢迎",
     "category": "其他",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 49,
+    "minutes": 1
   },
   {
     "title": "库存业务设计",
     "url": "/系统架构/ERP/库存设计/01-库存管理",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1286,
+    "minutes": 4
   },
   {
     "title": "采购业务流程",
     "url": "/系统架构/ERP/采购管理/01-采购管理",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1937,
+    "minutes": 5
   },
   {
     "title": "采购策略",
     "url": "/系统架构/ERP/采购管理/02-采购术语",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 416,
+    "minutes": 2
   },
   {
     "title": "销售业务流程",
     "url": "/系统架构/ERP/销售管理/01-销售管理",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1240,
+    "minutes": 4
   },
   {
     "title": "ERP与财务",
     "url": "/系统架构/企业财务信息化/ERP与财务",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 5247,
+    "minutes": 14
   },
   {
     "title": "企业财务信息化",
     "url": "/系统架构/企业财务信息化/企业财务信息化",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 41,
+    "minutes": 1
   },
   {
     "title": "杂谈",
     "url": "/系统架构/企业财务信息化/杂谈",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 151,
+    "minutes": 1
   },
   {
     "title": "ERP中的财务体现",
     "url": "/系统架构/企业财务信息化/资料库/ERP中的财务体现",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1434,
+    "minutes": 4
   },
   {
     "title": "三单匹配",
     "url": "/系统架构/企业财务信息化/资料库/三单匹配",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1101,
+    "minutes": 3
   },
   {
     "title": "会计准则",
     "url": "/系统架构/企业财务信息化/资料库/会计准则",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1355,
+    "minutes": 4
   },
   {
     "title": "会计核算",
     "url": "/系统架构/企业财务信息化/资料库/会计核算",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1072,
+    "minutes": 3
   },
   {
     "title": "发票与税",
     "url": "/系统架构/企业财务信息化/资料库/发票与税",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1947,
+    "minutes": 5
   },
   {
     "title": "报表合并机制",
     "url": "/系统架构/企业财务信息化/资料库/报表合并机制",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1404,
+    "minutes": 4
   },
   {
     "title": "理解做账",
     "url": "/系统架构/企业财务信息化/资料库/理解做账",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 953,
+    "minutes": 3
   },
   {
     "title": "税务管理",
     "url": "/系统架构/企业财务信息化/资料库/税务管理",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1339,
+    "minutes": 4
   },
   {
     "title": "管理会计",
     "url": "/系统架构/企业财务信息化/资料库/管理会计",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1220,
+    "minutes": 4
   },
   {
     "title": "资金管理",
     "url": "/系统架构/企业财务信息化/资料库/资金管理",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 1278,
+    "minutes": 4
   },
   {
     "title": "请求方式规范",
     "url": "/系统架构/系统设计/API设计规范",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 657,
+    "minutes": 2
   },
   {
     "title": "Git规范",
     "url": "/系统架构/系统设计/Git规范",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1407,
+    "minutes": 4
   },
   {
     "title": "数据权限规则核心设计",
     "url": "/系统架构/系统设计/企业组织数据权限",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 2187,
+    "minutes": 6
   },
   {
     "title": "**单据转换**",
     "url": "/系统架构/系统设计/单据设计",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 558,
+    "minutes": 2
   },
   {
     "title": "数据一致性",
     "url": "/系统架构/系统设计/数据一致性",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 112,
+    "minutes": 1
   },
   {
     "title": "第1章 供应链全貌大揭秘",
     "url": "/系统架构/跨境物流业务/书籍阅读/《实战供应链：业务梳理、系统设计与项目实战》",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 106,
+    "minutes": 1
   },
   {
     "title": "第1章 跨境电商物流市场",
     "url": "/系统架构/跨境物流业务/书籍阅读/《跨境物流及海外仓》",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1297,
+    "minutes": 4
   },
   {
     "title": "**一、先理解“承运商（Carrier）”是什么**",
     "url": "/系统架构/跨境物流业务/书籍阅读/详解/UPS",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1194,
+    "minutes": 3
   },
   {
     "title": "**一、偏远邮编本质是什么？**",
     "url": "/系统架构/跨境物流业务/书籍阅读/详解/偏远邮编",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1130,
+    "minutes": 3
   },
   {
     "title": "**一、先理解物流行业里的“承运人”定义**",
     "url": "/系统架构/跨境物流业务/书籍阅读/详解/理解承运人",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1207,
+    "minutes": 4
   },
   {
     "title": "**一、先看最本质区别**",
     "url": "/系统架构/跨境物流业务/书籍阅读/详解/邮政和快递的区别",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1175,
+    "minutes": 3
   },
   {
     "title": "**一、为什么“邮编”在跨境物流里这么重要？**",
     "url": "/系统架构/跨境物流业务/书籍阅读/详解/邮编在跨境物流的作用",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 1282,
+    "minutes": 4
   },
   {
     "title": "税务模块",
     "url": "/系统架构/项目实践/外贸业财一体化ERP/个人职责内容",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 28,
+    "minutes": 1
   },
   {
     "title": "订单模块",
     "url": "/系统架构/项目实践/大货系统/订单模块",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 0,
+    "minutes": 1
   },
   {
     "title": "为什么需要数字化",
     "url": "/系统架构/首页",
     "category": "系统架构",
     "created": 1786173733000,
-    "modified": 1786366613000
+    "modified": 1786366613000,
+    "words": 271,
+    "minutes": 1
   },
   {
     "title": "不同语言中如何实现函数的传递",
     "url": "/编程模型/函数",
     "category": "其他",
     "created": 1788268792000,
-    "modified": 1788268792000
+    "modified": 1788268792000,
+    "words": 678,
+    "minutes": 2
   },
   {
     "title": "垃圾回收器",
     "url": "/编程模型/垃圾回收器",
     "category": "其他",
     "created": 1788268792000,
-    "modified": 1788268792000
+    "modified": 1788268792000,
+    "words": 18,
+    "minutes": 1
   },
   {
     "title": "函数式编程控制反转",
     "url": "/编程模型/控制反转",
     "category": "其他",
     "created": 1788871186000,
-    "modified": 1788871186000
+    "modified": 1788871186000,
+    "words": 1053,
+    "minutes": 3
   },
   {
     "title": "声明",
     "url": "/编程模型/模块化",
     "category": "其他",
     "created": 1786370678000,
-    "modified": 1786370678000
+    "modified": 1786370678000,
+    "words": 582,
+    "minutes": 2
   },
   {
     "title": "首页",
     "url": "/考证/软考/首页",
     "category": "其他",
     "created": 1786173733000,
-    "modified": 1786173733000
+    "modified": 1786173733000,
+    "words": 7,
+    "minutes": 1
   }
 ]
 export const sidebarGroups = [

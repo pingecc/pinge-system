@@ -106,3 +106,134 @@ a {
 .VPDocAsideOutline ul.VPDocOutlineItem.nested > li > a.outline-link {
   padding-right: 20px;
 }
+
+/* 文章元信息（阅读时长 / 字数 / 创建日期），位于标题上方 */
+.article-meta {
+  padding-top: 4px;
+  margin-bottom: 16px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.article-meta .meta-dot {
+  margin: 0 6px;
+  color: var(--vp-c-text-3);
+}
+
+/* Mermaid 图表：SSR 输出隐藏源码，客户端渲染成 SVG；失败时回退显示源码 */
+.mermaid-block {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.mermaid-block .mermaid-src {
+  display: none;
+}
+
+.mermaid-block[data-done] .mermaid-target svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-block.mermaid-error .mermaid-src {
+  display: block;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-alt);
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* 导航栏搜索按钮（Pagefind，生产环境） */
+.pagefind-search {
+  display: flex;
+  align-items: center;
+}
+
+.pf-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px 0 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background-color 0.25s;
+}
+
+.pf-trigger:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg);
+}
+
+.pf-kbd {
+  padding: 0 5px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  background: var(--vp-c-bg);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+@media (max-width: 767px) {
+  .pf-trigger-label,
+  .pf-kbd {
+    display: none;
+  }
+
+  .pf-trigger {
+    padding: 0 8px;
+  }
+}
+
+/* 搜索弹窗 */
+.pf-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10vh 16px 32px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.pf-modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: var(--vp-c-bg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.pf-container {
+  overflow-y: auto;
+}
+
+/* Pagefind UI 配色跟随 VitePress 主题变量（自动适配明暗模式） */
+.pf-container .PagefindUI {
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--vp-c-brand-1);
+  --pagefind-ui-text: var(--vp-c-text-1);
+  --pagefind-ui-background: var(--vp-c-bg);
+  --pagefind-ui-border: var(--vp-c-divider);
+  --pagefind-ui-tag: var(--vp-c-bg-alt);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-font: inherit;
+  padding: 4px 0 16px;
+}

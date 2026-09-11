@@ -139,10 +139,71 @@ for (const d of allThemeDirs) {
   walkFiles(path.join(ROOT, d), d, allMds, false, false)
 }
 
+// 去掉 frontmatter、代码块、图片、链接等标记，保留纯文本（供摘要/字数统计用）
+function plainText(content) {
+  let body = content
+  const fm = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  if (fm) body = content.slice(fm[0].length)
+  return body
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/~~~[\s\S]*?~~~/g, " ")
+    .replace(/`[^`\n]*`/g, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/!\[\[([^\]]*)\]\]/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1")
+    .replace(/\[\[([^\]]*)\]\]/g, "$1")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\$\$[\s\S]*?\$\$/g, " ")
+    .replace(/\$[^$\n]+\$/g, " ")
+}
+
+// 从正文提取第一段有内容的文字作为 SEO 摘要（跳过标题、引用、表格等行）
+function extractDescription(rel) {
+  let content = ""
+  try {
+    content = fs.readFileSync(path.join(ROOT, rel), "utf8")
+  } catch {
+    return ""
+  }
+  for (const raw of plainText(content).split(/\r?\n/)) {
+    const line = raw.trim()
+    if (!line || /^(#|>|\|)/.test(line)) continue
+    if (/excalidraw/i.test(line)) continue
+    // URL 不进摘要，也不计入有效字数（避免"来源：http://…"这类行被当成摘要）
+    const text = line
+      .replace(/[*_~]+/g, "")
+      .replace(/https?:\/\/\S+/g, "")
+      .replace(/\^[A-Za-z0-9-]{4,}/g, "") // Obsidian 块引用 ID（如 ^zfVZwgHP）
+      .trim()
+    // 剔除空白、数字、标点后至少剩 15 个文字，避免把纯链接/编号行当摘要
+    if (text.replace(/[\s\d\p{P}\p{S}]/gu, "").length < 15) continue
+    return text.length > 120 ? text.slice(0, 120).trimEnd() + "…" : text
+  }
+  return ""
+}
+
+// 字数：中文按字符计、英文按单词计；阅读时长按 400 字/分钟估算
+function readingStats(rel) {
+  let content = ""
+  try {
+    content = fs.readFileSync(path.join(ROOT, rel), "utf8")
+  } catch {
+    return { words: 0, minutes: 1 }
+  }
+  const text = plainText(content)
+  const cjk = (text.match(/[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/g) || []).length
+  const latin = (text.match(/[A-Za-z0-9][A-Za-z0-9'’-]*/g) || []).length
+  const words = cjk + latin
+  return { words, minutes: Math.max(1, Math.ceil(words / 400)) }
+}
+
 // 标题 & 时间戳
 const titles = new Map()
 const timestamps = getGitTimestamps()
 const articles = []
+const descriptions = {}
 for (const rel of allMds) {
   const abs = path.join(ROOT, rel)
   const title = extractTitle(rel)
@@ -152,12 +213,17 @@ for (const rel of allMds) {
     return { created: st.mtimeMs, modified: st.mtimeMs }
   })()
   const topDir = rel.split("/")[0]
+  const desc = extractDescription(rel)
+  if (desc) descriptions[rel] = desc
+  const { words, minutes } = readingStats(rel)
   articles.push({
     title,
     url: "/" + rel.slice(0, -MD_EXT.length),
     category: categoryOf(topDir),
     created: ts.created,
-    modified: ts.modified
+    modified: ts.modified,
+    words,
+    minutes
   })
 }
 articles.sort((a, b) => naturalCompare(a.url, b.url))
@@ -257,6 +323,14 @@ export const imgIndex = ${JSON.stringify(imgIndex, null, 2)}
 `
 fs.mkdirSync(OUT_DIR, { recursive: true })
 fs.writeFileSync(OUT_FILE, out, "utf8")
+
+// SEO 摘要仅供 config.mts 构建期使用，单独成文件避免打进客户端 bundle
+const descriptionsFile = path.join(OUT_DIR, "descriptions.mjs")
+fs.writeFileSync(
+  descriptionsFile,
+  `// 由 scripts/gen-site-data.mjs 自动生成，请勿手动修改\nexport const descriptions = ${JSON.stringify(descriptions, null, 2)}\n`,
+  "utf8"
+)
 
 const total = articles.length
 console.log(`[gen-site-data] 共 ${total} 篇文章, ${categoryOrder.length} 个分类:`)
