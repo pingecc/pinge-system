@@ -2103,7 +2103,7 @@ export const allArticles = [
     "category": "Python",
     "created": 1786173733000,
     "modified": 1786370678000,
-    "words": 1216,
+    "words": 1389,
     "minutes": 4
   },
   {
