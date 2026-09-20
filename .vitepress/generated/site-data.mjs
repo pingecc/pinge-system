@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 23,
+    "count": 24,
     "articles": [
       {
         "title": "HTML基础",
@@ -120,7 +120,7 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "React介绍",
+        "title": "UI",
         "url": "/前端/React/01-介绍",
         "created": 1789042733000,
         "modified": 1789042733000
@@ -130,6 +130,12 @@ export const navCategories = [
         "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
         "created": 1788094737000,
         "modified": 1788268792000
+      },
+      {
+        "title": "原生HTML绑定事件方式",
+        "url": "/前端/React/原生HTML绑定事件方式",
+        "created": 1789812652616.7107,
+        "modified": 1789812652616.7107
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
@@ -713,7 +719,7 @@ export const navCategories = [
         "title": "2. 参数",
         "url": "/Python/01-Python核心编程/04-函数",
         "created": 1786173733000,
-        "modified": 1786370678000
+        "modified": 1789210492000
       },
       {
         "title": "05-面向对象",
@@ -1053,7 +1059,7 @@ export const navCategories = [
   {
     "label": "其他",
     "link": "/categories/%E5%85%B6%E4%BB%96",
-    "count": 9,
+    "count": 10,
     "articles": [
       {
         "title": "开发工具",
@@ -1102,6 +1108,12 @@ export const navCategories = [
         "url": "/编程模型/模块化",
         "created": 1786370678000,
         "modified": 1786370678000
+      },
+      {
+        "title": "导航",
+        "url": "/编程模型/设计模式/导航",
+        "created": 1789655909967.2456,
+        "modified": 1789655909967.2456
       },
       {
         "title": "首页",
@@ -2102,7 +2114,7 @@ export const allArticles = [
     "url": "/Python/01-Python核心编程/04-函数",
     "category": "Python",
     "created": 1786173733000,
-    "modified": 1786370678000,
+    "modified": 1789210492000,
     "words": 1389,
     "minutes": 4
   },
@@ -2283,7 +2295,7 @@ export const allArticles = [
     "category": "前端",
     "created": 1788094737000,
     "modified": 1788268792000,
-    "words": 977,
+    "words": 1000,
     "minutes": 3
   },
   {
@@ -2292,8 +2304,8 @@ export const allArticles = [
     "category": "前端",
     "created": 1787971861000,
     "modified": 1788268792000,
-    "words": 1171,
-    "minutes": 3
+    "words": 1323,
+    "minutes": 4
   },
   {
     "title": "1. 核心设计理念",
@@ -2332,13 +2344,13 @@ export const allArticles = [
     "minutes": 1
   },
   {
-    "title": "React介绍",
+    "title": "UI",
     "url": "/前端/React/01-介绍",
     "category": "前端",
     "created": 1789042733000,
     "modified": 1789042733000,
-    "words": 656,
-    "minutes": 2
+    "words": 1530,
+    "minutes": 4
   },
   {
     "title": "从 URL 到页面",
@@ -2350,12 +2362,21 @@ export const allArticles = [
     "minutes": 2
   },
   {
+    "title": "原生HTML绑定事件方式",
+    "url": "/前端/React/原生HTML绑定事件方式",
+    "category": "前端",
+    "created": 1789812652616.7107,
+    "modified": 1789812652616.7107,
+    "words": 204,
+    "minutes": 1
+  },
+  {
     "title": "React学习路线：面向后台管理和ERP系统",
     "url": "/前端/React学习路线-面向后台ERP",
     "category": "前端",
     "created": 1786173733000,
     "modified": 1786366613000,
-    "words": 1725,
+    "words": 1737,
     "minutes": 5
   },
   {
@@ -2728,6 +2749,15 @@ export const allArticles = [
     "minutes": 2
   },
   {
+    "title": "导航",
+    "url": "/编程模型/设计模式/导航",
+    "category": "其他",
+    "created": 1789655909967.2456,
+    "modified": 1789655909967.2456,
+    "words": 182,
+    "minutes": 1
+  },
+  {
     "title": "首页",
     "url": "/考证/软考/首页",
     "category": "其他",
@@ -2746,6 +2776,10 @@ export const sidebarGroups = [
         "text": "React",
         "collapsed": true,
         "items": [
+          {
+            "text": "原生HTML绑定事件方式",
+            "link": "/前端/React/原生HTML绑定事件方式"
+          },
           {
             "text": "01-介绍",
             "link": "/前端/React/01-介绍"
@@ -3857,6 +3891,16 @@ export const sidebarGroups = [
         "collapsed": true,
         "items": [
           {
+            "text": "设计模式",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "导航",
+                "link": "/编程模型/设计模式/导航"
+              }
+            ]
+          },
+          {
             "text": "函数",
             "link": "/编程模型/函数"
           },
@@ -3898,6 +3942,9 @@ export const sidebarGroups = [
   }
 ]
 export const mdIndex = {
+  "原生HTML绑定事件方式": [
+    "前端/React/原生HTML绑定事件方式.md"
+  ],
   "01-介绍": [
     "前端/React/01-介绍.md"
   ],
@@ -4406,11 +4453,17 @@ export const mdIndex = {
   "模块化": [
     "编程模型/模块化.md"
   ],
+  "导航": [
+    "编程模型/设计模式/导航.md"
+  ],
   "开发工具": [
     "工具资源/开发工具.md"
   ]
 }
 export const imgIndex = {
+  "原生HTML绑定事件方式": [
+    "前端/React/原生HTML绑定事件方式.md"
+  ],
   "01-介绍": [
     "前端/React/01-介绍.md"
   ],
@@ -4521,6 +4574,9 @@ export const imgIndex = {
   ],
   "Pasted image 20260908213959": [
     "前端/zmg/Pasted image 20260908213959.png"
+  ],
+  "Pasted image 20260919183819": [
+    "前端/zmg/Pasted image 20260919183819.png"
   ],
   "component_note": [
     "前端/zmg/component_note.png"
@@ -5266,6 +5322,9 @@ export const imgIndex = {
   ],
   "模块化": [
     "编程模型/模块化.md"
+  ],
+  "导航": [
+    "编程模型/设计模式/导航.md"
   ],
   "开发工具": [
     "工具资源/开发工具.md"
