@@ -3,13 +3,19 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 24,
+    "count": 25,
     "articles": [
       {
         "title": "HTML基础",
         "url": "/前端/01-HTML",
         "created": 1787971861000,
         "modified": 1787971861000
+      },
+      {
+        "title": "从 URL 到页面",
+        "url": "/前端/01-前端基础：浏览器与HTML CSS",
+        "created": 1788262792486.9956,
+        "modified": 1788262792486.9956
       },
       {
         "title": "解析 HTML ------ 生成 DOM Tree",
@@ -87,13 +93,13 @@ export const navCategories = [
         "title": "基础语法",
         "url": "/前端/03-JavaScript/01-核心",
         "created": 1788094737000,
-        "modified": 1788268792000
+        "modified": 1789907223000
       },
       {
         "title": "函数的本质",
         "url": "/前端/03-JavaScript/03-函数",
         "created": 1787971861000,
-        "modified": 1788268792000
+        "modified": 1789907223000
       },
       {
         "title": "1. 核心设计理念",
@@ -120,28 +126,28 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "UI",
-        "url": "/前端/React/01-介绍",
-        "created": 1789042733000,
-        "modified": 1789042733000
-      },
-      {
-        "title": "从 URL 到页面",
-        "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
-        "created": 1788094737000,
-        "modified": 1788268792000
-      },
-      {
         "title": "原生HTML绑定事件方式",
-        "url": "/前端/React/原生HTML绑定事件方式",
+        "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
         "created": 1789812652616.7107,
         "modified": 1789812652616.7107
+      },
+      {
+        "title": "什么是React？",
+        "url": "/前端/React/React教程",
+        "created": 1792333211510.289,
+        "modified": 1792333211510.289
+      },
+      {
+        "title": "虚拟DOM",
+        "url": "/前端/React/核心原理",
+        "created": 1792302232994.4333,
+        "modified": 1792302232994.4333
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
         "url": "/前端/React学习路线-面向后台ERP",
         "created": 1786173733000,
-        "modified": 1786366613000
+        "modified": 1789907223000
       },
       {
         "title": "浏览器解析HTML全过程",
@@ -154,7 +160,7 @@ export const navCategories = [
   {
     "label": "Java",
     "link": "/categories/Java",
-    "count": 89,
+    "count": 90,
     "articles": [
       {
         "title": "安全性",
@@ -205,7 +211,13 @@ export const navCategories = [
         "modified": 1786173733000
       },
       {
-        "title": "Chapter01：为什么需要Annotation",
+        "title": "从进程布局推导JVM内存区域",
+        "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
+        "created": 1791809594264.8096,
+        "modified": 1791809594264.8096
+      },
+      {
+        "title": "Chapter02：Annotation的本质",
         "url": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation",
         "created": 1786173733000,
         "modified": 1786366613000
@@ -1089,7 +1101,7 @@ export const navCategories = [
         "title": "不同语言中如何实现函数的传递",
         "url": "/编程模型/函数",
         "created": 1788268792000,
-        "modified": 1788268792000
+        "modified": 1789907223000
       },
       {
         "title": "垃圾回收器",
@@ -1112,8 +1124,8 @@ export const navCategories = [
       {
         "title": "导航",
         "url": "/编程模型/设计模式/导航",
-        "created": 1789655909967.2456,
-        "modified": 1789655909967.2456
+        "created": 1789907223000,
+        "modified": 1789907223000
       },
       {
         "title": "首页",
@@ -1341,7 +1353,7 @@ export const allArticles = [
     "category": "Java",
     "created": 1786173733000,
     "modified": 1786366613000,
-    "words": 2250,
+    "words": 2257,
     "minutes": 6
   },
   {
@@ -1354,13 +1366,22 @@ export const allArticles = [
     "minutes": 1
   },
   {
-    "title": "Chapter01：为什么需要Annotation",
+    "title": "从进程布局推导JVM内存区域",
+    "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
+    "category": "Java",
+    "created": 1791809594264.8096,
+    "modified": 1791809594264.8096,
+    "words": 68,
+    "minutes": 1
+  },
+  {
+    "title": "Chapter02：Annotation的本质",
     "url": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation",
     "category": "Java",
     "created": 1786173733000,
     "modified": 1786366613000,
-    "words": 2409,
-    "minutes": 7
+    "words": 2225,
+    "minutes": 6
   },
   {
     "title": "callback如何交给框架？",
@@ -2182,6 +2203,15 @@ export const allArticles = [
     "minutes": 15
   },
   {
+    "title": "从 URL 到页面",
+    "url": "/前端/01-前端基础：浏览器与HTML CSS",
+    "category": "前端",
+    "created": 1788262792486.9956,
+    "modified": 1788262792486.9956,
+    "words": 494,
+    "minutes": 2
+  },
+  {
     "title": "解析 HTML ------ 生成 DOM Tree",
     "url": "/前端/02-CSS/01-CSS基础",
     "category": "前端",
@@ -2294,7 +2324,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1788268792000,
+    "modified": 1789907223000,
     "words": 1000,
     "minutes": 3
   },
@@ -2303,7 +2333,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/03-函数",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1788268792000,
+    "modified": 1789907223000,
     "words": 1323,
     "minutes": 4
   },
@@ -2344,26 +2374,8 @@ export const allArticles = [
     "minutes": 1
   },
   {
-    "title": "UI",
-    "url": "/前端/React/01-介绍",
-    "category": "前端",
-    "created": 1789042733000,
-    "modified": 1789042733000,
-    "words": 1530,
-    "minutes": 4
-  },
-  {
-    "title": "从 URL 到页面",
-    "url": "/前端/React/01-前端基础：浏览器与HTML CSS",
-    "category": "前端",
-    "created": 1788094737000,
-    "modified": 1788268792000,
-    "words": 494,
-    "minutes": 2
-  },
-  {
     "title": "原生HTML绑定事件方式",
-    "url": "/前端/React/原生HTML绑定事件方式",
+    "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
     "category": "前端",
     "created": 1789812652616.7107,
     "modified": 1789812652616.7107,
@@ -2371,11 +2383,29 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "什么是React？",
+    "url": "/前端/React/React教程",
+    "category": "前端",
+    "created": 1792333211510.289,
+    "modified": 1792333211510.289,
+    "words": 3881,
+    "minutes": 10
+  },
+  {
+    "title": "虚拟DOM",
+    "url": "/前端/React/核心原理",
+    "category": "前端",
+    "created": 1792302232994.4333,
+    "modified": 1792302232994.4333,
+    "words": 52,
+    "minutes": 1
+  },
+  {
     "title": "React学习路线：面向后台管理和ERP系统",
     "url": "/前端/React学习路线-面向后台ERP",
     "category": "前端",
     "created": 1786173733000,
-    "modified": 1786366613000,
+    "modified": 1789907223000,
     "words": 1737,
     "minutes": 5
   },
@@ -2717,7 +2747,7 @@ export const allArticles = [
     "url": "/编程模型/函数",
     "category": "其他",
     "created": 1788268792000,
-    "modified": 1788268792000,
+    "modified": 1789907223000,
     "words": 678,
     "minutes": 2
   },
@@ -2752,8 +2782,8 @@ export const allArticles = [
     "title": "导航",
     "url": "/编程模型/设计模式/导航",
     "category": "其他",
-    "created": 1789655909967.2456,
-    "modified": 1789655909967.2456,
+    "created": 1789907223000,
+    "modified": 1789907223000,
     "words": 182,
     "minutes": 1
   },
@@ -2777,16 +2807,12 @@ export const sidebarGroups = [
         "collapsed": true,
         "items": [
           {
-            "text": "原生HTML绑定事件方式",
-            "link": "/前端/React/原生HTML绑定事件方式"
+            "text": "React教程",
+            "link": "/前端/React/React教程"
           },
           {
-            "text": "01-介绍",
-            "link": "/前端/React/01-介绍"
-          },
-          {
-            "text": "01-前端基础：浏览器与HTML CSS",
-            "link": "/前端/React/01-前端基础：浏览器与HTML CSS"
+            "text": "核心原理",
+            "link": "/前端/React/核心原理"
           }
         ]
       },
@@ -2865,6 +2891,10 @@ export const sidebarGroups = [
             "link": "/前端/03-JavaScript/IIFE"
           },
           {
+            "text": "原生HTML绑定事件方式",
+            "link": "/前端/03-JavaScript/原生HTML绑定事件方式"
+          },
+          {
             "text": "01-核心",
             "link": "/前端/03-JavaScript/01-核心"
           },
@@ -2897,6 +2927,10 @@ export const sidebarGroups = [
       {
         "text": "01-HTML",
         "link": "/前端/01-HTML"
+      },
+      {
+        "text": "01-前端基础：浏览器与HTML CSS",
+        "link": "/前端/01-前端基础：浏览器与HTML CSS"
       }
     ]
   },
@@ -3240,6 +3274,10 @@ export const sidebarGroups = [
             "text": "JVM",
             "collapsed": true,
             "items": [
+              {
+                "text": "从进程布局推导JVM内存区域",
+                "link": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域"
+              },
               {
                 "text": "01-Java源码到类加载过程",
                 "link": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程"
@@ -3942,14 +3980,11 @@ export const sidebarGroups = [
   }
 ]
 export const mdIndex = {
-  "原生HTML绑定事件方式": [
-    "前端/React/原生HTML绑定事件方式.md"
+  "React教程": [
+    "前端/React/React教程.md"
   ],
-  "01-介绍": [
-    "前端/React/01-介绍.md"
-  ],
-  "01-前端基础：浏览器与HTML CSS": [
-    "前端/React/01-前端基础：浏览器与HTML CSS.md"
+  "核心原理": [
+    "前端/React/核心原理.md"
   ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
@@ -3962,6 +3997,9 @@ export const mdIndex = {
   "01-HTML": [
     "前端/01-HTML.md",
     "Java/Java核心/技术基建/1-Web开发/01-HTML.md"
+  ],
+  "01-前端基础：浏览器与HTML CSS": [
+    "前端/01-前端基础：浏览器与HTML CSS.md"
   ],
   "CSS": [
     "前端/02-CSS/CSS.md"
@@ -4001,6 +4039,9 @@ export const mdIndex = {
   ],
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
+  ],
+  "原生HTML绑定事件方式": [
+    "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
   "01-核心": [
     "前端/03-JavaScript/01-核心.md",
@@ -4162,6 +4203,9 @@ export const mdIndex = {
   ],
   "01-Spring核心工作原理": [
     "Java/源码系列/01-Spring Framework/01-Spring核心工作原理.md"
+  ],
+  "从进程布局推导JVM内存区域": [
+    "Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域.md"
   ],
   "01-Java源码到类加载过程": [
     "Java/01-Java核心编程/JVM/01-Java源码到类加载过程.md"
@@ -4461,14 +4505,11 @@ export const mdIndex = {
   ]
 }
 export const imgIndex = {
-  "原生HTML绑定事件方式": [
-    "前端/React/原生HTML绑定事件方式.md"
+  "React教程": [
+    "前端/React/React教程.md"
   ],
-  "01-介绍": [
-    "前端/React/01-介绍.md"
-  ],
-  "01-前端基础：浏览器与HTML CSS": [
-    "前端/React/01-前端基础：浏览器与HTML CSS.md"
+  "核心原理": [
+    "前端/React/核心原理.md"
   ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
@@ -4572,11 +4613,8 @@ export const imgIndex = {
   "Pasted image 20260825210010": [
     "前端/zmg/Pasted image 20260825210010.png"
   ],
-  "Pasted image 20260908213959": [
-    "前端/zmg/Pasted image 20260908213959.png"
-  ],
-  "Pasted image 20260919183819": [
-    "前端/zmg/Pasted image 20260919183819.png"
+  "Pasted image 20260920214839": [
+    "前端/zmg/Pasted image 20260920214839.png"
   ],
   "component_note": [
     "前端/zmg/component_note.png"
@@ -4592,6 +4630,9 @@ export const imgIndex = {
   "01-HTML": [
     "前端/01-HTML.md",
     "Java/Java核心/技术基建/1-Web开发/01-HTML.md"
+  ],
+  "01-前端基础：浏览器与HTML CSS": [
+    "前端/01-前端基础：浏览器与HTML CSS.md"
   ],
   "CSS": [
     "前端/02-CSS/CSS.md"
@@ -4631,6 +4672,9 @@ export const imgIndex = {
   ],
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
+  ],
+  "原生HTML绑定事件方式": [
+    "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
   "01-核心": [
     "前端/03-JavaScript/01-核心.md",
@@ -4999,6 +5043,9 @@ export const imgIndex = {
   ],
   "01-Spring核心工作原理": [
     "Java/源码系列/01-Spring Framework/01-Spring核心工作原理.md"
+  ],
+  "从进程布局推导JVM内存区域": [
+    "Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域.md"
   ],
   "01-Java源码到类加载过程": [
     "Java/01-Java核心编程/JVM/01-Java源码到类加载过程.md"

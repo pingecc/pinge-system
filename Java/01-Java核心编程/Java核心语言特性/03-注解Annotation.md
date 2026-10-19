@@ -1,49 +1,24 @@
 这是一个非常好的学习主题。
 
 如果让我评价 **Java 最重要的三个语言特性**，我会认为是：
-
 1. **面向对象（OOP）**
 2. **泛型（Generics）**
 3. **注解（Annotation）**
 
-很多Java程序员工作几年以后，对注解的理解仍然停留在：
+**注解几乎贯穿整个现代Java生态**。Spring、SpringBoot、MyBatis、Dubbo、RocketMQ、JUnit、Lombok……  几乎所有框架都是围绕注解构建的。
 
-@Override、@Autowired、@Transactional、@RequestMapping……
-
-知道怎么用，但是不知道为什么能这样用。
-
-实际上，**注解几乎贯穿整个现代Java生态**。
-
-Spring、SpringBoot、MyBatis、Dubbo、RocketMQ、JUnit、Lombok……  
-几乎所有框架都是围绕注解构建的。
-
-所以，我们这次不只是讲”注解是什么”，而是从 **Java语言设计者的角度** 去理解：
-
-**为什么Java会发明Annotation？Annotation到底解决了什么问题？Spring为什么如此依赖Annotation？**
+从 **Java语言设计者的角度** 去理解：**为什么Java会发明Annotation？Annotation到底解决了什么问题？Spring为什么如此依赖Annotation？**
 
 
 先记住这几个最核心的思想。
- **1. Annotation出现的原因**
-以前只能依赖：
-- 注释
-- 命名规范
-- XML
-Annotation解决了代码和配置分离的问题。
----
+ **1. Annotation出现的原因**：Annotation解决了代码和配置分离的问题。把配置直接写在代码里面成为程序的一部分，在运行期间可以直接获取到并参与程序的逻辑。
+以前只能依赖：注释、命名规范、XML。
 
- **2. Annotation本质**
-它本质就是：
-**一个继承了** **`Annotation`** **的特殊接口。**
+ **2. Annotation本质**：**一个继承了** **`Annotation`** **的特殊接口。**
 
----
- **3. Annotation作用**
+ **3. Annotation作用**：不是执行业务，而是：**描述程序。** 也就是：Metadata（元数据）。
 
-不是执行业务，而是：**描述程序。** 也就是：Metadata（元数据）。
-
----
- **4. Annotation不会自己生效**
-
-真正工作的永远都是：
+ **4. Annotation不会自己生效**，真正工作的永远都是：
 - 编译器（如 `@Override`）
 - JVM（部分运行时注解）
 - 框架（如Spring、MyBatis等）
@@ -56,44 +31,10 @@ Annotation解决了代码和配置分离的问题。
 
 理解成：**在声明一个注解配置对象，并给它的各个属性赋值。**
 
-# Chapter01：为什么需要Annotation
-
-
-
-
-很多东西，都要先问一句：**没有Annotation之前怎么办？** Java最早（JDK1.0）是没有Annotation的。那时候如果**想给某些代码添加额外的信息，用于在程序运行期间识别做特定的操作**，例如EJB时代，通过名字约定：
-
-```text
-UserServiceBean
-
-UserServiceHome
-
-UserServiceRemote
-
-setXXX()
-
-getXXX()
-```
-因为只能靠名字，但是名字容易写错，没有类型检查。
-后来Java开始大量使用XML，例如Spring最早：
-
-```xml
-<bean id="userService"
-      class="xxx.UserService"/>
-```
-但是所有配置全部写XML变得非常繁琐，如果代码做了修改，对应的xml文件需要做同步。
-
-
-Java社区一直在想：
-
-**有没有办法把配置直接写在代码里面？成为程序的一部分，在运行期间可以直接获取到并参与程序的逻辑**
-
-
-
-
-
-
 # Chapter02：Annotation的本质
+
+
+**注解的本质是一个继承了 `java.lang.annotation.Annotation` 的接口，它本身只是“带数据的标记”（元数据），没有任何行为逻辑——所有功能都来自读取它的代码。**
 
 有了Annotation，就可以给程序添加**元数据**。Annotation的本质就是：**一个接口（Interface）， 一个类。
 
@@ -123,11 +64,6 @@ java.lang.annotation.Annotation
 Annotation就像**快递标签。** 一个个的箱子📦就是Class，可以给这些箱子贴任何的标签，代表着不同的用途，箱子本身不会发生变化，在于其人人看到这个箱子的标签之后如何去处理它。
 
 
-
-
-
-
----
 
 # Chapter03：Annotation 的完整语法
 
