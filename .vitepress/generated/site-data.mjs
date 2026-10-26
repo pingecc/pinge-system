@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 25,
+    "count": 27,
     "articles": [
       {
         "title": "HTML基础",
@@ -14,8 +14,8 @@ export const navCategories = [
       {
         "title": "从 URL 到页面",
         "url": "/前端/01-前端基础：浏览器与HTML CSS",
-        "created": 1788262792486.9956,
-        "modified": 1788262792486.9956
+        "created": 1792370120000,
+        "modified": 1792370120000
       },
       {
         "title": "解析 HTML ------ 生成 DOM Tree",
@@ -93,13 +93,13 @@ export const navCategories = [
         "title": "基础语法",
         "url": "/前端/03-JavaScript/01-核心",
         "created": 1788094737000,
-        "modified": 1789907223000
+        "modified": 1792370120000
       },
       {
         "title": "函数的本质",
         "url": "/前端/03-JavaScript/03-函数",
         "created": 1787971861000,
-        "modified": 1789907223000
+        "modified": 1792370120000
       },
       {
         "title": "1. 核心设计理念",
@@ -128,26 +128,38 @@ export const navCategories = [
       {
         "title": "原生HTML绑定事件方式",
         "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
-        "created": 1789812652616.7107,
-        "modified": 1789812652616.7107
+        "created": 1792370120000,
+        "modified": 1792370120000
       },
       {
         "title": "什么是React？",
-        "url": "/前端/React/React教程",
-        "created": 1792333211510.289,
-        "modified": 1792333211510.289
+        "url": "/前端/React/01-React教程",
+        "created": 1792825525341.712,
+        "modified": 1792825525341.712
       },
       {
         "title": "虚拟DOM",
         "url": "/前端/React/核心原理",
-        "created": 1792302232994.4333,
-        "modified": 1792302232994.4333
+        "created": 1792370120000,
+        "modified": 1792370120000
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
         "url": "/前端/React学习路线-面向后台ERP",
         "created": 1786173733000,
         "modified": 1789907223000
+      },
+      {
+        "title": "介绍",
+        "url": "/前端/node/node教程",
+        "created": 1793024346719.7197,
+        "modified": 1793024346719.7197
+      },
+      {
+        "title": "学习大纲",
+        "url": "/前端/node/学习大纲",
+        "created": 1793018068144.249,
+        "modified": 1793018068144.249
       },
       {
         "title": "浏览器解析HTML全过程",
@@ -160,7 +172,7 @@ export const navCategories = [
   {
     "label": "Java",
     "link": "/categories/Java",
-    "count": 90,
+    "count": 92,
     "articles": [
       {
         "title": "安全性",
@@ -202,7 +214,7 @@ export const navCategories = [
         "title": "关于类加载",
         "url": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程",
         "created": 1786173733000,
-        "modified": 1786366613000
+        "modified": 1792370120000
       },
       {
         "title": "02-Class对象应用",
@@ -211,16 +223,28 @@ export const navCategories = [
         "modified": 1786173733000
       },
       {
+        "title": "L1 · JVM 全景图",
+        "url": "/Java/01-Java核心编程/JVM/JVM",
+        "created": 1792501183410.1836,
+        "modified": 1792501183410.1836
+      },
+      {
         "title": "从进程布局推导JVM内存区域",
         "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
-        "created": 1791809594264.8096,
-        "modified": 1791809594264.8096
+        "created": 1792370120000,
+        "modified": 1792370120000
+      },
+      {
+        "title": "其它",
+        "url": "/Java/01-Java核心编程/JVM/其它",
+        "created": 1792416264244.3528,
+        "modified": 1792416264244.3528
       },
       {
         "title": "Chapter02：Annotation的本质",
         "url": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation",
         "created": 1786173733000,
-        "modified": 1786366613000
+        "modified": 1792370120000
       },
       {
         "title": "callback如何交给框架？",
@@ -774,7 +798,7 @@ export const navCategories = [
   {
     "label": "系统架构",
     "link": "/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84",
-    "count": 32,
+    "count": 33,
     "articles": [
       {
         "title": "库存业务设计",
@@ -879,6 +903,12 @@ export const navCategories = [
         "modified": 1786173733000
       },
       {
+        "title": "超时问题",
+        "url": "/系统架构/外部接口对接/常见问题",
+        "created": 1792820043467.24,
+        "modified": 1792820043467.24
+      },
+      {
         "title": "请求方式规范",
         "url": "/系统架构/系统设计/API设计规范",
         "created": 1786173733000,
@@ -973,13 +1003,19 @@ export const navCategories = [
   {
     "label": "English",
     "link": "/categories/English",
-    "count": 6,
+    "count": 7,
     "articles": [
       {
         "title": "exercise",
         "url": "/English/单词库/01-",
         "created": 1787578947000,
         "modified": 1787578947000
+      },
+      {
+        "title": "副词",
+        "url": "/English/句式和语法/副词",
+        "created": 1792669118074.0146,
+        "modified": 1792669118074.0146
       },
       {
         "title": "动词作句首",
@@ -1116,7 +1152,7 @@ export const navCategories = [
         "modified": 1788871186000
       },
       {
-        "title": "声明",
+        "title": "模块于文件系统",
         "url": "/编程模型/模块化",
         "created": 1786370678000,
         "modified": 1786370678000
@@ -1249,6 +1285,15 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "副词",
+    "url": "/English/句式和语法/副词",
+    "category": "English",
+    "created": 1792669118074.0146,
+    "modified": 1792669118074.0146,
+    "words": 434,
+    "minutes": 2
+  },
+  {
     "title": "动词作句首",
     "url": "/English/句式和语法/动词作句首",
     "category": "English",
@@ -1352,7 +1397,7 @@ export const allArticles = [
     "url": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000,
+    "modified": 1792370120000,
     "words": 2257,
     "minutes": 6
   },
@@ -1366,20 +1411,38 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "L1 · JVM 全景图",
+    "url": "/Java/01-Java核心编程/JVM/JVM",
+    "category": "Java",
+    "created": 1792501183410.1836,
+    "modified": 1792501183410.1836,
+    "words": 970,
+    "minutes": 3
+  },
+  {
     "title": "从进程布局推导JVM内存区域",
     "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
     "category": "Java",
-    "created": 1791809594264.8096,
-    "modified": 1791809594264.8096,
+    "created": 1792370120000,
+    "modified": 1792370120000,
     "words": 68,
     "minutes": 1
+  },
+  {
+    "title": "其它",
+    "url": "/Java/01-Java核心编程/JVM/其它",
+    "category": "Java",
+    "created": 1792416264244.3528,
+    "modified": 1792416264244.3528,
+    "words": 581,
+    "minutes": 2
   },
   {
     "title": "Chapter02：Annotation的本质",
     "url": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation",
     "category": "Java",
     "created": 1786173733000,
-    "modified": 1786366613000,
+    "modified": 1792370120000,
     "words": 2225,
     "minutes": 6
   },
@@ -2206,8 +2269,8 @@ export const allArticles = [
     "title": "从 URL 到页面",
     "url": "/前端/01-前端基础：浏览器与HTML CSS",
     "category": "前端",
-    "created": 1788262792486.9956,
-    "modified": 1788262792486.9956,
+    "created": 1792370120000,
+    "modified": 1792370120000,
     "words": 494,
     "minutes": 2
   },
@@ -2324,7 +2387,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/01-核心",
     "category": "前端",
     "created": 1788094737000,
-    "modified": 1789907223000,
+    "modified": 1792370120000,
     "words": 1000,
     "minutes": 3
   },
@@ -2333,7 +2396,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/03-函数",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1789907223000,
+    "modified": 1792370120000,
     "words": 1323,
     "minutes": 4
   },
@@ -2377,28 +2440,28 @@ export const allArticles = [
     "title": "原生HTML绑定事件方式",
     "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
     "category": "前端",
-    "created": 1789812652616.7107,
-    "modified": 1789812652616.7107,
+    "created": 1792370120000,
+    "modified": 1792370120000,
     "words": 204,
     "minutes": 1
   },
   {
     "title": "什么是React？",
-    "url": "/前端/React/React教程",
+    "url": "/前端/React/01-React教程",
     "category": "前端",
-    "created": 1792333211510.289,
-    "modified": 1792333211510.289,
-    "words": 3881,
-    "minutes": 10
+    "created": 1792825525341.712,
+    "modified": 1792825525341.712,
+    "words": 5440,
+    "minutes": 14
   },
   {
     "title": "虚拟DOM",
     "url": "/前端/React/核心原理",
     "category": "前端",
-    "created": 1792302232994.4333,
-    "modified": 1792302232994.4333,
-    "words": 52,
-    "minutes": 1
+    "created": 1792370120000,
+    "modified": 1792370120000,
+    "words": 802,
+    "minutes": 3
   },
   {
     "title": "React学习路线：面向后台管理和ERP系统",
@@ -2408,6 +2471,24 @@ export const allArticles = [
     "modified": 1789907223000,
     "words": 1737,
     "minutes": 5
+  },
+  {
+    "title": "介绍",
+    "url": "/前端/node/node教程",
+    "category": "前端",
+    "created": 1793024346719.7197,
+    "modified": 1793024346719.7197,
+    "words": 4164,
+    "minutes": 11
+  },
+  {
+    "title": "学习大纲",
+    "url": "/前端/node/学习大纲",
+    "category": "前端",
+    "created": 1793018068144.249,
+    "modified": 1793018068144.249,
+    "words": 943,
+    "minutes": 3
   },
   {
     "title": "浏览器解析HTML全过程",
@@ -2608,6 +2689,15 @@ export const allArticles = [
     "minutes": 4
   },
   {
+    "title": "超时问题",
+    "url": "/系统架构/外部接口对接/常见问题",
+    "category": "系统架构",
+    "created": 1792820043467.24,
+    "modified": 1792820043467.24,
+    "words": 104,
+    "minutes": 1
+  },
+  {
     "title": "请求方式规范",
     "url": "/系统架构/系统设计/API设计规范",
     "category": "系统架构",
@@ -2770,13 +2860,13 @@ export const allArticles = [
     "minutes": 3
   },
   {
-    "title": "声明",
+    "title": "模块于文件系统",
     "url": "/编程模型/模块化",
     "category": "其他",
     "created": 1786370678000,
     "modified": 1786370678000,
-    "words": 582,
-    "minutes": 2
+    "words": 1772,
+    "minutes": 5
   },
   {
     "title": "导航",
@@ -2807,12 +2897,26 @@ export const sidebarGroups = [
         "collapsed": true,
         "items": [
           {
-            "text": "React教程",
-            "link": "/前端/React/React教程"
-          },
-          {
             "text": "核心原理",
             "link": "/前端/React/核心原理"
+          },
+          {
+            "text": "01-React教程",
+            "link": "/前端/React/01-React教程"
+          }
+        ]
+      },
+      {
+        "text": "node",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "node教程",
+            "link": "/前端/node/node教程"
+          },
+          {
+            "text": "学习大纲",
+            "link": "/前端/node/学习大纲"
           }
         ]
       },
@@ -3275,8 +3379,16 @@ export const sidebarGroups = [
             "collapsed": true,
             "items": [
               {
+                "text": "JVM",
+                "link": "/Java/01-Java核心编程/JVM/JVM"
+              },
+              {
                 "text": "从进程布局推导JVM内存区域",
                 "link": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域"
+              },
+              {
+                "text": "其它",
+                "link": "/Java/01-Java核心编程/JVM/其它"
               },
               {
                 "text": "01-Java源码到类加载过程",
@@ -3683,6 +3795,16 @@ export const sidebarGroups = [
         ]
       },
       {
+        "text": "外部接口对接",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "常见问题",
+            "link": "/系统架构/外部接口对接/常见问题"
+          }
+        ]
+      },
+      {
         "text": "系统设计",
         "collapsed": true,
         "items": [
@@ -3804,6 +3926,10 @@ export const sidebarGroups = [
         "text": "句式和语法",
         "collapsed": true,
         "items": [
+          {
+            "text": "副词",
+            "link": "/English/句式和语法/副词"
+          },
           {
             "text": "动词作句首",
             "link": "/English/句式和语法/动词作句首"
@@ -3980,14 +4106,20 @@ export const sidebarGroups = [
   }
 ]
 export const mdIndex = {
-  "React教程": [
-    "前端/React/React教程.md"
-  ],
   "核心原理": [
     "前端/React/核心原理.md"
   ],
+  "01-React教程": [
+    "前端/React/01-React教程.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
+  ],
+  "node教程": [
+    "前端/node/node教程.md"
+  ],
+  "学习大纲": [
+    "前端/node/学习大纲.md"
   ],
   "首页": [
     "前端/首页.md",
@@ -4204,8 +4336,14 @@ export const mdIndex = {
   "01-Spring核心工作原理": [
     "Java/源码系列/01-Spring Framework/01-Spring核心工作原理.md"
   ],
+  "JVM": [
+    "Java/01-Java核心编程/JVM/JVM.md"
+  ],
   "从进程布局推导JVM内存区域": [
     "Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域.md"
+  ],
+  "其它": [
+    "Java/01-Java核心编程/JVM/其它.md"
   ],
   "01-Java源码到类加载过程": [
     "Java/01-Java核心编程/JVM/01-Java源码到类加载过程.md"
@@ -4400,6 +4538,9 @@ export const mdIndex = {
   "资金管理": [
     "系统架构/企业财务信息化/资料库/资金管理.md"
   ],
+  "常见问题": [
+    "系统架构/外部接口对接/常见问题.md"
+  ],
   "API设计规范": [
     "系统架构/系统设计/API设计规范.md"
   ],
@@ -4445,6 +4586,9 @@ export const mdIndex = {
   "01-": [
     "English/单词库/01-.md",
     "AI全栈应用/Vibe Coding/01-.md"
+  ],
+  "副词": [
+    "English/句式和语法/副词.md"
   ],
   "动词作句首": [
     "English/句式和语法/动词作句首.md"
@@ -4505,14 +4649,20 @@ export const mdIndex = {
   ]
 }
 export const imgIndex = {
-  "React教程": [
-    "前端/React/React教程.md"
-  ],
   "核心原理": [
     "前端/React/核心原理.md"
   ],
+  "01-React教程": [
+    "前端/React/01-React教程.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
+  ],
+  "node教程": [
+    "前端/node/node教程.md"
+  ],
+  "学习大纲": [
+    "前端/node/学习大纲.md"
   ],
   "Pasted image 20260525214527": [
     "前端/zmg/Pasted image 20260525214527.png"
@@ -4615,6 +4765,15 @@ export const imgIndex = {
   ],
   "Pasted image 20260920214839": [
     "前端/zmg/Pasted image 20260920214839.png"
+  ],
+  "Pasted image 20261026195417": [
+    "前端/zmg/Pasted image 20261026195417.png"
+  ],
+  "Pasted image 20261026211022": [
+    "前端/zmg/Pasted image 20261026211022.png"
+  ],
+  "Pasted image 20261026211044": [
+    "前端/zmg/Pasted image 20261026211044.png"
   ],
   "component_note": [
     "前端/zmg/component_note.png"
@@ -5044,8 +5203,14 @@ export const imgIndex = {
   "01-Spring核心工作原理": [
     "Java/源码系列/01-Spring Framework/01-Spring核心工作原理.md"
   ],
+  "JVM": [
+    "Java/01-Java核心编程/JVM/JVM.md"
+  ],
   "从进程布局推导JVM内存区域": [
     "Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域.md"
+  ],
+  "其它": [
+    "Java/01-Java核心编程/JVM/其它.md"
   ],
   "01-Java源码到类加载过程": [
     "Java/01-Java核心编程/JVM/01-Java源码到类加载过程.md"
@@ -5171,6 +5336,18 @@ export const imgIndex = {
   "Pasted image 20260714211953": [
     "Java/Pasted image 20260714211953.png"
   ],
+  "Pasted image 20261019203056": [
+    "Java/Pasted image 20261019203056.png"
+  ],
+  "Pasted image 20261019203125": [
+    "Java/Pasted image 20261019203125.png"
+  ],
+  "Pasted image 20261019203533": [
+    "Java/Pasted image 20261019203533.png"
+  ],
+  "Pasted image 20261019205622": [
+    "Java/Pasted image 20261019205622.png"
+  ],
   "Pasted image 20260626222125": [
     "Python/zmg/Pasted image 20260626222125.png"
   ],
@@ -5258,6 +5435,9 @@ export const imgIndex = {
   "资金管理": [
     "系统架构/企业财务信息化/资料库/资金管理.md"
   ],
+  "常见问题": [
+    "系统架构/外部接口对接/常见问题.md"
+  ],
   "API设计规范": [
     "系统架构/系统设计/API设计规范.md"
   ],
@@ -5306,6 +5486,9 @@ export const imgIndex = {
   "01-": [
     "English/单词库/01-.md",
     "AI全栈应用/Vibe Coding/01-.md"
+  ],
+  "副词": [
+    "English/句式和语法/副词.md"
   ],
   "动词作句首": [
     "English/句式和语法/动词作句首.md"
