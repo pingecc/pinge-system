@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 27,
+    "count": 31,
     "articles": [
       {
         "title": "HTML基础",
@@ -90,10 +90,10 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "基础语法",
-        "url": "/前端/03-JavaScript/01-核心",
-        "created": 1788094737000,
-        "modified": 1792370120000
+        "title": "核心语法",
+        "url": "/前端/03-JavaScript/01-JavaScript教程",
+        "created": 1793201079435.7,
+        "modified": 1793201079435.7
       },
       {
         "title": "函数的本质",
@@ -102,7 +102,7 @@ export const navCategories = [
         "modified": 1792370120000
       },
       {
-        "title": "1. 核心设计理念",
+        "title": "核心设计理念",
         "url": "/前端/03-JavaScript/04-模块化",
         "created": 1787971861000,
         "modified": 1787971861000
@@ -126,6 +126,12 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
+        "title": "🚀 TypeScript背景发展",
+        "url": "/前端/03-JavaScript/TypeScript",
+        "created": 1793191315082.106,
+        "modified": 1793191315082.106
+      },
+      {
         "title": "原生HTML绑定事件方式",
         "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
         "created": 1792370120000,
@@ -134,14 +140,20 @@ export const navCategories = [
       {
         "title": "什么是React？",
         "url": "/前端/React/01-React教程",
-        "created": 1792825525341.712,
-        "modified": 1792825525341.712
+        "created": 1793024530000,
+        "modified": 1793024530000
+      },
+      {
+        "title": "使用脚手架快速搭建项目",
+        "url": "/前端/React/02-项目开发",
+        "created": 1793717810934.9824,
+        "modified": 1793717810934.9824
       },
       {
         "title": "虚拟DOM",
         "url": "/前端/React/核心原理",
         "created": 1792370120000,
-        "modified": 1792370120000
+        "modified": 1793024530000
       },
       {
         "title": "React学习路线：面向后台管理和ERP系统",
@@ -150,16 +162,28 @@ export const navCategories = [
         "modified": 1789907223000
       },
       {
+        "title": "Vite",
+        "url": "/前端/node/Vite",
+        "created": 1793620427380.9028,
+        "modified": 1793620427380.9028
+      },
+      {
         "title": "介绍",
         "url": "/前端/node/node教程",
-        "created": 1793024346719.7197,
-        "modified": 1793024346719.7197
+        "created": 1793024530000,
+        "modified": 1793024530000
       },
       {
         "title": "学习大纲",
         "url": "/前端/node/学习大纲",
-        "created": 1793018068144.249,
-        "modified": 1793018068144.249
+        "created": 1793024530000,
+        "modified": 1793024530000
+      },
+      {
+        "title": "前端生态",
+        "url": "/前端/前端生态",
+        "created": 1793190766269.7185,
+        "modified": 1793190766269.7185
       },
       {
         "title": "浏览器解析HTML全过程",
@@ -225,20 +249,20 @@ export const navCategories = [
       {
         "title": "L1 · JVM 全景图",
         "url": "/Java/01-Java核心编程/JVM/JVM",
-        "created": 1792501183410.1836,
-        "modified": 1792501183410.1836
+        "created": 1793024530000,
+        "modified": 1793024530000
       },
       {
         "title": "从进程布局推导JVM内存区域",
         "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
         "created": 1792370120000,
-        "modified": 1792370120000
+        "modified": 1793024530000
       },
       {
         "title": "其它",
         "url": "/Java/01-Java核心编程/JVM/其它",
-        "created": 1792416264244.3528,
-        "modified": 1792416264244.3528
+        "created": 1793024530000,
+        "modified": 1793024530000
       },
       {
         "title": "Chapter02：Annotation的本质",
@@ -905,8 +929,8 @@ export const navCategories = [
       {
         "title": "超时问题",
         "url": "/系统架构/外部接口对接/常见问题",
-        "created": 1792820043467.24,
-        "modified": 1792820043467.24
+        "created": 1793024530000,
+        "modified": 1793024530000
       },
       {
         "title": "请求方式规范",
@@ -1014,8 +1038,8 @@ export const navCategories = [
       {
         "title": "副词",
         "url": "/English/句式和语法/副词",
-        "created": 1792669118074.0146,
-        "modified": 1792669118074.0146
+        "created": 1793024530000,
+        "modified": 1793024530000
       },
       {
         "title": "动词作句首",
@@ -1155,7 +1179,7 @@ export const navCategories = [
         "title": "模块于文件系统",
         "url": "/编程模型/模块化",
         "created": 1786370678000,
-        "modified": 1786370678000
+        "modified": 1793024530000
       },
       {
         "title": "导航",
@@ -1172,36 +1196,1239 @@ export const navCategories = [
     ]
   }
 ]
-export const navCategoryItems = [
-  {
-    "text": "前端",
-    "link": "/categories/%E5%89%8D%E7%AB%AF"
-  },
-  {
-    "text": "Java",
-    "link": "/categories/Java"
-  },
-  {
-    "text": "Python",
-    "link": "/categories/Python"
-  },
-  {
-    "text": "系统架构",
-    "link": "/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"
-  },
-  {
-    "text": "English",
-    "link": "/categories/English"
-  },
-  {
-    "text": "AI全栈应用",
-    "link": "/categories/AI%E5%85%A8%E6%A0%88%E5%BA%94%E7%94%A8"
-  },
-  {
-    "text": "其他",
-    "link": "/categories/%E5%85%B6%E4%BB%96"
-  }
-]
+export const categoryDirs = {
+  "前端": [
+    "前端"
+  ],
+  "Java": [
+    "Java"
+  ],
+  "Python": [
+    "Python"
+  ],
+  "系统架构": [
+    "系统架构"
+  ],
+  "English": [
+    "English"
+  ],
+  "AI全栈应用": [
+    "AI全栈应用"
+  ],
+  "其他": [
+    "服务器",
+    "考证",
+    "编程模型",
+    "源码系列",
+    "工具资源"
+  ]
+}
+export const categorySidebarMap = {
+  "前端": [
+    {
+      "text": "React",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "核心原理",
+          "link": "/前端/React/核心原理"
+        },
+        {
+          "text": "01-React教程",
+          "link": "/前端/React/01-React教程"
+        },
+        {
+          "text": "02-项目开发",
+          "link": "/前端/React/02-项目开发"
+        }
+      ]
+    },
+    {
+      "text": "node",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Vite",
+          "link": "/前端/node/Vite"
+        },
+        {
+          "text": "node教程",
+          "link": "/前端/node/node教程"
+        },
+        {
+          "text": "学习大纲",
+          "link": "/前端/node/学习大纲"
+        }
+      ]
+    },
+    {
+      "text": "02-CSS",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "reference",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "flex-grow-flex-shrink-guide",
+              "link": "/前端/02-CSS/reference/flex-grow-flex-shrink-guide"
+            },
+            {
+              "text": "justify-content-guide",
+              "link": "/前端/02-CSS/reference/justify-content-guide"
+            }
+          ]
+        },
+        {
+          "text": "布局",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "布局技巧",
+              "link": "/前端/02-CSS/布局/布局技巧"
+            },
+            {
+              "text": "01-盒子模型",
+              "link": "/前端/02-CSS/布局/01-盒子模型"
+            },
+            {
+              "text": "02-Margin、Padding与BFC",
+              "link": "/前端/02-CSS/布局/02-Margin、Padding与BFC"
+            },
+            {
+              "text": "03-普通文档流与Display",
+              "link": "/前端/02-CSS/布局/03-普通文档流与Display"
+            },
+            {
+              "text": "04-position",
+              "link": "/前端/02-CSS/布局/04-position"
+            },
+            {
+              "text": "05-Flex布局",
+              "link": "/前端/02-CSS/布局/05-Flex布局"
+            },
+            {
+              "text": "08-Grid（网格布局）",
+              "link": "/前端/02-CSS/布局/08-Grid（网格布局）"
+            }
+          ]
+        },
+        {
+          "text": "CSS",
+          "link": "/前端/02-CSS/CSS"
+        },
+        {
+          "text": "01-CSS基础",
+          "link": "/前端/02-CSS/01-CSS基础"
+        },
+        {
+          "text": "02-CSS选择器",
+          "link": "/前端/02-CSS/02-CSS选择器"
+        }
+      ]
+    },
+    {
+      "text": "03-JavaScript",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "IIFE",
+          "link": "/前端/03-JavaScript/IIFE"
+        },
+        {
+          "text": "TypeScript",
+          "link": "/前端/03-JavaScript/TypeScript"
+        },
+        {
+          "text": "原生HTML绑定事件方式",
+          "link": "/前端/03-JavaScript/原生HTML绑定事件方式"
+        },
+        {
+          "text": "01-JavaScript教程",
+          "link": "/前端/03-JavaScript/01-JavaScript教程"
+        },
+        {
+          "text": "03-函数",
+          "link": "/前端/03-JavaScript/03-函数"
+        },
+        {
+          "text": "04-模块化",
+          "link": "/前端/03-JavaScript/04-模块化"
+        },
+        {
+          "text": "05-异步",
+          "link": "/前端/03-JavaScript/05-异步"
+        },
+        {
+          "text": "06-DOM与浏览器API",
+          "link": "/前端/03-JavaScript/06-DOM与浏览器API"
+        }
+      ]
+    },
+    {
+      "text": "React学习路线-面向后台ERP",
+      "link": "/前端/React学习路线-面向后台ERP"
+    },
+    {
+      "text": "前端生态",
+      "link": "/前端/前端生态"
+    },
+    {
+      "text": "首页",
+      "link": "/前端/首页"
+    },
+    {
+      "text": "01-HTML",
+      "link": "/前端/01-HTML"
+    },
+    {
+      "text": "01-前端基础：浏览器与HTML CSS",
+      "link": "/前端/01-前端基础：浏览器与HTML CSS"
+    }
+  ],
+  "Java": [
+    {
+      "text": "Java核心",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Excalidraw",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "vue-route",
+              "link": "/Java/Java核心/Excalidraw/vue-route"
+            },
+            {
+              "text": "企业经营",
+              "link": "/Java/Java核心/Excalidraw/企业经营"
+            }
+          ]
+        },
+        {
+          "text": "GPT",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "ChatGPT",
+              "link": "/Java/Java核心/GPT/ChatGPT"
+            },
+            {
+              "text": "DeepSeek学习",
+              "link": "/Java/Java核心/GPT/DeepSeek学习"
+            },
+            {
+              "text": "Gemini学习",
+              "link": "/Java/Java核心/GPT/Gemini学习"
+            }
+          ]
+        },
+        {
+          "text": "Spring生态",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Spring",
+              "link": "/Java/Java核心/Spring生态/01-Spring"
+            },
+            {
+              "text": "02-Spring Cloud",
+              "link": "/Java/Java核心/Spring生态/02-Spring Cloud"
+            }
+          ]
+        },
+        {
+          "text": "工作流",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Flowable",
+              "link": "/Java/Java核心/工作流/01-Flowable"
+            }
+          ]
+        },
+        {
+          "text": "技术基建",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "技术组件",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "MinIO",
+                  "link": "/Java/Java核心/技术基建/技术组件/MinIO"
+                }
+              ]
+            },
+            {
+              "text": "计算机系统",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "IO",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "text": "IO",
+                      "link": "/Java/Java核心/技术基建/计算机系统/IO/IO"
+                    },
+                    {
+                      "text": "什么是IO",
+                      "link": "/Java/Java核心/技术基建/计算机系统/IO/什么是IO"
+                    }
+                  ]
+                },
+                {
+                  "text": "深入理解计算机系统",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "text": "深入理解计算机系统",
+                      "link": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/深入理解计算机系统"
+                    },
+                    {
+                      "text": "系统调用",
+                      "link": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/系统调用"
+                    }
+                  ]
+                },
+                {
+                  "text": "操作系统",
+                  "link": "/Java/Java核心/技术基建/计算机系统/操作系统"
+                },
+                {
+                  "text": "数据存储",
+                  "link": "/Java/Java核心/技术基建/计算机系统/数据存储"
+                },
+                {
+                  "text": "文件系统设计",
+                  "link": "/Java/Java核心/技术基建/计算机系统/文件系统设计"
+                },
+                {
+                  "text": "计算机组层原理",
+                  "link": "/Java/Java核心/技术基建/计算机系统/计算机组层原理"
+                },
+                {
+                  "text": "计算机网络",
+                  "link": "/Java/Java核心/技术基建/计算机系统/计算机网络"
+                }
+              ]
+            },
+            {
+              "text": "运维",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "软件安装",
+                  "link": "/Java/Java核心/技术基建/运维/软件安装"
+                }
+              ]
+            },
+            {
+              "text": "1-Web开发",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "JavaScript",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "text": "异步",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/异步"
+                    },
+                    {
+                      "text": "浏览器",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/浏览器"
+                    },
+                    {
+                      "text": "语言核心",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/语言核心"
+                    }
+                  ]
+                },
+                {
+                  "text": "Vue",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "text": "README",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/Vue/README"
+                    },
+                    {
+                      "text": "Vue2",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue2"
+                    },
+                    {
+                      "text": "Vue3",
+                      "link": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue3"
+                    }
+                  ]
+                },
+                {
+                  "text": "RDEADME",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/RDEADME"
+                },
+                {
+                  "text": "Web",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/Web"
+                },
+                {
+                  "text": "工程化",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/工程化"
+                },
+                {
+                  "text": "待整理",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/待整理"
+                },
+                {
+                  "text": "构建",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/构建"
+                },
+                {
+                  "text": "01-HTML",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/01-HTML"
+                },
+                {
+                  "text": "02-CSS",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/02-CSS"
+                },
+                {
+                  "text": "vue3快速上手",
+                  "link": "/Java/Java核心/技术基建/1-Web开发/vue3快速上手"
+                }
+              ]
+            },
+            {
+              "text": "4-Python开发",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "RDADEME",
+                  "link": "/Java/Java核心/技术基建/4-Python开发/RDADEME"
+                },
+                {
+                  "text": "爬虫",
+                  "link": "/Java/Java核心/技术基建/4-Python开发/爬虫"
+                },
+                {
+                  "text": "0-Python",
+                  "link": "/Java/Java核心/技术基建/4-Python开发/0-Python"
+                }
+              ]
+            },
+            {
+              "text": "前后端数据交互",
+              "link": "/Java/Java核心/技术基建/前后端数据交互"
+            },
+            {
+              "text": "教程资源",
+              "link": "/Java/Java核心/技术基建/教程资源"
+            },
+            {
+              "text": "线上故障分析",
+              "link": "/Java/Java核心/技术基建/线上故障分析"
+            },
+            {
+              "text": "软件开发环境",
+              "link": "/Java/Java核心/技术基建/软件开发环境"
+            }
+          ]
+        },
+        {
+          "text": "消息队列",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-RabbitMQ基础",
+              "link": "/Java/Java核心/消息队列/01-RabbitMQ基础"
+            },
+            {
+              "text": "02-RabbitMQ问题解决",
+              "link": "/Java/Java核心/消息队列/02-RabbitMQ问题解决"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "应用",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Flowable",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Flowable",
+              "link": "/Java/应用/Flowable/01-Flowable"
+            }
+          ]
+        },
+        {
+          "text": "Spring生态",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Mybatis",
+              "link": "/Java/应用/Spring生态/Mybatis"
+            }
+          ]
+        },
+        {
+          "text": "其它技术",
+          "link": "/Java/应用/其它技术"
+        },
+        {
+          "text": "欢迎",
+          "link": "/Java/应用/欢迎"
+        }
+      ]
+    },
+    {
+      "text": "架构",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "系统性能",
+          "link": "/Java/架构/系统性能"
+        }
+      ]
+    },
+    {
+      "text": "源码系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-Spring Framework",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Spring核心工作原理",
+              "link": "/Java/源码系列/01-Spring Framework/01-Spring核心工作原理"
+            }
+          ]
+        },
+        {
+          "text": "阅读心法",
+          "link": "/Java/源码系列/阅读心法"
+        }
+      ]
+    },
+    {
+      "text": "01-Java核心编程",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "JVM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "JVM",
+              "link": "/Java/01-Java核心编程/JVM/JVM"
+            },
+            {
+              "text": "从进程布局推导JVM内存区域",
+              "link": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域"
+            },
+            {
+              "text": "其它",
+              "link": "/Java/01-Java核心编程/JVM/其它"
+            },
+            {
+              "text": "01-Java源码到类加载过程",
+              "link": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程"
+            },
+            {
+              "text": "02-Class对象应用",
+              "link": "/Java/01-Java核心编程/JVM/02-Class对象应用"
+            }
+          ]
+        },
+        {
+          "text": "Java核心语言特性",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "03-注解Annotation",
+              "link": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation"
+            }
+          ]
+        },
+        {
+          "text": "Java源码设计",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "Java-CallBack设计",
+              "link": "/Java/01-Java核心编程/Java源码设计/Java-CallBack设计"
+            },
+            {
+              "text": "Java-动态代理设计",
+              "link": "/Java/01-Java核心编程/Java源码设计/Java-动态代理设计"
+            },
+            {
+              "text": "构造方法中传递 this 设计理解",
+              "link": "/Java/01-Java核心编程/Java源码设计/构造方法中传递 this 设计理解"
+            }
+          ]
+        },
+        {
+          "text": "Java高级技术",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "字节码操作-ASM",
+              "link": "/Java/01-Java核心编程/Java高级技术/字节码操作-ASM"
+            }
+          ]
+        },
+        {
+          "text": "MAT",
+          "link": "/Java/01-Java核心编程/MAT"
+        },
+        {
+          "text": "Tomcat",
+          "link": "/Java/01-Java核心编程/Tomcat"
+        },
+        {
+          "text": "面向对象",
+          "link": "/Java/01-Java核心编程/面向对象"
+        },
+        {
+          "text": "00-设计哲学",
+          "link": "/Java/01-Java核心编程/00-设计哲学"
+        },
+        {
+          "text": "01-开发和运行环境",
+          "link": "/Java/01-Java核心编程/01-开发和运行环境"
+        },
+        {
+          "text": "02-语言核心",
+          "link": "/Java/01-Java核心编程/02-语言核心"
+        },
+        {
+          "text": "03-并发编程",
+          "link": "/Java/01-Java核心编程/03-并发编程"
+        },
+        {
+          "text": "04-函数式编程",
+          "link": "/Java/01-Java核心编程/04-函数式编程"
+        },
+        {
+          "text": "05-IO编程",
+          "link": "/Java/01-Java核心编程/05-IO编程"
+        }
+      ]
+    },
+    {
+      "text": "02-Spring生态",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-Spring",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Spring",
+              "link": "/Java/02-Spring生态/01-Spring/01-Spring"
+            },
+            {
+              "text": "01-Spring核心",
+              "link": "/Java/02-Spring生态/01-Spring/01-Spring核心"
+            },
+            {
+              "text": "02-常见应用",
+              "link": "/Java/02-Spring生态/01-Spring/02-常见应用"
+            }
+          ]
+        },
+        {
+          "text": "SpringAI集成",
+          "link": "/Java/02-Spring生态/SpringAI集成"
+        },
+        {
+          "text": "02-SpringMVC",
+          "link": "/Java/02-Spring生态/02-SpringMVC"
+        }
+      ]
+    },
+    {
+      "text": "03-数据库",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "MongoDB",
+          "link": "/Java/03-数据库/MongoDB"
+        },
+        {
+          "text": "MySQL",
+          "link": "/Java/03-数据库/MySQL"
+        },
+        {
+          "text": "PostgreSQL",
+          "link": "/Java/03-数据库/PostgreSQL"
+        },
+        {
+          "text": "Redis",
+          "link": "/Java/03-数据库/Redis"
+        },
+        {
+          "text": "SQL",
+          "link": "/Java/03-数据库/SQL"
+        },
+        {
+          "text": "分布式事务",
+          "link": "/Java/03-数据库/分布式事务"
+        },
+        {
+          "text": "消息队列",
+          "link": "/Java/03-数据库/消息队列"
+        }
+      ]
+    },
+    {
+      "text": "04-ORM",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Mybatis",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-ORM发展历程",
+              "link": "/Java/04-ORM/Mybatis/01-ORM发展历程"
+            },
+            {
+              "text": "02-Mybatis",
+              "link": "/Java/04-ORM/Mybatis/02-Mybatis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "04-开发工具",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "日志",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Logback",
+              "link": "/Java/04-开发工具/日志/01-Logback"
+            },
+            {
+              "text": "01-日志",
+              "link": "/Java/04-开发工具/日志/01-日志"
+            },
+            {
+              "text": "02-log4j2",
+              "link": "/Java/04-开发工具/日志/02-log4j2"
+            }
+          ]
+        },
+        {
+          "text": "Git",
+          "link": "/Java/04-开发工具/Git"
+        },
+        {
+          "text": "01-Lombok",
+          "link": "/Java/04-开发工具/01-Lombok"
+        },
+        {
+          "text": "01-Ugit",
+          "link": "/Java/04-开发工具/01-Ugit"
+        },
+        {
+          "text": "02-hutool",
+          "link": "/Java/04-开发工具/02-hutool"
+        }
+      ]
+    },
+    {
+      "text": "05-Elastic Stack",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-核心知识",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-Elasticsearch简介",
+              "link": "/Java/05-Elastic Stack/01-核心知识/01-Elasticsearch简介"
+            },
+            {
+              "text": "02-DSL-API操作",
+              "link": "/Java/05-Elastic Stack/01-核心知识/02-DSL-API操作"
+            },
+            {
+              "text": "03-RestAPI",
+              "link": "/Java/05-Elastic Stack/01-核心知识/03-RestAPI"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Python": [
+    {
+      "text": "01-Python核心编程",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-开发和运行环境",
+          "link": "/Python/01-Python核心编程/01-开发和运行环境"
+        },
+        {
+          "text": "01-核心",
+          "link": "/Python/01-Python核心编程/01-核心"
+        },
+        {
+          "text": "03-数据结构",
+          "link": "/Python/01-Python核心编程/03-数据结构"
+        },
+        {
+          "text": "04-函数",
+          "link": "/Python/01-Python核心编程/04-函数"
+        },
+        {
+          "text": "05-面向对象",
+          "link": "/Python/01-Python核心编程/05-面向对象"
+        },
+        {
+          "text": "06-模块化",
+          "link": "/Python/01-Python核心编程/06-模块化"
+        },
+        {
+          "text": "07-文件",
+          "link": "/Python/01-Python核心编程/07-文件"
+        }
+      ]
+    },
+    {
+      "text": "02-开发",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-requests",
+          "link": "/Python/02-开发/01-requests"
+        },
+        {
+          "text": "02-os库",
+          "link": "/Python/02-开发/02-os库"
+        },
+        {
+          "text": "03-pathlib",
+          "link": "/Python/02-开发/03-pathlib"
+        }
+      ]
+    }
+  ],
+  "系统架构": [
+    {
+      "text": "ERP",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "库存设计",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-库存管理",
+              "link": "/系统架构/ERP/库存设计/01-库存管理"
+            }
+          ]
+        },
+        {
+          "text": "采购管理",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-采购管理",
+              "link": "/系统架构/ERP/采购管理/01-采购管理"
+            },
+            {
+              "text": "02-采购术语",
+              "link": "/系统架构/ERP/采购管理/02-采购术语"
+            }
+          ]
+        },
+        {
+          "text": "销售管理",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "01-销售管理",
+              "link": "/系统架构/ERP/销售管理/01-销售管理"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "企业财务信息化",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "资料库",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "ERP中的财务体现",
+              "link": "/系统架构/企业财务信息化/资料库/ERP中的财务体现"
+            },
+            {
+              "text": "三单匹配",
+              "link": "/系统架构/企业财务信息化/资料库/三单匹配"
+            },
+            {
+              "text": "会计准则",
+              "link": "/系统架构/企业财务信息化/资料库/会计准则"
+            },
+            {
+              "text": "会计核算",
+              "link": "/系统架构/企业财务信息化/资料库/会计核算"
+            },
+            {
+              "text": "发票与税",
+              "link": "/系统架构/企业财务信息化/资料库/发票与税"
+            },
+            {
+              "text": "报表合并机制",
+              "link": "/系统架构/企业财务信息化/资料库/报表合并机制"
+            },
+            {
+              "text": "理解做账",
+              "link": "/系统架构/企业财务信息化/资料库/理解做账"
+            },
+            {
+              "text": "税务管理",
+              "link": "/系统架构/企业财务信息化/资料库/税务管理"
+            },
+            {
+              "text": "管理会计",
+              "link": "/系统架构/企业财务信息化/资料库/管理会计"
+            },
+            {
+              "text": "资金管理",
+              "link": "/系统架构/企业财务信息化/资料库/资金管理"
+            }
+          ]
+        },
+        {
+          "text": "ERP与财务",
+          "link": "/系统架构/企业财务信息化/ERP与财务"
+        },
+        {
+          "text": "企业财务信息化",
+          "link": "/系统架构/企业财务信息化/企业财务信息化"
+        },
+        {
+          "text": "杂谈",
+          "link": "/系统架构/企业财务信息化/杂谈"
+        }
+      ]
+    },
+    {
+      "text": "外部接口对接",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "常见问题",
+          "link": "/系统架构/外部接口对接/常见问题"
+        }
+      ]
+    },
+    {
+      "text": "系统设计",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "API设计规范",
+          "link": "/系统架构/系统设计/API设计规范"
+        },
+        {
+          "text": "Git规范",
+          "link": "/系统架构/系统设计/Git规范"
+        },
+        {
+          "text": "企业组织数据权限",
+          "link": "/系统架构/系统设计/企业组织数据权限"
+        },
+        {
+          "text": "单据设计",
+          "link": "/系统架构/系统设计/单据设计"
+        },
+        {
+          "text": "数据一致性",
+          "link": "/系统架构/系统设计/数据一致性"
+        }
+      ]
+    },
+    {
+      "text": "跨境物流业务",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "书籍阅读",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "详解",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "UPS",
+                  "link": "/系统架构/跨境物流业务/书籍阅读/详解/UPS"
+                },
+                {
+                  "text": "偏远邮编",
+                  "link": "/系统架构/跨境物流业务/书籍阅读/详解/偏远邮编"
+                },
+                {
+                  "text": "理解承运人",
+                  "link": "/系统架构/跨境物流业务/书籍阅读/详解/理解承运人"
+                },
+                {
+                  "text": "邮政和快递的区别",
+                  "link": "/系统架构/跨境物流业务/书籍阅读/详解/邮政和快递的区别"
+                },
+                {
+                  "text": "邮编在跨境物流的作用",
+                  "link": "/系统架构/跨境物流业务/书籍阅读/详解/邮编在跨境物流的作用"
+                }
+              ]
+            },
+            {
+              "text": "《实战供应链：业务梳理、系统设计与项目实战》",
+              "link": "/系统架构/跨境物流业务/书籍阅读/《实战供应链：业务梳理、系统设计与项目实战》"
+            },
+            {
+              "text": "《跨境物流及海外仓》",
+              "link": "/系统架构/跨境物流业务/书籍阅读/《跨境物流及海外仓》"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "项目实践",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "外贸业财一体化ERP",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "个人职责内容",
+              "link": "/系统架构/项目实践/外贸业财一体化ERP/个人职责内容"
+            }
+          ]
+        },
+        {
+          "text": "大货系统",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "订单模块",
+              "link": "/系统架构/项目实践/大货系统/订单模块"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "首页",
+      "link": "/系统架构/首页"
+    }
+  ],
+  "English": [
+    {
+      "text": "单词库",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-",
+          "link": "/English/单词库/01-"
+        }
+      ]
+    },
+    {
+      "text": "句式和语法",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "副词",
+          "link": "/English/句式和语法/副词"
+        },
+        {
+          "text": "动词作句首",
+          "link": "/English/句式和语法/动词作句首"
+        }
+      ]
+    },
+    {
+      "text": "零基础系统学习英语",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-英语学习下意识的重要性",
+          "link": "/English/零基础系统学习英语/01-英语学习下意识的重要性"
+        },
+        {
+          "text": "02-单词联想",
+          "link": "/English/零基础系统学习英语/02-单词联想"
+        },
+        {
+          "text": "03-学英语的10个习惯",
+          "link": "/English/零基础系统学习英语/03-学英语的10个习惯"
+        }
+      ]
+    },
+    {
+      "text": "欢迎",
+      "link": "/English/欢迎"
+    }
+  ],
+  "AI全栈应用": [
+    {
+      "text": "Agent",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "核心代码示例",
+          "link": "/AI全栈应用/Agent/核心代码示例"
+        },
+        {
+          "text": "00-总结",
+          "link": "/AI全栈应用/Agent/00-总结"
+        },
+        {
+          "text": "01-认识Agent",
+          "link": "/AI全栈应用/Agent/01-认识Agent"
+        },
+        {
+          "text": "02-上下文工程",
+          "link": "/AI全栈应用/Agent/02-上下文工程"
+        }
+      ]
+    },
+    {
+      "text": "Vibe Coding",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "01-",
+          "link": "/AI全栈应用/Vibe Coding/01-"
+        }
+      ]
+    },
+    {
+      "text": "AI 基础概念",
+      "link": "/AI全栈应用/AI 基础概念"
+    },
+    {
+      "text": "WorkBuddy",
+      "link": "/AI全栈应用/WorkBuddy"
+    },
+    {
+      "text": "workbuddy分享",
+      "link": "/AI全栈应用/workbuddy分享"
+    }
+  ],
+  "其他": [
+    {
+      "text": "服务器",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Mac",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "command 和 sh",
+              "link": "/服务器/Mac/command 和 sh"
+            },
+            {
+              "text": "快捷键",
+              "link": "/服务器/Mac/快捷键"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "考证",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "软考",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "首页",
+              "link": "/考证/软考/首页"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "编程模型",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "设计模式",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "导航",
+              "link": "/编程模型/设计模式/导航"
+            }
+          ]
+        },
+        {
+          "text": "函数",
+          "link": "/编程模型/函数"
+        },
+        {
+          "text": "垃圾回收器",
+          "link": "/编程模型/垃圾回收器"
+        },
+        {
+          "text": "控制反转",
+          "link": "/编程模型/控制反转"
+        },
+        {
+          "text": "模块化",
+          "link": "/编程模型/模块化"
+        }
+      ]
+    },
+    {
+      "text": "源码系列",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "欢迎",
+          "link": "/源码系列/欢迎"
+        }
+      ]
+    },
+    {
+      "text": "工具资源",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "开发工具",
+          "link": "/工具资源/开发工具"
+        }
+      ]
+    }
+  ]
+}
 export const allArticles = [
   {
     "title": "关于提示词和SKill",
@@ -1288,8 +2515,8 @@ export const allArticles = [
     "title": "副词",
     "url": "/English/句式和语法/副词",
     "category": "English",
-    "created": 1792669118074.0146,
-    "modified": 1792669118074.0146,
+    "created": 1793024530000,
+    "modified": 1793024530000,
     "words": 434,
     "minutes": 2
   },
@@ -1414,8 +2641,8 @@ export const allArticles = [
     "title": "L1 · JVM 全景图",
     "url": "/Java/01-Java核心编程/JVM/JVM",
     "category": "Java",
-    "created": 1792501183410.1836,
-    "modified": 1792501183410.1836,
+    "created": 1793024530000,
+    "modified": 1793024530000,
     "words": 970,
     "minutes": 3
   },
@@ -1424,7 +2651,7 @@ export const allArticles = [
     "url": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域",
     "category": "Java",
     "created": 1792370120000,
-    "modified": 1792370120000,
+    "modified": 1793024530000,
     "words": 68,
     "minutes": 1
   },
@@ -1432,8 +2659,8 @@ export const allArticles = [
     "title": "其它",
     "url": "/Java/01-Java核心编程/JVM/其它",
     "category": "Java",
-    "created": 1792416264244.3528,
-    "modified": 1792416264244.3528,
+    "created": 1793024530000,
+    "modified": 1793024530000,
     "words": 581,
     "minutes": 2
   },
@@ -2383,13 +3610,13 @@ export const allArticles = [
     "minutes": 1
   },
   {
-    "title": "基础语法",
-    "url": "/前端/03-JavaScript/01-核心",
+    "title": "核心语法",
+    "url": "/前端/03-JavaScript/01-JavaScript教程",
     "category": "前端",
-    "created": 1788094737000,
-    "modified": 1792370120000,
-    "words": 1000,
-    "minutes": 3
+    "created": 1793201079435.7,
+    "modified": 1793201079435.7,
+    "words": 2982,
+    "minutes": 8
   },
   {
     "title": "函数的本质",
@@ -2401,13 +3628,13 @@ export const allArticles = [
     "minutes": 4
   },
   {
-    "title": "1. 核心设计理念",
+    "title": "核心设计理念",
     "url": "/前端/03-JavaScript/04-模块化",
     "category": "前端",
     "created": 1787971861000,
     "modified": 1787971861000,
-    "words": 3596,
-    "minutes": 9
+    "words": 3616,
+    "minutes": 10
   },
   {
     "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
@@ -2437,6 +3664,15 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "🚀 TypeScript背景发展",
+    "url": "/前端/03-JavaScript/TypeScript",
+    "category": "前端",
+    "created": 1793191315082.106,
+    "modified": 1793191315082.106,
+    "words": 1119,
+    "minutes": 3
+  },
+  {
     "title": "原生HTML绑定事件方式",
     "url": "/前端/03-JavaScript/原生HTML绑定事件方式",
     "category": "前端",
@@ -2449,17 +3685,26 @@ export const allArticles = [
     "title": "什么是React？",
     "url": "/前端/React/01-React教程",
     "category": "前端",
-    "created": 1792825525341.712,
-    "modified": 1792825525341.712,
-    "words": 5440,
-    "minutes": 14
+    "created": 1793024530000,
+    "modified": 1793024530000,
+    "words": 8222,
+    "minutes": 21
+  },
+  {
+    "title": "使用脚手架快速搭建项目",
+    "url": "/前端/React/02-项目开发",
+    "category": "前端",
+    "created": 1793717810934.9824,
+    "modified": 1793717810934.9824,
+    "words": 3076,
+    "minutes": 8
   },
   {
     "title": "虚拟DOM",
     "url": "/前端/React/核心原理",
     "category": "前端",
     "created": 1792370120000,
-    "modified": 1792370120000,
+    "modified": 1793024530000,
     "words": 802,
     "minutes": 3
   },
@@ -2473,21 +3718,39 @@ export const allArticles = [
     "minutes": 5
   },
   {
+    "title": "Vite",
+    "url": "/前端/node/Vite",
+    "category": "前端",
+    "created": 1793620427380.9028,
+    "modified": 1793620427380.9028,
+    "words": 885,
+    "minutes": 3
+  },
+  {
     "title": "介绍",
     "url": "/前端/node/node教程",
     "category": "前端",
-    "created": 1793024346719.7197,
-    "modified": 1793024346719.7197,
-    "words": 4164,
-    "minutes": 11
+    "created": 1793024530000,
+    "modified": 1793024530000,
+    "words": 6541,
+    "minutes": 17
   },
   {
     "title": "学习大纲",
     "url": "/前端/node/学习大纲",
     "category": "前端",
-    "created": 1793018068144.249,
-    "modified": 1793018068144.249,
+    "created": 1793024530000,
+    "modified": 1793024530000,
     "words": 943,
+    "minutes": 3
+  },
+  {
+    "title": "前端生态",
+    "url": "/前端/前端生态",
+    "category": "前端",
+    "created": 1793190766269.7185,
+    "modified": 1793190766269.7185,
+    "words": 821,
     "minutes": 3
   },
   {
@@ -2692,8 +3955,8 @@ export const allArticles = [
     "title": "超时问题",
     "url": "/系统架构/外部接口对接/常见问题",
     "category": "系统架构",
-    "created": 1792820043467.24,
-    "modified": 1792820043467.24,
+    "created": 1793024530000,
+    "modified": 1793024530000,
     "words": 104,
     "minutes": 1
   },
@@ -2864,7 +4127,7 @@ export const allArticles = [
     "url": "/编程模型/模块化",
     "category": "其他",
     "created": 1786370678000,
-    "modified": 1786370678000,
+    "modified": 1793024530000,
     "words": 1772,
     "minutes": 5
   },
@@ -2887,1224 +4150,6 @@ export const allArticles = [
     "minutes": 1
   }
 ]
-export const sidebarGroups = [
-  {
-    "text": "前端",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "React",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "核心原理",
-            "link": "/前端/React/核心原理"
-          },
-          {
-            "text": "01-React教程",
-            "link": "/前端/React/01-React教程"
-          }
-        ]
-      },
-      {
-        "text": "node",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "node教程",
-            "link": "/前端/node/node教程"
-          },
-          {
-            "text": "学习大纲",
-            "link": "/前端/node/学习大纲"
-          }
-        ]
-      },
-      {
-        "text": "02-CSS",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "reference",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "flex-grow-flex-shrink-guide",
-                "link": "/前端/02-CSS/reference/flex-grow-flex-shrink-guide"
-              },
-              {
-                "text": "justify-content-guide",
-                "link": "/前端/02-CSS/reference/justify-content-guide"
-              }
-            ]
-          },
-          {
-            "text": "布局",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "布局技巧",
-                "link": "/前端/02-CSS/布局/布局技巧"
-              },
-              {
-                "text": "01-盒子模型",
-                "link": "/前端/02-CSS/布局/01-盒子模型"
-              },
-              {
-                "text": "02-Margin、Padding与BFC",
-                "link": "/前端/02-CSS/布局/02-Margin、Padding与BFC"
-              },
-              {
-                "text": "03-普通文档流与Display",
-                "link": "/前端/02-CSS/布局/03-普通文档流与Display"
-              },
-              {
-                "text": "04-position",
-                "link": "/前端/02-CSS/布局/04-position"
-              },
-              {
-                "text": "05-Flex布局",
-                "link": "/前端/02-CSS/布局/05-Flex布局"
-              },
-              {
-                "text": "08-Grid（网格布局）",
-                "link": "/前端/02-CSS/布局/08-Grid（网格布局）"
-              }
-            ]
-          },
-          {
-            "text": "CSS",
-            "link": "/前端/02-CSS/CSS"
-          },
-          {
-            "text": "01-CSS基础",
-            "link": "/前端/02-CSS/01-CSS基础"
-          },
-          {
-            "text": "02-CSS选择器",
-            "link": "/前端/02-CSS/02-CSS选择器"
-          }
-        ]
-      },
-      {
-        "text": "03-JavaScript",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "IIFE",
-            "link": "/前端/03-JavaScript/IIFE"
-          },
-          {
-            "text": "原生HTML绑定事件方式",
-            "link": "/前端/03-JavaScript/原生HTML绑定事件方式"
-          },
-          {
-            "text": "01-核心",
-            "link": "/前端/03-JavaScript/01-核心"
-          },
-          {
-            "text": "03-函数",
-            "link": "/前端/03-JavaScript/03-函数"
-          },
-          {
-            "text": "04-模块化",
-            "link": "/前端/03-JavaScript/04-模块化"
-          },
-          {
-            "text": "05-异步",
-            "link": "/前端/03-JavaScript/05-异步"
-          },
-          {
-            "text": "06-DOM与浏览器API",
-            "link": "/前端/03-JavaScript/06-DOM与浏览器API"
-          }
-        ]
-      },
-      {
-        "text": "React学习路线-面向后台ERP",
-        "link": "/前端/React学习路线-面向后台ERP"
-      },
-      {
-        "text": "首页",
-        "link": "/前端/首页"
-      },
-      {
-        "text": "01-HTML",
-        "link": "/前端/01-HTML"
-      },
-      {
-        "text": "01-前端基础：浏览器与HTML CSS",
-        "link": "/前端/01-前端基础：浏览器与HTML CSS"
-      }
-    ]
-  },
-  {
-    "text": "Java",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "Java核心",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Excalidraw",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "vue-route",
-                "link": "/Java/Java核心/Excalidraw/vue-route"
-              },
-              {
-                "text": "企业经营",
-                "link": "/Java/Java核心/Excalidraw/企业经营"
-              }
-            ]
-          },
-          {
-            "text": "GPT",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "ChatGPT",
-                "link": "/Java/Java核心/GPT/ChatGPT"
-              },
-              {
-                "text": "DeepSeek学习",
-                "link": "/Java/Java核心/GPT/DeepSeek学习"
-              },
-              {
-                "text": "Gemini学习",
-                "link": "/Java/Java核心/GPT/Gemini学习"
-              }
-            ]
-          },
-          {
-            "text": "Spring生态",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Spring",
-                "link": "/Java/Java核心/Spring生态/01-Spring"
-              },
-              {
-                "text": "02-Spring Cloud",
-                "link": "/Java/Java核心/Spring生态/02-Spring Cloud"
-              }
-            ]
-          },
-          {
-            "text": "工作流",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Flowable",
-                "link": "/Java/Java核心/工作流/01-Flowable"
-              }
-            ]
-          },
-          {
-            "text": "技术基建",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "技术组件",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "MinIO",
-                    "link": "/Java/Java核心/技术基建/技术组件/MinIO"
-                  }
-                ]
-              },
-              {
-                "text": "计算机系统",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "IO",
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "text": "IO",
-                        "link": "/Java/Java核心/技术基建/计算机系统/IO/IO"
-                      },
-                      {
-                        "text": "什么是IO",
-                        "link": "/Java/Java核心/技术基建/计算机系统/IO/什么是IO"
-                      }
-                    ]
-                  },
-                  {
-                    "text": "深入理解计算机系统",
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "text": "深入理解计算机系统",
-                        "link": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/深入理解计算机系统"
-                      },
-                      {
-                        "text": "系统调用",
-                        "link": "/Java/Java核心/技术基建/计算机系统/深入理解计算机系统/系统调用"
-                      }
-                    ]
-                  },
-                  {
-                    "text": "操作系统",
-                    "link": "/Java/Java核心/技术基建/计算机系统/操作系统"
-                  },
-                  {
-                    "text": "数据存储",
-                    "link": "/Java/Java核心/技术基建/计算机系统/数据存储"
-                  },
-                  {
-                    "text": "文件系统设计",
-                    "link": "/Java/Java核心/技术基建/计算机系统/文件系统设计"
-                  },
-                  {
-                    "text": "计算机组层原理",
-                    "link": "/Java/Java核心/技术基建/计算机系统/计算机组层原理"
-                  },
-                  {
-                    "text": "计算机网络",
-                    "link": "/Java/Java核心/技术基建/计算机系统/计算机网络"
-                  }
-                ]
-              },
-              {
-                "text": "运维",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "软件安装",
-                    "link": "/Java/Java核心/技术基建/运维/软件安装"
-                  }
-                ]
-              },
-              {
-                "text": "1-Web开发",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "JavaScript",
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "text": "异步",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/异步"
-                      },
-                      {
-                        "text": "浏览器",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/浏览器"
-                      },
-                      {
-                        "text": "语言核心",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/JavaScript/语言核心"
-                      }
-                    ]
-                  },
-                  {
-                    "text": "Vue",
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "text": "README",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/Vue/README"
-                      },
-                      {
-                        "text": "Vue2",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue2"
-                      },
-                      {
-                        "text": "Vue3",
-                        "link": "/Java/Java核心/技术基建/1-Web开发/Vue/Vue3"
-                      }
-                    ]
-                  },
-                  {
-                    "text": "RDEADME",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/RDEADME"
-                  },
-                  {
-                    "text": "Web",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/Web"
-                  },
-                  {
-                    "text": "工程化",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/工程化"
-                  },
-                  {
-                    "text": "待整理",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/待整理"
-                  },
-                  {
-                    "text": "构建",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/构建"
-                  },
-                  {
-                    "text": "01-HTML",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/01-HTML"
-                  },
-                  {
-                    "text": "02-CSS",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/02-CSS"
-                  },
-                  {
-                    "text": "vue3快速上手",
-                    "link": "/Java/Java核心/技术基建/1-Web开发/vue3快速上手"
-                  }
-                ]
-              },
-              {
-                "text": "4-Python开发",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "RDADEME",
-                    "link": "/Java/Java核心/技术基建/4-Python开发/RDADEME"
-                  },
-                  {
-                    "text": "爬虫",
-                    "link": "/Java/Java核心/技术基建/4-Python开发/爬虫"
-                  },
-                  {
-                    "text": "0-Python",
-                    "link": "/Java/Java核心/技术基建/4-Python开发/0-Python"
-                  }
-                ]
-              },
-              {
-                "text": "前后端数据交互",
-                "link": "/Java/Java核心/技术基建/前后端数据交互"
-              },
-              {
-                "text": "教程资源",
-                "link": "/Java/Java核心/技术基建/教程资源"
-              },
-              {
-                "text": "线上故障分析",
-                "link": "/Java/Java核心/技术基建/线上故障分析"
-              },
-              {
-                "text": "软件开发环境",
-                "link": "/Java/Java核心/技术基建/软件开发环境"
-              }
-            ]
-          },
-          {
-            "text": "消息队列",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-RabbitMQ基础",
-                "link": "/Java/Java核心/消息队列/01-RabbitMQ基础"
-              },
-              {
-                "text": "02-RabbitMQ问题解决",
-                "link": "/Java/Java核心/消息队列/02-RabbitMQ问题解决"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "应用",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Flowable",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Flowable",
-                "link": "/Java/应用/Flowable/01-Flowable"
-              }
-            ]
-          },
-          {
-            "text": "Spring生态",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "Mybatis",
-                "link": "/Java/应用/Spring生态/Mybatis"
-              }
-            ]
-          },
-          {
-            "text": "其它技术",
-            "link": "/Java/应用/其它技术"
-          },
-          {
-            "text": "欢迎",
-            "link": "/Java/应用/欢迎"
-          }
-        ]
-      },
-      {
-        "text": "架构",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "系统性能",
-            "link": "/Java/架构/系统性能"
-          }
-        ]
-      },
-      {
-        "text": "源码系列",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-Spring Framework",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Spring核心工作原理",
-                "link": "/Java/源码系列/01-Spring Framework/01-Spring核心工作原理"
-              }
-            ]
-          },
-          {
-            "text": "阅读心法",
-            "link": "/Java/源码系列/阅读心法"
-          }
-        ]
-      },
-      {
-        "text": "01-Java核心编程",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "JVM",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "JVM",
-                "link": "/Java/01-Java核心编程/JVM/JVM"
-              },
-              {
-                "text": "从进程布局推导JVM内存区域",
-                "link": "/Java/01-Java核心编程/JVM/从进程布局推导JVM内存区域"
-              },
-              {
-                "text": "其它",
-                "link": "/Java/01-Java核心编程/JVM/其它"
-              },
-              {
-                "text": "01-Java源码到类加载过程",
-                "link": "/Java/01-Java核心编程/JVM/01-Java源码到类加载过程"
-              },
-              {
-                "text": "02-Class对象应用",
-                "link": "/Java/01-Java核心编程/JVM/02-Class对象应用"
-              }
-            ]
-          },
-          {
-            "text": "Java核心语言特性",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "03-注解Annotation",
-                "link": "/Java/01-Java核心编程/Java核心语言特性/03-注解Annotation"
-              }
-            ]
-          },
-          {
-            "text": "Java源码设计",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "Java-CallBack设计",
-                "link": "/Java/01-Java核心编程/Java源码设计/Java-CallBack设计"
-              },
-              {
-                "text": "Java-动态代理设计",
-                "link": "/Java/01-Java核心编程/Java源码设计/Java-动态代理设计"
-              },
-              {
-                "text": "构造方法中传递 this 设计理解",
-                "link": "/Java/01-Java核心编程/Java源码设计/构造方法中传递 this 设计理解"
-              }
-            ]
-          },
-          {
-            "text": "Java高级技术",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "字节码操作-ASM",
-                "link": "/Java/01-Java核心编程/Java高级技术/字节码操作-ASM"
-              }
-            ]
-          },
-          {
-            "text": "MAT",
-            "link": "/Java/01-Java核心编程/MAT"
-          },
-          {
-            "text": "Tomcat",
-            "link": "/Java/01-Java核心编程/Tomcat"
-          },
-          {
-            "text": "面向对象",
-            "link": "/Java/01-Java核心编程/面向对象"
-          },
-          {
-            "text": "00-设计哲学",
-            "link": "/Java/01-Java核心编程/00-设计哲学"
-          },
-          {
-            "text": "01-开发和运行环境",
-            "link": "/Java/01-Java核心编程/01-开发和运行环境"
-          },
-          {
-            "text": "02-语言核心",
-            "link": "/Java/01-Java核心编程/02-语言核心"
-          },
-          {
-            "text": "03-并发编程",
-            "link": "/Java/01-Java核心编程/03-并发编程"
-          },
-          {
-            "text": "04-函数式编程",
-            "link": "/Java/01-Java核心编程/04-函数式编程"
-          },
-          {
-            "text": "05-IO编程",
-            "link": "/Java/01-Java核心编程/05-IO编程"
-          }
-        ]
-      },
-      {
-        "text": "02-Spring生态",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-Spring",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Spring",
-                "link": "/Java/02-Spring生态/01-Spring/01-Spring"
-              },
-              {
-                "text": "01-Spring核心",
-                "link": "/Java/02-Spring生态/01-Spring/01-Spring核心"
-              },
-              {
-                "text": "02-常见应用",
-                "link": "/Java/02-Spring生态/01-Spring/02-常见应用"
-              }
-            ]
-          },
-          {
-            "text": "SpringAI集成",
-            "link": "/Java/02-Spring生态/SpringAI集成"
-          },
-          {
-            "text": "02-SpringMVC",
-            "link": "/Java/02-Spring生态/02-SpringMVC"
-          }
-        ]
-      },
-      {
-        "text": "03-数据库",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "MongoDB",
-            "link": "/Java/03-数据库/MongoDB"
-          },
-          {
-            "text": "MySQL",
-            "link": "/Java/03-数据库/MySQL"
-          },
-          {
-            "text": "PostgreSQL",
-            "link": "/Java/03-数据库/PostgreSQL"
-          },
-          {
-            "text": "Redis",
-            "link": "/Java/03-数据库/Redis"
-          },
-          {
-            "text": "SQL",
-            "link": "/Java/03-数据库/SQL"
-          },
-          {
-            "text": "分布式事务",
-            "link": "/Java/03-数据库/分布式事务"
-          },
-          {
-            "text": "消息队列",
-            "link": "/Java/03-数据库/消息队列"
-          }
-        ]
-      },
-      {
-        "text": "04-ORM",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Mybatis",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-ORM发展历程",
-                "link": "/Java/04-ORM/Mybatis/01-ORM发展历程"
-              },
-              {
-                "text": "02-Mybatis",
-                "link": "/Java/04-ORM/Mybatis/02-Mybatis"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "04-开发工具",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "日志",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Logback",
-                "link": "/Java/04-开发工具/日志/01-Logback"
-              },
-              {
-                "text": "01-日志",
-                "link": "/Java/04-开发工具/日志/01-日志"
-              },
-              {
-                "text": "02-log4j2",
-                "link": "/Java/04-开发工具/日志/02-log4j2"
-              }
-            ]
-          },
-          {
-            "text": "Git",
-            "link": "/Java/04-开发工具/Git"
-          },
-          {
-            "text": "01-Lombok",
-            "link": "/Java/04-开发工具/01-Lombok"
-          },
-          {
-            "text": "01-Ugit",
-            "link": "/Java/04-开发工具/01-Ugit"
-          },
-          {
-            "text": "02-hutool",
-            "link": "/Java/04-开发工具/02-hutool"
-          }
-        ]
-      },
-      {
-        "text": "05-Elastic Stack",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-核心知识",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-Elasticsearch简介",
-                "link": "/Java/05-Elastic Stack/01-核心知识/01-Elasticsearch简介"
-              },
-              {
-                "text": "02-DSL-API操作",
-                "link": "/Java/05-Elastic Stack/01-核心知识/02-DSL-API操作"
-              },
-              {
-                "text": "03-RestAPI",
-                "link": "/Java/05-Elastic Stack/01-核心知识/03-RestAPI"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "text": "Python",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "01-Python核心编程",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-开发和运行环境",
-            "link": "/Python/01-Python核心编程/01-开发和运行环境"
-          },
-          {
-            "text": "01-核心",
-            "link": "/Python/01-Python核心编程/01-核心"
-          },
-          {
-            "text": "03-数据结构",
-            "link": "/Python/01-Python核心编程/03-数据结构"
-          },
-          {
-            "text": "04-函数",
-            "link": "/Python/01-Python核心编程/04-函数"
-          },
-          {
-            "text": "05-面向对象",
-            "link": "/Python/01-Python核心编程/05-面向对象"
-          },
-          {
-            "text": "06-模块化",
-            "link": "/Python/01-Python核心编程/06-模块化"
-          },
-          {
-            "text": "07-文件",
-            "link": "/Python/01-Python核心编程/07-文件"
-          }
-        ]
-      },
-      {
-        "text": "02-开发",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-requests",
-            "link": "/Python/02-开发/01-requests"
-          },
-          {
-            "text": "02-os库",
-            "link": "/Python/02-开发/02-os库"
-          },
-          {
-            "text": "03-pathlib",
-            "link": "/Python/02-开发/03-pathlib"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "text": "系统架构",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "ERP",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "库存设计",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-库存管理",
-                "link": "/系统架构/ERP/库存设计/01-库存管理"
-              }
-            ]
-          },
-          {
-            "text": "采购管理",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-采购管理",
-                "link": "/系统架构/ERP/采购管理/01-采购管理"
-              },
-              {
-                "text": "02-采购术语",
-                "link": "/系统架构/ERP/采购管理/02-采购术语"
-              }
-            ]
-          },
-          {
-            "text": "销售管理",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "01-销售管理",
-                "link": "/系统架构/ERP/销售管理/01-销售管理"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "企业财务信息化",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "资料库",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "ERP中的财务体现",
-                "link": "/系统架构/企业财务信息化/资料库/ERP中的财务体现"
-              },
-              {
-                "text": "三单匹配",
-                "link": "/系统架构/企业财务信息化/资料库/三单匹配"
-              },
-              {
-                "text": "会计准则",
-                "link": "/系统架构/企业财务信息化/资料库/会计准则"
-              },
-              {
-                "text": "会计核算",
-                "link": "/系统架构/企业财务信息化/资料库/会计核算"
-              },
-              {
-                "text": "发票与税",
-                "link": "/系统架构/企业财务信息化/资料库/发票与税"
-              },
-              {
-                "text": "报表合并机制",
-                "link": "/系统架构/企业财务信息化/资料库/报表合并机制"
-              },
-              {
-                "text": "理解做账",
-                "link": "/系统架构/企业财务信息化/资料库/理解做账"
-              },
-              {
-                "text": "税务管理",
-                "link": "/系统架构/企业财务信息化/资料库/税务管理"
-              },
-              {
-                "text": "管理会计",
-                "link": "/系统架构/企业财务信息化/资料库/管理会计"
-              },
-              {
-                "text": "资金管理",
-                "link": "/系统架构/企业财务信息化/资料库/资金管理"
-              }
-            ]
-          },
-          {
-            "text": "ERP与财务",
-            "link": "/系统架构/企业财务信息化/ERP与财务"
-          },
-          {
-            "text": "企业财务信息化",
-            "link": "/系统架构/企业财务信息化/企业财务信息化"
-          },
-          {
-            "text": "杂谈",
-            "link": "/系统架构/企业财务信息化/杂谈"
-          }
-        ]
-      },
-      {
-        "text": "外部接口对接",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "常见问题",
-            "link": "/系统架构/外部接口对接/常见问题"
-          }
-        ]
-      },
-      {
-        "text": "系统设计",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "API设计规范",
-            "link": "/系统架构/系统设计/API设计规范"
-          },
-          {
-            "text": "Git规范",
-            "link": "/系统架构/系统设计/Git规范"
-          },
-          {
-            "text": "企业组织数据权限",
-            "link": "/系统架构/系统设计/企业组织数据权限"
-          },
-          {
-            "text": "单据设计",
-            "link": "/系统架构/系统设计/单据设计"
-          },
-          {
-            "text": "数据一致性",
-            "link": "/系统架构/系统设计/数据一致性"
-          }
-        ]
-      },
-      {
-        "text": "跨境物流业务",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "书籍阅读",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "详解",
-                "collapsed": true,
-                "items": [
-                  {
-                    "text": "UPS",
-                    "link": "/系统架构/跨境物流业务/书籍阅读/详解/UPS"
-                  },
-                  {
-                    "text": "偏远邮编",
-                    "link": "/系统架构/跨境物流业务/书籍阅读/详解/偏远邮编"
-                  },
-                  {
-                    "text": "理解承运人",
-                    "link": "/系统架构/跨境物流业务/书籍阅读/详解/理解承运人"
-                  },
-                  {
-                    "text": "邮政和快递的区别",
-                    "link": "/系统架构/跨境物流业务/书籍阅读/详解/邮政和快递的区别"
-                  },
-                  {
-                    "text": "邮编在跨境物流的作用",
-                    "link": "/系统架构/跨境物流业务/书籍阅读/详解/邮编在跨境物流的作用"
-                  }
-                ]
-              },
-              {
-                "text": "《实战供应链：业务梳理、系统设计与项目实战》",
-                "link": "/系统架构/跨境物流业务/书籍阅读/《实战供应链：业务梳理、系统设计与项目实战》"
-              },
-              {
-                "text": "《跨境物流及海外仓》",
-                "link": "/系统架构/跨境物流业务/书籍阅读/《跨境物流及海外仓》"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "项目实践",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "外贸业财一体化ERP",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "个人职责内容",
-                "link": "/系统架构/项目实践/外贸业财一体化ERP/个人职责内容"
-              }
-            ]
-          },
-          {
-            "text": "大货系统",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "订单模块",
-                "link": "/系统架构/项目实践/大货系统/订单模块"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "首页",
-        "link": "/系统架构/首页"
-      }
-    ]
-  },
-  {
-    "text": "English",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "单词库",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-",
-            "link": "/English/单词库/01-"
-          }
-        ]
-      },
-      {
-        "text": "句式和语法",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "副词",
-            "link": "/English/句式和语法/副词"
-          },
-          {
-            "text": "动词作句首",
-            "link": "/English/句式和语法/动词作句首"
-          }
-        ]
-      },
-      {
-        "text": "零基础系统学习英语",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-英语学习下意识的重要性",
-            "link": "/English/零基础系统学习英语/01-英语学习下意识的重要性"
-          },
-          {
-            "text": "02-单词联想",
-            "link": "/English/零基础系统学习英语/02-单词联想"
-          },
-          {
-            "text": "03-学英语的10个习惯",
-            "link": "/English/零基础系统学习英语/03-学英语的10个习惯"
-          }
-        ]
-      },
-      {
-        "text": "欢迎",
-        "link": "/English/欢迎"
-      }
-    ]
-  },
-  {
-    "text": "AI全栈应用",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "Agent",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "核心代码示例",
-            "link": "/AI全栈应用/Agent/核心代码示例"
-          },
-          {
-            "text": "00-总结",
-            "link": "/AI全栈应用/Agent/00-总结"
-          },
-          {
-            "text": "01-认识Agent",
-            "link": "/AI全栈应用/Agent/01-认识Agent"
-          },
-          {
-            "text": "02-上下文工程",
-            "link": "/AI全栈应用/Agent/02-上下文工程"
-          }
-        ]
-      },
-      {
-        "text": "Vibe Coding",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "01-",
-            "link": "/AI全栈应用/Vibe Coding/01-"
-          }
-        ]
-      },
-      {
-        "text": "AI 基础概念",
-        "link": "/AI全栈应用/AI 基础概念"
-      },
-      {
-        "text": "WorkBuddy",
-        "link": "/AI全栈应用/WorkBuddy"
-      },
-      {
-        "text": "workbuddy分享",
-        "link": "/AI全栈应用/workbuddy分享"
-      }
-    ]
-  },
-  {
-    "text": "其他",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "服务器",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Mac",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "command 和 sh",
-                "link": "/服务器/Mac/command 和 sh"
-              },
-              {
-                "text": "快捷键",
-                "link": "/服务器/Mac/快捷键"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "考证",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "软考",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "首页",
-                "link": "/考证/软考/首页"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "text": "编程模型",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "设计模式",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "导航",
-                "link": "/编程模型/设计模式/导航"
-              }
-            ]
-          },
-          {
-            "text": "函数",
-            "link": "/编程模型/函数"
-          },
-          {
-            "text": "垃圾回收器",
-            "link": "/编程模型/垃圾回收器"
-          },
-          {
-            "text": "控制反转",
-            "link": "/编程模型/控制反转"
-          },
-          {
-            "text": "模块化",
-            "link": "/编程模型/模块化"
-          }
-        ]
-      },
-      {
-        "text": "源码系列",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "欢迎",
-            "link": "/源码系列/欢迎"
-          }
-        ]
-      },
-      {
-        "text": "工具资源",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "开发工具",
-            "link": "/工具资源/开发工具"
-          }
-        ]
-      }
-    ]
-  }
-]
 export const mdIndex = {
   "核心原理": [
     "前端/React/核心原理.md"
@@ -4112,14 +4157,23 @@ export const mdIndex = {
   "01-React教程": [
     "前端/React/01-React教程.md"
   ],
+  "02-项目开发": [
+    "前端/React/02-项目开发.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
+  ],
+  "Vite": [
+    "前端/node/Vite.md"
   ],
   "node教程": [
     "前端/node/node教程.md"
   ],
   "学习大纲": [
     "前端/node/学习大纲.md"
+  ],
+  "前端生态": [
+    "前端/前端生态.md"
   ],
   "首页": [
     "前端/首页.md",
@@ -4172,12 +4226,14 @@ export const mdIndex = {
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
   ],
+  "TypeScript": [
+    "前端/03-JavaScript/TypeScript.md"
+  ],
   "原生HTML绑定事件方式": [
     "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
-  "01-核心": [
-    "前端/03-JavaScript/01-核心.md",
-    "Python/01-Python核心编程/01-核心.md"
+  "01-JavaScript教程": [
+    "前端/03-JavaScript/01-JavaScript教程.md"
   ],
   "03-函数": [
     "前端/03-JavaScript/03-函数.md"
@@ -4463,6 +4519,9 @@ export const mdIndex = {
   "03-RestAPI": [
     "Java/05-Elastic Stack/01-核心知识/03-RestAPI.md"
   ],
+  "01-核心": [
+    "Python/01-Python核心编程/01-核心.md"
+  ],
   "03-数据结构": [
     "Python/01-Python核心编程/03-数据结构.md"
   ],
@@ -4655,8 +4714,14 @@ export const imgIndex = {
   "01-React教程": [
     "前端/React/01-React教程.md"
   ],
+  "02-项目开发": [
+    "前端/React/02-项目开发.md"
+  ],
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
+  ],
+  "Vite": [
+    "前端/node/Vite.md"
   ],
   "node教程": [
     "前端/node/node教程.md"
@@ -4781,6 +4846,9 @@ export const imgIndex = {
   "react_note": [
     "前端/zmg/react_note.png"
   ],
+  "前端生态": [
+    "前端/前端生态.md"
+  ],
   "首页": [
     "前端/首页.md",
     "系统架构/首页.md",
@@ -4832,12 +4900,14 @@ export const imgIndex = {
   "IIFE": [
     "前端/03-JavaScript/IIFE.md"
   ],
+  "TypeScript": [
+    "前端/03-JavaScript/TypeScript.md"
+  ],
   "原生HTML绑定事件方式": [
     "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
-  "01-核心": [
-    "前端/03-JavaScript/01-核心.md",
-    "Python/01-Python核心编程/01-核心.md"
+  "01-JavaScript教程": [
+    "前端/03-JavaScript/01-JavaScript教程.md"
   ],
   "03-函数": [
     "前端/03-JavaScript/03-函数.md"
@@ -5350,6 +5420,9 @@ export const imgIndex = {
   ],
   "Pasted image 20260626222125": [
     "Python/zmg/Pasted image 20260626222125.png"
+  ],
+  "01-核心": [
+    "Python/01-Python核心编程/01-核心.md"
   ],
   "03-数据结构": [
     "Python/01-Python核心编程/03-数据结构.md"

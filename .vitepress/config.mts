@@ -3,8 +3,9 @@ import fs from "node:fs"
 import path from "node:path"
 import obsidianLinks, { htmlSafety } from "./plugins/obsidian-links.mjs"
 import fileNameHeading from "./plugins/file-name-heading.mjs"
-import { navCategoryItems, sidebarGroups } from "./generated/site-data.mjs"
+import { navCategories, categoryDirs, categorySidebarMap } from "./generated/site-data.mjs"
 import { descriptions } from "./generated/descriptions.mjs"
+import { categoryEntryUrl } from "./theme/utils"
 
 // 站点对外地址（sitemap / og:url 用），必须带 base 路径和结尾斜杠
 const SITE_URL = "https://pingecc.github.io/pinge-system/"
@@ -49,14 +50,33 @@ export default defineConfig({
       md.use(htmlSafety)
       md.use(fileNameHeading)
       // mermaid 代码块：SSR 输出隐藏源码，客户端由 MermaidRenderer 渲染成 SVG
+      // 另支持 title="..." 标注文件名：剥离后交给默认渲染保持 Shiki 高亮不变
       const defaultFence = md.renderer.rules.fence!
       md.renderer.rules.fence = (tokens, idx, options, env, self) => {
         const token = tokens[idx]
-        if (token.info.trim() === "mermaid") {
+        const info = token.info.trim()
+        if (info === "mermaid") {
           return (
             '<div class="mermaid-block">' +
             `<pre class="mermaid-src">${md.utils.escapeHtml(token.content.trim())}</pre>` +
             '<div class="mermaid-target"></div></div>'
+          )
+        }
+        const titled = info.match(/^(.*?)\s+title="([^"]+)"\s*$/)
+        if (titled) {
+          const original = token.info
+          token.info = titled[1]
+          let inner = ""
+          try {
+            inner = defaultFence(tokens, idx, options, env, self)
+          } finally {
+            token.info = original
+          }
+          return (
+            '<div class="code-block-titled">' +
+            `<div class="code-title"><span class="code-title-icon" aria-hidden="true"></span>${md.utils.escapeHtml(titled[2])}</div>` +
+            inner +
+            "</div>"
           )
         }
         return defaultFence(tokens, idx, options, env, self)
@@ -65,7 +85,7 @@ export default defineConfig({
   },
   themeConfig: {
     nav: navItems(),
-    sidebar: { "/": sidebarGroups },
+    sidebar: sidebarConfig(),
     outline: { level: [1, 6], label: "本页目录" },
     // Pagefind 索引只在 npm run build 后生成，开发模式仍用内置本地搜索
     search: isDev()
@@ -136,7 +156,42 @@ function isDev() {
 
 function navItems(): DefaultTheme.NavItem[] {
   return [
-    { text: "Home", link: "/" },
-    { text: "Notes", items: navCategoryItems }
+    { text: "首页", link: "/", activeMatch: "^/$" },
+    // 分类平铺为 tab（react.dev 式）：点击直达该分类首篇文章（进入内容区），
+    // 浏览该分类文章时保持高亮；分类列表页仅由面包屑/分类徽章进入
+    ...navCategories.map((c) => ({
+      text: c.label,
+      link: categoryEntryUrl(c),
+      activeMatch: categoryActiveMatch(c.label)
+    }))
   ]
+}
+
+const OTHER_LABEL = "其他"
+
+function rx(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+// activeMatch 同时命中「文章目录前缀」与「/categories/<分类>」两种路径；
+// route.path 里中文可能出现 encode 形态，原文与 encodeURIComponent 各配一份
+function categoryActiveMatch(label: string): string {
+  const dirs = categoryDirs[label] ?? [label]
+  const nameAlts = [label, encodeURIComponent(label)].map(rx)
+  const dirAlts = [...new Set(dirs.flatMap((d) => [d, encodeURIComponent(d)]))].map(rx)
+  const catPage = `categories/(?:${nameAlts.join("|")})`
+  const articlePrefix = `(?:(?:${dirAlts.join("|")})/)`
+  return `^/(?:${catPage}|${articlePrefix})`
+}
+
+// 侧边栏按分类切分：进入某分类后只显示该分类的文章树（react.dev 式分域导航）；
+// 分类落地页 frontmatter 已设 sidebar: false，无需为 /categories/ 配置
+function sidebarConfig(): DefaultTheme.SidebarMulti {
+  const map: DefaultTheme.SidebarMulti = { "/": [] }
+  for (const c of navCategories) {
+    for (const dir of categoryDirs[c.label] ?? [c.label]) {
+      map[`/${dir}/`] = categorySidebarMap[c.label] ?? []
+    }
+  }
+  return map
 }

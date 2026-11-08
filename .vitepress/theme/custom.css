@@ -1,9 +1,37 @@
-/* 站点品牌色（覆盖 VitePress 默认靛蓝），明暗模式各一套 */
+/* ============================================================================
+   Pinge's Blog 设计系统
+   布局方向：专注文档风（对标 react.dev / Mintlify）
+   分区：tokens → 全局基础 → 布局宽度 → 排版 → 代码块 → 容器 → 表格图片
+         → 侧边栏 → 文章页组件 → 既有增强（outline/zoom/mermaid/pagefind/giscus)
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. Design tokens
+   ------------------------------------------------------------------------ */
+
+/* 品牌色：emerald 绿（覆盖 VitePress 默认靛蓝），明暗各一套 */
 :root {
   --vp-c-brand-1: #047857;
   --vp-c-brand-2: #059669;
   --vp-c-brand-3: #10b981;
   --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+
+  /* CJK 优先字体栈：Latin 走系统 UI 字体，中文按平台最佳可用 */
+  --vp-font-family-base:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "HarmonyOS Sans SC", "MiSans",
+    "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+  --vp-font-family-mono:
+    ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* 侧边栏略宽，给深层级目录留出呼吸感 */
+  --vp-sidebar-width: 292px;
+
+  /* 氛围层 tokens：品牌色柔光 / 首页网格点 / 卡面底色 */
+  --pl-glow: rgba(16, 185, 129, 0.05);
+  --pl-grid-dot: rgba(100, 116, 139, 0.16);
+  --pl-card-bg: #ffffff;
 }
 
 html.dark {
@@ -11,9 +39,16 @@ html.dark {
   --vp-c-brand-2: #2bb984;
   --vp-c-brand-3: #10b981;
   --vp-c-brand-soft: rgba(52, 211, 153, 0.16);
+  /* 暗色代码块与页面底色拉开一点层次 */
+  --vp-code-block-bg: #161618;
+
+  /* 氛围层 tokens：暗色下光更明显、卡面比页面底色略亮一档形成抬升 */
+  --pl-glow: rgba(52, 211, 153, 0.08);
+  --pl-grid-dot: rgba(148, 163, 184, 0.1);
+  --pl-card-bg: #1e1e24;
 }
 
-/* 分类徽章配色（明暗模式各一套），供首页/分类页列表使用 */
+/* 分类徽章配色（明暗各一套），供首页/分类页/文章元信息使用 */
 :root {
   --cat-front-bg: rgba(59, 130, 246, 0.12);
   --cat-front-text: #2563eb;
@@ -48,46 +83,192 @@ html.dark {
   --cat-other-text: #cbd5e1;
 }
 
-/* 首页整屏布局：仅桌面端把内容固定在视口内、列表内部滚动（对标目标站点） */
-@media (min-width: 769px) {
-  html:has(.is-home),
-  html:has(.is-home) body {
-    overflow: hidden !important;
-    height: 100%;
-  }
+/* ---------------------------------------------------------------------------
+   2. 全局基础
+   ------------------------------------------------------------------------ */
 
-  html:has(.is-home) .VPContent.is-home {
-    height: calc(100dvh - var(--vp-nav-height));
-    overflow: hidden;
-  }
+/* 文本选中用品牌色柔光 */
+::selection {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
 }
 
-/* 移动端首页：恢复自然页面滚动，避免内容被裁切 */
-@media (max-width: 768px) {
-  html:has(.is-home) .VPContent.is-home {
-    height: auto;
-    overflow: visible;
-  }
-
-  html:has(.is-home) .VPHome {
-    padding-bottom: 24px;
-  }
+/* 细滚动条，减少视觉噪音 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
 }
 
-html:has(.is-home) .VPHome .vp-doc.container {
-  padding-bottom: 0;
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-html:has(.is-home) .VPHome {
-  margin-bottom: 0;
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: var(--vp-c-divider);
 }
 
-/* 链接去掉下划线（与目标站点一致） */
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 链接去下划线（界面元素），正文内链接由第 4 节恢复 */
 a {
   text-decoration: none !important;
 }
 
-/* 正文内容中的链接恢复下划线保证辨识度；界面元素（导航/侧边栏/首页列表）保持无下划线。
+/* ---------------------------------------------------------------------------
+   2.1 氛围层：品牌色柔光 + 首页点阵网格 + 页面切换淡入
+   （正文阅读区只有极淡的顶部柔光，不加其他装饰，不影响阅读）
+   ------------------------------------------------------------------------ */
+
+/* 页面底色移到 html，body 置空后在其下垫一层固定的顶部柔光 */
+html {
+  background-color: var(--vp-c-bg);
+}
+
+body {
+  background: transparent;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -32vh;
+  left: 50%;
+  z-index: -1;
+  width: min(1500px, 100vw);
+  height: 90vh;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 55% 55% at 50% 18%, var(--pl-glow), transparent 70%);
+  pointer-events: none;
+}
+
+/* 首页门面：hero 后方的点阵网格，向下渐隐 */
+.VPContent.is-home {
+  position: relative;
+}
+
+.VPContent.is-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 560px;
+  background-image: radial-gradient(var(--pl-grid-dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 90% at 50% 0%, black 35%, transparent 78%);
+  mask-image: radial-gradient(ellipse 65% 90% at 50% 0%, black 35%, transparent 78%);
+  pointer-events: none;
+}
+
+/* 页面切换微淡入（尊重系统"减弱动态效果"设置） */
+@media (prefers-reduced-motion: no-preference) {
+  .VPDoc .content-container,
+  .VPPage,
+  .VPHome {
+    animation: pl-fade-in 0.2s ease both;
+  }
+}
+
+@keyframes pl-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   3. 布局宽度：正文列加宽到 ~760px，右栏目录略宽
+   ------------------------------------------------------------------------ */
+
+@media (min-width: 1280px) {
+  .VPDoc.has-aside .content-container {
+    max-width: 772px;
+  }
+
+  .VPDoc .aside {
+    max-width: 272px;
+  }
+
+  .VPDoc .aside-container {
+    width: 240px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   4. 正文排版（.vp-doc）
+   ------------------------------------------------------------------------ */
+
+.vp-doc {
+  line-height: 1.75;
+  word-break: break-word;
+}
+
+/* 标题层级 */
+.vp-doc h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .vp-doc h1 {
+    font-size: 32px;
+  }
+}
+
+.vp-doc h2 {
+  margin: 56px 0 20px;
+  padding-top: 28px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.vp-doc h3 {
+  margin: 40px 0 12px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.vp-doc h4 {
+  margin: 28px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 段落与列表的呼吸感 */
+.vp-doc p {
+  margin: 18px 0;
+}
+
+.vp-doc ul,
+.vp-doc ol {
+  margin: 18px 0;
+  padding-left: 24px;
+}
+
+.vp-doc li {
+  margin: 6px 0;
+}
+
+/* 首个标题前的空隙收紧：文章页标题即 h1，紧跟元信息 */
+.vp-doc h1:first-child {
+  margin-top: 0;
+}
+
+/* 正文内链接恢复下划线保证辨识度；界面元素（导航/侧边栏/首页列表）保持无下划线。
    注意排除首页（.VPContent.is-home 的内容也带 .vp-doc 类） */
 .VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a {
   text-decoration: underline !important;
@@ -100,10 +281,151 @@ a {
   text-decoration-color: var(--vp-c-brand-1);
 }
 
+/* 引用块：品牌色左边线 + 柔和底色 */
+.vp-doc blockquote {
+  margin: 20px 0;
+  padding: 12px 20px;
+  border-left: 3px solid var(--vp-c-brand-1);
+  border-radius: 0 8px 8px 0;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc blockquote p {
+  margin: 8px 0;
+}
+
+/* 分隔线 */
+.vp-doc hr {
+  margin: 40px 0;
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* 行内代码 */
+.vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* ---------------------------------------------------------------------------
+   5. 代码块
+   ------------------------------------------------------------------------ */
+
+/* 代码容器：圆角 + 细边框，与图片/表格同一套框线语言 */
+.vp-doc div[class*="language-"] {
+  margin: 20px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+}
+
+/* 所有 pre 一律内部横向滚动，防止长行把页面撑出横向滚动条
+   （VitePress 默认只处理 div[class*=language-] 内的 pre，
+   笔记里经 HTML 包裹或缩进产生的裸 pre 会溢出） */
+.vp-doc pre {
+  overflow-x: auto;
+}
+
+/* 裸代码块（无 language 包装）：与标准代码块同观感 */
+.vp-doc :not(div[class*="language-"]) > pre {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background-color: var(--vp-code-block-bg);
+}
+
+/* 带文件名标题的代码块（```ts title="main.js"）：标题栏 + 代码区一体 */
+.code-block-titled {
+  margin: 20px 0;
+}
+
+.code-block-titled div[class*="language-"] {
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0;
+}
+
+.code-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: var(--vp-c-bg-soft);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12.5px;
+  color: var(--vp-c-text-2);
+}
+
+/* 文件图标（mask 上色，明暗自适应） */
+.code-title-icon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  background-color: var(--vp-c-text-3);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+/* ---------------------------------------------------------------------------
+   6. ::: 容器（tip / info / warning / danger / details）
+   ------------------------------------------------------------------------ */
+
+.vp-doc .custom-block {
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.vp-doc .custom-block-title {
+  font-weight: 600;
+}
+
+/* 标题前缀图标，一眼分辨类型 */
+.vp-doc .custom-block.tip .custom-block-title::before {
+  content: "💡 ";
+}
+
+.vp-doc .custom-block.info .custom-block-title::before {
+  content: "ℹ️ ";
+}
+
+.vp-doc .custom-block.warning .custom-block-title::before {
+  content: "⚠️ ";
+}
+
+.vp-doc .custom-block.danger .custom-block-title::before {
+  content: "🚫 ";
+}
+
+.vp-doc .custom-block.details .custom-block-title::before {
+  content: "❔ ";
+}
+
+/* ---------------------------------------------------------------------------
+   7. 表格与图片
+   ------------------------------------------------------------------------ */
+
+.vp-doc table {
+  margin: 20px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+}
+
 /* 正文图片：圆角 + 细边框；medium-zoom 放大态除外 */
 .vp-doc img:not(.medium-zoom-image--opened) {
   border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* 暗色模式柔化白底截图，避免亮块刺眼 */
@@ -111,23 +433,278 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   filter: brightness(0.92);
 }
 
-/* 评论 */
-.giscus-comments {
-  border-top: 1px solid var(--vp-c-divider);
-  margin-top: 40px;
-  padding-top: 24px;
+/* ---------------------------------------------------------------------------
+   8. 侧边栏
+   ------------------------------------------------------------------------ */
+
+/* 行容器：圆角胶囊的 hover / 激活态（8px 内边距统一行文字缩进） */
+.VPSidebar .VPSidebarItem > .item {
+  border-radius: 8px;
+  padding: 0 8px;
+  transition: background-color 0.2s;
 }
 
-.giscus-title {
-  font-size: 18px;
+.VPSidebar .VPSidebarItem > .item:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item {
+  background: var(--vp-c-brand-soft);
+}
+
+/* 激活态改用胶囊表达，去掉默认的左侧竖条 */
+.VPSidebar .indicator {
+  display: none;
+}
+
+/* 字重层级：可折叠的目录行 600、文章行 500，字号统一略小更精致 */
+.VPSidebar .VPSidebarItem .text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  padding: 5px 0;
+}
+
+.VPSidebar .VPSidebarItem.level-0 > .item .text {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebar .VPSidebarItem.collapsible:not(.level-0) > .item .text {
   font-weight: 600;
-  margin: 0 0 12px;
+  color: var(--vp-c-text-1);
 }
 
-.giscus-tip {
+.VPSidebar .VPSidebarItem:not(.collapsible):not(.level-0) > .item .text {
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+/* 折叠箭头：略小、弱化，悬停恢复 */
+.VPSidebar .caret {
+  width: 26px;
+  height: 26px;
+  margin-right: -5px;
+  color: var(--vp-c-text-3);
+}
+
+.VPSidebar .caret-icon {
+  font-size: 15px;
+}
+
+/* 侧边栏分类头（SidebarCategoryTitle 渲染） */
+
+/* 侧边栏筛选框（SidebarFilter 渲染），带放大镜图标 */
+.sidebar-filter {
+  padding: 0 0 14px;
+}
+
+.sidebar-filter input {
+  width: 100%;
+  padding: 7px 12px 7px 30px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 13px;
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.sidebar-filter input::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+.sidebar-filter input:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg);
+}
+
+/* 筛选态：命中的条目高亮关键词由 JS 标记，这里处理隐藏与提示 */
+.VPSidebar .sidebar-item-hidden {
+  display: none !important;
+}
+
+/* 筛选时强制展开所有折叠组（绕过 VPSidebarItem 的 collapsed 隐藏） */
+.VPSidebar.sidebar-filtering .VPSidebarItem.collapsed .items {
+  display: block;
+}
+
+/* 强制展开的同时把 caret 图标统一成展开态，避免视觉误导 */
+.VPSidebar.sidebar-filtering .VPSidebarItem.collapsed .caret-icon {
+  transform: rotate(90deg);
+}
+
+.sidebar-filter-empty {
+  padding: 12px 8px;
+  font-size: 12.5px;
+  color: var(--vp-c-text-3);
+}
+
+/* ---------------------------------------------------------------------------
+   9. 文章页组件：面包屑 / 元信息 / 进度条 / 回到顶部
+   ------------------------------------------------------------------------ */
+
+/* 分类主题色注入：带 cat-<slug> 类的元素可用 --card-c / --card-bg
+   （首页分类卡片、文章元信息徽章共用这一份映射） */
+.cat-front {
+  --card-c: var(--cat-front-text);
+  --card-bg: var(--cat-front-bg);
+}
+
+.cat-java {
+  --card-c: var(--cat-java-text);
+  --card-bg: var(--cat-java-bg);
+}
+
+.cat-python {
+  --card-c: var(--cat-python-text);
+  --card-bg: var(--cat-python-bg);
+}
+
+.cat-arch {
+  --card-c: var(--cat-arch-text);
+  --card-bg: var(--cat-arch-bg);
+}
+
+.cat-english {
+  --card-c: var(--cat-english-text);
+  --card-bg: var(--cat-english-bg);
+}
+
+.cat-ai {
+  --card-c: var(--cat-ai-text);
+  --card-bg: var(--cat-ai-bg);
+}
+
+.cat-other {
+  --card-c: var(--cat-other-text);
+  --card-bg: var(--cat-other-bg);
+}
+
+/* 面包屑 */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+  line-height: 1.5;
+}
+
+.breadcrumbs a {
+  color: var(--vp-c-text-3);
+  transition: color 0.25s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.breadcrumbs .crumb-sep {
+  color: var(--vp-c-divider);
+  user-select: none;
+}
+
+.breadcrumbs .crumb-current {
+  color: var(--vp-c-text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+
+/* 文章元信息（分类徽章 / 日期 / 字数 / 时长），位于面包屑之下、标题之上 */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 0;
+  margin-bottom: 14px;
   color: var(--vp-c-text-2);
   font-size: 13px;
 }
+
+.article-meta .meta-dot {
+  color: var(--vp-c-text-3);
+}
+
+.article-meta .cat-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--card-c);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* 阅读进度条：fixed 顶边 2px 细条，JS 控制 scaleX */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 45;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vp-c-brand-3), var(--vp-c-brand-1));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+/* 回到顶部浮动按钮 */
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 32px;
+  z-index: 44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 767px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 20px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   10. 既有增强：右栏目录折叠
+   ------------------------------------------------------------------------ */
 
 /* 右侧目录：三级及以下标题默认折叠，点击小箭头展开 */
 .VPDocAsideOutline ul.VPDocOutlineItem.nested > li {
@@ -188,20 +765,10 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   z-index: 100;
 }
 
-/* 文章元信息（阅读时长 / 字数 / 创建日期），位于标题上方 */
-.article-meta {
-  padding-top: 4px;
-  margin-bottom: 16px;
-  color: var(--vp-c-text-2);
-  font-size: 13px;
-}
+/* ---------------------------------------------------------------------------
+   11. Mermaid 图表
+   ------------------------------------------------------------------------ */
 
-.article-meta .meta-dot {
-  margin: 0 6px;
-  color: var(--vp-c-text-3);
-}
-
-/* Mermaid 图表：SSR 输出隐藏源码，客户端渲染成 SVG；失败时回退显示源码 */
 .mermaid-block {
   margin: 16px 0;
   text-align: center;
@@ -228,7 +795,10 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   white-space: pre-wrap;
 }
 
-/* 导航栏搜索按钮（Pagefind，生产环境） */
+/* ---------------------------------------------------------------------------
+   12. 导航栏搜索（Pagefind，生产环境）
+   ------------------------------------------------------------------------ */
+
 .pagefind-search {
   display: flex;
   align-items: center;
@@ -305,8 +875,9 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   overflow-y: auto;
 }
 
-/* Pagefind UI 配色跟随 VitePress 主题变量（自动适配明暗模式） */
-.pf-container .PagefindUI {
+/* Pagefind UI 配色跟随 VitePress 主题变量（自动适配明暗模式）
+   根类名是小写 pagefind-ui */
+.pf-container .pagefind-ui {
   --pagefind-ui-scale: 0.9;
   --pagefind-ui-primary: var(--vp-c-brand-1);
   --pagefind-ui-text: var(--vp-c-text-1);
@@ -317,4 +888,94 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   --pagefind-ui-border-radius: 8px;
   --pagefind-ui-font: inherit;
   padding: 4px 0 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   13. 首页内嵌搜索（HomeSearch）：PagefindUI 直出在 hero，非弹窗
+   ------------------------------------------------------------------------ */
+
+.home-search {
+  width: min(560px, 100%);
+  margin: 0 auto;
+}
+
+/* PagefindUI 生成的 DOM 无 Vue scoped 属性，主题化必须走全局样式。
+   注意根类名是小写 pagefind-ui（大写 PagefindUI 不会命中） */
+.home-search .pagefind-ui {
+  --pagefind-ui-scale: 0.95;
+  --pagefind-ui-primary: var(--vp-c-brand-1);
+  --pagefind-ui-text: var(--vp-c-text-1);
+  --pagefind-ui-background: var(--vp-c-bg);
+  --pagefind-ui-border: var(--vp-c-divider);
+  --pagefind-ui-tag: var(--vp-c-bg-soft);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 12px;
+  --pagefind-ui-font: inherit;
+}
+
+/* 输入框做成 hero 大搜索框的观感 */
+.home-search .pagefind-ui__search-input {
+  padding: 13px 16px;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.home-search .pagefind-ui__search-input:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg);
+}
+
+/* 结果区与统计文案的间距收敛 */
+.home-search .pagefind-ui__message {
+  margin: 14px 0 6px;
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+}
+
+.home-search .pagefind-ui__results {
+  margin-top: 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg);
+  overflow: hidden;
+}
+
+.home-search .pagefind-ui__result {
+  padding: 12px 16px;
+}
+
+/* Pagefind 默认给每个结果写死 2px #eee 分隔线，暗色下成白线；
+   其 Svelte 样式运行时注入且带类名（两段选择器打平会胜出），这里用三段压过。
+   统一去掉默认分隔线，相邻结果改用主题变量虚线（弹窗与内嵌两处共用） */
+.home-search .pagefind-ui__results .pagefind-ui__result,
+.pf-container .pagefind-ui__results .pagefind-ui__result {
+  border-top: 0;
+}
+
+.home-search .pagefind-ui__results .pagefind-ui__result + .pagefind-ui__result,
+.pf-container .pagefind-ui__results .pagefind-ui__result + .pagefind-ui__result {
+  border-top: 1px dashed var(--vp-c-divider);
+}
+
+/* ---------------------------------------------------------------------------
+   14. 评论（giscus）
+   ------------------------------------------------------------------------ */
+
+.giscus-comments {
+  border-top: 1px solid var(--vp-c-divider);
+  margin-top: 40px;
+  padding-top: 24px;
+}
+
+.giscus-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.giscus-tip {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
 }

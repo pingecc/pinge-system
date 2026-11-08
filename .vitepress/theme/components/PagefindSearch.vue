@@ -1,3 +1,11 @@
+<script lang="ts">
+// 供其他组件（如首页大搜索框）复用：派发全局事件打开搜索弹窗。
+// 开发模式没有 Pagefind 索引，事件无人监听、自然成为 no-op（dev 用内置搜索）。
+export function openSearch() {
+  window.dispatchEvent(new CustomEvent("pf:open-search"))
+}
+</script>
+
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from "vue"
 
@@ -79,10 +87,12 @@ function onKeydown(e: KeyboardEvent) {
 
 onMounted(() => {
   window.addEventListener("keydown", onKeydown)
+  window.addEventListener("pf:open-search", show as EventListener)
   isMac.value = /Mac|iPhone|iPad/.test(navigator.platform)
 })
 onBeforeUnmount(() => {
   window.removeEventListener("keydown", onKeydown)
+  window.removeEventListener("pf:open-search", show as EventListener)
   wrap?.remove()
   wrap = null
   ui?.destroy()

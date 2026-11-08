@@ -275,7 +275,9 @@ function treeItems(dirAbs, posixRel) {
   return items
 }
 
-const sidebarGroups = []
+// 按分类切分的侧边栏：进入某分类后只展示该分类的文章树（react.dev 式分域导航）
+// "其他"由多个小目录合并而成，保留各自顶层分组；其余分类直接用自身目录树
+const categorySidebarMap = {}
 for (const label of categoryOrder) {
   if (label === OTHER_CATEGORY) {
     const items = []
@@ -284,10 +286,10 @@ for (const label of categoryOrder) {
       const children = treeItems(path.join(ROOT, topDir), topDir)
       if (children.length) items.push({ text: topDir, collapsed: true, items: children })
     }
-    if (items.length) sidebarGroups.push({ text: label, collapsed: true, items })
+    if (items.length) categorySidebarMap[label] = items
   } else {
     const items = treeItems(path.join(ROOT, label), label)
-    if (items.length) sidebarGroups.push({ text: label, collapsed: true, items })
+    if (items.length) categorySidebarMap[label] = items
   }
 }
 
@@ -311,13 +313,17 @@ for (const d of allThemeDirs) {
   }
 }
 
-const navCategoryItems = navCategories.map((c) => ({ text: c.label, link: c.link }))
+// 分类 → 组成该分类的顶级目录（面包屑与导航高亮需要）
+const categoryDirs = {}
+for (const label of categoryOrder) {
+  categoryDirs[label] = label === OTHER_CATEGORY ? SMALL_DIRS : [label]
+}
 
 const out = `// 由 scripts/gen-site-data.mjs 自动生成，请勿手动修改
 export const navCategories = ${JSON.stringify(navCategories, null, 2)}
-export const navCategoryItems = ${JSON.stringify(navCategoryItems, null, 2)}
+export const categoryDirs = ${JSON.stringify(categoryDirs, null, 2)}
+export const categorySidebarMap = ${JSON.stringify(categorySidebarMap, null, 2)}
 export const allArticles = ${JSON.stringify(articles, null, 2)}
-export const sidebarGroups = ${JSON.stringify(sidebarGroups, null, 2)}
 export const mdIndex = ${JSON.stringify(mdIndex, null, 2)}
 export const imgIndex = ${JSON.stringify(imgIndex, null, 2)}
 `
