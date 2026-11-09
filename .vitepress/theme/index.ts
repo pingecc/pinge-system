@@ -13,6 +13,7 @@ import MermaidRenderer from "./components/MermaidRenderer"
 import ReadingProgress from "./components/ReadingProgress"
 import BackToTop from "./components/BackToTop"
 import SidebarFilter from "./components/SidebarFilter"
+import SidebarHoverReveal from "./components/SidebarHoverReveal"
 import "./custom.css"
 
 export default {
@@ -25,7 +26,8 @@ export default {
         h(ImageZoom),
         h(MermaidRenderer),
         h(ReadingProgress),
-        h(BackToTop)
+        h(BackToTop),
+        h(SidebarHoverReveal)
       ],
       // 侧边栏顶部：当前分类头（名称/篇数/总览）+ 文章筛选框
       "sidebar-nav-before": () => [h(SidebarCategoryTitle), h(SidebarFilter)],

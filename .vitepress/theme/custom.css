@@ -188,14 +188,19 @@ body::before {
 }
 
 /* ---------------------------------------------------------------------------
-   3. 布局宽度：正文列加宽到 ~760px，右栏目录略宽
+   3. 布局宽度：正文列加宽到 ~840px，右栏目录略宽
    ------------------------------------------------------------------------ */
 
-@media (min-width: 1280px) {
-  .VPDoc.has-aside .content-container {
-    max-width: 772px;
+/* VitePress 原生 scoped 规则 .VPDoc.has-aside .content-container[data-v]
+   特异性为 (0,4,0)，普通同名选择器压不住（此前一直没生效，列宽停在 688px）；
+   借 .content 补一级特异性打平后再靠后加载胜出。960 起生效覆盖两个桌面档 */
+@media (min-width: 960px) {
+  .VPDoc.has-aside .content .content-container {
+    max-width: 840px;
   }
+}
 
+@media (min-width: 1280px) {
   .VPDoc .aside {
     max-width: 272px;
   }
@@ -544,6 +549,81 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   padding: 12px 8px;
   font-size: 12.5px;
   color: var(--vp-c-text-3);
+}
+
+/* ---------------------------------------------------------------------------
+   8.1 悬停弹出侧边栏（桌面端文章页默认收起，指针移到左缘弹出）
+   启用条件由 html:has(.VPSidebar) 判定（首页/分类页没有侧栏，规则自动失效），
+   窄屏(<960px)与移动端抽屉不受影响；弹出状态类 sidebar-revealed
+   由 SidebarHoverReveal.ts 挂在 html 上（悬停/延迟收起/Esc）。
+   ------------------------------------------------------------------------ */
+
+/* 左缘热区：隐形竖条，只在桌面端 + 有侧栏的页面显示。
+   z-index 低于桌面端侧栏(25)与导航栏(30)，不挡任何交互，仅负责感应 */
+.sidebar-hover-zone {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  html:has(.VPSidebar) .sidebar-hover-zone {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    z-index: 15;
+  }
+
+  /* 默认收起：侧栏平移出屏 */
+  html:has(.VPSidebar) .VPSidebar {
+    transform: translateX(-100%);
+  }
+
+  /* 正文不再为侧栏预留左边距，整页居中（1440+ 见下方媒体块） */
+  html:has(.VPSidebar) .VPContent.has-sidebar {
+    padding-left: 0;
+  }
+
+  /* 导航栏底部分隔线不再给侧栏列让位，铺满整行；
+     标题块自带的分段底线同步透明化，避免叠出深色短段 */
+  html:has(.VPSidebar) .VPNavBar.has-sidebar .divider {
+    padding-left: 0;
+  }
+
+  html:has(.VPSidebar) .VPNavBarTitle.has-sidebar .title {
+    border-bottom-color: transparent;
+  }
+
+  /* 弹出：热区/侧栏悬停（JS 延迟收起）+ 键盘聚焦（Tab 进侧栏即弹）+ 抽屉态 */
+  html:has(.VPSidebar) .VPSidebar.open,
+  html:has(.VPSidebar) .VPSidebar:hover,
+  html:has(.VPSidebar) .VPSidebar:focus-within,
+  html.sidebar-revealed:has(.VPSidebar) .VPSidebar {
+    transform: translateX(0);
+    box-shadow: var(--vp-shadow-3);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@media (min-width: 1440px) {
+  /* 大屏：左边距改为布局中缝，正文列与无侧栏页面完全对齐 */
+  html:has(.VPSidebar) .VPContent.has-sidebar {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2);
+  }
+}
+
+/* 960–1279 没有右栏目录，正文按居中几何收窄，避免全宽长行（列宽与 840 主列一致） */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+  html:has(.VPSidebar) .VPDoc .container {
+    display: flex;
+    justify-content: center;
+    max-width: 992px;
+  }
+
+  html:has(.VPSidebar) .VPDoc .content {
+    max-width: 904px;
+  }
 }
 
 /* ---------------------------------------------------------------------------

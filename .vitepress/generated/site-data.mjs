@@ -92,8 +92,8 @@ export const navCategories = [
       {
         "title": "核心语法",
         "url": "/前端/03-JavaScript/01-JavaScript核心编程",
-        "created": 1794230862926.239,
-        "modified": 1794230862926.239
+        "created": 1794230934000,
+        "modified": 1794230934000
       },
       {
         "title": "核心设计理念",
@@ -128,8 +128,8 @@ export const navCategories = [
       {
         "title": "this 指向探讨",
         "url": "/前端/03-JavaScript/this 指向探讨",
-        "created": 1794230689511.1301,
-        "modified": 1794230689511.1301
+        "created": 1794230934000,
+        "modified": 1794230934000
       },
       {
         "title": "原生HTML绑定事件方式",
@@ -140,14 +140,14 @@ export const navCategories = [
       {
         "title": "理解为什么会出现箭头函数",
         "url": "/前端/03-JavaScript/箭头函数深入解析",
-        "created": 1794230137585.0732,
-        "modified": 1794230137585.0732
+        "created": 1794230934000,
+        "modified": 1794230934000
       },
       {
         "title": "闭包深入解析",
         "url": "/前端/03-JavaScript/闭包深入解析",
-        "created": 1794230256727.4163,
-        "modified": 1794230256727.4163
+        "created": 1794230934000,
+        "modified": 1794230934000
       },
       {
         "title": "什么是React？",
@@ -174,16 +174,16 @@ export const navCategories = [
         "modified": 1789907223000
       },
       {
-        "title": "Vite",
-        "url": "/前端/node/Vite",
-        "created": 1794131938000,
-        "modified": 1794131938000
+        "title": "介绍",
+        "url": "/前端/node/01-node教程",
+        "created": 1793109508026.5786,
+        "modified": 1793109508026.5786
       },
       {
-        "title": "介绍",
-        "url": "/前端/node/node教程",
-        "created": 1793024530000,
-        "modified": 1794131938000
+        "title": "02-Vite",
+        "url": "/前端/node/02-Vite",
+        "created": 1794231021563.709,
+        "modified": 1794231021563.709
       },
       {
         "title": "学习大纲",
@@ -1260,16 +1260,16 @@ export const categorySidebarMap = {
       "collapsed": true,
       "items": [
         {
-          "text": "Vite",
-          "link": "/前端/node/Vite"
-        },
-        {
-          "text": "node教程",
-          "link": "/前端/node/node教程"
-        },
-        {
           "text": "学习大纲",
           "link": "/前端/node/学习大纲"
+        },
+        {
+          "text": "01-node教程",
+          "link": "/前端/node/01-node教程"
+        },
+        {
+          "text": "02-Vite",
+          "link": "/前端/node/02-Vite"
         }
       ]
     },
@@ -3633,8 +3633,8 @@ export const allArticles = [
     "title": "核心语法",
     "url": "/前端/03-JavaScript/01-JavaScript核心编程",
     "category": "前端",
-    "created": 1794230862926.239,
-    "modified": 1794230862926.239,
+    "created": 1794230934000,
+    "modified": 1794230934000,
     "words": 1802,
     "minutes": 5
   },
@@ -3687,8 +3687,8 @@ export const allArticles = [
     "title": "this 指向探讨",
     "url": "/前端/03-JavaScript/this 指向探讨",
     "category": "前端",
-    "created": 1794230689511.1301,
-    "modified": 1794230689511.1301,
+    "created": 1794230934000,
+    "modified": 1794230934000,
     "words": 224,
     "minutes": 1
   },
@@ -3705,8 +3705,8 @@ export const allArticles = [
     "title": "理解为什么会出现箭头函数",
     "url": "/前端/03-JavaScript/箭头函数深入解析",
     "category": "前端",
-    "created": 1794230137585.0732,
-    "modified": 1794230137585.0732,
+    "created": 1794230934000,
+    "modified": 1794230934000,
     "words": 1154,
     "minutes": 3
   },
@@ -3714,8 +3714,8 @@ export const allArticles = [
     "title": "闭包深入解析",
     "url": "/前端/03-JavaScript/闭包深入解析",
     "category": "前端",
-    "created": 1794230256727.4163,
-    "modified": 1794230256727.4163,
+    "created": 1794230934000,
+    "modified": 1794230934000,
     "words": 650,
     "minutes": 2
   },
@@ -3756,22 +3756,22 @@ export const allArticles = [
     "minutes": 5
   },
   {
-    "title": "Vite",
-    "url": "/前端/node/Vite",
-    "category": "前端",
-    "created": 1794131938000,
-    "modified": 1794131938000,
-    "words": 885,
-    "minutes": 3
-  },
-  {
     "title": "介绍",
-    "url": "/前端/node/node教程",
+    "url": "/前端/node/01-node教程",
     "category": "前端",
-    "created": 1793024530000,
-    "modified": 1794131938000,
+    "created": 1793109508026.5786,
+    "modified": 1793109508026.5786,
     "words": 6541,
     "minutes": 17
+  },
+  {
+    "title": "02-Vite",
+    "url": "/前端/node/02-Vite",
+    "category": "前端",
+    "created": 1794231021563.709,
+    "modified": 1794231021563.709,
+    "words": 888,
+    "minutes": 3
   },
   {
     "title": "学习大纲",
@@ -4201,14 +4201,14 @@ export const mdIndex = {
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
   ],
-  "Vite": [
-    "前端/node/Vite.md"
-  ],
-  "node教程": [
-    "前端/node/node教程.md"
-  ],
   "学习大纲": [
     "前端/node/学习大纲.md"
+  ],
+  "01-node教程": [
+    "前端/node/01-node教程.md"
+  ],
+  "02-Vite": [
+    "前端/node/02-Vite.md"
   ],
   "前端生态": [
     "前端/前端生态.md"
@@ -4764,14 +4764,14 @@ export const imgIndex = {
   "React学习路线-面向后台ERP": [
     "前端/React学习路线-面向后台ERP.md"
   ],
-  "Vite": [
-    "前端/node/Vite.md"
-  ],
-  "node教程": [
-    "前端/node/node教程.md"
-  ],
   "学习大纲": [
     "前端/node/学习大纲.md"
+  ],
+  "01-node教程": [
+    "前端/node/01-node教程.md"
+  ],
+  "02-Vite": [
+    "前端/node/02-Vite.md"
   ],
   "Pasted image 20260525214527": [
     "前端/zmg/Pasted image 20260525214527.png"
