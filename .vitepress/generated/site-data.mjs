@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 31,
+    "count": 33,
     "articles": [
       {
         "title": "HTML基础",
@@ -91,21 +91,15 @@ export const navCategories = [
       },
       {
         "title": "核心语法",
-        "url": "/前端/03-JavaScript/01-JavaScript教程",
-        "created": 1793201079435.7,
-        "modified": 1793201079435.7
-      },
-      {
-        "title": "函数的本质",
-        "url": "/前端/03-JavaScript/03-函数",
-        "created": 1787971861000,
-        "modified": 1792370120000
+        "url": "/前端/03-JavaScript/01-JavaScript核心编程",
+        "created": 1794230862926.239,
+        "modified": 1794230862926.239
       },
       {
         "title": "核心设计理念",
         "url": "/前端/03-JavaScript/04-模块化",
         "created": 1787971861000,
-        "modified": 1787971861000
+        "modified": 1794131938000
       },
       {
         "title": "第 1 层：为什么需要异步 —— JavaScript 是单线程的",
@@ -128,8 +122,14 @@ export const navCategories = [
       {
         "title": "🚀 TypeScript背景发展",
         "url": "/前端/03-JavaScript/TypeScript",
-        "created": 1793191315082.106,
-        "modified": 1793191315082.106
+        "created": 1794131938000,
+        "modified": 1794131938000
+      },
+      {
+        "title": "this 指向探讨",
+        "url": "/前端/03-JavaScript/this 指向探讨",
+        "created": 1794230689511.1301,
+        "modified": 1794230689511.1301
       },
       {
         "title": "原生HTML绑定事件方式",
@@ -138,16 +138,28 @@ export const navCategories = [
         "modified": 1792370120000
       },
       {
+        "title": "理解为什么会出现箭头函数",
+        "url": "/前端/03-JavaScript/箭头函数深入解析",
+        "created": 1794230137585.0732,
+        "modified": 1794230137585.0732
+      },
+      {
+        "title": "闭包深入解析",
+        "url": "/前端/03-JavaScript/闭包深入解析",
+        "created": 1794230256727.4163,
+        "modified": 1794230256727.4163
+      },
+      {
         "title": "什么是React？",
         "url": "/前端/React/01-React教程",
         "created": 1793024530000,
-        "modified": 1793024530000
+        "modified": 1794131938000
       },
       {
         "title": "使用脚手架快速搭建项目",
         "url": "/前端/React/02-项目开发",
-        "created": 1793717810934.9824,
-        "modified": 1793717810934.9824
+        "created": 1794131938000,
+        "modified": 1794131938000
       },
       {
         "title": "虚拟DOM",
@@ -164,14 +176,14 @@ export const navCategories = [
       {
         "title": "Vite",
         "url": "/前端/node/Vite",
-        "created": 1793620427380.9028,
-        "modified": 1793620427380.9028
+        "created": 1794131938000,
+        "modified": 1794131938000
       },
       {
         "title": "介绍",
         "url": "/前端/node/node教程",
         "created": 1793024530000,
-        "modified": 1793024530000
+        "modified": 1794131938000
       },
       {
         "title": "学习大纲",
@@ -182,8 +194,8 @@ export const navCategories = [
       {
         "title": "前端生态",
         "url": "/前端/前端生态",
-        "created": 1793190766269.7185,
-        "modified": 1793190766269.7185
+        "created": 1794131938000,
+        "modified": 1794131938000
       },
       {
         "title": "浏览器解析HTML全过程",
@@ -1340,16 +1352,24 @@ export const categorySidebarMap = {
           "link": "/前端/03-JavaScript/TypeScript"
         },
         {
+          "text": "this 指向探讨",
+          "link": "/前端/03-JavaScript/this 指向探讨"
+        },
+        {
           "text": "原生HTML绑定事件方式",
           "link": "/前端/03-JavaScript/原生HTML绑定事件方式"
         },
         {
-          "text": "01-JavaScript教程",
-          "link": "/前端/03-JavaScript/01-JavaScript教程"
+          "text": "箭头函数深入解析",
+          "link": "/前端/03-JavaScript/箭头函数深入解析"
         },
         {
-          "text": "03-函数",
-          "link": "/前端/03-JavaScript/03-函数"
+          "text": "闭包深入解析",
+          "link": "/前端/03-JavaScript/闭包深入解析"
+        },
+        {
+          "text": "01-JavaScript核心编程",
+          "link": "/前端/03-JavaScript/01-JavaScript核心编程"
         },
         {
           "text": "04-模块化",
@@ -3611,28 +3631,19 @@ export const allArticles = [
   },
   {
     "title": "核心语法",
-    "url": "/前端/03-JavaScript/01-JavaScript教程",
+    "url": "/前端/03-JavaScript/01-JavaScript核心编程",
     "category": "前端",
-    "created": 1793201079435.7,
-    "modified": 1793201079435.7,
-    "words": 2982,
-    "minutes": 8
-  },
-  {
-    "title": "函数的本质",
-    "url": "/前端/03-JavaScript/03-函数",
-    "category": "前端",
-    "created": 1787971861000,
-    "modified": 1792370120000,
-    "words": 1323,
-    "minutes": 4
+    "created": 1794230862926.239,
+    "modified": 1794230862926.239,
+    "words": 1802,
+    "minutes": 5
   },
   {
     "title": "核心设计理念",
     "url": "/前端/03-JavaScript/04-模块化",
     "category": "前端",
     "created": 1787971861000,
-    "modified": 1787971861000,
+    "modified": 1794131938000,
     "words": 3616,
     "minutes": 10
   },
@@ -3667,10 +3678,19 @@ export const allArticles = [
     "title": "🚀 TypeScript背景发展",
     "url": "/前端/03-JavaScript/TypeScript",
     "category": "前端",
-    "created": 1793191315082.106,
-    "modified": 1793191315082.106,
+    "created": 1794131938000,
+    "modified": 1794131938000,
     "words": 1119,
     "minutes": 3
+  },
+  {
+    "title": "this 指向探讨",
+    "url": "/前端/03-JavaScript/this 指向探讨",
+    "category": "前端",
+    "created": 1794230689511.1301,
+    "modified": 1794230689511.1301,
+    "words": 224,
+    "minutes": 1
   },
   {
     "title": "原生HTML绑定事件方式",
@@ -3682,11 +3702,29 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "理解为什么会出现箭头函数",
+    "url": "/前端/03-JavaScript/箭头函数深入解析",
+    "category": "前端",
+    "created": 1794230137585.0732,
+    "modified": 1794230137585.0732,
+    "words": 1154,
+    "minutes": 3
+  },
+  {
+    "title": "闭包深入解析",
+    "url": "/前端/03-JavaScript/闭包深入解析",
+    "category": "前端",
+    "created": 1794230256727.4163,
+    "modified": 1794230256727.4163,
+    "words": 650,
+    "minutes": 2
+  },
+  {
     "title": "什么是React？",
     "url": "/前端/React/01-React教程",
     "category": "前端",
     "created": 1793024530000,
-    "modified": 1793024530000,
+    "modified": 1794131938000,
     "words": 8222,
     "minutes": 21
   },
@@ -3694,8 +3732,8 @@ export const allArticles = [
     "title": "使用脚手架快速搭建项目",
     "url": "/前端/React/02-项目开发",
     "category": "前端",
-    "created": 1793717810934.9824,
-    "modified": 1793717810934.9824,
+    "created": 1794131938000,
+    "modified": 1794131938000,
     "words": 3076,
     "minutes": 8
   },
@@ -3721,8 +3759,8 @@ export const allArticles = [
     "title": "Vite",
     "url": "/前端/node/Vite",
     "category": "前端",
-    "created": 1793620427380.9028,
-    "modified": 1793620427380.9028,
+    "created": 1794131938000,
+    "modified": 1794131938000,
     "words": 885,
     "minutes": 3
   },
@@ -3731,7 +3769,7 @@ export const allArticles = [
     "url": "/前端/node/node教程",
     "category": "前端",
     "created": 1793024530000,
-    "modified": 1793024530000,
+    "modified": 1794131938000,
     "words": 6541,
     "minutes": 17
   },
@@ -3748,8 +3786,8 @@ export const allArticles = [
     "title": "前端生态",
     "url": "/前端/前端生态",
     "category": "前端",
-    "created": 1793190766269.7185,
-    "modified": 1793190766269.7185,
+    "created": 1794131938000,
+    "modified": 1794131938000,
     "words": 821,
     "minutes": 3
   },
@@ -4229,14 +4267,20 @@ export const mdIndex = {
   "TypeScript": [
     "前端/03-JavaScript/TypeScript.md"
   ],
+  "this 指向探讨": [
+    "前端/03-JavaScript/this 指向探讨.md"
+  ],
   "原生HTML绑定事件方式": [
     "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
-  "01-JavaScript教程": [
-    "前端/03-JavaScript/01-JavaScript教程.md"
+  "箭头函数深入解析": [
+    "前端/03-JavaScript/箭头函数深入解析.md"
   ],
-  "03-函数": [
-    "前端/03-JavaScript/03-函数.md"
+  "闭包深入解析": [
+    "前端/03-JavaScript/闭包深入解析.md"
+  ],
+  "01-JavaScript核心编程": [
+    "前端/03-JavaScript/01-JavaScript核心编程.md"
   ],
   "04-模块化": [
     "前端/03-JavaScript/04-模块化.md"
@@ -4903,14 +4947,20 @@ export const imgIndex = {
   "TypeScript": [
     "前端/03-JavaScript/TypeScript.md"
   ],
+  "this 指向探讨": [
+    "前端/03-JavaScript/this 指向探讨.md"
+  ],
   "原生HTML绑定事件方式": [
     "前端/03-JavaScript/原生HTML绑定事件方式.md"
   ],
-  "01-JavaScript教程": [
-    "前端/03-JavaScript/01-JavaScript教程.md"
+  "箭头函数深入解析": [
+    "前端/03-JavaScript/箭头函数深入解析.md"
   ],
-  "03-函数": [
-    "前端/03-JavaScript/03-函数.md"
+  "闭包深入解析": [
+    "前端/03-JavaScript/闭包深入解析.md"
+  ],
+  "01-JavaScript核心编程": [
+    "前端/03-JavaScript/01-JavaScript核心编程.md"
   ],
   "04-模块化": [
     "前端/03-JavaScript/04-模块化.md"

@@ -564,7 +564,7 @@ fn();                 // undefined（严格模式下报错）← this 丢失
 
 ## ⁠1 ⁠定义函数
 
-### ⁠1.1 ⁠函数声明
+### ⁠1.1 ⁠普通函数声明
 ```js
 function add(a, b) {
   return a + b;
@@ -573,7 +573,7 @@ function add(a, b) {
 - 特点：**会被提升（hoisting）**。也即在它前面的代码块里也可以访问，整个函数体在作用域内提前可用。
 - 适合需要在定义前调用的场景。
 
-### ⁠1.2 ⁠函数表达式
+1、 函数表达式：声明完之后赋值给一个变量，这种不需要写函数名字
 ```js
 const add = function(a, b) {
   return a + b;
@@ -582,7 +582,38 @@ const add = function(a, b) {
 - 特点：不会被提升（变量提升，但赋值为 `undefined`）。
 - 可以是匿名的，也可以命名（命名便于调试和递归）。
 
-### ⁠1.3 ⁠箭头函数
+另外，这种方式经常在对象的属性赋值里出现
+```js 
+const person = {
+  name: "张三",
+  age: 25,
+  
+  // 方式 A：方法简写（推荐，ES6）
+  sayHello() {
+    console.log(`你好，我是${this.name}`);
+  },
+  
+  // 方式 B：传统 function 表达式
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+
+person.sayHello();  // 你好，我是张三
+person.greet();     // Hello!
+
+```
+
+
+2、函数立即执行表达式：声明一个函数之后立即传递参数然后执行它，见的比较少
+
+```js  
+(function() {
+    // 私有作用域
+  })();
+```
+### ⁠1.2 ⁠箭头函数
+
 ```js
 const add = (a, b) => a + b;          // 单行隐式返回
 const add = (a, b) => { return a + b; }; // 多行
@@ -593,23 +624,7 @@ const square = x => x * x;            // 单参数可省略括号
 - 不能作为构造函数（不能用 `new`）。
 - 更简洁，推荐在现代代码中优先使用。
 
-### ⁠1.4 ⁠其他方式
-- **方法简写**（对象字面量）：
-  ```js
-  const obj = {
-    add(a, b) { return a + b; }
-  };
-  ```
-- **Function 构造函数**（不推荐，有作用域和性能问题）：
-  ```js
-  const add = new Function('a', 'b', 'return a + b');
-  ```
-- **立即执行函数表达式（IIFE）**：
-  ```js
-  (function() {
-    // 私有作用域
-  })();
-  ```
+[[箭头函数深入解析]]
 
 ## ⁠2 ⁠参数与返回值
 
@@ -637,57 +652,7 @@ const square = x => x * x;            // 单参数可省略括号
 
 ## ⁠3 ⁠闭包
 
-函数可以“记住”并访问其定义时的词法环境。内层函数可以访问外层函数定义的所有变量和函数，并且只要这个内层函数一直存在，被它访问的外层变量和函数就不会被销毁，内层函数会一直持有它们的引用。
-
-**闭包背后设计基本原理：**
-1、是在JS和Python中，函数中声明的变量并不会直接放在调用栈里，而是放在一个叫**词法环境的数据结构对象中，被存储在内存堆**中（保证函数执行结束后变量可以被垃圾回收器进行分析而不是随着调用栈的销毁而销毁）。在函数执行时，**这个词法环境结构对象被创建，其内部函数本身会自动引用外部函数的词法环境对象（在 JS 规范中叫 [[Environment]]，Python 中叫 closure）**，在外部函数执行完毕后，垃圾回收器开始分析，基本原理就是可达性分析，分析该词法环境对象哪些变量依然被外部变量引用，所以如果当初的内部函数被返回到外部被某个变量接收了，那么该内部函数对象就是存活着，如果正好该内部函数引用了当初外部函数的的某些变量，那么这些内部变量则不会被销毁，继续保留在内存堆中。
-2、当内部函数被执行时，如果代码中出现对外部变量的访问（比如执行 `count++` 或 `obj.name = 'test'`），引擎并不是在栈上重新创建一个指向堆对象的局部变量，而是进行**标识符解析（Identifier Resolution）**：、
-- 引擎先在内部函数的局部栈帧里找 `count`，没找到。
-- 引擎顺着内部函数身上的隐藏指针 `[[Environment]]`，直接摸到了堆内存中那个幸存的**外部词法环境对象**。
-- 引擎在这个堆对象里找到了 `count` 的槽位，并直接在这个槽位上进行读取或修改。
-3、当内部函数执行结束，它的调用栈帧被销毁，它自己内部的局部变量确实随之灰飞烟灭了。但是，那个被它在堆内存中跨域修改的外部变量（如 `count` 变成了 `1`）依然完好无损地躺在堆内存的词法环境对象里。 等到内部函数**下一次**被执行时，它顺着指针再次找到这个槽位，读取到的就是上一次修改后的值（`1`）
-
-
-```mermaid
-graph TD
-    subgraph CallStack["调用栈 (Call Stack)"]
-        EC_Ext["外部函数执行上下文<br/>(External Execution Context)<br/>执行完毕即弹出销毁"]
-        EC_Int["内部函数执行上下文<br/>(Internal Execution Context)<br/>未来每次调用时创建，执行完销毁"]
-    end
-
-    subgraph HeapMemory["内存堆 (Heap Memory)"]
-        LexEnv["外部函数词法环境对象<br/>(Lexical Environment)<br/>因被引用而驻留内存"]
-        Slot1["被捕获变量槽位<br/>(例: count = 1)"]
-        Slot2["被捕获变量槽位<br/>(例: obj = {...})"]
-        IntFuncObj["内部函数对象<br/>(Function Object)<br/>被外部变量接收，持续存活"]
-    end
-
-    %% 外部函数的作用
-    EC_Ext -. "1. 产生变量并触发逃逸分析" .-> LexEnv
-    EC_Ext -. "2. 创建内部函数" .-> IntFuncObj
-
-    %% 词法环境内部结构
-    LexEnv --- Slot1
-    LexEnv --- Slot2
-
-    %% 核心：闭包的引用链
-    IntFuncObj == "3. &#91;&#91;Environment&#93;&#93; 隐藏指针<br/>(锁定词法环境，阻止GC回收)" ==> LexEnv
-
-    %% 内部函数执行时的寻址
-    EC_Int -- "4. 标识符跨域寻址/读写" --> Slot1
-    EC_Int -- "4. 标识符跨域寻址/读写" --> Slot2
-
-    classDef stack fill:#f9d0c4,stroke:#333,stroke-width:2px;
-    classDef heap fill:#d4e6f1,stroke:#333,stroke-width:2px;
-    classDef core fill:#fcf3cf,stroke:#f39c12,stroke-width:3px;
-
-    class EC_Ext,EC_Int stack;
-    class LexEnv,Slot1,Slot2,IntFuncObj heap;
-    class IntFuncObj core;
-```
-
-
-
+[[闭包深入解析]]
 
 
   ```js 
@@ -704,85 +669,16 @@ console.log(counter()); // 2
 
 
 
-## ⁠4 ⁠this
+## ⁠4 ⁠this指向问题
 
-Java Script一开始只有普通函数，内部的this也即普通函数每次执行时，自动给this进行重新绑定，由调用方式决定，而箭头函数没有自己的this，它内部的this被当作变量使用，基于闭包进行运作，也即外部函数在执行，该箭头函数被创建时，基于闭包的方式，该this就指向了外部函数this对应的对象，后续该箭头函数被重新执行，不管被放在哪个外部函数中执行，this的指向都不变了。
-
-
-
- Java中的this：在编译期间就确定了，this永远指向当前实例，即使在内部类，也是指向内部类实例本身，且Java中提供OuterClass.this.field的方式用于在内部类中访问外部类实例的成员（因为Java中以规定现有外部类实例，后有内部类实例）。
-> 为什么Java可以直接在编译期间确定this指向？因为在Java中，函数不能单独存在，必须依赖于对象进行调用。
-
-而在JavaScript中，函数既可以直接调用，也可以通过对象去调用，所以javaScript中的函数的this指向无法在编译器期间直接确定。
-
-```java
-public class ButtonClickDemo {
-    private String label = "主窗口";
-
-    public void init() {
-        JButton button = new JButton("点击我");
-
-        // 注册点击监听器（回调）
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // 在回调中直接访问外部类的字段 —— 编译器自动处理
-                System.out.println("按钮被点击，当前窗口: " + label);
-                
-                // 等价于：
-                System.out.println("按钮被点击，当前窗口: " + ButtonClickDemo.this.label);
-            }
-        });
-    }
-}
-```
-
-
+[[this 指向探讨]]
 javaScript中，由于它是动态解释型语言，this是在运行过程中根据调用方式指定的：
 - 如果是对象调用，则方法中的this指向对象本身，
 - 如果是普通函数调用，在非严格模式下，this指向全局对象，严格模式下，undefind
 - 而如果是箭头函数，没有自己的 this，它会继承外层作用域的 this（定义时就确定了），在被当作回调函数时大量使用，因为传入回调函数时，会被接收方使用一个变量接收，然后再进行调用，所以会被当作一个普通函数调用最终，
 
-## ⁠5 ⁠用 new 调用构造函数时，this 指向新创建的对象。
 
-```javaScript
-function Person(name) {
-  this.name = name;
-  this.sayHi = function() {
-    console.log(`你好，我是${this.name}`);
-  };
-}
-
-const p = new Person("张三");
-p.sayHi();  // 你好，我是张三
-```
-
-## ⁠6 ⁠通过对象调用方法时，this 指向该对象。
-
-```javaScript
-const person = {
-  name: "王五",
-  sayName() {
-    console.log(this.name);
-  }
-};
-
-person.sayName();     // 王五   ← this 指向 person
-
-
-```
-
-## ⁠7 ⁠普通函数直接调用时
-
-```javaScript
-// 原因：fn 只是普通函数调用，不再通过对象调用,在严格模式下 this 丢失。
-const fn = person.sayName;
-fn();                 // undefined（严格模式下报错）
-
-// 非严格模式下，- this 指向全局对象（浏览器是 window，Node 是 global）
-```
-
-## ⁠8 ⁠显示绑定this
+### ⁠4.1 ⁠显示绑定this
 手动指定 this 指向谁。
 
 ```javaScript
@@ -805,61 +701,6 @@ call 和 apply 的区别只在传参方式：
 - call(thisArg, arg1, arg2, ...)
 - apply(thisArg, [arg1, arg2, ...])
 
-## ⁠9 ⁠箭头函数的特殊行为
-
-箭头函数没有自己的 this，它会继承外层作用域的 this（定义时就确定了）。
-
-```javaScript
-const person = {
-  name: "赵六",
-  sayName: () => {
-    console.log(this.name);  // 这里的 this 不是 person！
-  },
-  sayName2() {
-    const fn = () => {
-      console.log(this.name); // 继承 sayName2 的 this
-    };
-    fn();
-  }
-};
-
-person.sayName();   // undefined（或报错）
-person.sayName2();  // 赵六
-
-```
-
-箭头函数常用于回调，避免丢失this，简单来讲，如果想在一个函数的内部函数里访问外部函数所在作用域的this指向的对象，则需要使用箭头函数来完成。
-```javaScript
-const person = {
-  name: "张三",
-  hobbies: ["篮球", "游泳"],
-  showHobbies() {
-    this.hobbies.forEach(hobby => {
-      console.log(`${this.name} 喜欢 ${hobby}`);
-    });
-  }
-};
-
-person.showHobbies();
-// 张三 喜欢 篮球
-// 张三 喜欢 游泳
-```
 # 原型
 
 
-
-
-# 最佳实践与常见陷阱
-
-**推荐**：
-- 优先使用箭头函数 + `const`/`let`。
-- 使用默认参数、Rest、解构。
-- 小函数、单一职责。
-- 合理使用闭包，避免内存泄漏（注意解除引用）。
-
-**陷阱**：
-- 普通函数中的 `this` 丢失（常见于事件回调、定时器）→ 用箭头或 `bind`。
-- 闭包中循环变量问题（用 `let` 或 IIFE 解决）。
-- 过度使用递归导致栈溢出。
-- 把箭头函数当构造函数。
-- 混淆提升行为。
