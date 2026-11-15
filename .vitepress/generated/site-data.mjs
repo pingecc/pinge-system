@@ -3,7 +3,7 @@ export const navCategories = [
   {
     "label": "前端",
     "link": "/categories/%E5%89%8D%E7%AB%AF",
-    "count": 33,
+    "count": 34,
     "articles": [
       {
         "title": "HTML基础",
@@ -120,7 +120,7 @@ export const navCategories = [
         "modified": 1787971861000
       },
       {
-        "title": "🚀 TypeScript背景发展",
+        "title": "介绍",
         "url": "/前端/03-JavaScript/TypeScript",
         "created": 1794131938000,
         "modified": 1794131938000
@@ -176,14 +176,20 @@ export const navCategories = [
       {
         "title": "介绍",
         "url": "/前端/node/01-node教程",
-        "created": 1793109508026.5786,
-        "modified": 1793109508026.5786
+        "created": 1794233555000,
+        "modified": 1794233555000
       },
       {
         "title": "02-Vite",
         "url": "/前端/node/02-Vite",
-        "created": 1794231021563.709,
-        "modified": 1794231021563.709
+        "created": 1794233555000,
+        "modified": 1794233555000
+      },
+      {
+        "title": "以前",
+        "url": "/前端/node/03-关于npx",
+        "created": 1794403948869.5156,
+        "modified": 1794403948869.5156
       },
       {
         "title": "学习大纲",
@@ -1143,7 +1149,7 @@ export const navCategories = [
   {
     "label": "其他",
     "link": "/categories/%E5%85%B6%E4%BB%96",
-    "count": 10,
+    "count": 11,
     "articles": [
       {
         "title": "开发工具",
@@ -1168,6 +1174,12 @@ export const navCategories = [
         "url": "/源码系列/欢迎",
         "created": 1786173733000,
         "modified": 1786173733000
+      },
+      {
+        "title": "TypeScript背景",
+        "url": "/编程模型/TypeScript背景",
+        "created": 1794404308229.1658,
+        "modified": 1794404308229.1658
       },
       {
         "title": "不同语言中如何实现函数的传递",
@@ -1270,6 +1282,10 @@ export const categorySidebarMap = {
         {
           "text": "02-Vite",
           "link": "/前端/node/02-Vite"
+        },
+        {
+          "text": "03-关于npx",
+          "link": "/前端/node/03-关于npx"
         }
       ]
     },
@@ -2408,6 +2424,10 @@ export const categorySidebarMap = {
               "link": "/编程模型/设计模式/导航"
             }
           ]
+        },
+        {
+          "text": "TypeScript背景",
+          "link": "/编程模型/TypeScript背景"
         },
         {
           "text": "函数",
@@ -3675,13 +3695,13 @@ export const allArticles = [
     "minutes": 1
   },
   {
-    "title": "🚀 TypeScript背景发展",
+    "title": "介绍",
     "url": "/前端/03-JavaScript/TypeScript",
     "category": "前端",
     "created": 1794131938000,
     "modified": 1794131938000,
-    "words": 1119,
-    "minutes": 3
+    "words": 4632,
+    "minutes": 12
   },
   {
     "title": "this 指向探讨",
@@ -3759,19 +3779,28 @@ export const allArticles = [
     "title": "介绍",
     "url": "/前端/node/01-node教程",
     "category": "前端",
-    "created": 1793109508026.5786,
-    "modified": 1793109508026.5786,
-    "words": 6541,
+    "created": 1794233555000,
+    "modified": 1794233555000,
+    "words": 6725,
     "minutes": 17
   },
   {
     "title": "02-Vite",
     "url": "/前端/node/02-Vite",
     "category": "前端",
-    "created": 1794231021563.709,
-    "modified": 1794231021563.709,
+    "created": 1794233555000,
+    "modified": 1794233555000,
     "words": 888,
     "minutes": 3
+  },
+  {
+    "title": "以前",
+    "url": "/前端/node/03-关于npx",
+    "category": "前端",
+    "created": 1794403948869.5156,
+    "modified": 1794403948869.5156,
+    "words": 394,
+    "minutes": 1
   },
   {
     "title": "学习大纲",
@@ -4134,6 +4163,15 @@ export const allArticles = [
     "minutes": 1
   },
   {
+    "title": "TypeScript背景",
+    "url": "/编程模型/TypeScript背景",
+    "category": "其他",
+    "created": 1794404308229.1658,
+    "modified": 1794404308229.1658,
+    "words": 1114,
+    "minutes": 3
+  },
+  {
     "title": "不同语言中如何实现函数的传递",
     "url": "/编程模型/函数",
     "category": "其他",
@@ -4209,6 +4247,9 @@ export const mdIndex = {
   ],
   "02-Vite": [
     "前端/node/02-Vite.md"
+  ],
+  "03-关于npx": [
+    "前端/node/03-关于npx.md"
   ],
   "前端生态": [
     "前端/前端生态.md"
@@ -4732,6 +4773,9 @@ export const mdIndex = {
   "快捷键": [
     "服务器/Mac/快捷键.md"
   ],
+  "TypeScript背景": [
+    "编程模型/TypeScript背景.md"
+  ],
   "函数": [
     "编程模型/函数.md"
   ],
@@ -4772,6 +4816,9 @@ export const imgIndex = {
   ],
   "02-Vite": [
     "前端/node/02-Vite.md"
+  ],
+  "03-关于npx": [
+    "前端/node/03-关于npx.md"
   ],
   "Pasted image 20260525214527": [
     "前端/zmg/Pasted image 20260525214527.png"
@@ -5663,6 +5710,9 @@ export const imgIndex = {
   ],
   "快捷键": [
     "服务器/Mac/快捷键.md"
+  ],
+  "TypeScript背景": [
+    "编程模型/TypeScript背景.md"
   ],
   "函数": [
     "编程模型/函数.md"

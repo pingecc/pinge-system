@@ -503,8 +503,10 @@ my-awesome-package/
 mkdir my-project && cd my-project
 npm init -y
 
-# 2. 安装常用依赖
+# 2. 安装常用依赖 多个依赖包时通过空格分开
+# 同时下载 express cors dotenv等依赖包
 npm install express cors dotenv
+# 下面的依赖包只在开发阶段会用到，实际运行时不需要，所以前面加了 -D 参数，表示安装为开发依赖
 npm install -D nodemon typescript @types/node
 
 # 3. 查看当前安装了哪些包
@@ -522,6 +524,32 @@ rm -rf node_modules package-lock.json
 npm cache clean --force
 npm install
 ```
+
+
+
+`-D` 参数详解：
+
+1、会把包写到 `package.json` 的 `devDependencies` 字段里，而不是 `dependencies`。
+```json
+{
+  "devDependencies": {
+    "typescript": "^5.x",
+    "@types/node": "^20.x"
+  },
+  "dependencies": {
+    "express": "^4.x"
+  }
+}
+```
+
+2、当我们使用 （webpack、esbuild、vite 等）打包工具打包时，最终打包产物里本来就不会包含这些开发依赖包。
+
+| 场景                                | 是否安装 `devDependencies` | 说明                |
+| --------------------------------- | ---------------------- | ----------------- |
+| 本地开发 `npm install`                | ✅ 会装                   | 默认全部安装            |
+| 生产环境 `npm install --production`   | ❌ 不装                   | 只装 `dependencies` |
+| `NODE_ENV=production npm install` | ❌ 不装                   | 同上                |
+
 ## ⁠2 ⁠CommonJS 下的标准包结构
 
 ```bash
@@ -653,7 +681,7 @@ export { default as ApiClient } from './src/api.js';
 
 ### ⁠4.4 ⁠4. 脚本与自动化
 
-- **`scripts`**: 项目的“快捷指令表”。它允许你封装复杂的终端命令。
+- **`scripts`**: 项目的“快捷指令表”。它允许你封装复杂的终端命令，使用 `npm run [scripts里写的脚本名]` 就可以直接运行对应配置的命令，这些命令的格式一般是：node_modules下的某个工具的命令+参数 ，其实就是直接去执行node_modules包下的某个工具包提供的命令，通过这种配置的方式来简化命令
     ```json
     "scripts": {
       "start": "node server.js",
@@ -662,17 +690,22 @@ export { default as ApiClient } from './src/api.js';
     }
     ```
 
+例如上面的配置，当在项目下的命令控制台执行 `npm run dev` 时：
+
+```bash
+# 临时把 node_modules/.bin 加到 PATH 前面
+export PATH="./node_modules/.bin:$PATH"
+# 然后执行你写的命令
+nodemon server.js
+```
+
+
 一个标准的现代化 Node.js 项目（无论是后端服务还是前端工程），其 `package.json` 中的 `scripts` 字段通常会涵盖本地开发、代码检查、测试、构建和自动生命周期等全套流程。
 
   
 
 以下是一个完整且经典的 `package.json` 配置示例，随后我们将逐一拆解每个命令的详细作用与适用场景。
-
-  
-
-JSON
-
-```
+```json
 {
   "name": "enterprise-standard-project",
   "version": "1.0.0",
