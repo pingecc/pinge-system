@@ -123,7 +123,7 @@ export const navCategories = [
         "title": "介绍",
         "url": "/前端/03-JavaScript/TypeScript",
         "created": 1794131938000,
-        "modified": 1794131938000
+        "modified": 1794750146000
       },
       {
         "title": "this 指向探讨",
@@ -177,7 +177,7 @@ export const navCategories = [
         "title": "介绍",
         "url": "/前端/node/01-node教程",
         "created": 1794233555000,
-        "modified": 1794233555000
+        "modified": 1794750146000
       },
       {
         "title": "02-Vite",
@@ -188,8 +188,8 @@ export const navCategories = [
       {
         "title": "以前",
         "url": "/前端/node/03-关于npx",
-        "created": 1794403948869.5156,
-        "modified": 1794403948869.5156
+        "created": 1794750146000,
+        "modified": 1794750146000
       },
       {
         "title": "学习大纲",
@@ -1178,8 +1178,8 @@ export const navCategories = [
       {
         "title": "TypeScript背景",
         "url": "/编程模型/TypeScript背景",
-        "created": 1794404308229.1658,
-        "modified": 1794404308229.1658
+        "created": 1794750146000,
+        "modified": 1794750146000
       },
       {
         "title": "不同语言中如何实现函数的传递",
@@ -3699,7 +3699,7 @@ export const allArticles = [
     "url": "/前端/03-JavaScript/TypeScript",
     "category": "前端",
     "created": 1794131938000,
-    "modified": 1794131938000,
+    "modified": 1794750146000,
     "words": 4632,
     "minutes": 12
   },
@@ -3780,7 +3780,7 @@ export const allArticles = [
     "url": "/前端/node/01-node教程",
     "category": "前端",
     "created": 1794233555000,
-    "modified": 1794233555000,
+    "modified": 1794750146000,
     "words": 6725,
     "minutes": 17
   },
@@ -3797,8 +3797,8 @@ export const allArticles = [
     "title": "以前",
     "url": "/前端/node/03-关于npx",
     "category": "前端",
-    "created": 1794403948869.5156,
-    "modified": 1794403948869.5156,
+    "created": 1794750146000,
+    "modified": 1794750146000,
     "words": 394,
     "minutes": 1
   },
@@ -4166,8 +4166,8 @@ export const allArticles = [
     "title": "TypeScript背景",
     "url": "/编程模型/TypeScript背景",
     "category": "其他",
-    "created": 1794404308229.1658,
-    "modified": 1794404308229.1658,
+    "created": 1794750146000,
+    "modified": 1794750146000,
     "words": 1114,
     "minutes": 3
   },
