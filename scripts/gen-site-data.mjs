@@ -8,10 +8,10 @@ const ROOT = path.resolve(process.cwd())
 const OUT_DIR = path.join(ROOT, ".vitepress", "generated")
 const OUT_FILE = path.join(OUT_DIR, "site-data.mjs")
 
-// 主题分类顺序（小目录并入"其他"）
-const THEME_ORDER = ["前端", "Java", "Python", "Go开发", "系统架构", "English", "AI全栈应用"]
-const OTHER_CATEGORY = "其他"
-const SMALL_DIRS = ["服务器", "考证", "编程模型", "源码系列", "工具资源"]
+// 主题分类顺序
+const THEME_ORDER = ["前端", "Java", "Python", "Go开发"]
+// 排除的顶级目录：不进导航/侧边栏/分类，config.mts 的 srcExclude 也不为其生成页面
+const EXCLUDED_TOP_DIRS = ["系统架构", "English", "AI全栈应用", "服务器", "考证", "编程模型", "源码系列", "工具资源"]
 
 // 排除规则（与旧 build.py 保持一致）
 const EXCLUDE_FILE_PREFIXES = ["未命名"]
@@ -74,10 +74,6 @@ function walkFiles(dirAbs, posixRel, out, includeImages, includeZmgMd) {
   }
 }
 
-function categoryOf(topDir) {
-  return SMALL_DIRS.includes(topDir) ? OTHER_CATEGORY : topDir
-}
-
 // git 历史时间戳（创建/修改时间），失败回退文件 mtime
 function getGitTimestamps() {
   const map = new Map()
@@ -133,7 +129,7 @@ function extractTitle(rel) {
 }
 
 // 收集所有主题 md
-const allThemeDirs = [...THEME_ORDER, ...SMALL_DIRS]
+const allThemeDirs = THEME_ORDER
 const allMds = []
 for (const d of allThemeDirs) {
   walkFiles(path.join(ROOT, d), d, allMds, false, false)
@@ -219,7 +215,7 @@ for (const rel of allMds) {
   articles.push({
     title,
     url: "/" + rel.slice(0, -MD_EXT.length),
-    category: categoryOf(topDir),
+    category: topDir,
     created: ts.created,
     modified: ts.modified,
     words,
@@ -228,14 +224,13 @@ for (const rel of allMds) {
 }
 articles.sort((a, b) => naturalCompare(a.url, b.url))
 
-// 分类（含"其他"合并）
+// 分类
 const categoryMap = new Map()
 for (const art of articles) {
   if (!categoryMap.has(art.category)) categoryMap.set(art.category, [])
   categoryMap.get(art.category).push(art)
 }
-const categoryOrder = [...THEME_ORDER.filter((d) => categoryMap.has(d))]
-if (categoryMap.has(OTHER_CATEGORY)) categoryOrder.push(OTHER_CATEGORY)
+const categoryOrder = THEME_ORDER.filter((d) => categoryMap.has(d))
 
 const navCategories = categoryOrder.map((label) => ({
   label,
@@ -276,21 +271,10 @@ function treeItems(dirAbs, posixRel) {
 }
 
 // 按分类切分的侧边栏：进入某分类后只展示该分类的文章树（react.dev 式分域导航）
-// "其他"由多个小目录合并而成，保留各自顶层分组；其余分类直接用自身目录树
 const categorySidebarMap = {}
 for (const label of categoryOrder) {
-  if (label === OTHER_CATEGORY) {
-    const items = []
-    for (const topDir of SMALL_DIRS) {
-      if (!fs.existsSync(path.join(ROOT, topDir))) continue
-      const children = treeItems(path.join(ROOT, topDir), topDir)
-      if (children.length) items.push({ text: topDir, collapsed: true, items: children })
-    }
-    if (items.length) categorySidebarMap[label] = items
-  } else {
-    const items = treeItems(path.join(ROOT, label), label)
-    if (items.length) categorySidebarMap[label] = items
-  }
+  const items = treeItems(path.join(ROOT, label), label)
+  if (items.length) categorySidebarMap[label] = items
 }
 
 // 双链/嵌入索引（md 排除 zmg；图片包含 zmg）
@@ -316,7 +300,7 @@ for (const d of allThemeDirs) {
 // 分类 → 组成该分类的顶级目录（面包屑与导航高亮需要）
 const categoryDirs = {}
 for (const label of categoryOrder) {
-  categoryDirs[label] = label === OTHER_CATEGORY ? SMALL_DIRS : [label]
+  categoryDirs[label] = [label]
 }
 
 const out = `// 由 scripts/gen-site-data.mjs 自动生成，请勿手动修改
@@ -324,6 +308,7 @@ export const navCategories = ${JSON.stringify(navCategories, null, 2)}
 export const categoryDirs = ${JSON.stringify(categoryDirs, null, 2)}
 export const categorySidebarMap = ${JSON.stringify(categorySidebarMap, null, 2)}
 export const allArticles = ${JSON.stringify(articles, null, 2)}
+export const excludedTopDirs = ${JSON.stringify(EXCLUDED_TOP_DIRS, null, 2)}
 export const mdIndex = ${JSON.stringify(mdIndex, null, 2)}
 export const imgIndex = ${JSON.stringify(imgIndex, null, 2)}
 `

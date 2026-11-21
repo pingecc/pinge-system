@@ -3,14 +3,15 @@ import fs from "node:fs"
 import path from "node:path"
 import obsidianLinks, { htmlSafety } from "./plugins/obsidian-links.mjs"
 import fileNameHeading from "./plugins/file-name-heading.mjs"
-import { navCategories, categoryDirs, categorySidebarMap } from "./generated/site-data.mjs"
+import { navCategories, categoryDirs, categorySidebarMap, excludedTopDirs } from "./generated/site-data.mjs"
 import { descriptions } from "./generated/descriptions.mjs"
 import { categoryEntryUrl } from "./theme/utils"
 
 // 站点对外地址（sitemap / og:url 用），必须带 base 路径和结尾斜杠
 const SITE_URL = "https://pingecc.github.io/pinge-system/"
 
-// 不参与正文页面生成的目录/文件（buildEnd 复制 .md 时会同步跳过）
+// 不参与正文页面生成的目录/文件（buildEnd 复制 .md 时会同步跳过）；
+// 排除的顶级目录来自 gen-site-data.mjs（不进导航/侧边栏/分类，也不生成页面）
 const EXCLUDE_GLOBS = [
   "README.md",
   "MIGRATION.md",
@@ -23,7 +24,8 @@ const EXCLUDE_GLOBS = [
   "**/模板.md",
   "**/READEME.md",
   "**/AI 测试.md",
-  "**/*.excalidraw.md"
+  "**/*.excalidraw.md",
+  ...excludedTopDirs.map((d) => `${d}/**`)
 ]
 
 function globToRegExp(glob) {
