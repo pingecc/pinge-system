@@ -17,6 +17,7 @@ const CATEGORY_SLUGS: Record<string, string> = {
   前端: "front",
   Java: "java",
   Python: "python",
+  Go开发: "go",
   系统架构: "arch",
   English: "english",
   AI全栈应用: "ai",

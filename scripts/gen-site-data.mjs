@@ -9,7 +9,7 @@ const OUT_DIR = path.join(ROOT, ".vitepress", "generated")
 const OUT_FILE = path.join(OUT_DIR, "site-data.mjs")
 
 // 主题分类顺序（小目录并入"其他"）
-const THEME_ORDER = ["前端", "Java", "Python", "系统架构", "English", "AI全栈应用"]
+const THEME_ORDER = ["前端", "Java", "Python", "Go开发", "系统架构", "English", "AI全栈应用"]
 const OTHER_CATEGORY = "其他"
 const SMALL_DIRS = ["服务器", "考证", "编程模型", "源码系列", "工具资源"]
 

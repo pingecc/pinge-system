@@ -838,6 +838,25 @@ export const navCategories = [
     ]
   },
   {
+    "label": "Go开发",
+    "link": "/categories/Go%E5%BC%80%E5%8F%91",
+    "count": 2,
+    "articles": [
+      {
+        "title": "main包",
+        "url": "/Go开发/Go编程/Go疑问",
+        "created": 1794750146000,
+        "modified": 1794837222000
+      },
+      {
+        "title": "Hello World",
+        "url": "/Go开发/Go编程/Go编程",
+        "created": 1794750146000,
+        "modified": 1794837222000
+      }
+    ]
+  },
+  {
     "label": "系统架构",
     "link": "/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84",
     "count": 33,
@@ -1229,6 +1248,9 @@ export const categoryDirs = {
   ],
   "Python": [
     "Python"
+  ],
+  "Go开发": [
+    "Go开发"
   ],
   "系统架构": [
     "系统架构"
@@ -2062,6 +2084,22 @@ export const categorySidebarMap = {
       ]
     }
   ],
+  "Go开发": [
+    {
+      "text": "Go编程",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Go疑问",
+          "link": "/Go开发/Go编程/Go疑问"
+        },
+        {
+          "text": "Go编程",
+          "link": "/Go开发/Go编程/Go编程"
+        }
+      ]
+    }
+  ],
   "系统架构": [
     {
       "text": "ERP",
@@ -2604,6 +2642,24 @@ export const allArticles = [
     "modified": 1787578947000,
     "words": 174,
     "minutes": 1
+  },
+  {
+    "title": "main包",
+    "url": "/Go开发/Go编程/Go疑问",
+    "category": "Go开发",
+    "created": 1794750146000,
+    "modified": 1794837222000,
+    "words": 5659,
+    "minutes": 15
+  },
+  {
+    "title": "Hello World",
+    "url": "/Go开发/Go编程/Go编程",
+    "category": "Go开发",
+    "created": 1794750146000,
+    "modified": 1794837222000,
+    "words": 7518,
+    "minutes": 19
   },
   {
     "title": "安全性",
@@ -4631,6 +4687,12 @@ export const mdIndex = {
   "03-pathlib": [
     "Python/02-开发/03-pathlib.md"
   ],
+  "Go疑问": [
+    "Go开发/Go编程/Go疑问.md"
+  ],
+  "Go编程": [
+    "Go开发/Go编程/Go编程.md"
+  ],
   "01-库存管理": [
     "系统架构/ERP/库存设计/01-库存管理.md"
   ],
@@ -5544,6 +5606,12 @@ export const imgIndex = {
   ],
   "03-pathlib": [
     "Python/02-开发/03-pathlib.md"
+  ],
+  "Go疑问": [
+    "Go开发/Go编程/Go疑问.md"
+  ],
+  "Go编程": [
+    "Go开发/Go编程/Go编程.md"
   ],
   "01-库存管理": [
     "系统架构/ERP/库存设计/01-库存管理.md"
