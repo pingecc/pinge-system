@@ -843,16 +843,16 @@ export const navCategories = [
     "count": 2,
     "articles": [
       {
-        "title": "main包",
-        "url": "/Go开发/Go编程/Go疑问",
+        "title": "程序结构",
+        "url": "/Go开发/Go编程/Go编程",
         "created": 1794750146000,
         "modified": 1794837222000
       },
       {
-        "title": "Hello World",
-        "url": "/Go开发/Go编程/Go编程",
-        "created": 1794750146000,
-        "modified": 1794837222000
+        "title": "main包",
+        "url": "/Go开发/Go编程/Go设计哲学说明",
+        "created": 1795329069473.4119,
+        "modified": 1795329069473.4119
       }
     ]
   }
@@ -1692,12 +1692,12 @@ export const categorySidebarMap = {
       "collapsed": true,
       "items": [
         {
-          "text": "Go疑问",
-          "link": "/Go开发/Go编程/Go疑问"
-        },
-        {
           "text": "Go编程",
           "link": "/Go开发/Go编程/Go编程"
+        },
+        {
+          "text": "Go设计哲学说明",
+          "link": "/Go开发/Go编程/Go设计哲学说明"
         }
       ]
     }
@@ -1705,21 +1705,21 @@ export const categorySidebarMap = {
 }
 export const allArticles = [
   {
-    "title": "main包",
-    "url": "/Go开发/Go编程/Go疑问",
-    "category": "Go开发",
-    "created": 1794750146000,
-    "modified": 1794837222000,
-    "words": 5659,
-    "minutes": 15
-  },
-  {
-    "title": "Hello World",
+    "title": "程序结构",
     "url": "/Go开发/Go编程/Go编程",
     "category": "Go开发",
     "created": 1794750146000,
     "modified": 1794837222000,
-    "words": 7518,
+    "words": 5124,
+    "minutes": 13
+  },
+  {
+    "title": "main包",
+    "url": "/Go开发/Go编程/Go设计哲学说明",
+    "category": "Go开发",
+    "created": 1795329069473.4119,
+    "modified": 1795329069473.4119,
+    "words": 7404,
     "minutes": 19
   },
   {
@@ -3358,11 +3358,11 @@ export const mdIndex = {
   "03-pathlib": [
     "Python/02-开发/03-pathlib.md"
   ],
-  "Go疑问": [
-    "Go开发/Go编程/Go疑问.md"
-  ],
   "Go编程": [
     "Go开发/Go编程/Go编程.md"
+  ],
+  "Go设计哲学说明": [
+    "Go开发/Go编程/Go设计哲学说明.md"
   ]
 }
 export const imgIndex = {
@@ -4111,10 +4111,13 @@ export const imgIndex = {
   "03-pathlib": [
     "Python/02-开发/03-pathlib.md"
   ],
-  "Go疑问": [
-    "Go开发/Go编程/Go疑问.md"
-  ],
   "Go编程": [
     "Go开发/Go编程/Go编程.md"
+  ],
+  "Go设计哲学说明": [
+    "Go开发/Go编程/Go设计哲学说明.md"
+  ],
+  "截屏2026-11-22 13.56.31": [
+    "Go开发/img/截屏2026-11-22 13.56.31.png"
   ]
 }
