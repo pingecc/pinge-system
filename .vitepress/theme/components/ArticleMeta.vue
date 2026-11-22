@@ -3,6 +3,7 @@ import { computed } from "vue"
 import { useData, withBase } from "vitepress"
 import { allArticles } from "../../generated/site-data.mjs"
 import { categorySlug, formatDate } from "../utils"
+import ReaderSettings from "./ReaderSettings.vue"
 
 const { page } = useData()
 
@@ -33,5 +34,6 @@ const wordsText = computed(() =>
     <span>{{ wordsText }} 字</span>
     <span class="meta-dot">·</span>
     <span>约 {{ meta.minutes }} 分钟</span>
+    <ReaderSettings class="reader-settings-inline" />
   </div>
 </template>

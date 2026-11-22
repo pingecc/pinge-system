@@ -297,6 +297,78 @@ for (const d of allThemeDirs) {
   }
 }
 
+// 双链图（Obsidian wikilink → 站内文章）：出链/反链，供文末"反向链接/继续阅读"
+function resolveWikiTarget(rawTarget, parentDir) {
+  const target = rawTarget.split("|")[0].split("#")[0].trim()
+  if (!target) return null
+  const dot = target.lastIndexOf(".")
+  const stem = dot > 0 ? target.slice(0, dot) : target
+  let hits = mdIndex[stem] || []
+  if (!hits.length && target.includes("/")) {
+    const suffix = "/" + target
+    hits = Object.values(mdIndex).flat().filter((rel) => rel.endsWith(suffix))
+  }
+  if (!hits.length) return null
+  const sameDir = hits.filter((h) => h.slice(0, h.lastIndexOf("/")) === parentDir)
+  if (sameDir.length === 1) return sameDir[0]
+  return hits.reduce((a, b) => (a.split("/").length <= b.split("/").length ? a : b))
+}
+
+const WIKI_LINK_RE = /!?\[\[([^\[\]]+)\]\]/g
+const outgoingByRel = {}
+const incomingByRel = {}
+for (const rel of allMds) {
+  let content = ""
+  try {
+    content = fs.readFileSync(path.join(ROOT, rel), "utf8")
+  } catch {
+    continue
+  }
+  const parentDir = rel.includes("/") ? rel.slice(0, rel.lastIndexOf("/")) : ""
+  const seen = new Set()
+  WIKI_LINK_RE.lastIndex = 0
+  let m
+  while ((m = WIKI_LINK_RE.exec(content))) {
+    if (m[0].startsWith("!")) continue // 图片嵌入不算文章链接
+    const t = resolveWikiTarget(m[1], parentDir)
+    if (!t || t === rel || seen.has(t)) continue
+    seen.add(t)
+    ;(outgoingByRel[rel] ||= []).push(t)
+    ;(incomingByRel[t] ||= []).push(rel)
+  }
+}
+
+// 换成与 allArticles.url 一致的口径（"/<目录>/<去 .md 路径>"）
+const urlOfRel = (rel) => "/" + rel.slice(0, -MD_EXT.length)
+const backlinksMap = {}
+for (const [rel, arr] of Object.entries(incomingByRel)) {
+  backlinksMap[urlOfRel(rel)] = arr.map(urlOfRel)
+}
+const outByUrl = {}
+for (const [rel, arr] of Object.entries(outgoingByRel)) {
+  outByUrl[urlOfRel(rel)] = arr.map(urlOfRel)
+}
+
+// 相关推荐：同分类内打分（共引 2 分、它链我 3 分、我链它 2 分、同子目录 1 分），取前 3
+const relatedMap = {}
+for (const art of articles) {
+  const myOut = new Set(outByUrl[art.url] || [])
+  const myIn = new Set(backlinksMap[art.url] || [])
+  const myDir = art.url.split("/").slice(0, -1).join("/")
+  const scored = []
+  for (const other of articles) {
+    if (other.url === art.url || other.category !== art.category) continue
+    let score = 0
+    for (const t of outByUrl[other.url] || []) if (myOut.has(t)) score += 2
+    if (myIn.has(other.url)) score += 3
+    if (myOut.has(other.url)) score += 2
+    if (other.url.split("/").slice(0, -1).join("/") === myDir) score += 1
+    if (score > 0) scored.push([score, other.url])
+  }
+  scored.sort((a, b) => b[0] - a[0] || naturalCompare(a[1], b[1]))
+  relatedMap[art.url] = scored.slice(0, 3).map(([, u]) => u)
+}
+
 // 分类 → 组成该分类的顶级目录（面包屑与导航高亮需要）
 const categoryDirs = {}
 for (const label of categoryOrder) {
@@ -311,6 +383,8 @@ export const allArticles = ${JSON.stringify(articles, null, 2)}
 export const excludedTopDirs = ${JSON.stringify(EXCLUDED_TOP_DIRS, null, 2)}
 export const mdIndex = ${JSON.stringify(mdIndex, null, 2)}
 export const imgIndex = ${JSON.stringify(imgIndex, null, 2)}
+export const backlinksMap = ${JSON.stringify(backlinksMap)}
+export const relatedMap = ${JSON.stringify(relatedMap)}
 `
 fs.mkdirSync(OUT_DIR, { recursive: true })
 fs.writeFileSync(OUT_FILE, out, "utf8")

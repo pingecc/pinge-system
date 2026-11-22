@@ -28,10 +28,42 @@
   /* 侧边栏略宽，给深层级目录留出呼吸感 */
   --vp-sidebar-width: 292px;
 
+  /* 动效 tokens：统一时长/缓动，交互一致才有"丝滑"的节奏感 */
+  --pl-ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --pl-dur: 0.25s;
+  --pl-dur-fast: 0.15s;
+
+  /* 阅读器偏好（ReaderSettings 经 html data-* 属性驱动） */
+  --pl-doc-fs: 16.5px;
+  --pl-doc-lh: 1.8;
+  --pl-doc-maxw: 840px;
+  --pl-font-kai: "LXGW WenKai Screen", "Kaiti SC", "STKaiti", "KaiTi", serif;
+
   /* 氛围层 tokens：品牌色柔光 / 首页网格点 / 卡面底色 */
   --pl-glow: rgba(16, 185, 129, 0.05);
   --pl-grid-dot: rgba(100, 116, 139, 0.16);
   --pl-card-bg: #ffffff;
+}
+
+/* 阅读器偏好各档位 */
+html[data-pl-size="0"] {
+  --pl-doc-fs: 15px;
+}
+
+html[data-pl-size="2"] {
+  --pl-doc-fs: 18px;
+}
+
+html[data-pl-line="0"] {
+  --pl-doc-lh: 1.7;
+}
+
+html[data-pl-line="2"] {
+  --pl-doc-lh: 1.95;
+}
+
+html[data-pl-width="wide"] {
+  --pl-doc-maxw: 960px;
 }
 
 html.dark {
@@ -197,10 +229,11 @@ body::before {
 
 /* VitePress 原生 scoped 规则 .VPDoc.has-aside .content-container[data-v]
    特异性为 (0,4,0)，普通同名选择器压不住（此前一直没生效，列宽停在 688px）；
-   借 .content 补一级特异性打平后再靠后加载胜出。960 起生效覆盖两个桌面档 */
+   借 .content 补一级特异性打平后再靠后加载胜出。960 起生效覆盖两个桌面档。
+   列宽由 --pl-doc-maxw 驱动（阅读器"宽度"档位 840/960） */
 @media (min-width: 960px) {
   .VPDoc.has-aside .content .content-container {
-    max-width: 840px;
+    max-width: var(--pl-doc-maxw);
   }
 }
 
@@ -218,9 +251,16 @@ body::before {
    4. 正文排版（.vp-doc）
    ------------------------------------------------------------------------ */
 
+/* 正文排版由阅读器 tokens 驱动（字号/行距可在文章页切换） */
 .vp-doc {
-  line-height: 1.75;
+  font-size: var(--pl-doc-fs);
+  line-height: var(--pl-doc-lh);
   word-break: break-word;
+}
+
+/* 文楷模式：正文字体整体切换为霞鹜文楷 Screen（代码块仍走 mono） */
+html[data-pl-font="kai"] .vp-doc {
+  font-family: var(--pl-font-kai);
 }
 
 /* 标题层级 */
@@ -257,9 +297,15 @@ body::before {
   font-weight: 600;
 }
 
-/* 段落与列表的呼吸感 */
+/* 段落与列表的呼吸感；text-wrap 减少孤行断句，中英混排更自然 */
 .vp-doc p {
   margin: 18px 0;
+  text-wrap: pretty;
+}
+
+.vp-doc h2,
+.vp-doc h3 {
+  text-wrap: balance;
 }
 
 .vp-doc ul,
@@ -288,6 +334,17 @@ body::before {
 
 .VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a:hover {
   text-decoration-color: var(--vp-c-brand-1);
+}
+
+/* 笔记间双链（obsidian-links 插件渲染的 internal-link）用虚线下划线区分，
+   一眼认出"这是知识库内部跳转" */
+.VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a.internal-link {
+  text-decoration-style: dashed !important;
+  text-decoration-thickness: 1px;
+}
+
+.VPContent:not(.is-home) .vp-doc :is(p, li, td, th, blockquote, dd) a.internal-link:hover {
+  text-decoration-style: solid !important;
 }
 
 /* 引用块：品牌色左边线 + 柔和底色 */
@@ -617,17 +674,69 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   }
 }
 
-/* 960–1279 没有右栏目录，正文按居中几何收窄，避免全宽长行（列宽与 840 主列一致） */
+/* 960–1279 没有右栏目录，正文按居中几何收窄，避免全宽长行（列宽 = 主列 + 左右 padding） */
 @media (min-width: 960px) and (max-width: 1279.98px) {
   html:has(.VPSidebar) .VPDoc .container {
     display: flex;
     justify-content: center;
-    max-width: 992px;
+    max-width: calc(var(--pl-doc-maxw) + 152px);
   }
 
   html:has(.VPSidebar) .VPDoc .content {
-    max-width: 904px;
+    max-width: calc(var(--pl-doc-maxw) + 64px);
   }
+}
+
+/* ---------------------------------------------------------------------------
+   8.2 专注模式（ReaderSettings 切换，html.focus-mode 驱动）：
+   隐藏导航/侧栏/右栏/面包屑，正文按阅读宽度居中，只留正文 + 进度条 + 回到顶部。
+   Esc 退出由 ReaderSettings 监听。
+   ------------------------------------------------------------------------ */
+
+@media (min-width: 960px) {
+  html.focus-mode .VPNavBar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--pl-dur) var(--pl-ease), transform var(--pl-dur) var(--pl-ease);
+  }
+
+  /* 导航离场后正文上移，不留空条 */
+  html.focus-mode .VPContent.has-sidebar {
+    padding-top: 0;
+  }
+
+  html.focus-mode .VPDoc {
+    padding-top: 24px;
+  }
+
+  /* 收起右栏并按阅读宽度居中（与 960–1279 档同一套居中几何） */
+  html.focus-mode .VPDoc .aside {
+    display: none;
+  }
+
+  html.focus-mode .VPDoc .container {
+    display: flex;
+    justify-content: center;
+    max-width: none;
+  }
+
+  html.focus-mode .VPDoc .content {
+    max-width: none;
+  }
+}
+
+html.focus-mode .breadcrumbs {
+  display: none;
+}
+
+/* 专注模式下侧栏不响应悬停弹出（热区也一并隐藏） */
+html.focus-mode .sidebar-hover-zone {
+  display: none;
+}
+
+html.focus-mode .VPSidebar {
+  transform: translateX(-100%) !important;
 }
 
 /* ---------------------------------------------------------------------------
@@ -731,6 +840,97 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.7;
+}
+
+/* 阅读器设置条：元信息行右侧，弱化观感（灰字小号 + 无边框按钮） */
+.reader-settings-inline {
+  margin-left: auto;
+}
+
+.reader-settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  color: var(--vp-c-text-2);
+}
+
+.rs-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rs-label {
+  margin-right: 3px;
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  user-select: none;
+}
+
+.rs-btn {
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-family: inherit;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: background-color var(--pl-dur-fast) var(--pl-ease),
+    color var(--pl-dur-fast) var(--pl-ease);
+}
+
+.rs-btn:hover {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.rs-btn.is-on {
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  font-weight: 600;
+}
+
+.rs-focus {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color var(--pl-dur-fast) var(--pl-ease), border-color var(--pl-dur-fast) var(--pl-ease),
+    background-color var(--pl-dur-fast) var(--pl-ease);
+}
+
+.rs-focus:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.rs-focus.is-on {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.rs-focus-icon {
+  width: 13px;
+  height: 13px;
+}
+
+/* 窄屏：设置条换行独立成行，控件右对齐保持呼吸感 */
+@media (max-width: 767px) {
+  .reader-settings-inline {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 /* 阅读进度条：fixed 顶边 2px 细条，JS 控制 scaleX */
@@ -1062,4 +1262,149 @@ html.dark .vp-doc img:not(.medium-zoom-image--opened) {
 .giscus-tip {
   color: var(--vp-c-text-2);
   font-size: 13px;
+}
+
+/* ---------------------------------------------------------------------------
+   15. 文末知识网络：继续阅读（相关推荐）+ 反向链接
+   ------------------------------------------------------------------------ */
+
+.doc-links {
+  margin-top: 44px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 24px;
+}
+
+.doc-links-title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.doc-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.doc-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  transition: border-color var(--pl-dur-fast) var(--pl-ease),
+    transform var(--pl-dur-fast) var(--pl-ease), box-shadow var(--pl-dur-fast) var(--pl-ease);
+}
+
+.doc-link-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.doc-link-title {
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.doc-link-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: var(--vp-c-text-2);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.doc-link-meta {
+  margin-top: auto;
+  color: var(--vp-c-text-3);
+  font-size: 11.5px;
+}
+
+@media (max-width: 767px) {
+  .doc-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 反向链接：接在"继续阅读"之后，同一分区不加第二条分隔线 */
+.doc-backlinks {
+  margin-top: 28px;
+}
+
+.doc-backlinks + .giscus-comments {
+  margin-top: 36px;
+}
+
+.doc-backlinks-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.doc-backlinks-count {
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  font-weight: 500;
+  vertical-align: 1px;
+}
+
+.doc-backlinks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.doc-backlinks-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--vp-c-text-2);
+  font-size: 13.5px;
+  transition: color var(--pl-dur-fast) var(--pl-ease);
+}
+
+.doc-backlinks-item:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.doc-backlinks-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--vp-c-text-3);
+  transition: color var(--pl-dur-fast) var(--pl-ease);
+}
+
+.doc-backlinks-item:hover .doc-backlinks-icon {
+  color: var(--vp-c-brand-1);
+}
+
+/* ---------------------------------------------------------------------------
+   16. View Transitions
+   ------------------------------------------------------------------------ */
+
+/* 暗色圆形扩散期间关闭默认的 root 交叉淡入（快照直接交给 clipPath 动画接管），
+   用 html.vt-appearance 作用域隔离，避免影响路由切换的默认 crossfade */
+html.vt-appearance::view-transition-old(root),
+html.vt-appearance::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* 路由切换 crossfade：默认动画即淡入淡出，这里收一下时长让节奏更干脆 */
+::view-transition-old(root) {
+  animation-duration: 0.12s;
+}
+
+::view-transition-new(root) {
+  animation-duration: 0.18s;
 }
